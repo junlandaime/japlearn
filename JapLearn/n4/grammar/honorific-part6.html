@@ -1,0 +1,153 @@
+<!-- Practice and Exercises Section -->
+<section class="mb-12">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice and Exercises</h2>
+    
+    <p class="text-gray-700 mb-6">
+        Let's practice using keigo in different situations. Try to identify which type of keigo (sonkeigo, kenjougo, or teineigo) would be appropriate in each scenario, and then transform the given sentences accordingly.
+    </p>
+    
+    <div class="exercise-card mb-8" x-data="{ showAnswer1: false, showAnswer2: false, showAnswer3: false, showAnswer4: false }">
+        <h3 class="text-xl font-semibold mb-4">Exercise 1: Identifying Keigo Types</h3>
+        
+        <p class="text-gray-700 mb-4">
+            For each situation, identify which type of keigo would be most appropriate.
+        </p>
+        
+        <div class="space-y-6">
+            <div class="bg-white p-4 rounded-md border border-gray-200">
+                <p class="font-medium mb-2">Situation 1:</p>
+                <p class="text-gray-700 mb-4">
+                    You are talking to your boss about what your colleague did yesterday.
+                </p>
+                
+                <div class="flex items-center justify-between">
+                    <button @click="showAnswer1 = !showAnswer1" class="btn-primary">
+                        <span x-text="showAnswer1 ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer1" class="text-green-700 font-medium">
+                        Teineigo (for talking to your boss) + Sonkeigo (for talking about your colleague)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-md border border-gray-200">
+                <p class="font-medium mb-2">Situation 2:</p>
+                <p class="text-gray-700 mb-4">
+                    You are talking to a customer about what you will do for them.
+                </p>
+                
+                <div class="flex items-center justify-between">
+                    <button @click="showAnswer2 = !showAnswer2" class="btn-primary">
+                        <span x-text="showAnswer2 ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer2" class="text-green-700 font-medium">
+                        Teineigo (for talking politely) + Kenjougo (for talking about yourself to a customer)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-md border border-gray-200">
+                <p class="font-medium mb-2">Situation 3:</p>
+                <p class="text-gray-700 mb-4">
+                    You are talking to your friend about what your teacher said in class.
+                </p>
+                
+                <div class="flex items-center justify-between">
+                    <button @click="showAnswer3 = !showAnswer3" class="btn-primary">
+                        <span x-text="showAnswer3 ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer3" class="text-green-700 font-medium">
+                        Casual form (for talking to a friend) + Sonkeigo (for talking about your teacher)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-md border border-gray-200">
+                <p class="font-medium mb-2">Situation 4:</p>
+                <p class="text-gray-700 mb-4">
+                    You are talking to your teacher about what you did for homework.
+                </p>
+                
+                <div class="flex items-center justify-between">
+                    <button @click="showAnswer4 = !showAnswer4" class="btn-primary">
+                        <span x-text="showAnswer4 ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer4" class="text-green-700 font-medium">
+                        Teineigo (for talking politely) + Kenjougo (for talking about yourself to your teacher)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="exercise-card" x-data="{ showAnswer1: false, showAnswer2: false, showAnswer3: false }">
+        <h3 class="text-xl font-semibold mb-4">Exercise 2: Transforming Sentences</h3>
+        
+        <p class="text-gray-700 mb-4">
+            Transform the following sentences into the appropriate keigo form based on the given situation.
+        </p>
+        
+        <div class="space-y-6">
+            <div class="bg-white p-4 rounded-md border border-gray-200">
+                <p class="font-medium mb-2">Sentence 1:</p>
+                <p class="japanese mb-1">山田さんは今、本を読んでいます。</p>
+                <p class="italic text-gray-600 mb-4">Yamada-san wa ima, hon o yonde imasu.</p>
+                <p class="text-gray-700 mb-2">Situation: You are talking to your colleague about your boss (Yamada-san).</p>
+                
+                <div class="flex items-center justify-between">
+                    <button @click="showAnswer1 = !showAnswer1" class="btn-primary">
+                        <span x-text="showAnswer1 ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer1" class="text-green-700">
+                        <p class="japanese mb-1">山田さんは今、本をお読みになっています。</p>
+                        <p class="italic">Yamada-san wa ima, hon o o-yomi ni natte imasu.</p>
+                        <p class="text-sm mt-1">(Using sonkeigo to show respect to your boss)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-md border border-gray-200">
+                <p class="font-medium mb-2">Sentence 2:</p>
+                <p class="japanese mb-1">私は明日、先生に会います。</p>
+                <p class="italic text-gray-600 mb-4">Watashi wa ashita, sensei ni aimasu.</p>
+                <p class="text-gray-700 mb-2">Situation: You are telling your teacher about your plan to meet them tomorrow.</p>
+                
+                <div class="flex items-center justify-between">
+                    <button @click="showAnswer2 = !showAnswer2" class="btn-primary">
+                        <span x-text="showAnswer2 ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer2" class="text-green-700">
+                        <p class="japanese mb-1">私は明日、先生にお目にかかります。</p>
+                        <p class="italic">Watashi wa ashita, sensei ni o-me ni kakarimasu.</p>
+                        <p class="text-sm mt-1">(Using kenjougo to humble yourself when talking to your teacher)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-md border border-gray-200">
+                <p class="font-medium mb-2">Sentence 3:</p>
+                <p class="japanese mb-1">社長は何を食べましたか？</p>
+                <p class="italic text-gray-600 mb-4">Shachō wa nani o tabemashita ka?</p>
+                <p class="text-gray-700 mb-2">Situation: You are asking your colleague what the company president ate.</p>
+                
+                <div class="flex items-center justify-between">
+                    <button @click="showAnswer3 = !showAnswer3" class="btn-primary">
+                        <span x-text="showAnswer3 ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer3" class="text-green-700">
+                        <p class="japanese mb-1">社長は何を召し上がりましたか？</p>
+                        <p class="italic">Shachō wa nani o meshiagarimashita ka?</p>
+                        <p class="text-sm mt-1">(Using sonkeigo to show respect to the company president)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

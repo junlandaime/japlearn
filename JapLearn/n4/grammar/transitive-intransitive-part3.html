@@ -1,0 +1,138 @@
+            <!-- Practice Exercises Section -->
+            <section class="mb-12" x-data="{ showAnswers: {} }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-6">
+                    Test your understanding of transitive and intransitive verbs with these practice exercises.
+                </p>
+                
+                <!-- Exercise 1: Identification -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 1: Identify the Verb Type</h3>
+                    <p class="mb-4">Determine whether each verb is transitive (他動詞) or intransitive (自動詞).</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 開ける (あける)</p>
+                            <button @click="showAnswers[1] = !showAnswers[1]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[1]">Show Answer</span>
+                                <span x-show="showAnswers[1]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[1]" class="mt-2 text-green-700">
+                                <p>他動詞 (Transitive) - "to open something"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 始まる (はじまる)</p>
+                            <button @click="showAnswers[2] = !showAnswers[2]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[2]">Show Answer</span>
+                                <span x-show="showAnswers[2]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[2]" class="mt-2 text-green-700">
+                                <p>自動詞 (Intransitive) - "to begin (by itself)"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 消す (けす)</p>
+                            <button @click="showAnswers[3] = !showAnswers[3]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[3]">Show Answer</span>
+                                <span x-show="showAnswers[3]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[3]" class="mt-2 text-green-700">
+                                <p>他動詞 (Transitive) - "to turn off/extinguish something"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> 壊れる (こわれる)</p>
+                            <button @click="showAnswers[4] = !showAnswers[4]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[4]">Show Answer</span>
+                                <span x-show="showAnswers[4]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[4]" class="mt-2 text-green-700">
+                                <p>自動詞 (Intransitive) - "to break (by itself)"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">5.</span> 落とす (おとす)</p>
+                            <button @click="showAnswers[5] = !showAnswers[5]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[5]">Show Answer</span>
+                                <span x-show="showAnswers[5]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[5]" class="mt-2 text-green-700">
+                                <p>他動詞 (Transitive) - "to drop something"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2: Particle Selection -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 2: Choose the Correct Particle</h3>
+                    <p class="mb-4">Select whether を (o) or が (ga) should be used in each sentence.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> ドア＿＿開きました。</p>
+                            <button @click="showAnswers[6] = !showAnswers[6]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[6]">Show Answer</span>
+                                <span x-show="showAnswers[6]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[6]" class="mt-2 text-green-700">
+                                <p>ドアが開きました。(Doa ga akimashita.)</p>
+                                <p class="text-sm text-gray-600 mt-1">The verb 開く (aku) is intransitive, so we use が (ga).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 先生は本＿＿閉めました。</p>
+                            <button @click="showAnswers[7] = !showAnswers[7]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[7]">Show Answer</span>
+                                <span x-show="showAnswers[7]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[7]" class="mt-2 text-green-700">
+                                <p>先生は本を閉めました。(Sensei wa hon o shimemashita.)</p>
+                                <p class="text-sm text-gray-600 mt-1">The verb 閉める (shimeru) is transitive, so we use を (o).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> 電気＿＿消えました。</p>
+                            <button @click="showAnswers[8] = !showAnswers[8]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[8]">Show Answer</span>
+                                <span x-show="showAnswers[8]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[8]" class="mt-2 text-green-700">
+                                <p>電気が消えました。(Denki ga kiemashita.)</p>
+                                <p class="text-sm text-gray-600 mt-1">The verb 消える (kieru) is intransitive, so we use が (ga).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">4.</span> 私は窓＿＿開けました。</p>
+                            <button @click="showAnswers[9] = !showAnswers[9]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[9]">Show Answer</span>
+                                <span x-show="showAnswers[9]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[9]" class="mt-2 text-green-700">
+                                <p>私は窓を開けました。(Watashi wa mado o akemashita.)</p>
+                                <p class="text-sm text-gray-600 mt-1">The verb 開ける (akeru) is transitive, so we use を (o).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">5.</span> コンピューター＿＿壊れました。</p>
+                            <button @click="showAnswers[10] = !showAnswers[10]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[10]">Show Answer</span>
+                                <span x-show="showAnswers[10]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[10]" class="mt-2 text-green-700">
+                                <p>コンピューターが壊れました。(Konpyūtā ga kowaremashita.)</p>
+                                <p class="text-sm text-gray-600 mt-1">The verb 壊れる (kowareru) is intransitive, so we use が (ga).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>

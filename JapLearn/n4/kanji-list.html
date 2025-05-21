@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N4 Kanji List | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .kanji-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .kanji-char {
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1;
+            color: #4338ca;
+        }
+        .kanji-readings {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .kanji-meanings {
+            font-size: 0.875rem;
+            color: #1f2937;
+        }
+        .category-tab {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .category-tab.active {
+            color: #4f46e5;
+            border-bottom-color: #4f46e5;
+        }
+        .category-tab:hover:not(.active) {
+            color: #6366f1;
+            border-bottom-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../n5/intro.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">N5 Course</a>
+                        <a href="./intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N4 Course</a>
+                        <a href="../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">JLPT N4 Kanji List</h1>
+            <p class="text-xl">Master approximately 300 kanji characters required for the JLPT N4 level.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N4 Kanji Overview</h2>
+                <p class="text-gray-700 mb-4">
+                    The JLPT N4 level requires knowledge of approximately 300 kanji characters. This is in addition to the 100 kanji from the N5 level, bringing your total to around 400 kanji characters. These kanji appear frequently in everyday reading materials and are essential for intermediate Japanese proficiency.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Study Tip:</span> Focus on learning kanji in context through vocabulary words rather than memorizing them in isolation. This approach will help you recognize and use kanji more naturally in your reading and writing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kanji Categories -->
+            <section class="mb-12" x-data="{ activeTab: 'people' }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Kanji by Category</h2>
+                
+                <div class="border-b border-gray-200 mb-6">
+                    <div class="flex flex-wrap -mb-px">
+                        <button @click="activeTab = 'people'" :class="{ 'active': activeTab === 'people' }" class="category-tab">
+                            <i class="fas fa-user mr-2"></i> People & Family
+                        </button>
+                        <button @click="activeTab = 'actions'" :class="{ 'active': activeTab === 'actions' }" class="category-tab">
+                            <i class="fas fa-running mr-2"></i> Actions & Movement
+                        </button>
+                        <button @click="activeTab = 'places'" :class="{ 'active': activeTab === 'places' }" class="category-tab">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Places & Locations
+                        </button>
+                        <button @click="activeTab = 'time'" :class="{ 'active': activeTab === 'time' }" class="category-tab">
+                            <i class="fas fa-clock mr-2"></i> Time & Calendar
+                        </button>
+                        <button @click="activeTab = 'nature'" :class="{ 'active': activeTab === 'nature' }" class="category-tab">
+                            <i class="fas fa-leaf mr-2"></i> Nature & Environment
+                        </button>
+                        <button @click="activeTab = 'abstract'" :class="{ 'active': activeTab === 'abstract' }" class="category-tab">
+                            <i class="fas fa-brain mr-2"></i> Abstract Concepts
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- People & Family Kanji -->
+                <div x-show="activeTab === 'people'" class="animate-fade-in">
+                    <p class="text-gray-700 mb-6">
+                        Kanji related to people, family members, and human characteristics. These are essential for discussing relationships and describing individuals.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <!-- Kanji Card: 男 -->
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">男</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: ダン、ナン</span><br>
+                                    <span class="text-green-600">Kun: おとこ</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">man, male</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kanji Card: 女 -->
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">女</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: ジョ、ニョ</span><br>
+                                    <span class="text-green-600">Kun: おんな</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">woman, female</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kanji Card: 子 -->
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">子</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: シ、ス</span><br>
+                                    <span class="text-green-600">Kun: こ</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">child, kid</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kanji Card: 父 -->
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">父</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: フ</span><br>
+                                    <span class="text-green-600">Kun: ちち</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">father, dad</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kanji Card: 母 -->
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">母</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: ボ</span><br>
+                                    <span class="text-green-600">Kun: はは</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">mother, mom</div>
+                            </div>
+                        </div>
+                        
+                        <!-- More kanji would be listed here -->
+                        <div class="kanji-card bg-gray-50 flex items-center justify-center">
+                            <span class="text-gray-400">More kanji in this category...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Actions & Movement Kanji -->
+                <div x-show="activeTab === 'actions'" class="animate-fade-in">
+                    <p class="text-gray-700 mb-6">
+                        Kanji related to actions, movements, and verbs. These are crucial for describing what people do in Japanese.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <!-- Sample action kanji would be listed here -->
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">行</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: コウ、ギョウ</span><br>
+                                    <span class="text-green-600">Kun: い(く)、おこな(う)</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">go, travel, conduct</div>
+                            </div>
+                        </div>
+                        
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">来</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: ライ</span><br>
+                                    <span class="text-green-600">Kun: く(る)</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">come, arrive</div>
+                            </div>
+                        </div>
+                        
+                        <div class="kanji-card">
+                            <div class="flex flex-col items-center">
+                                <div class="kanji-char japanese mb-2">見</div>
+                                <div class="kanji-readings mb-1">
+                                    <span class="text-blue-600">On: ケン</span><br>
+                                    <span class="text-green-600">Kun: み(る)</span>
+                                </div>
+                                <div class="kanji-meanings font-medium">see, look, watch</div>
+                            </div>
+                        </div>
+                        
+                        <div class="kanji-card bg-gray-50 flex items-center justify-center">
+                            <span class="text-gray-400">More kanji in this category...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for other categories -->
+                <div x-show="activeTab === 'places'" class="animate-fade-in">
+                    <p class="text-gray-700 mb-6">
+                        Kanji related to locations, buildings, and geographical features.
+                    </p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg text-center">
+                        <i class="fas fa-tools text-blue-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Content Under Development</h3>
+                        <p class="text-gray-600">
+                            We're currently adding more kanji to this category. Check back soon for updates!
+                        </p>
+                    </div>
+                </div>
+                
+                <div x-show="activeTab === 'time'" class="animate-fade-in">
+                    <p class="text-gray-700 mb-6">
+                        Kanji related to time, dates, and calendrical terms.
+                    </p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg text-center">
+                        <i class="fas fa-tools text-blue-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Content Under Development</h3>
+                        <p class="text-gray-600">
+                            We're currently adding more kanji to this category. Check back soon for updates!
+                        </p>
+                    </div>
+                </div>
+                
+                <div x-show="activeTab === 'nature'" class="animate-fade-in">
+                    <p class="text-gray-700 mb-6">
+                        Kanji related to nature, weather, animals, and plants.
+                    </p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg text-center">
+                        <i class="fas fa-tools text-blue-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Content Under Development</h3>
+                        <p class="text-gray-600">
+                            We're currently adding more kanji to this category. Check back soon for updates!
+                        </p>
+                    </div>
+                </div>
+                
+                <div x-show="activeTab === 'abstract'" class="animate-fade-in">
+                    <p class="text-gray-700 mb-6">
+                        Kanji related to abstract concepts, emotions, and ideas.
+                    </p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg text-center">
+                        <i class="fas fa-tools text-blue-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Content Under Development</h3>
+                        <p class="text-gray-600">
+                            We're currently adding more kanji to this category. Check back soon for updates!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Study Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Kanji Study Resources</h2>
+                <p class="text-gray-700 mb-6">
+                    To help you master the N4 level kanji, we've compiled some useful resources and study techniques:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-3">Effective Study Methods</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Spaced Repetition:</span> Review kanji at increasing intervals to improve long-term retention</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Vocabulary Context:</span> Learn kanji in the context of common vocabulary words</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Radical Analysis:</span> Break down complex kanji into their component parts</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Writing Practice:</span> Write kanji repeatedly to build muscle memory</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Mnemonic Devices:</span> Create stories or visual associations for difficult kanji</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-3">Recommended Tools</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-mobile-alt text-indigo-500 mr-2"></i> <span class="font-medium">Anki:</span> Create digital flashcards with spaced repetition</li>
+                            <li><i class="fas fa-book text-indigo-500 mr-2"></i> <span class="font-medium">Kanji Dictionary:</span> "A Guide to Remembering Japanese Characters" by Kenneth G. Henshall</li>
+                            <li><i class="fas fa-pen text-indigo-500 mr-2"></i> <span class="font-medium">Kanji Practice Books:</span> "Basic Kanji Book Vol. 2" for structured writing practice</li>
+                            <li><i class="fas fa-globe text-indigo-500 mr-2"></i> <span class="font-medium">Jisho.org:</span> Online Japanese dictionary with kanji lookup by radical</li>
+                            <li><i class="fas fa-user text-indigo-500 mr-2"></i> <span class="font-medium">Language Exchange:</span> Practice using kanji in real conversations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Navigation -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">N4 Course Navigation</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="./intro.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-home text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">N4 Course Introduction</h3>
+                    </a>
+                    <a href="./kanji-list.html" class="bg-indigo-100 hover:bg-indigo-200 border border-indigo-300 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-font text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">N4 Kanji List</h3>
+                    </a>
+                    <a href="./grammar/transitive-intransitive.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-book text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">N4 Grammar Lessons</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="./intro.html" class="text-indigo-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">N4 Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./grammar/transitive-intransitive.html" class="text-gray-300 hover:text-white">Grammar Lessons</a></li>
+                        <li><a href="./kanji-list.html" class="text-indigo-300 hover:text-white">Kanji List</a></li>
+                        <li><a href="./vocabulary/daily-life.html" class="text-gray-300 hover:text-white">Vocabulary</a></li>
+                        <li><a href="./practice/reading.html" class="text-gray-300 hover:text-white">Practice Exercises</a></li>
+                        <li><a href="./exam-prep/overview.html" class="text-gray-300 hover:text-white">JLPT N4 Preparation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

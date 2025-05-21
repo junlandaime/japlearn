@@ -1,0 +1,387 @@
+            <!-- Practice Exercises Section -->
+            <section class="mb-12" x-data="{ showAnswers: {} }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Exercises</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    Test your understanding of the imperative forms with these practice exercises.
+                </p>
+                
+                <!-- Exercise 1: Plain Imperative Form -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 1: Plain Imperative Form</h3>
+                    <p class="mb-4">Convert the following verbs to their plain imperative form.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 行く (いく) - to go</p>
+                            <button @click="showAnswers[1] = !showAnswers[1]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[1]">Show Answer</span>
+                                <span x-show="showAnswers[1]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[1]" class="mt-2 text-green-700">
+                                <p class="japanese">行け (いけ)</p>
+                                <p class="text-sm text-gray-600 mt-1">Ike - Go! (U-verb: change final う to え)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 食べる (たべる) - to eat</p>
+                            <button @click="showAnswers[2] = !showAnswers[2]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[2]">Show Answer</span>
+                                <span x-show="showAnswers[2]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[2]" class="mt-2 text-green-700">
+                                <p class="japanese">食べろ (たべろ)</p>
+                                <p class="text-sm text-gray-600 mt-1">Tabero - Eat! (RU-verb: remove る and add ろ)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 聞く (きく) - to listen/ask</p>
+                            <button @click="showAnswers[3] = !showAnswers[3]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[3]">Show Answer</span>
+                                <span x-show="showAnswers[3]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[3]" class="mt-2 text-green-700">
+                                <p class="japanese">聞け (きけ)</p>
+                                <p class="text-sm text-gray-600 mt-1">Kike - Listen! (U-verb: change final う to え)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> 見る (みる) - to see/look</p>
+                            <button @click="showAnswers[4] = !showAnswers[4]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[4]">Show Answer</span>
+                                <span x-show="showAnswers[4]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[4]" class="mt-2 text-green-700">
+                                <p class="japanese">見ろ (みろ)</p>
+                                <p class="text-sm text-gray-600 mt-1">Miro - Look! (RU-verb: remove る and add ろ)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">5.</span> する - to do</p>
+                            <button @click="showAnswers[5] = !showAnswers[5]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[5]">Show Answer</span>
+                                <span x-show="showAnswers[5]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[5]" class="mt-2 text-green-700">
+                                <p class="japanese">しろ</p>
+                                <p class="text-sm text-gray-600 mt-1">Shiro - Do! (Irregular verb)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">6.</span> 来る (くる) - to come</p>
+                            <button @click="showAnswers[6] = !showAnswers[6]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[6]">Show Answer</span>
+                                <span x-show="showAnswers[6]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[6]" class="mt-2 text-green-700">
+                                <p class="japanese">来い (こい)</p>
+                                <p class="text-sm text-gray-600 mt-1">Koi - Come! (Irregular verb)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2: Choosing the Right Form -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 2: Choosing the Right Form</h3>
+                    <p class="mb-4">Choose the most appropriate imperative form for each situation.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> You want to ask a stranger to take your photo. Which form would you use?</p>
+                            <button @click="showAnswers[7] = !showAnswers[7]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[7]">Show Answer</span>
+                                <span x-show="showAnswers[7]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[7]" class="mt-2 text-green-700">
+                                <p class="japanese">写真を撮ってもらえませんか。 / 写真を撮ってくださいませんか。</p>
+                                <p class="italic text-gray-600">Shashin o totte moraemasen ka. / Shashin o totte kudasaimasen ka.</p>
+                                <p class="text-sm text-gray-600 mt-1">When speaking to a stranger, a polite form like 〜てもらえませんか or 〜てくださいませんか is appropriate.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> A mother telling her child to clean their room. Which form would be appropriate?</p>
+                            <button @click="showAnswers[8] = !showAnswers[8]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[8]">Show Answer</span>
+                                <span x-show="showAnswers[8]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[8]" class="mt-2 text-green-700">
+                                <p class="japanese">部屋を掃除しなさい。</p>
+                                <p class="italic text-gray-600">Heya o souji shinasai.</p>
+                                <p class="text-sm text-gray-600 mt-1">The 〜なさい form is commonly used by parents when giving instructions to their children.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> You're asking a close friend to wait for you. Which form would you use?</p>
+                            <button @click="showAnswers[9] = !showAnswers[9]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[9]">Show Answer</span>
+                                <span x-show="showAnswers[9]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[9]" class="mt-2 text-green-700">
+                                <p class="japanese">ちょっと待って。 / 待ってくれる？</p>
+                                <p class="italic text-gray-600">Chotto matte. / Matte kureru?</p>
+                                <p class="text-sm text-gray-600 mt-1">With close friends, the casual て-form or 〜てくれる？ form is appropriate.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> A police officer ordering someone to stop during an emergency. Which form would be used?</p>
+                            <button @click="showAnswers[10] = !showAnswers[10]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[10]">Show Answer</span>
+                                <span x-show="showAnswers[10]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[10]" class="mt-2 text-green-700">
+                                <p class="japanese">止まれ！</p>
+                                <p class="italic text-gray-600">Tomare!</p>
+                                <p class="text-sm text-gray-600 mt-1">In emergency situations or by authorities giving commands, the plain imperative form is used.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">5.</span> You're asking your boss for time off. Which form would be most appropriate?</p>
+                            <button @click="showAnswers[11] = !showAnswers[11]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[11]">Show Answer</span>
+                                <span x-show="showAnswers[11]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[11]" class="mt-2 text-green-700">
+                                <p class="japanese">休みを取らせていただけませんか。</p>
+                                <p class="italic text-gray-600">Yasumi o torasete itadakemasen ka.</p>
+                                <p class="text-sm text-gray-600 mt-1">When speaking to superiors, the very polite 〜ていただけませんか form is appropriate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 3: Converting to Negative Commands -->
+                <div class="grammar-card">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 3: Converting to Negative Commands</h3>
+                    <p class="mb-4">Convert the following positive commands to negative commands (prohibitions).</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> ここで食べてください。 → (Please don't eat here.)</p>
+                            <button @click="showAnswers[12] = !showAnswers[12]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[12]">Show Answer</span>
+                                <span x-show="showAnswers[12]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[12]" class="mt-2 text-green-700">
+                                <p class="japanese">ここで食べないでください。</p>
+                                <p class="italic text-gray-600">Koko de tabenaide kudasai.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 入って。 → (Don't come in.)</p>
+                            <button @click="showAnswers[13] = !showAnswers[13]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[13]">Show Answer</span>
+                                <span x-show="showAnswers[13]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[13]" class="mt-2 text-green-700">
+                                <p class="japanese">入らないで。</p>
+                                <p class="italic text-gray-600">Hairanaide.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 行け！ → (Don't go!)</p>
+                            <button @click="showAnswers[14] = !showAnswers[14]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[14]">Show Answer</span>
+                                <span x-show="showAnswers[14]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[14]" class="mt-2 text-green-700">
+                                <p class="japanese">行くな！</p>
+                                <p class="italic text-gray-600">Iku na!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> 部屋を掃除しなさい。 → (Don't clean the room.)</p>
+                            <button @click="showAnswers[15] = !showAnswers[15]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[15]">Show Answer</span>
+                                <span x-show="showAnswers[15]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[15]" class="mt-2 text-green-700">
+                                <p class="japanese">部屋を掃除しないでください。 / 部屋を掃除しなくていいです。</p>
+                                <p class="italic text-gray-600">Heya o souji shinaide kudasai. / Heya o souji shinakute ii desu.</p>
+                                <p class="text-sm text-gray-600 mt-1">The second option means "You don't have to clean the room" which is often more natural than a direct prohibition in this context.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Common Mistakes Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Common Mistakes to Avoid</h2>
+                
+                <div class="grammar-card">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 1: Using the Plain Imperative in Everyday Conversation</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 窓を開けろ！ (to a colleague or stranger)</p>
+                                <p class="italic text-gray-600">Mado o akero!</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 窓を開けてもらえますか？</p>
+                                <p class="italic text-gray-600">Mado o akete moraemasu ka?</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                The plain imperative form is too harsh for everyday conversation and can sound rude. Use polite request forms instead.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 2: Using 〜なさい with People of Equal or Higher Status</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 先生、ここに座りなさい。</p>
+                                <p class="italic text-gray-600">Sensei, koko ni suwarinasai.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 先生、こちらにお座りください。</p>
+                                <p class="italic text-gray-600">Sensei, kochira ni osuwari kudasai.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                The 〜なさい form is used by people in positions of authority. Using it with equals or superiors is inappropriate.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 3: Not Softening Requests Appropriately</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 手伝ってください。 (abrupt request to a superior)</p>
+                                <p class="italic text-gray-600">Tetsudatte kudasai.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 手伝っていただけませんか。</p>
+                                <p class="italic text-gray-600">Tetsudatte itadakemasen ka.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                When making requests to superiors or in formal situations, it's important to use appropriately polite forms.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 4: Using the Wrong Prohibition Form</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 行くな！ (to a customer or colleague)</p>
+                                <p class="italic text-gray-600">Iku na!</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 行かないでください。</p>
+                                <p class="italic text-gray-600">Ikanaide kudasai.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                The 〜な prohibition form is very harsh. In most situations, 〜ないでください is more appropriate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summary and Further Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Summary</h2>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Key Takeaways</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Japanese has multiple imperative forms, each with different levels of politeness and appropriate contexts for use.</li>
+                        <li>• The plain imperative (〜ろ/〜え) is very direct and should be used with caution, mainly in emergencies or fiction.</li>
+                        <li>• The 〜てください form is the standard polite way to make requests in most situations.</li>
+                        <li>• The 〜なさい form is used by people in authority when giving instructions to subordinates.</li>
+                        <li>• The simple て-form can be used for casual requests among friends and family.</li>
+                        <li>• More polite forms like 〜ていただけませんか are appropriate when speaking to superiors or in formal situations.</li>
+                        <li>• Negative commands (prohibitions) have their own forms, with 〜ないでください being the standard polite form.</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4">Further Resources</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="prohibition.html" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Prohibition Form</h4>
+                            <p class="text-gray-600">Learn more about the various ways to express prohibitions in Japanese.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="causative.html" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Causative Form</h4>
+                            <p class="text-gray-600">Learn about the causative form, which is used to express making or letting someone do something.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 rounded-lg p-6">
+                    <a href="giving-receiving.html" class="flex items-center text-indigo-600 hover:text-indigo-800 mb-4 md:mb-0">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Previous: Giving and Receiving Verbs
+                    </a>
+                    
+                    <a href="prohibition.html" class="flex items-center text-indigo-600 hover:text-indigo-800">
+                        Next: Prohibition Form
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300">Your comprehensive resource for learning Japanese and preparing for the JLPT exams.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-300">© 2025 JapLearn. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

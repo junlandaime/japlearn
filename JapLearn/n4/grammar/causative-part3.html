@@ -1,0 +1,326 @@
+            <!-- Practice Exercises Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Exercises</h2>
+                
+                <!-- Exercise 1: Transformation -->
+                <div class="exercise-card mb-8" x-data="{ showAnswer: false }">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 1: Transform Verbs into Causative Form</h3>
+                    
+                    <p class="text-gray-700 mb-4">
+                        Transform the following verbs into their causative form.
+                    </p>
+                    
+                    <div class="space-y-4 mb-4">
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium">1. 飲む (nomu)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium">2. 帰る (kaeru)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium">3. 立つ (tatsu)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium">4. 勉強する (benkyō suru)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium">5. 食べる (taberu)</p>
+                        </div>
+                    </div>
+                    
+                    <button @click="showAnswer = !showAnswer" class="btn-primary">
+                        <span x-text="showAnswer ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer" class="mt-4 bg-green-50 p-4 rounded-md">
+                        <p class="font-medium">Answers:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700 mt-2">
+                            <li>
+                                <span class="japanese">飲ませる (nomaseru)</span><br>
+                                <span>to make/let (someone) drink</span>
+                            </li>
+                            <li>
+                                <span class="japanese">帰らせる (kaeraseru)</span><br>
+                                <span>to make/let (someone) go home</span>
+                            </li>
+                            <li>
+                                <span class="japanese">立たせる (tataseru)</span><br>
+                                <span>to make/let (someone) stand</span>
+                            </li>
+                            <li>
+                                <span class="japanese">勉強させる (benkyō saseru)</span><br>
+                                <span>to make/let (someone) study</span>
+                            </li>
+                            <li>
+                                <span class="japanese">食べさせる (tabesaseru)</span><br>
+                                <span>to make/let (someone) eat</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2: Sentence Completion -->
+                <div class="exercise-card mb-8" x-data="{ showAnswer: false }">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 2: Complete the Sentences</h3>
+                    
+                    <p class="text-gray-700 mb-4">
+                        Complete the following sentences using the causative form of the verbs in parentheses.
+                    </p>
+                    
+                    <div class="space-y-4 mb-4">
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">1. 先生は生徒に本を＿＿＿＿。(読む)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">2. 母は子供を早く＿＿＿＿。(寝る)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">3. 上司は部下に残業を＿＿＿＿。(する)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">4. 父は息子にピアノを＿＿＿＿。(弾く)</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">5. コーチは選手を毎日＿＿＿＿。(走る)</p>
+                        </div>
+                    </div>
+                    
+                    <button @click="showAnswer = !showAnswer" class="btn-primary">
+                        <span x-text="showAnswer ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer" class="mt-4 bg-green-50 p-4 rounded-md">
+                        <p class="font-medium">Answers:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700 mt-2">
+                            <li>
+                                <span class="japanese">先生は生徒に本を読ませました。</span><br>
+                                <span class="italic text-gray-600">Sensei wa seito ni hon o yomasemashita.</span><br>
+                                <span>The teacher made/let the students read a book.</span>
+                            </li>
+                            <li>
+                                <span class="japanese">母は子供を早く寝させました。</span><br>
+                                <span class="italic text-gray-600">Haha wa kodomo o hayaku nesasemashita.</span><br>
+                                <span>The mother made/let the child go to bed early.</span>
+                            </li>
+                            <li>
+                                <span class="japanese">上司は部下に残業をさせました。</span><br>
+                                <span class="italic text-gray-600">Jōshi wa buka ni zangyō o sasemashita.</span><br>
+                                <span>The boss made the subordinates work overtime.</span>
+                            </li>
+                            <li>
+                                <span class="japanese">父は息子にピアノを弾かせました。</span><br>
+                                <span class="italic text-gray-600">Chichi wa musuko ni piano o hikasemashita.</span><br>
+                                <span>The father made/let his son play the piano.</span>
+                            </li>
+                            <li>
+                                <span class="japanese">コーチは選手を毎日走らせました。</span><br>
+                                <span class="italic text-gray-600">Kōchi wa senshu o mainichi hashirasemashita.</span><br>
+                                <span>The coach made the athletes run every day.</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Exercise 3: Choose the Correct Particle -->
+                <div class="exercise-card" x-data="{ showAnswer: false }">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 3: Choose the Correct Particle</h3>
+                    
+                    <p class="text-gray-700 mb-4">
+                        Choose the correct particle (に or を) to complete each sentence.
+                    </p>
+                    
+                    <div class="space-y-4 mb-4">
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">1. 先生は学生（　）教室を掃除させました。</p>
+                            <div class="mt-2 space-y-1">
+                                <p>a. に</p>
+                                <p>b. を</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">2. 母は子供（　）早く寝させました。</p>
+                            <div class="mt-2 space-y-1">
+                                <p>a. に</p>
+                                <p>b. を</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">3. 上司は部下（　）報告書を書かせました。</p>
+                            <div class="mt-2 space-y-1">
+                                <p>a. に</p>
+                                <p>b. を</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">4. 先生は生徒（　）立たせました。</p>
+                            <div class="mt-2 space-y-1">
+                                <p>a. に</p>
+                                <p>b. を</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <p class="font-medium japanese">5. 医者は患者（　）薬を飲ませました。</p>
+                            <div class="mt-2 space-y-1">
+                                <p>a. に</p>
+                                <p>b. を</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button @click="showAnswer = !showAnswer" class="btn-primary">
+                        <span x-text="showAnswer ? 'Hide Answer' : 'Show Answer'"></span>
+                    </button>
+                    
+                    <div x-show="showAnswer" class="mt-4 bg-green-50 p-4 rounded-md">
+                        <p class="font-medium">Answers:</p>
+                        <ol class="list-decimal list-inside space-y-1 text-gray-700 mt-2">
+                            <li>a. に (The students are cleaning the classroom - transitive verb with object)</li>
+                            <li>b. を (The child is sleeping - intransitive verb)</li>
+                            <li>a. に (The subordinates are writing a report - transitive verb with object)</li>
+                            <li>b. を (The students are standing - intransitive verb)</li>
+                            <li>a. に (The patients are taking medicine - transitive verb with object)</li>
+                        </ol>
+                        
+                        <p class="mt-4">Explanation:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 mt-2">
+                            <li>Use に when the verb is transitive (takes an object)</li>
+                            <li>Use を when the verb is intransitive (doesn't take an object)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Common Mistakes Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Common Mistakes</h2>
+                
+                <div class="space-y-6">
+                    <!-- Mistake 1 -->
+                    <div class="mistake-card">
+                        <h3 class="text-xl font-semibold mb-3 text-red-700">Incorrect Formation of Causative</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-red-50 p-3 rounded-md">
+                                <p class="font-medium text-red-700">Incorrect:</p>
+                                <p class="japanese">食べるさせる (taberu saseru)</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-3 rounded-md">
+                                <p class="font-medium text-green-700">Correct:</p>
+                                <p class="japanese">食べさせる (tabesaseru)</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700">
+                            For Group 2 verbs (ichidan verbs), you must remove the final る before adding させる. Don't simply add させる to the dictionary form.
+                        </p>
+                    </div>
+                    
+                    <!-- Mistake 2 -->
+                    <div class="mistake-card">
+                        <h3 class="text-xl font-semibold mb-3 text-red-700">Using the Wrong Particle</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-red-50 p-3 rounded-md">
+                                <p class="font-medium text-red-700">Incorrect:</p>
+                                <p class="japanese">先生は生徒を本を読ませました。</p>
+                                <p class="italic text-gray-600">Sensei wa seito o hon o yomasemashita.</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-3 rounded-md">
+                                <p class="font-medium text-green-700">Correct:</p>
+                                <p class="japanese">先生は生徒に本を読ませました。</p>
+                                <p class="italic text-gray-600">Sensei wa seito ni hon o yomasemashita.</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700">
+                            When using a transitive verb (a verb that takes an object) in the causative form, the person being made to do something takes the に particle, not the を particle. This is because the sentence already has an object marked with を.
+                        </p>
+                    </div>
+                    
+                    <!-- Mistake 3 -->
+                    <div class="mistake-card">
+                        <h3 class="text-xl font-semibold mb-3 text-red-700">Confusing Causative with Potential Form</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-red-50 p-3 rounded-md">
+                                <p class="font-medium text-red-700">Incorrect Usage:</p>
+                                <p class="japanese">子供を泳がせる。(When trying to say "The child can swim.")</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-3 rounded-md">
+                                <p class="font-medium text-green-700">Correct:</p>
+                                <p class="japanese">子供は泳げる。</p>
+                                <p class="italic text-gray-600">Kodomo wa oyogeru.</p>
+                                <p>The child can swim. (Potential form)</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700">
+                            The causative form (〜させる) means "to make/let someone do something," while the potential form (〜える/〜られる) means "can do something." Be careful not to confuse these two forms.
+                        </p>
+                    </div>
+                    
+                    <!-- Mistake 4 -->
+                    <div class="mistake-card">
+                        <h3 class="text-xl font-semibold mb-3 text-red-700">Incorrect Causative Form of Irregular Verbs</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-red-50 p-3 rounded-md">
+                                <p class="font-medium text-red-700">Incorrect:</p>
+                                <p class="japanese">するさせる (suru saseru)</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-3 rounded-md">
+                                <p class="font-medium text-green-700">Correct:</p>
+                                <p class="japanese">させる (saseru)</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700">
+                            The irregular verbs する (suru) and 来る (kuru) have special causative forms: させる (saseru) and 来させる (kosaseru). Remember these special forms.
+                        </p>
+                    </div>
+                    
+                    <!-- Mistake 5 -->
+                    <div class="mistake-card">
+                        <h3 class="text-xl font-semibold mb-3 text-red-700">Misinterpreting the Meaning</h3>
+                        
+                        <p class="text-gray-700 mb-4">
+                            The causative form can mean either "to make someone do something" or "to let someone do something" depending on the context. Misinterpreting this meaning can lead to confusion.
+                        </p>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-medium">Tip:</span> To clarify whether you mean "make" or "let," you can use additional context or specific expressions:
+                                    </p>
+                                    <ul class="list-disc list-inside space-y-1 text-sm text-yellow-700 mt-1">
+                                        <li>無理に〜させる (muri ni ~saseru) - to force someone to do something</li>
+                                        <li>自由に〜させる (jiyū ni ~saseru) - to let someone freely do something</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>

@@ -1,0 +1,318 @@
+            <!-- Practice Exercises Section -->
+            <section class="mb-12" x-data="{ showAnswers: {} }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Exercises</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    Test your understanding of the volitional form with these practice exercises.
+                </p>
+                
+                <!-- Exercise 1: Conjugation -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 1: Conjugate to the Volitional Form</h3>
+                    <p class="mb-4">Convert each verb to its plain volitional form.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 行く (いく) - to go</p>
+                            <button @click="showAnswers[1] = !showAnswers[1]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[1]">Show Answer</span>
+                                <span x-show="showAnswers[1]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[1]" class="mt-2 text-green-700">
+                                <p class="japanese">行こう (いこう)</p>
+                                <p class="text-sm text-gray-600 mt-1">Ikou - let's go</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 食べる (たべる) - to eat</p>
+                            <button @click="showAnswers[2] = !showAnswers[2]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[2]">Show Answer</span>
+                                <span x-show="showAnswers[2]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[2]" class="mt-2 text-green-700">
+                                <p class="japanese">食べよう (たべよう)</p>
+                                <p class="text-sm text-gray-600 mt-1">Tabeyou - let's eat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 待つ (まつ) - to wait</p>
+                            <button @click="showAnswers[3] = !showAnswers[3]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[3]">Show Answer</span>
+                                <span x-show="showAnswers[3]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[3]" class="mt-2 text-green-700">
+                                <p class="japanese">待とう (まとう)</p>
+                                <p class="text-sm text-gray-600 mt-1">Matou - let's wait</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> する - to do</p>
+                            <button @click="showAnswers[4] = !showAnswers[4]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[4]">Show Answer</span>
+                                <span x-show="showAnswers[4]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[4]" class="mt-2 text-green-700">
+                                <p class="japanese">しよう</p>
+                                <p class="text-sm text-gray-600 mt-1">Shiyou - let's do</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">5.</span> 来る (くる) - to come</p>
+                            <button @click="showAnswers[5] = !showAnswers[5]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[5]">Show Answer</span>
+                                <span x-show="showAnswers[5]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[5]" class="mt-2 text-green-700">
+                                <p class="japanese">来よう (こよう)</p>
+                                <p class="text-sm text-gray-600 mt-1">Koyou - let's come</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2: Polite Form -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 2: Convert to Polite Volitional</h3>
+                    <p class="mb-4">Change each plain volitional form to its polite form.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> 行こう (いこう)</p>
+                            <button @click="showAnswers[6] = !showAnswers[6]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[6]">Show Answer</span>
+                                <span x-show="showAnswers[6]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[6]" class="mt-2 text-green-700">
+                                <p class="japanese">行きましょう (いきましょう)</p>
+                                <p class="italic text-gray-600">Ikimashou</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 食べよう (たべよう)</p>
+                            <button @click="showAnswers[7] = !showAnswers[7]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[7]">Show Answer</span>
+                                <span x-show="showAnswers[7]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[7]" class="mt-2 text-green-700">
+                                <p class="japanese">食べましょう (たべましょう)</p>
+                                <p class="italic text-gray-600">Tabemashou</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> しよう</p>
+                            <button @click="showAnswers[8] = !showAnswers[8]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[8]">Show Answer</span>
+                                <span x-show="showAnswers[8]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[8]" class="mt-2 text-green-700">
+                                <p class="japanese">しましょう</p>
+                                <p class="italic text-gray-600">Shimashou</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 3: Usage -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 3: Identify the Usage</h3>
+                    <p class="mb-4">Determine whether each sentence expresses intention, invitation, or suggestion.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> 明日、早く起きよう。</p>
+                            <p class="italic text-gray-600 mb-2">Ashita, hayaku okiyou.</p>
+                            <button @click="showAnswers[9] = !showAnswers[9]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[9]">Show Answer</span>
+                                <span x-show="showAnswers[9]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[9]" class="mt-2 text-green-700">
+                                <p>Intention</p>
+                                <p class="text-sm text-gray-600 mt-1">This is expressing the speaker's own intention to wake up early tomorrow.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 一緒に映画を見に行きましょう。</p>
+                            <p class="italic text-gray-600 mb-2">Issho ni eiga o mi ni ikimashou.</p>
+                            <button @click="showAnswers[10] = !showAnswers[10]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[10]">Show Answer</span>
+                                <span x-show="showAnswers[10]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[10]" class="mt-2 text-green-700">
+                                <p>Invitation</p>
+                                <p class="text-sm text-gray-600 mt-1">This is inviting someone to go see a movie together.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> 手伝いましょうか。</p>
+                            <p class="italic text-gray-600 mb-2">Tetsudaimashou ka.</p>
+                            <button @click="showAnswers[11] = !showAnswers[11]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[11]">Show Answer</span>
+                                <span x-show="showAnswers[11]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[11]" class="mt-2 text-green-700">
+                                <p>Suggestion/Offer</p>
+                                <p class="text-sm text-gray-600 mt-1">This is offering to help someone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Common Mistakes Section -->
+                <div class="grammar-card">
+                    <h3 class="text-xl font-semibold mb-4">Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 1: Confusing Group 1 and Group 2 conjugations</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 話ろう (はなろう)</p>
+                                <p class="italic text-gray-600">Hanarou</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 話そう (はなそう)</p>
+                                <p class="italic text-gray-600">Hanasou</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                For Group 1 verbs, you must change the final う-sound to the corresponding お-sound and add う. Don't just add ろう to the stem.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 2: Using the wrong context</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 先生は明日来ようと言いました。</p>
+                                <p class="italic text-gray-600">Sensei wa ashita koyou to iimashita.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 先生は明日来ると言いました。</p>
+                                <p class="italic text-gray-600">Sensei wa ashita kuru to iimashita.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                The volitional form is used for the speaker's own intentions or for invitations. When reporting what someone else said they will do, use the plain form instead.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 3: Creating a direct negative volitional</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 行かないよう</p>
+                                <p class="italic text-gray-600">Ikanai you</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 行くのはやめよう</p>
+                                <p class="italic text-gray-600">Iku no wa yameyou</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                Remember that the volitional form doesn't have a direct negative form. Use the structure "verb + のはやめよう" instead.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summary and Further Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Summary</h2>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Key Takeaways</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• The volitional form expresses intention ("I will"), invitation ("let's"), or suggestion ("shall we").</li>
+                        <li>• Group 1 (U) verbs: Change the final う-sound to the corresponding お-sound + う (話す → 話そう).</li>
+                        <li>• Group 2 (RU) verbs: Remove る and add よう (食べる → 食べよう).</li>
+                        <li>• Irregular verbs: する → しよう, 来る → 来よう.</li>
+                        <li>• The polite form is created by adding ましょう to the verb stem.</li>
+                        <li>• To express "let's not do something," use the structure "verb + のはやめよう".</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4">Further Resources</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Volitional Form Practice Workbook</h4>
+                            <p class="text-gray-600">Additional exercises to master the volitional form in Japanese.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Related Grammar: Conditional Forms</h4>
+                            <p class="text-gray-600">Learn how the volitional form interacts with conditional expressions.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 rounded-lg p-6">
+                    <a href="potential-form.html" class="flex items-center text-indigo-600 hover:text-indigo-800 mb-4 md:mb-0">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Previous: Potential Form
+                    </a>
+                    
+                    <a href="conditional-ba.html" class="flex items-center text-indigo-600 hover:text-indigo-800">
+                        Next: Conditional Form (〜ば)
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300">Your comprehensive resource for learning Japanese and preparing for the JLPT exams.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-300">© 2025 JapLearn. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

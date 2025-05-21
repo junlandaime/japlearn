@@ -1,0 +1,281 @@
+            <!-- Practice Exercises Section -->
+            <section class="mb-12" x-data="{ showAnswers: {} }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Exercises</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    Test your understanding of giving and receiving verbs with these practice exercises.
+                </p>
+                
+                <!-- Exercise 1: Choosing the Right Verb -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 1: Choose the Correct Verb</h3>
+                    <p class="mb-4">Select the appropriate verb (あげる, くれる, or もらう) for each sentence.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 私は友達に誕生日プレゼントを＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Watashi wa tomodachi ni tanjoubi purezento o _______.</p>
+                            <p>I gave a birthday present to my friend.</p>
+                            <button @click="showAnswers[1] = !showAnswers[1]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[1]">Show Answer</span>
+                                <span x-show="showAnswers[1]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[1]" class="mt-2 text-green-700">
+                                <p class="japanese">あげました (agemashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">The speaker (I) is giving to someone else (friend), so あげる is used.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 先生は私に新しい本を＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Sensei wa watashi ni atarashii hon o _______.</p>
+                            <p>The teacher gave me a new book.</p>
+                            <button @click="showAnswers[2] = !showAnswers[2]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[2]">Show Answer</span>
+                                <span x-show="showAnswers[2]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[2]" class="mt-2 text-green-700">
+                                <p class="japanese">くれました (kuremashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">Someone else (teacher) is giving to the speaker (me), so くれる is used.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 私は母に花を＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Watashi wa haha ni hana o _______.</p>
+                            <p>I gave flowers to my mother.</p>
+                            <button @click="showAnswers[3] = !showAnswers[3]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[3]">Show Answer</span>
+                                <span x-show="showAnswers[3]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[3]" class="mt-2 text-green-700">
+                                <p class="japanese">あげました (agemashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">The speaker (I) is giving to someone else (mother), so あげる is used, even though mother is in the speaker's in-group.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> 私は友達にケーキを＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Watashi wa tomodachi ni keeki o _______.</p>
+                            <p>I received a cake from my friend.</p>
+                            <button @click="showAnswers[4] = !showAnswers[4]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[4]">Show Answer</span>
+                                <span x-show="showAnswers[4]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[4]" class="mt-2 text-green-700">
+                                <p class="japanese">もらいました (moraimashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">The speaker (I) is receiving from someone else (friend), so もらう is used.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">5.</span> 母は弟におもちゃを＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Haha wa otouto ni omocha o _______.</p>
+                            <p>My mother gave a toy to my younger brother.</p>
+                            <button @click="showAnswers[5] = !showAnswers[5]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[5]">Show Answer</span>
+                                <span x-show="showAnswers[5]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[5]" class="mt-2 text-green-700">
+                                <p class="japanese">あげました (agemashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">Both mother and brother are in the speaker's in-group, but neither is the speaker, so あげる is used.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2: Te-form with Giving and Receiving Verbs -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 2: Using ~て Form with Giving and Receiving Verbs</h3>
+                    <p class="mb-4">Complete each sentence with the appropriate ~て form expression.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 友達は私の宿題を手伝って＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Tomodachi wa watashi no shukudai o tetsudatte _______.</p>
+                            <p>My friend helped me with my homework.</p>
+                            <button @click="showAnswers[6] = !showAnswers[6]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[6]">Show Answer</span>
+                                <span x-show="showAnswers[6]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[6]" class="mt-2 text-green-700">
+                                <p class="japanese">くれました (kuremashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">Someone else (friend) did something for the speaker's benefit, so ~てくれる is used.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 私は子供に本を読んで＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Watashi wa kodomo ni hon o yonde _______.</p>
+                            <p>I read a book to the child.</p>
+                            <button @click="showAnswers[7] = !showAnswers[7]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[7]">Show Answer</span>
+                                <span x-show="showAnswers[7]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[7]" class="mt-2 text-green-700">
+                                <p class="japanese">あげました (agemashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">The speaker did something for someone else's benefit, so ~てあげる is used.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 私は先生に日本語を教えて＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Watashi wa sensei ni nihongo o oshiete _______.</p>
+                            <p>I had the teacher teach me Japanese.</p>
+                            <button @click="showAnswers[8] = !showAnswers[8]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[8]">Show Answer</span>
+                                <span x-show="showAnswers[8]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[8]" class="mt-2 text-green-700">
+                                <p class="japanese">もらいました (moraimashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">The speaker received the benefit of someone else's action, so ~てもらう is used.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 3: Honorific Forms -->
+                <div class="grammar-card">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 3: Using Honorific Forms</h3>
+                    <p class="mb-4">Replace the basic verbs with their appropriate honorific forms.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 私は社長にレポートをあげました。 → 私は社長にレポートを＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Watashi wa shachou ni repooto o agemashita. → Watashi wa shachou ni repooto o _______.</p>
+                            <button @click="showAnswers[9] = !showAnswers[9]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[9]">Show Answer</span>
+                                <span x-show="showAnswers[9]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[9]" class="mt-2 text-green-700">
+                                <p class="japanese">さしあげました (sashiagemashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">When giving to someone of higher status (company president), use the humble form さしあげる.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 先生は私にアドバイスをくれました。 → 先生は私にアドバイスを＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Sensei wa watashi ni adobaisu o kuremashita. → Sensei wa watashi ni adobaisu o _______.</p>
+                            <button @click="showAnswers[10] = !showAnswers[10]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[10]">Show Answer</span>
+                                <span x-show="showAnswers[10]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[10]" class="mt-2 text-green-700">
+                                <p class="japanese">くださいました (kudasaimashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">When someone of higher status (teacher) gives something to you, use the honorific form くださる.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 私は先生に本をもらいました。 → 私は先生に本を＿＿＿＿＿。</p>
+                            <p class="italic text-gray-600">Watashi wa sensei ni hon o moraimashita. → Watashi wa sensei ni hon o _______.</p>
+                            <button @click="showAnswers[11] = !showAnswers[11]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[11]">Show Answer</span>
+                                <span x-show="showAnswers[11]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[11]" class="mt-2 text-green-700">
+                                <p class="japanese">いただきました (itadakimashita)</p>
+                                <p class="text-sm text-gray-600 mt-1">When receiving something from someone of higher status (teacher), use the humble form いただく.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summary and Further Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Summary</h2>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Key Takeaways</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Japanese has three main giving and receiving verbs: あげる (to give from speaker to others), くれる (to give from others to speaker), and もらう (to receive by speaker from others).</li>
+                        <li>• The choice of verb depends on the direction of the action and the relationship between the giver and receiver.</li>
+                        <li>• These verbs have honorific forms (さしあげる, くださる, いただく) used to show respect or humility.</li>
+                        <li>• The concept of "in-group" vs. "out-group" is crucial for using these verbs correctly.</li>
+                        <li>• These verbs can be combined with the て-form to express doing something for someone's benefit or having someone do something for you.</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4">Further Resources</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Advanced Giving and Receiving Expressions</h4>
+                            <p class="text-gray-600">Learn more complex patterns and nuances of giving and receiving in Japanese.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Next Grammar Point: Passive Form</h4>
+                            <p class="text-gray-600">Learn about the passive form in Japanese, another important N4 grammar point.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 rounded-lg p-6">
+                    <a href="conditional-tara.html" class="flex items-center text-indigo-600 hover:text-indigo-800 mb-4 md:mb-0">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Previous: Conditional Form (〜たら)
+                    </a>
+                    
+                    <a href="#" class="flex items-center text-indigo-600 hover:text-indigo-800">
+                        Next: Passive Form
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300">Your comprehensive resource for learning Japanese and preparing for the JLPT exams.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-300">© 2025 JapLearn. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

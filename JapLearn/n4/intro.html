@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N4 Introduction | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .info-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .grammar-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .tag-beginner {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .tag-intermediate {
+            background-color: #fff7ed;
+            color: #9a3412;
+        }
+        .section-grammar {
+            background-color: #eef2ff;
+            border-left: 4px solid #6366f1;
+        }
+        .section-vocabulary {
+            background-color: #ede9fe;
+            border-left: 4px solid #8b5cf6;
+        }
+        .section-kanji {
+            background-color: #dcfce7;
+            border-left: 4px solid #15803d;
+        }
+        .section-culture {
+            background-color: #fef2f2;
+            border-left: 4px solid #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../n5/intro.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">N5 Course</a>
+                        <a href="./intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N4 Course</a>
+                        <a href="../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">JLPT N4 Introduction</h1>
+            <p class="text-xl">Welcome to the next step in your Japanese language journey!</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">What is JLPT N4?</h2>
+                <p class="text-gray-700 mb-4">
+                    The Japanese Language Proficiency Test (JLPT) N4 is the second level from the bottom in the five-level JLPT system. It's designed for learners who have progressed beyond the basic N5 level and are ready to tackle more intermediate concepts in Japanese.
+                </p>
+                
+                <p class="text-gray-700 mb-6">
+                    At the N4 level, you'll build upon the foundation you established at N5, learning more complex grammar patterns, expanding your vocabulary to around 1,500-2,000 words, and mastering approximately 300 kanji characters.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">According to the JLPT website:</span> N4 certifies that you "can understand basic Japanese" and are able to read and understand passages on familiar daily topics written in basic vocabulary and kanji. You should also be able to listen and comprehend conversations encountered in daily life and generally follow their contents.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="info-card section-grammar">
+                        <h3 class="text-xl font-semibold mb-3">Key Differences from N5</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-arrow-up text-indigo-500 mr-2"></i> <span class="font-medium">More complex grammar:</span> Learn conditional forms, causative, passive, and more nuanced expressions</li>
+                            <li><i class="fas fa-arrow-up text-indigo-500 mr-2"></i> <span class="font-medium">Expanded vocabulary:</span> Nearly double the vocabulary compared to N5</li>
+                            <li><i class="fas fa-arrow-up text-indigo-500 mr-2"></i> <span class="font-medium">More kanji:</span> About 300 kanji total (compared to 100 at N5 level)</li>
+                            <li><i class="fas fa-arrow-up text-indigo-500 mr-2"></i> <span class="font-medium">Longer readings:</span> Texts with more complex structures and content</li>
+                            <li><i class="fas fa-arrow-up text-indigo-500 mr-2"></i> <span class="font-medium">Natural dialogue:</span> Listening exercises with less simplified language</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card section-culture">
+                        <h3 class="text-xl font-semibold mb-3">What You'll Be Able to Do</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Hold basic conversations about daily life topics</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Express a wider range of emotions and opinions</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Read simple articles, advertisements, and short texts</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Write basic emails or messages with more complex expressions</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Understand announcements in public spaces like stations</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Navigate various daily situations in Japan with less difficulty</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- N4 Course Structure -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N4 Course Structure</h2>
+                <p class="text-gray-700 mb-6">
+                    Our N4 course is designed to systematically build upon your N5 knowledge and prepare you for the JLPT N4 exam. Here's what you can expect:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="info-card section-grammar">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-book text-indigo-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Grammar</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Transitive & Intransitive Verbs</li>
+                            <li>Potential Form (~できる)</li>
+                            <li>Volitional Form (~しよう)</li>
+                            <li>Conditional Forms (~ば, ~たら)</li>
+                            <li>Giving & Receiving</li>
+                            <li>Causative & Passive Forms</li>
+                            <li>Basic Honorific Language</li>
+                        </ul>
+                        <div class="mt-4 text-center">
+                            <a href="./grammar/transitive-intransitive.html" class="text-indigo-600 hover:text-indigo-800">
+                                Start Learning Grammar <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card section-kanji">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-font text-green-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Kanji</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>~300 Essential Kanji</li>
+                            <li>Common Radicals</li>
+                            <li>Compound Kanji Words</li>
+                            <li>Reading Practice</li>
+                            <li>Writing Practice</li>
+                            <li>Memory Techniques</li>
+                        </ul>
+                        <div class="mt-4 text-center">
+                            <a href="./kanji-list.html" class="text-green-600 hover:text-green-800">
+                                Explore N4 Kanji <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card section-vocabulary">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-language text-purple-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Vocabulary</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>~1,500-2,000 Words</li>
+                            <li>Topic-Based Vocabulary</li>
+                            <li>Common Expressions</li>
+                            <li>Adverbs & Adjectives</li>
+                            <li>Idiomatic Phrases</li>
+                            <li>Word Formation</li>
+                        </ul>
+                        <div class="mt-4 text-center">
+                            <a href="./vocabulary/daily-life.html" class="text-purple-600 hover:text-purple-800">
+                                Build Your Vocabulary <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card section-culture">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-torii-gate text-red-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Culture & Practice</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Reading Comprehension</li>
+                            <li>Listening Exercises</li>
+                            <li>Conversation Practice</li>
+                            <li>Cultural Context</li>
+                            <li>Practical Applications</li>
+                            <li>JLPT N4 Test Preparation</li>
+                        </ul>
+                        <div class="mt-4 text-center">
+                            <a href="./practice/reading.html" class="text-red-600 hover:text-red-800">
+                                Start Practicing <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sample Grammar Point -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N4 Sample Grammar Point</h2>
+                <p class="text-gray-700 mb-6">
+                    Here's a taste of the type of grammar you'll learn in the N4 course:
+                </p>
+                
+                <div class="info-card section-grammar">
+                    <div class="flex items-center mb-4">
+                        <h3 class="text-xl font-semibold">Potential Form: ~ことができます</h3>
+                        <span class="grammar-tag tag-intermediate ml-3">N4 Level</span>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-4">
+                        The potential form is used to express the ability to do something. In N5, you learned the simple potential form of verbs (e.g., 食べられる - can eat). In N4, we'll explore the pattern <span class="japanese">〜ことができます</span>, which offers another way to express ability.
+                    </p>
+                    
+                    <div class="example-card p-4 mb-4">
+                        <p class="font-medium mb-1">Example:</p>
+                        <p class="japanese text-lg mb-1">日本語で話すことができます。</p>
+                        <p class="italic text-gray-600">Nihongo de hanasu koto ga dekimasu.</p>
+                        <p>I can speak in Japanese.</p>
+                    </div>
+                    
+                    <div class="example-card p-4">
+                        <p class="font-medium mb-1">Example:</p>
+                        <p class="japanese text-lg mb-1">漢字を読むことができますか。</p>
+                        <p class="italic text-gray-600">Kanji o yomu koto ga dekimasu ka.</p>
+                        <p>Can you read kanji?</p>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="./grammar/potential-form.html" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Learn More About Potential Form <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prerequisites -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Prerequisites for N4</h2>
+                <p class="text-gray-700 mb-6">
+                    Before diving into the N4 level, we recommend you have the following foundation:
+                </p>
+                
+                <div class="info-card">
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Hiragana & Katakana:</span> Confident reading and writing of both Japanese syllabaries</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Basic Kanji:</span> Familiarity with approximately 100 basic kanji (N5 level)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">N5 Grammar:</span> Understanding of basic sentence structures, particles, and tenses</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Basic Vocabulary:</span> Knowledge of around 800-1000 common Japanese words</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="font-medium">Simple Conversations:</span> Ability to engage in basic everyday conversations</li>
+                    </ul>
+                    
+                    <div class="mt-6 bg-indigo-50 p-4 rounded-md">
+                        <p class="text-indigo-800">
+                            <i class="fas fa-info-circle mr-2"></i> Not confident in your N5 skills yet? Don't worry! Check out our <a href="../n5/intro.html" class="text-indigo-600 hover:text-indigo-800 underline">N5 Course</a> to build a solid foundation before progressing to N4.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learn More Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Ready to Start Learning?</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="./grammar/transitive-intransitive.html" class="info-card hover:bg-indigo-50 transition duration-300 flex flex-col items-center p-6">
+                        <i class="fas fa-book text-indigo-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Start with Grammar</h3>
+                        <p class="text-gray-600 text-center">Begin with the foundations of N4 grammar patterns</p>
+                    </a>
+                    <a href="./kanji-list.html" class="info-card hover:bg-green-50 transition duration-300 flex flex-col items-center p-6">
+                        <i class="fas fa-font text-green-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Explore N4 Kanji</h3>
+                        <p class="text-gray-600 text-center">See all 300 kanji you'll learn at the N4 level</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="./intro.html" class="text-indigo-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">N4 Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./grammar/transitive-intransitive.html" class="text-gray-300 hover:text-white">Grammar Lessons</a></li>
+                        <li><a href="./kanji-list.html" class="text-gray-300 hover:text-white">Kanji List</a></li>
+                        <li><a href="./vocabulary/daily-life.html" class="text-gray-300 hover:text-white">Vocabulary</a></li>
+                        <li><a href="./practice/reading.html" class="text-gray-300 hover:text-white">Practice Exercises</a></li>
+                        <li><a href="./exam-prep/overview.html" class="text-gray-300 hover:text-white">JLPT N4 Preparation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

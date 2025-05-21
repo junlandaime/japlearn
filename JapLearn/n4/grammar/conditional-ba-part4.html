@@ -1,0 +1,318 @@
+            <!-- Practice Exercises Section -->
+            <section class="mb-12" x-data="{ showAnswers: {} }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Exercises</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    Test your understanding of the 〜ば conditional form with these practice exercises.
+                </p>
+                
+                <!-- Exercise 1: Conjugation -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 1: Conjugate to the 〜ば Form</h3>
+                    <p class="mb-4">Convert each word to its 〜ば conditional form.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 行く (いく) - to go</p>
+                            <button @click="showAnswers[1] = !showAnswers[1]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[1]">Show Answer</span>
+                                <span x-show="showAnswers[1]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[1]" class="mt-2 text-green-700">
+                                <p class="japanese">行けば (いけば)</p>
+                                <p class="text-sm text-gray-600 mt-1">Ikeba - if (I/you/etc.) go</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 食べる (たべる) - to eat</p>
+                            <button @click="showAnswers[2] = !showAnswers[2]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[2]">Show Answer</span>
+                                <span x-show="showAnswers[2]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[2]" class="mt-2 text-green-700">
+                                <p class="japanese">食べれば (たべれば)</p>
+                                <p class="text-sm text-gray-600 mt-1">Tabereba - if (I/you/etc.) eat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 高い (たかい) - expensive</p>
+                            <button @click="showAnswers[3] = !showAnswers[3]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[3]">Show Answer</span>
+                                <span x-show="showAnswers[3]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[3]" class="mt-2 text-green-700">
+                                <p class="japanese">高ければ (たかければ)</p>
+                                <p class="text-sm text-gray-600 mt-1">Takakereba - if (it) is expensive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> 静か (しずか) - quiet</p>
+                            <button @click="showAnswers[4] = !showAnswers[4]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[4]">Show Answer</span>
+                                <span x-show="showAnswers[4]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[4]" class="mt-2 text-green-700">
+                                <p class="japanese">静かであれば (しずかであれば)</p>
+                                <p class="text-sm text-gray-600 mt-1">Shizuka de areba - if (it) is quiet</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">5.</span> 学生 (がくせい) - student</p>
+                            <button @click="showAnswers[5] = !showAnswers[5]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[5]">Show Answer</span>
+                                <span x-show="showAnswers[5]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[5]" class="mt-2 text-green-700">
+                                <p class="japanese">学生であれば (がくせいであれば)</p>
+                                <p class="text-sm text-gray-600 mt-1">Gakusei de areba - if (he/she) is a student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2: Negative Form -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 2: Convert to Negative 〜ば Form</h3>
+                    <p class="mb-4">Change each word to its negative 〜ば conditional form.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> 行く (いく) - to go</p>
+                            <button @click="showAnswers[6] = !showAnswers[6]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[6]">Show Answer</span>
+                                <span x-show="showAnswers[6]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[6]" class="mt-2 text-green-700">
+                                <p class="japanese">行かなければ (いかなければ)</p>
+                                <p class="italic text-gray-600">Ikanakereba - if (I/you/etc.) don't go</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 高い (たかい) - expensive</p>
+                            <button @click="showAnswers[7] = !showAnswers[7]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[7]">Show Answer</span>
+                                <span x-show="showAnswers[7]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[7]" class="mt-2 text-green-700">
+                                <p class="japanese">高くなければ (たかくなければ)</p>
+                                <p class="italic text-gray-600">Takakunakereba - if (it) is not expensive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> 学生 (がくせい) - student</p>
+                            <button @click="showAnswers[8] = !showAnswers[8]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[8]">Show Answer</span>
+                                <span x-show="showAnswers[8]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[8]" class="mt-2 text-green-700">
+                                <p class="japanese">学生ではなければ (がくせいではなければ)</p>
+                                <p class="italic text-gray-600">Gakusei dewa nakereba - if (he/she) is not a student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 3: Complete the Sentence -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 3: Complete the Sentences</h3>
+                    <p class="mb-4">Complete each sentence with the appropriate 〜ば form of the word in parentheses.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> お金が＿＿＿＿、新しいパソコンを買います。(ある)</p>
+                            <button @click="showAnswers[9] = !showAnswers[9]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[9]">Show Answer</span>
+                                <span x-show="showAnswers[9]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[9]" class="mt-2 text-green-700">
+                                <p class="japanese">お金があれば、新しいパソコンを買います。</p>
+                                <p class="italic text-gray-600">Okane ga areba, atarashii pasokon o kaimasu.</p>
+                                <p>If I have money, I will buy a new computer.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 毎日運動＿＿＿＿、健康になります。(する)</p>
+                            <button @click="showAnswers[10] = !showAnswers[10]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[10]">Show Answer</span>
+                                <span x-show="showAnswers[10]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[10]" class="mt-2 text-green-700">
+                                <p class="japanese">毎日運動すれば、健康になります。</p>
+                                <p class="italic text-gray-600">Mainichi undō sureba, kenkō ni narimasu.</p>
+                                <p>If you exercise every day, you will become healthy.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> この薬を＿＿＿＿、すぐに良くなるでしょう。(飲む)</p>
+                            <button @click="showAnswers[11] = !showAnswers[11]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[11]">Show Answer</span>
+                                <span x-show="showAnswers[11]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[11]" class="mt-2 text-green-700">
+                                <p class="japanese">この薬を飲めば、すぐに良くなるでしょう。</p>
+                                <p class="italic text-gray-600">Kono kusuri o nomeba, sugu ni yoku naru deshō.</p>
+                                <p>If you take this medicine, you will get better soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Common Mistakes Section -->
+                <div class="grammar-card">
+                    <h3 class="text-xl font-semibold mb-4">Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 1: Using 〜ば for past or completed actions</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 昨日、雨が降れば、試合は中止でした。</p>
+                                <p class="italic text-gray-600">Kinō, ame ga fureba, shiai wa chūshi deshita.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 昨日、雨が降ったので、試合は中止でした。</p>
+                                <p class="italic text-gray-600">Kinō, ame ga futta node, shiai wa chūshi deshita.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                The 〜ば form is not used for past or completed actions. For past conditions, use ～たので or ～たから instead.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 2: Using 〜ば for specific one-time events in the future</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 明日、家に帰れば、電話します。</p>
+                                <p class="italic text-gray-600">Ashita, ie ni kaereba, denwa shimasu.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 明日、家に帰ったら、電話します。</p>
+                                <p class="italic text-gray-600">Ashita, ie ni kaettara, denwa shimasu.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                For specific one-time events in sequence (especially in the future), the 〜たら form is more appropriate than 〜ば.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 3: Using 〜ば with commands or requests</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ ここに来れば。</p>
+                                <p class="italic text-gray-600">Koko ni kureba.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ ここに来てください。</p>
+                                <p class="italic text-gray-600">Koko ni kite kudasai.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                The 〜ば form cannot be used by itself as a command or request. Use the appropriate command forms instead.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summary and Further Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Summary</h2>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Key Takeaways</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• The 〜ば conditional form is used to express natural consequences, general rules, hypothetical situations, and advice.</li>
+                        <li>• For verbs: Group 1 (U) verbs change the final う-sound to the corresponding え-sound + ば; Group 2 (RU) verbs remove る and add れば.</li>
+                        <li>• For i-adjectives: Change the final い to ければ.</li>
+                        <li>• For na-adjectives and nouns: Add であれば.</li>
+                        <li>• The negative form is created by changing ない to なければ for verbs and i-adjectives, and using ではなければ for na-adjectives and nouns.</li>
+                        <li>• The 〜ば form is one of four conditional forms in Japanese, each with its own nuances and usage patterns.</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4">Further Resources</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Japanese Conditionals Workbook</h4>
+                            <p class="text-gray-600">Additional exercises to master all conditional forms in Japanese.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="conditional-tara.html" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Related Grammar: 〜たら Conditional</h4>
+                            <p class="text-gray-600">Learn about another important conditional form in Japanese.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 rounded-lg p-6">
+                    <a href="volitional-form.html" class="flex items-center text-indigo-600 hover:text-indigo-800 mb-4 md:mb-0">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Previous: Volitional Form
+                    </a>
+                    
+                    <a href="conditional-tara.html" class="flex items-center text-indigo-600 hover:text-indigo-800">
+                        Next: Conditional Form (〜たら)
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300">Your comprehensive resource for learning Japanese and preparing for the JLPT exams.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-300">© 2025 JapLearn. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

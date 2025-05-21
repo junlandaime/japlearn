@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Form (〜たら) - N4 Japanese Grammar | JapLearn</title>
+    <meta name="description" content="Learn how to use the 〜たら conditional form in Japanese. Understand the formation rules, usage patterns, and practice with examples.">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        
+        .verb-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .verb-table th, .verb-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        
+        .verb-table th {
+            background-color: #f3f4f6;
+            font-weight: 500;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+        }
+        
+        .comparison-table th {
+            background-color: #f3f4f6;
+            font-weight: 500;
+        }
+        
+        .example-card {
+            background-color: #f9fafb;
+            border-left: 4px solid #6366f1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        
+        .grammar-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex-shrink-0 flex items-center">
+                        <span class="text-xl font-bold">JapLearn</span>
+                    </a>
+                    <nav class="ml-6 flex space-x-8">
+                        <a href="../../index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-500">Home</a>
+                        <a href="../../n5/intro.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-500">N5</a>
+                        <a href="../intro.html" class="px-3 py-2 rounded-md text-sm font-medium bg-indigo-700">N4</a>
+                        <a href="../../resources.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-500">Resources</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">Conditional Form (〜たら)</h1>
+                <p class="text-xl">Learn how to express conditions and temporal sequences in Japanese</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Breadcrumbs -->
+    <div class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="py-3 flex">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="flex items-center space-x-4">
+                        <li>
+                            <div>
+                                <a href="../../index.html" class="text-gray-400 hover:text-gray-500">Home</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                                </svg>
+                                <a href="../intro.html" class="ml-4 text-gray-400 hover:text-gray-500">N4 Course</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                                </svg>
+                                <a href="../grammar.html" class="ml-4 text-gray-400 hover:text-gray-500">Grammar</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                                </svg>
+                                <span class="ml-4 text-gray-500 font-medium">Conditional Form (〜たら)</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 lg:p-10">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Introduction to the 〜たら Conditional</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    The 〜たら conditional is one of the most versatile and commonly used conditional forms in Japanese. It is used to express conditions that must be fulfilled before something else can happen, often translated as "if" or "when" in English.
+                </p>
+                
+                <div class="example-card">
+                    <p class="japanese text-lg mb-1">雨が降ったら、傘を持って行きます。</p>
+                    <p class="italic text-gray-600">Ame ga futtara, kasa o motte ikimasu.</p>
+                    <p>If it rains, I will take an umbrella.</p>
+                </div>
+                
+                <p class="text-gray-700 mt-6 mb-6">
+                    Unlike some other conditional forms in Japanese, the 〜たら form can express both hypothetical conditions and temporal sequences. This makes it particularly useful for a wide range of situations.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-indigo-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">Key Features</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Expresses both hypothetical conditions and temporal sequences</li>
+                            <li>• Can be translated as "if" or "when" depending on context</li>
+                            <li>• Formed by adding ら to the past tense form</li>
+                            <li>• Works with all types of words (verbs, adjectives, nouns)</li>
+                            <li>• More versatile than other conditional forms</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-amber-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-amber-700">When to Use 〜たら</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• For specific, one-time conditions</li>
+                            <li>• To express a sequence of events</li>
+                            <li>• When describing discoveries or realizations</li>
+                            <li>• For hypothetical situations</li>
+                            <li>• When giving advice or suggestions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg mt-8">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-lg font-medium text-blue-800">Important Note</h3>
+                            <p class="mt-2 text-blue-700">
+                                Japanese has four main conditional forms: 〜たら, 〜ば, 〜と, and 〜なら. Each has its own nuances and usage patterns. The 〜たら form is often the most versatile and easiest to use, making it a good starting point for learners.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Formation Rules Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">How to Form the 〜たら Conditional</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    The 〜たら conditional is formed by adding ら to the past (た) form of verbs, adjectives, and nouns with the copula. This makes it relatively simple to form compared to some other conditional forms.
+                </p>
+                
+                <div class="space-y-8">
+                    <!-- Verbs -->
+                    <div class="verb-group verb-group-1">
+                        <h3 class="text-xl font-semibold mb-3">For Verbs</h3>
+                        <p class="text-gray-700 mb-4">
+                            To form the 〜たら conditional with verbs, you need to use the past tense (た form) and add ら:
+                        </p>
+                        
+                        <div class="bg-blue-50 p-4 rounded-md mb-4">
+                            <p class="font-medium text-center">
+                                Verb (past tense) + ら
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium text-blue-700 mb-2">Group 1: U-Verbs (五段動詞)</h4>
+                                <div class="overflow-x-auto">
+                                    <table class="verb-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Dictionary Form</th>
+                                                <th>Past Form</th>
+                                                <th>〜たら Form</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="japanese">話す (はなす)</td>
+                                                <td class="japanese">話した (はなした)</td>
+                                                <td class="japanese">話したら (はなしたら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">買う (かう)</td>
+                                                <td class="japanese">買った (かった)</td>
+                                                <td class="japanese">買ったら (かったら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">読む (よむ)</td>
+                                                <td class="japanese">読んだ (よんだ)</td>
+                                                <td class="japanese">読んだら (よんだら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">帰る (かえる)</td>
+                                                <td class="japanese">帰った (かえった)</td>
+                                                <td class="japanese">帰ったら (かえったら)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium text-green-700 mb-2">Group 2: RU-Verbs (一段動詞)</h4>
+                                <div class="overflow-x-auto">
+                                    <table class="verb-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Dictionary Form</th>
+                                                <th>Past Form</th>
+                                                <th>〜たら Form</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="japanese">食べる (たべる)</td>
+                                                <td class="japanese">食べた (たべた)</td>
+                                                <td class="japanese">食べたら (たべたら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">見る (みる)</td>
+                                                <td class="japanese">見た (みた)</td>
+                                                <td class="japanese">見たら (みたら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">起きる (おきる)</td>
+                                                <td class="japanese">起きた (おきた)</td>
+                                                <td class="japanese">起きたら (おきたら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">出る (でる)</td>
+                                                <td class="japanese">出た (でた)</td>
+                                                <td class="japanese">出たら (でたら)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-medium text-amber-700 mb-2">Group 3: Irregular Verbs (不規則動詞)</h4>
+                            <div class="overflow-x-auto">
+                                <table class="verb-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Dictionary Form</th>
+                                            <th>Past Form</th>
+                                            <th>〜たら Form</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="japanese">する (する)</td>
+                                            <td class="japanese">した (した)</td>
+                                            <td class="japanese">したら (したら)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="japanese">来る (くる)</td>
+                                            <td class="japanese">来た (きた)</td>
+                                            <td class="japanese">来たら (きたら)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Adjectives -->
+                    <div class="verb-group verb-group-2">
+                        <h3 class="text-xl font-semibold mb-3">For Adjectives</h3>
+                        <p class="text-gray-700 mb-4">
+                            For adjectives, you also use the past tense form and add ら:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium text-blue-700 mb-2">I-Adjectives (い形容詞)</h4>
+                                <div class="bg-blue-50 p-4 rounded-md mb-4">
+                                    <p class="font-medium text-center">
+                                        Change the final い to かった + ら
+                                    </p>
+                                </div>
+                                
+                                <div class="overflow-x-auto">
+                                    <table class="verb-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Dictionary Form</th>
+                                                <th>Past Form</th>
+                                                <th>〜たら Form</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="japanese">高い (たかい)</td>
+                                                <td class="japanese">高かった (たかかった)</td>
+                                                <td class="japanese">高かったら (たかかったら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">安い (やすい)</td>
+                                                <td class="japanese">安かった (やすかった)</td>
+                                                <td class="japanese">安かったら (やすかったら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">寒い (さむい)</td>
+                                                <td class="japanese">寒かった (さむかった)</td>
+                                                <td class="japanese">寒かったら (さむかったら)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium text-green-700 mb-2">NA-Adjectives (な形容詞)</h4>
+                                <div class="bg-green-50 p-4 rounded-md mb-4">
+                                    <p class="font-medium text-center">
+                                        Add だった + ら
+                                    </p>
+                                </div>
+                                
+                                <div class="overflow-x-auto">
+                                    <table class="verb-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Dictionary Form</th>
+                                                <th>Past Form</th>
+                                                <th>〜たら Form</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="japanese">静か (しずか)</td>
+                                                <td class="japanese">静かだった (しずかだった)</td>
+                                                <td class="japanese">静かだったら (しずかだったら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">便利 (べんり)</td>
+                                                <td class="japanese">便利だった (べんりだった)</td>
+                                                <td class="japanese">便利だったら (べんりだったら)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="japanese">元気 (げんき)</td>
+                                                <td class="japanese">元気だった (げんきだった)</td>
+                                                <td class="japanese">元気だったら (げんきだったら)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nouns -->
+                    <div class="verb-group verb-group-3">
+                        <h3 class="text-xl font-semibold mb-3">For Nouns</h3>
+                        <p class="text-gray-700 mb-4">
+                            For nouns, you add だったら (the past tense of the copula だ plus ら):
+                        </p>
+                        
+                        <div class="bg-amber-50 p-4 rounded-md mb-4">
+                            <p class="font-medium text-center">
+                                Noun + だったら
+                            </p>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="verb-table">
+                                <thead>
+                                    <tr>
+                                        <th>Noun</th>
+                                        <th>〜たら Form</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="japanese">学生 (がくせい)</td>
+                                        <td class="japanese">学生だったら (がくせいだったら)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="japanese">日曜日 (にちようび)</td>
+                                        <td class="japanese">日曜日だったら (にちようびだったら)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="japanese">先生 (せんせい)</td>
+                                        <td class="japanese">先生だったら (せんせいだったら)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mt-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Negative 〜たら Form</h3>
+                    <p class="text-gray-700 mb-4">
+                        To create the negative 〜たら form, you use the negative past tense form:
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-indigo-700 mb-2">For Verbs</h4>
+                            <p class="text-gray-700 mb-2">Use the negative past form + ら</p>
+                            <div class="example-card">
+                                <p class="japanese">行かなかった → 行かなかったら</p>
+                                <p class="italic text-gray-600">Ikanakatta → Ikanakattara</p>
+                                <p>If (I/you/etc.) don't go</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-indigo-700 mb-2">For I-Adjectives</h4>
+                            <p class="text-gray-700 mb-2">Use the negative past form + ら</p>
+                            <div class="example-card">
+                                <p class="japanese">高くなかった → 高くなかったら</p>
+                                <p class="italic text-gray-600">Takakunakatta → Takakunakattara</p>
+                                <p>If (it) is not expensive</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-indigo-700 mb-2">For NA-Adjectives</h4>
+                            <p class="text-gray-700 mb-2">Use the negative past form + ら</p>
+                            <div class="example-card">
+                                <p class="japanese">静かじゃなかった → 静かじゃなかったら</p>
+                                <p class="italic text-gray-600">Shizuka janakatta → Shizuka janakattara</p>
+                                <p>If (it) is not quiet</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-indigo-700 mb-2">For Nouns</h4>
+                            <p class="text-gray-700 mb-2">Use the negative past form + ら</p>
+                            <div class="example-card">
+                                <p class="japanese">学生じゃなかった → 学生じゃなかったら</p>
+                                <p class="italic text-gray-600">Gakusei janakatta → Gakusei janakattara</p>
+                                <p>If (he/she) is not a student</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <span class="font-medium">Note:</span> The 〜たら form is easier to form than the 〜ば form because it consistently follows the pattern of past tense + ら for all word types. This makes it a very practical conditional form to learn and use.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Usage Patterns Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Usage Patterns</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    The 〜たら conditional in Japanese has several important usage patterns. Let's explore the most common ways to use this grammar:
+                </p>
+                
+                <div class="space-y-8">
+                    <!-- Pattern 1 -->
+                    <div class="grammar-card">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">1. Temporal Sequence</h3>
+                        <p class="text-gray-700 mb-4">
+                            The 〜たら form is commonly used to express a sequence of events, where one action happens after another. In this usage, it's often translated as "when" or "after" rather than "if."
+                        </p>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">家に帰ったら、宿題をします。</p>
+                            <p class="italic text-gray-600">Ie ni kaettara, shukudai o shimasu.</p>
+                            <p>When I get home, I'll do my homework.</p>
+                        </div>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">食事が終わったら、映画を見ましょう。</p>
+                            <p class="italic text-gray-600">Shokuji ga owattara, eiga o mimashou.</p>
+                            <p>After the meal is finished, let's watch a movie.</p>
+                        </div>
+                        
+                        <p class="text-gray-700 mt-4">
+                            In these examples, the second action will occur after the first action is completed. This temporal relationship is a key feature of the 〜たら form.
+                        </p>
+                    </div>
+                    
+                    <!-- Pattern 2 -->
+                    <div class="grammar-card">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">2. Specific Conditions</h3>
+                        <p class="text-gray-700 mb-4">
+                            The 〜たら form is used to express specific, one-time conditions, rather than general rules or principles.
+                        </p>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">明日雨が降ったら、傘を持って行きます。</p>
+                            <p class="italic text-gray-600">Ashita ame ga futtara, kasa o motte ikimasu.</p>
+                            <p>If it rains tomorrow, I'll take an umbrella.</p>
+                        </div>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">この薬を飲んだら、すぐに良くなるでしょう。</p>
+                            <p class="italic text-gray-600">Kono kusuri o nondara, sugu ni yoku naru deshou.</p>
+                            <p>If you take this medicine, you'll probably feel better soon.</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-medium">Note:</span> While the 〜ば form is often used for general rules or natural consequences, the 〜たら form is better for specific situations or one-time events.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pattern 3 -->
+                    <div class="grammar-card">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">3. Discoveries and Realizations</h3>
+                        <p class="text-gray-700 mb-4">
+                            The 〜たら form is often used to express unexpected discoveries or realizations. In this usage, the past tense is commonly used in the main clause.
+                        </p>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">家に帰ったら、誰もいませんでした。</p>
+                            <p class="italic text-gray-600">Ie ni kaettara, dare mo imasen deshita.</p>
+                            <p>When I got home, there was nobody there.</p>
+                        </div>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">財布を見たら、お金がなくなっていました。</p>
+                            <p class="italic text-gray-600">Saifu o mitara, okane ga nakunatte imashita.</p>
+                            <p>When I looked at my wallet, my money was gone.</p>
+                        </div>
+                        
+                        <p class="text-gray-700 mt-4">
+                            This usage often conveys a sense of surprise or an unexpected situation that was discovered.
+                        </p>
+                    </div>
+                    
+                    <!-- Pattern 4 -->
+                    <div class="grammar-card">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">4. Hypothetical Situations</h3>
+                        <p class="text-gray-700 mb-4">
+                            The 〜たら form can be used to express hypothetical situations, including counterfactual conditions (things that didn't or won't happen).
+                        </p>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">お金があったら、新しい車を買うのに。</p>
+                            <p class="italic text-gray-600">Okane ga attara, atarashii kuruma o kau noni.</p>
+                            <p>If I had money, I would buy a new car.</p>
+                        </div>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">日本に行ったら、何をしたいですか。</p>
+                            <p class="italic text-gray-600">Nihon ni ittara, nani o shitai desu ka.</p>
+                            <p>If you went to Japan, what would you want to do?</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pattern 5 -->
+                    <div class="grammar-card">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">5. Giving Advice</h3>
+                        <p class="text-gray-700 mb-4">
+                            The 〜たら form can be used when giving advice or making suggestions.
+                        </p>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">頭が痛かったら、この薬を飲んでください。</p>
+                            <p class="italic text-gray-600">Atama ga itakattara, kono kusuri o nonde kudasai.</p>
+                            <p>If you have a headache, please take this medicine.</p>
+                        </div>
+                        
+                        <div class="example-card">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese text-lg mb-1">分からなかったら、先生に聞いてみたらどうですか。</p>
+                            <p class="italic text-gray-600">Wakaranakattara, sensei ni kiite mitara dou desu ka.</p>
+                            <p>If you don't understand, how about asking the teacher?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mt-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Common Expressions with 〜たら</h3>
+                    <p class="text-gray-700 mb-4">
+                        There are several fixed expressions and patterns that use the 〜たら form:
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-medium text-indigo-700 mb-2">〜たらどうですか</h4>
+                            <p class="text-gray-700 mb-2">Used for making suggestions</p>
+                            <div class="example-card">
+                                <p class="japanese">もっと早く起きたらどうですか。</p>
+                                <p class="italic text-gray-600">Motto hayaku okitara dou desu ka.</p>
+                                <p>How about waking up earlier?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-medium text-indigo-700 mb-2">〜たらいいですか</h4>
+                            <p class="text-gray-700 mb-2">Used for asking for advice or permission</p>
+                            <div class="example-card">
+                                <p class="japanese">何を買ったらいいですか。</p>
+                                <p class="italic text-gray-600">Nani o kattara ii desu ka.</p>
+                                <p>What should I buy?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-medium text-indigo-700 mb-2">〜たらいいのに</h4>
+                            <p class="text-gray-700 mb-2">Used for expressing regret or wishful thinking</p>
+                            <div class="example-card">
+                                <p class="japanese">もっと勉強したらいいのに。</p>
+                                <p class="italic text-gray-600">Motto benkyou shitara ii noni.</p>
+                                <p>You should study more. (It would be good if you studied more.)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-medium text-indigo-700 mb-2">〜たら〜たで</h4>
+                            <p class="text-gray-700 mb-2">Used for expressing that either way, there's a problem</p>
+                            <div class="example-card">
+                                <p class="japanese">行ったら行ったで、問題があります。</p>
+                                <p class="italic text-gray-600">Ittara itta de, mondai ga arimasu.</p>
+                                <p>Even if I go, there will still be problems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mt-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Comparing 〜たら with Other Conditional Forms</h3>
+                    <p class="text-gray-700 mb-4">
+                        Japanese has four main conditional forms, each with its own nuances. Here's how 〜たら compares to the others:
+                    </p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Form</th>
+                                    <th>Main Usage</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">〜たら</td>
+                                    <td>Temporal sequence, specific one-time conditions, discoveries</td>
+                                    <td class="japanese">家に帰ったら、電話します。<br><span class="text-gray-600">When I get home, I'll call you.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">〜ば</td>
+                                    <td>Natural consequences, general truths, hypothetical situations</td>
+                                    <td class="japanese">毎日勉強すれば、上手になります。<br><span class="text-gray-600">If you study every day, you'll improve.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">〜と</td>
+                                    <td>Automatic or natural results, definite outcomes</td>
+                                    <td class="japanese">このボタンを押すと、機械が動きます。<br><span class="text-gray-600">If you press this button, the machine will move.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">〜なら</td>
+                                    <td>Contextual conditions, introducing new information</td>
+                                    <td class="japanese">日本語を勉強するなら、この本がいいです。<br><span class="text-gray-600">If you're studying Japanese, this book is good.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p class="text-gray-700 mt-4">
+                        The 〜たら form is perhaps the most versatile of all the conditional forms, as it can be used in a wide range of situations. It's especially useful for beginners because it follows a consistent formation pattern and can express many different types of conditions.
+                    </p>
+                </div>
+            </section>
+            <!-- Practice Exercises Section -->
+            <section class="mb-12" x-data="{ showAnswers: {} }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Practice Exercises</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    Test your understanding of the 〜たら conditional form with these practice exercises.
+                </p>
+                
+                <!-- Exercise 1: Conjugation -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 1: Conjugate to the 〜たら Form</h3>
+                    <p class="mb-4">Convert each word to its 〜たら conditional form.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">1.</span> 行く (いく) - to go</p>
+                            <button @click="showAnswers[1] = !showAnswers[1]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[1]">Show Answer</span>
+                                <span x-show="showAnswers[1]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[1]" class="mt-2 text-green-700">
+                                <p class="japanese">行ったら (いったら)</p>
+                                <p class="text-sm text-gray-600 mt-1">Ittara - if/when (I/you/etc.) go</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">2.</span> 食べる (たべる) - to eat</p>
+                            <button @click="showAnswers[2] = !showAnswers[2]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[2]">Show Answer</span>
+                                <span x-show="showAnswers[2]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[2]" class="mt-2 text-green-700">
+                                <p class="japanese">食べたら (たべたら)</p>
+                                <p class="text-sm text-gray-600 mt-1">Tabetara - if/when (I/you/etc.) eat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">3.</span> 高い (たかい) - expensive</p>
+                            <button @click="showAnswers[3] = !showAnswers[3]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[3]">Show Answer</span>
+                                <span x-show="showAnswers[3]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[3]" class="mt-2 text-green-700">
+                                <p class="japanese">高かったら (たかかったら)</p>
+                                <p class="text-sm text-gray-600 mt-1">Takakattara - if (it) is expensive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">4.</span> 静か (しずか) - quiet</p>
+                            <button @click="showAnswers[4] = !showAnswers[4]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[4]">Show Answer</span>
+                                <span x-show="showAnswers[4]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[4]" class="mt-2 text-green-700">
+                                <p class="japanese">静かだったら (しずかだったら)</p>
+                                <p class="text-sm text-gray-600 mt-1">Shizuka dattara - if (it) is quiet</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2"><span class="font-medium">5.</span> する - to do</p>
+                            <button @click="showAnswers[5] = !showAnswers[5]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[5]">Show Answer</span>
+                                <span x-show="showAnswers[5]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[5]" class="mt-2 text-green-700">
+                                <p class="japanese">したら (したら)</p>
+                                <p class="text-sm text-gray-600 mt-1">Shitara - if/when (I/you/etc.) do</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2: Negative Form -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 2: Convert to Negative 〜たら Form</h3>
+                    <p class="mb-4">Change each word to its negative 〜たら conditional form.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> 行く (いく) - to go</p>
+                            <button @click="showAnswers[6] = !showAnswers[6]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[6]">Show Answer</span>
+                                <span x-show="showAnswers[6]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[6]" class="mt-2 text-green-700">
+                                <p class="japanese">行かなかったら (いかなかったら)</p>
+                                <p class="italic text-gray-600">Ikanakattara - if (I/you/etc.) don't go</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 高い (たかい) - expensive</p>
+                            <button @click="showAnswers[7] = !showAnswers[7]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[7]">Show Answer</span>
+                                <span x-show="showAnswers[7]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[7]" class="mt-2 text-green-700">
+                                <p class="japanese">高くなかったら (たかくなかったら)</p>
+                                <p class="italic text-gray-600">Takakunakattara - if (it) is not expensive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> 学生 (がくせい) - student</p>
+                            <button @click="showAnswers[8] = !showAnswers[8]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[8]">Show Answer</span>
+                                <span x-show="showAnswers[8]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[8]" class="mt-2 text-green-700">
+                                <p class="japanese">学生じゃなかったら (がくせいじゃなかったら)</p>
+                                <p class="italic text-gray-600">Gakusei janakattara - if (he/she) is not a student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 3: Identify the Usage -->
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 3: Identify the Usage</h3>
+                    <p class="mb-4">Determine whether each sentence expresses a temporal sequence, specific condition, or discovery.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> 家に帰ったら、誰もいませんでした。</p>
+                            <p class="italic text-gray-600 mb-2">Ie ni kaettara, dare mo imasen deshita.</p>
+                            <button @click="showAnswers[9] = !showAnswers[9]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[9]">Show Answer</span>
+                                <span x-show="showAnswers[9]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[9]" class="mt-2 text-green-700">
+                                <p>Discovery</p>
+                                <p class="text-sm text-gray-600 mt-1">This sentence expresses an unexpected discovery that was made when the speaker got home.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 食事が終わったら、映画を見ましょう。</p>
+                            <p class="italic text-gray-600 mb-2">Shokuji ga owattara, eiga o mimashou.</p>
+                            <button @click="showAnswers[10] = !showAnswers[10]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[10]">Show Answer</span>
+                                <span x-show="showAnswers[10]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[10]" class="mt-2 text-green-700">
+                                <p>Temporal Sequence</p>
+                                <p class="text-sm text-gray-600 mt-1">This sentence expresses a sequence of events: first the meal will end, then we will watch a movie.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> 明日雨が降ったら、傘を持って行きます。</p>
+                            <p class="italic text-gray-600 mb-2">Ashita ame ga futtara, kasa o motte ikimasu.</p>
+                            <button @click="showAnswers[11] = !showAnswers[11]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[11]">Show Answer</span>
+                                <span x-show="showAnswers[11]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[11]" class="mt-2 text-green-700">
+                                <p>Specific Condition</p>
+                                <p class="text-sm text-gray-600 mt-1">This sentence expresses a specific condition: if it rains tomorrow (and only tomorrow), I'll take an umbrella.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Common Mistakes Section -->
+                <div class="grammar-card">
+                    <h3 class="text-xl font-semibold mb-4">Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 1: Confusing 〜たら with 〜ば for general rules</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 毎日運動したら、健康になります。</p>
+                                <p class="italic text-gray-600">Mainichi undou shitara, kenkou ni narimasu.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 毎日運動すれば、健康になります。</p>
+                                <p class="italic text-gray-600">Mainichi undou sureba, kenkou ni narimasu.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                For general rules or principles that always apply, the 〜ば form is more appropriate than 〜たら.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 2: Using 〜たら for commands</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ ここに来たら。</p>
+                                <p class="italic text-gray-600">Koko ni kitara.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ ここに来てください。</p>
+                                <p class="italic text-gray-600">Koko ni kite kudasai.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                The 〜たら form cannot be used by itself as a command. Use the appropriate command forms instead.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 3: Using 〜たら with the wrong tense in the main clause</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 明日、雨が降ったら、試合は中止でした。</p>
+                                <p class="italic text-gray-600">Ashita, ame ga futtara, shiai wa chuushi deshita.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 明日、雨が降ったら、試合は中止です。</p>
+                                <p class="italic text-gray-600">Ashita, ame ga futtara, shiai wa chuushi desu.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                When talking about future conditions, use the present tense in the main clause, not the past tense.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summary and Further Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Summary</h2>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Key Takeaways</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• The 〜たら conditional form is used to express temporal sequences, specific conditions, discoveries, and hypothetical situations.</li>
+                        <li>• It is formed by adding ら to the past tense form of verbs, adjectives, and nouns with the copula.</li>
+                        <li>• The 〜たら form is more versatile than the 〜ば form and can be used in a wider range of situations.</li>
+                        <li>• It is particularly useful for expressing a sequence of events ("when" or "after") and specific, one-time conditions.</li>
+                        <li>• The 〜たら form is one of four conditional forms in Japanese, each with its own nuances and usage patterns.</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4">Further Resources</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Japanese Conditionals Workbook</h4>
+                            <p class="text-gray-600">Additional exercises to master all conditional forms in Japanese.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="giving-receiving.html" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Next Grammar Point: Giving and Receiving</h4>
+                            <p class="text-gray-600">Learn about the giving and receiving verbs in Japanese.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 rounded-lg p-6">
+                    <a href="conditional-ba.html" class="flex items-center text-indigo-600 hover:text-indigo-800 mb-4 md:mb-0">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Previous: Conditional Form (〜ば)
+                    </a>
+                    
+                    <a href="giving-receiving.html" class="flex items-center text-indigo-600 hover:text-indigo-800">
+                        Next: Giving and Receiving Verbs
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300">Your comprehensive resource for learning Japanese and preparing for the JLPT exams.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-300">© 2025 JapLearn. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

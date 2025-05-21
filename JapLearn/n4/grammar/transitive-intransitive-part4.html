@@ -1,0 +1,204 @@
+            <!-- Exercise 3: Sentence Transformation -->
+            <section class="mb-12" x-data="{ showAnswers: {} }">
+                <div class="grammar-card mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Exercise 3: Sentence Transformation</h3>
+                    <p class="mb-4">Transform each sentence by changing the transitive verb to its intransitive counterpart (or vice versa).</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">1.</span> 私はドアを開けました。</p>
+                            <p class="italic text-gray-600 mb-2">Watashi wa doa o akemashita.</p>
+                            <p class="text-gray-700 mb-2">I opened the door.</p>
+                            <button @click="showAnswers[11] = !showAnswers[11]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[11]">Show Answer</span>
+                                <span x-show="showAnswers[11]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[11]" class="mt-2 text-green-700">
+                                <p class="japanese">ドアが開きました。</p>
+                                <p class="italic text-gray-600">Doa ga akimashita.</p>
+                                <p class="text-gray-700">The door opened.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">2.</span> 電気が消えました。</p>
+                            <p class="italic text-gray-600 mb-2">Denki ga kiemashita.</p>
+                            <p class="text-gray-700 mb-2">The light went out.</p>
+                            <button @click="showAnswers[12] = !showAnswers[12]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[12]">Show Answer</span>
+                                <span x-show="showAnswers[12]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[12]" class="mt-2 text-green-700">
+                                <p class="japanese">誰かが電気を消しました。</p>
+                                <p class="italic text-gray-600">Dareka ga denki o keshimashita.</p>
+                                <p class="text-gray-700">Someone turned off the light.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-md">
+                            <p class="mb-2 japanese"><span class="font-medium">3.</span> 先生は授業を始めました。</p>
+                            <p class="italic text-gray-600 mb-2">Sensei wa jugyō o hajimemashita.</p>
+                            <p class="text-gray-700 mb-2">The teacher started the class.</p>
+                            <button @click="showAnswers[13] = !showAnswers[13]" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                <span x-show="!showAnswers[13]">Show Answer</span>
+                                <span x-show="showAnswers[13]">Hide Answer</span>
+                            </button>
+                            <div x-show="showAnswers[13]" class="mt-2 text-green-700">
+                                <p class="japanese">授業が始まりました。</p>
+                                <p class="italic text-gray-600">Jugyō ga hajimarimashita.</p>
+                                <p class="text-gray-700">The class started.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Common Mistakes Section -->
+                <div class="grammar-card">
+                    <h3 class="text-xl font-semibold mb-4">Common Mistakes to Avoid</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 1: Using the wrong particle</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 私はドアが開けました。</p>
+                                <p class="italic text-gray-600">Watashi wa doa ga akemashita.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 私はドアを開けました。</p>
+                                <p class="italic text-gray-600">Watashi wa doa o akemashita.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                When using a transitive verb like 開ける (akeru), the object must be marked with を (o), not が (ga).
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 2: Using the wrong verb in the pair</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ ドアを開きました。</p>
+                                <p class="italic text-gray-600">Doa o akimashita.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ ドアが開きました。</p>
+                                <p class="italic text-gray-600">Doa ga akimashita.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                開く (aku) is an intransitive verb, so it cannot take a direct object with を (o). Use 開ける (akeru) instead if you want to express that someone opened the door.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-red-600 mb-2">Mistake 3: Confusing similar verb pairs</h4>
+                            <div class="bg-red-50 p-4 rounded-md mb-3">
+                                <p class="japanese mb-1">❌ 私は電気を消えました。</p>
+                                <p class="italic text-gray-600">Watashi wa denki o kiemashita.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-md">
+                                <p class="japanese mb-1">✓ 私は電気を消しました。</p>
+                                <p class="italic text-gray-600">Watashi wa denki o keshimashita.</p>
+                            </div>
+                            <p class="text-gray-700 mt-2">
+                                消える (kieru) is intransitive and means "to go out/disappear." The transitive counterpart is 消す (kesu), which means "to turn off/extinguish."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summary and Further Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Summary</h2>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-700">Key Takeaways</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• <span class="font-medium">Transitive verbs (他動詞)</span> describe actions done to something and take a direct object marked by を (o).</li>
+                        <li>• <span class="font-medium">Intransitive verbs (自動詞)</span> describe actions that happen by themselves and typically use が (ga) to mark the subject.</li>
+                        <li>• Many Japanese verbs come in transitive-intransitive pairs with related meanings.</li>
+                        <li>• While there are some patterns to identify which is which, it's often best to memorize these pairs together.</li>
+                        <li>• The choice between transitive and intransitive verbs can reflect the speaker's perspective on agency and responsibility.</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4">Further Resources</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Complete List of Transitive-Intransitive Pairs</h4>
+                            <p class="text-gray-600">A comprehensive reference of all common verb pairs in Japanese.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="block bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold mb-2 text-indigo-600">Advanced Usage Patterns</h4>
+                            <p class="text-gray-600">Learn more complex sentence structures using transitive and intransitive verbs.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 rounded-lg p-6">
+                    <a href="../intro.html" class="flex items-center text-indigo-600 hover:text-indigo-800 mb-4 md:mb-0">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Back to N4 Introduction
+                    </a>
+                    
+                    <a href="potential-form.html" class="flex items-center text-indigo-600 hover:text-indigo-800">
+                        Next: Potential Form
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300">Your comprehensive resource for learning Japanese and preparing for the JLPT exams.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../../n5/intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N4 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-300">© 2025 JapLearn. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
