@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Website Belajar Bahasa Jepang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #e74c3c;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #e74c3c;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #3498db;
+            margin-top: 20px;
+        }
+        .section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .main-list > li {
+            margin-bottom: 8px;
+        }
+        .sub-list {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        .sub-list li {
+            margin-bottom: 3px;
+        }
+        a {
+            text-decoration: none;
+            color: #2980b9;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .grid-item {
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .jlpt-label {
+            display: inline-block;
+            padding: 2px 8px;
+            margin-right: 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .n5 {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .n4 {
+            background-color: #3498db;
+            color: white;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #search {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .toc {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .toc-list {
+            columns: 2;
+        }
+        @media (max-width: 768px) {
+            .toc-list {
+                columns: 1;
+            }
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Sitemap Website Belajar Bahasa Jepang N5 dan N4</h1>
+    
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Cari halaman...">
+    </div>
+    
+    <div class="toc">
+        <h2>Daftar Isi</h2>
+        <ul class="toc-list">
+            <li><a href="#halaman-utama">Halaman Utama dan Navigasi</a></li>
+            <li><a href="#kursus-n5">Kursus N5 - Pemula</a></li>
+            <li><a href="#tata-bahasa-n5">Tata Bahasa N5</a></li>
+            <li><a href="#kosakata-n5">Kosakata N5</a></li>
+            <li><a href="#latihan-n5">Latihan N5</a></li>
+            <li><a href="#persiapan-ujian-n5">Persiapan Ujian N5</a></li>
+            <li><a href="#kursus-n4">Kursus N4 - Menengah Dasar</a></li>
+            <li><a href="#tata-bahasa-n4">Tata Bahasa N4</a></li>
+            <li><a href="#kosakata-n4">Kosakata N4</a></li>
+            <li><a href="#latihan-n4">Latihan N4</a></li>
+            <li><a href="#persiapan-ujian-n4">Persiapan Ujian N4</a></li>
+            <li><a href="#materi-pendukung">Materi Pendukung</a></li>
+            <li><a href="#forum-komunitas">Forum dan Komunitas</a></li>
+            <li><a href="#komponen-interaktif">Komponen Interaktif</a></li>
+            <li><a href="#halaman-administratif">Halaman Administratif</a></li>
+            <li><a href="#profil-pengguna">Profil Pengguna</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="halaman-utama">
+        <h2>Halaman Utama dan Navigasi</h2>
+        <ul class="main-list">
+            <li><a href="index.html">Halaman Utama</a></li>
+            <li><a href="about.html">Tentang Website dan Tim</a></li>
+            <li><a href="contact.html">Halaman Kontak</a></li>
+            <li><a href="signup.html">Pendaftaran Akun</a></li>
+            <li><a href="login.html">Halaman Login</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="kursus-n5">
+        <h2>Kursus N5 - Pemula</h2>
+        <h3>Pengenalan</h3>
+        <ul class="main-list">
+            <li><a href="n5/intro.html"><span class="jlpt-label n5">N5</span>Pengenalan Bahasa Jepang untuk Pemula</a></li>
+            <li><a href="n5/hiragana.html"><span class="jlpt-label n5">N5</span>Belajar Hiragana Lengkap</a></li>
+            <li><a href="n5/katakana.html"><span class="jlpt-label n5">N5</span>Belajar Katakana Lengkap</a></li>
+            <li><a href="n5/basic-kanji.html"><span class="jlpt-label n5">N5</span>Pengenalan Kanji Dasar N5 (100 Kanji)</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="tata-bahasa-n5">
+        <h2>Tata Bahasa N5</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="n5/grammar/basic-sentence.html"><span class="jlpt-label n5">N5</span>Struktur Kalimat Dasar</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/particles-intro.html"><span class="jlpt-label n5">N5</span>Pengenalan Partikel (は、が、を、に、で)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/verb-intro.html"><span class="jlpt-label n5">N5</span>Pengenalan Kata Kerja</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/verb-group1.html"><span class="jlpt-label n5">N5</span>Kata Kerja Grup 1 (Godan)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/verb-group2.html"><span class="jlpt-label n5">N5</span>Kata Kerja Grup 2 (Ichidan)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/verb-group3.html"><span class="jlpt-label n5">N5</span>Kata Kerja Grup 3 (Tidak Beraturan)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/adjectives.html"><span class="jlpt-label n5">N5</span>Kata Sifat (i-adjectives & na-adjectives)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/present-tense.html"><span class="jlpt-label n5">N5</span>Bentuk Present Tense</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/past-tense.html"><span class="jlpt-label n5">N5</span>Bentuk Past Tense</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/negative-form.html"><span class="jlpt-label n5">N5</span>Bentuk Negatif</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/te-form.html"><span class="jlpt-label n5">N5</span>Bentuk ~て</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/nai-form.html"><span class="jlpt-label n5">N5</span>Bentuk ~ない</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/grammar/question.html"><span class="jlpt-label n5">N5</span>Membuat Kalimat Tanya</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="kosakata-n5">
+        <h2>Kosakata N5</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="n5/vocabulary/greetings.html"><span class="jlpt-label n5">N5</span>Salam dan Ungkapan Umum</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/numbers.html"><span class="jlpt-label n5">N5</span>Angka dan Bilangan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/time.html"><span class="jlpt-label n5">N5</span>Waktu, Hari, Bulan, Tahun</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/family.html"><span class="jlpt-label n5">N5</span>Keluarga</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/colors.html"><span class="jlpt-label n5">N5</span>Warna</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/animals.html"><span class="jlpt-label n5">N5</span>Hewan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/food.html"><span class="jlpt-label n5">N5</span>Makanan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/transport.html"><span class="jlpt-label n5">N5</span>Transportasi</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/location.html"><span class="jlpt-label n5">N5</span>Lokasi dan Arah</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/activities.html"><span class="jlpt-label n5">N5</span>Aktivitas Sehari-hari</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/school.html"><span class="jlpt-label n5">N5</span>Sekolah</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/weather.html"><span class="jlpt-label n5">N5</span>Cuaca</a>
+            </div>
+            <div class="grid-item">
+                <a href="n5/vocabulary/master-list-n5.html"><span class="jlpt-label n5">N5</span>Daftar Lengkap Kosakata N5</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="latihan-n5">
+        <h2>Latihan N5</h2>
+        <ul class="main-list">
+            <li><a href="n5/practice/listening.html"><span class="jlpt-label n5">N5</span>Latihan Mendengarkan N5</a></li>
+            <li><a href="n5/practice/reading.html"><span class="jlpt-label n5">N5</span>Latihan Membaca N5</a></li>
+            <li><a href="n5/practice/writing.html"><span class="jlpt-label n5">N5</span>Latihan Menulis N5</a></li>
+            <li><a href="n5/practice/speaking.html"><span class="jlpt-label n5">N5</span>Latihan Berbicara N5</a></li>
+            <li><a href="n5/practice/kanji-quiz.html"><span class="jlpt-label n5">N5</span>Kuis Kanji N5</a></li>
+            <li><a href="n5/practice/vocabulary-quiz.html"><span class="jlpt-label n5">N5</span>Kuis Kosakata N5</a></li>
+            <li><a href="n5/practice/grammar-quiz.html"><span class="jlpt-label n5">N5</span>Kuis Tata Bahasa N5</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="persiapan-ujian-n5">
+        <h2>Persiapan Ujian N5</h2>
+        <ul class="main-list">
+            <li><a href="n5/exam-prep/exam-overview.html"><span class="jlpt-label n5">N5</span>Penjelasan Ujian JLPT N5</a></li>
+            <li><a href="n5/exam-prep/practice-test.html"><span class="jlpt-label n5">N5</span>Simulasi Ujian N5</a></li>
+            <li><a href="n5/exam-prep/time-management.html"><span class="jlpt-label n5">N5</span>Manajemen Waktu untuk Ujian</a></li>
+            <li><a href="n5/exam-prep/study-plan.html"><span class="jlpt-label n5">N5</span>Rencana Belajar N5</a></li>
+            <li><a href="n5/exam-prep/tips-tricks.html"><span class="jlpt-label n5">N5</span>Tips dan Trik Menghadapi Ujian N5</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="kursus-n4">
+        <h2>Kursus N4 - Menengah Dasar</h2>
+        <h3>Pengantar N4</h3>
+        <ul class="main-list">
+            <li><a href="n4/intro.html"><span class="jlpt-label n4">N4</span>Pengantar Level N4</a></li>
+            <li><a href="n4/kanji-list.html"><span class="jlpt-label n4">N4</span>Daftar Kanji N4 (300 Kanji)</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="tata-bahasa-n4">
+        <h2>Tata Bahasa N4</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="n4/grammar/transitive-intransitive.html"><span class="jlpt-label n4">N4</span>Kata Kerja Transitif dan Intransitif</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/potential-form.html"><span class="jlpt-label n4">N4</span>Bentuk Potensial (~できる)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/volitional-form.html"><span class="jlpt-label n4">N4</span>Bentuk Keinginan (~しよう)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/conditional-ba.html"><span class="jlpt-label n4">N4</span>Bentuk Pengandaian (~ば)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/conditional-tara.html"><span class="jlpt-label n4">N4</span>Bentuk Pengandaian (~たら)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/giving-receiving.html"><span class="jlpt-label n4">N4</span>Memberi dan Menerima (あげる、もらう、くれる)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/imperative.html"><span class="jlpt-label n4">N4</span>Bentuk Perintah</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/prohibition.html"><span class="jlpt-label n4">N4</span>Bentuk Larangan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/causative.html"><span class="jlpt-label n4">N4</span>Bentuk Kausatif (Menyebabkan)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/passive.html"><span class="jlpt-label n4">N4</span>Bentuk Pasif</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/honorific.html"><span class="jlpt-label n4">N4</span>Bahasa Hormat (Keigo) Dasar</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/counters.html"><span class="jlpt-label n4">N4</span>Kata Bantu Bilangan (Counters)</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/adverbs.html"><span class="jlpt-label n4">N4</span>Kata Keterangan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/conjunctions.html"><span class="jlpt-label n4">N4</span>Kata Penghubung</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/quotations.html"><span class="jlpt-label n4">N4</span>Kutipan Langsung dan Tidak Langsung</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/grammar/compound-sentences.html"><span class="jlpt-label n4">N4</span>Kalimat Majemuk</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="kosakata-n4">
+        <h2>Kosakata N4</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="n4/vocabulary/business.html"><span class="jlpt-label n4">N4</span>Bisnis dan Pekerjaan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/health.html"><span class="jlpt-label n4">N4</span>Kesehatan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/feelings.html"><span class="jlpt-label n4">N4</span>Perasaan dan Emosi</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/shopping.html"><span class="jlpt-label n4">N4</span>Berbelanja</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/entertainment.html"><span class="jlpt-label n4">N4</span>Hiburan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/technology.html"><span class="jlpt-label n4">N4</span>Teknologi</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/nature.html"><span class="jlpt-label n4">N4</span>Alam</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/travel.html"><span class="jlpt-label n4">N4</span>Perjalanan</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/traits.html"><span class="jlpt-label n4">N4</span>Sifat dan Karakter</a>
+            </div>
+            <div class="grid-item">
+                <a href="n4/vocabulary/master-list-n4.html"><span class="jlpt-label n4">N4</span>Daftar Lengkap Kosakata N4</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="latihan-n4">
+        <h2>Latihan N4</h2>
+        <ul class="main-list">
+            <li><a href="n4/practice/listening.html"><span class="jlpt-label n4">N4</span>Latihan Mendengarkan N4</a></li>
+            <li><a href="n4/practice/reading.html"><span class="jlpt-label n4">N4</span>Latihan Membaca N4</a></li>
+            <li><a href="n4/practice/writing.html"><span class="jlpt-label n4">N4</span>Latihan Menulis N4</a></li>
+            <li><a href="n4/practice/speaking.html"><span class="jlpt-label n4">N4</span>Latihan Berbicara N4</a></li>
+            <li><a href="n4/practice/kanji-quiz.html"><span class="jlpt-label n4">N4</span>Kuis Kanji N4</a></li>
+            <li><a href="n4/practice/vocabulary-quiz.html"><span class="jlpt-label n4">N4</span>Kuis Kosakata N4</a></li>
+            <li><a href="n4/practice/grammar-quiz.html"><span class="jlpt-label n4">N4</span>Kuis Tata Bahasa N4</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="persiapan-ujian-n4">
+        <h2>Persiapan Ujian N4</h2>
+        <ul class="main-list">
+            <li><a href="n4/exam-prep/exam-overview.html"><span class="jlpt-label n4">N4</span>Penjelasan Ujian JLPT N4</a></li>
+            <li><a href="n4/exam-prep/practice-test.html"><span class="jlpt-label n4">N4</span>Simulasi Ujian N4</a></li>
+            <li><a href="n4/exam-prep/time-management.html"><span class="jlpt-label n4">N4</span>Manajemen Waktu untuk Ujian</a></li>
+            <li><a href="n4/exam-prep/study-plan.html"><span class="jlpt-label n4">N4</span>Rencana Belajar N4</a></li>
+            <li><a href="n4/exam-prep/tips-tricks.html"><span class="jlpt-label n4">N4</span>Tips dan Trik Menghadapi Ujian N4</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="materi-pendukung">
+        <h2>Materi Pendukung</h2>
+        <ul class="main-list">
+            <li><a href="resources/study-methods.html">Metode Belajar Bahasa Jepang</a></li>
+            <li><a href="resources/culture.html">Budaya Jepang</a></li>
+            <li><a href="resources/reading-materials.html">Bahan Bacaan Tambahan</a></li>
+            <li><a href="resources/listening-materials.html">Materi Dengar Tambahan</a></li>
+            <li><a href="resources/apps-tools.html">Aplikasi dan Alat Bantu Belajar</a></li>
+            <li><a href="resources/dictionary.html">Kamus Jepang-Indonesia Sederhana</a></li>
+            <li><a href="resources/common-phrases.html">Frasa Umum Sehari-hari</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="forum-komunitas">
+        <h2>Forum dan Komunitas</h2>
+        <ul class="main-list">
+            <li><a href="community/forum.html">Forum Diskusi</a></li>
+            <li><a href="community/study-groups.html">Grup Belajar</a></li>
+            <li><a href="community/language-exchange.html">Program Pertukaran Bahasa</a></li>
+            <li><a href="community/events.html">Acara dan Kegiatan</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="komponen-interaktif">
+        <h2>Komponen Interaktif</h2>
+        <ul class="main-list">
+            <li><a href="interactive/hiragana-game.html">Permainan Belajar Hiragana</a></li>
+            <li><a href="interactive/katakana-game.html">Permainan Belajar Katakana</a></li>
+            <li><a href="interactive/kanji-flashcards.html">Kartu Flashcard Kanji</a></li>
+            <li><a href="interactive/vocabulary-flashcards.html">Kartu Flashcard Kosakata</a></li>
+            <li><a href="interactive/pronunciation-practice.html">Latihan Pengucapan</a></li>
+            <li><a href="interactive/sentence-builder.html">Pembuat Kalimat</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="halaman-administratif">
+        <h2>Halaman Administratif</h2>
+        <ul class="main-list">
+            <li><a href="admin/dashboard.html">Dasbor Admin</a></li>
+            <li><a href="admin/user-management.html">Manajemen Pengguna</a></li>
+            <li><a href="admin/content-management.html">Manajemen Konten</a></li>
+            <li><a href="admin/stats.html">Statistik Website</a></li>
+            <li><a href="admin/feedback.html">Umpan Balik Pengguna</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="profil-pengguna">
+        <h2>Profil Pengguna</h2>
+        <ul class="main-list">
+            <li><a href="user/profile.html">Profil Pengguna</a></li>
+            <li><a href="user/progress.html">Kemajuan Belajar</a></li>
+            <li><a href="user/certificates.html">Sertifikat Penyelesaian</a></li>
+            <li><a href="user/settings.html">Pengaturan Akun</a></li>
+            <li><a href="user/saved-content.html">Konten Tersimpan</a></li>
+            <li><a href="user/history.html">Riwayat Aktivitas</a></li>
+        </ul>
+    </div>
+
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // Fungsi untuk pencarian halaman
+        document.getElementById('search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const links = document.querySelectorAll('a');
+            
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                const parent = link.closest('li') || link.closest('.grid-item');
+                
+                if (text.includes(searchTerm)) {
+                    if (parent) parent.style.display = '';
+                } else {
+                    if (parent) parent.style.display = 'none';
+                }
+            });
+            
+            // Jika section kosong, sembunyikan section
+            document.querySelectorAll('.section').forEach(section => {
+                const visibleItems = section.querySelectorAll('li:not([style*="display: none"]), .grid-item:not([style*="display: none"])');
+                
+                if (visibleItems.length === 0) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = '';
+                }
+            });
+        });
+        
+        // Fungsi untuk tombol kembali ke atas
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Tampilkan/sembunyikan tombol back-to-top saat scroll
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        // Inisialisasi
+        document.querySelector('.back-to-top').style.display = 'none';
+    </script>
+</body>
+</html>

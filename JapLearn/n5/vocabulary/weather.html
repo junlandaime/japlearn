@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Weather Vocabulary | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .vocabulary-table th, .vocabulary-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        .vocabulary-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            font-size: 1.25rem;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        /* Category Colors */
+        .category-weather tbody tr {
+            background-color: rgba(186, 230, 253, 0.4); /* Light blue */
+        }
+        .category-climate tbody tr {
+            background-color: rgba(254, 202, 202, 0.4); /* Light red */
+        }
+        .category-natural tbody tr {
+            background-color: rgba(220, 252, 231, 0.4); /* Light green */
+        }
+        .category-seasons tbody tr {
+            background-color: rgba(254, 240, 138, 0.4); /* Light yellow */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">Weather Vocabulary</h1>
+            <p class="text-xl">Learn essential Japanese words for talking about weather, climate, and seasons.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Weather Vocabulary</h2>
+                <p class="text-gray-700 mb-4">
+                    Weather is a common topic of conversation in Japan, just like in many other cultures. Being able to discuss the weather is an essential part of daily communication. In this lesson, we'll explore vocabulary related to weather conditions, seasons, climate, and natural phenomena.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Key Phrase:</p>
+                    <div>
+                        <p class="japanese">今日の天気はどうですか。</p>
+                        <p class="text-gray-600">Kyō no tenki wa dō desu ka.</p>
+                        <p class="text-gray-600">How is the weather today?</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> Weather forecasts are a significant part of daily news in Japan. This is because Japan experiences a wide range of weather conditions throughout the year, from typhoons to heavy snowfall, and the Japanese are often very attentive to changes in weather patterns. Many Japanese people check the weather forecast regularly and plan activities accordingly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Conditions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Weather Conditions</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are common weather conditions and terms you'll need to describe the weather in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-weather">
+                            <tr>
+                                <td><span class="japanese">天気</span> (てんき)</td>
+                                <td>Tenki</td>
+                                <td>Weather</td>
+                                <td>今日の天気はいいです。<br>(Today's weather is nice.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">晴れ</span> (はれ)</td>
+                                <td>Hare</td>
+                                <td>Sunny/Clear</td>
+                                <td>明日は晴れです。<br>(Tomorrow will be sunny.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">曇り</span> (くもり)</td>
+                                <td>Kumori</td>
+                                <td>Cloudy</td>
+                                <td>今日は曇りです。<br>(Today is cloudy.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">雨</span> (あめ)</td>
+                                <td>Ame</td>
+                                <td>Rain</td>
+                                <td>雨が降っています。<br>(It's raining.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">小雨</span> (こさめ)</td>
+                                <td>Kosame</td>
+                                <td>Light rain/Drizzle</td>
+                                <td>小雨が降っています。<br>(It's drizzling.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">大雨</span> (おおあめ)</td>
+                                <td>Ōame</td>
+                                <td>Heavy rain</td>
+                                <td>大雨が降っています。<br>(It's pouring/raining heavily.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">雪</span> (ゆき)</td>
+                                <td>Yuki</td>
+                                <td>Snow</td>
+                                <td>雪が降っています。<br>(It's snowing.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">風</span> (かぜ)</td>
+                                <td>Kaze</td>
+                                <td>Wind</td>
+                                <td>強い風が吹いています。<br>(A strong wind is blowing.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">霧</span> (きり)</td>
+                                <td>Kiri</td>
+                                <td>Fog</td>
+                                <td>今朝は霧がありました。<br>(There was fog this morning.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">雷</span> (かみなり)</td>
+                                <td>Kaminari</td>
+                                <td>Thunder</td>
+                                <td>雷がなっています。<br>(It's thundering.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 今日の天気はどうですか。</p>
+                        <p class="text-gray-600">A: Kyō no tenki wa dō desu ka?</p>
+                        <p class="text-gray-600">A: How is the weather today?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: 今日は曇りですが、午後から雨が降るでしょう。</p>
+                        <p class="text-gray-600">B: Kyō wa kumori desu ga, gogo kara ame ga furu deshō.</p>
+                        <p class="text-gray-600">B: Today is cloudy, but it will probably rain in the afternoon.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Temperature and Climate Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Temperature and Climate</h2>
+                <p class="text-gray-700 mb-4">
+                    These words will help you describe temperature and climate conditions in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-climate">
+                            <tr>
+                                <td><span class="japanese">気温</span> (きおん)</td>
+                                <td>Kion</td>
+                                <td>Temperature</td>
+                                <td>今日の気温は何度ですか。<br>(What is today's temperature?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">暑い</span> (あつい)</td>
+                                <td>Atsui</td>
+                                <td>Hot (weather)</td>
+                                <td>今日はとても暑いです。<br>(It's very hot today.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">熱い</span> (あつい)</td>
+                                <td>Atsui</td>
+                                <td>Hot (objects)</td>
+                                <td>このコーヒーは熱いです。<br>(This coffee is hot.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">寒い</span> (さむい)</td>
+                                <td>Samui</td>
+                                <td>Cold (weather)</td>
+                                <td>冬は寒いです。<br>(Winter is cold.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">冷たい</span> (つめたい)</td>
+                                <td>Tsumetai</td>
+                                <td>Cold (objects)</td>
+                                <td>この水は冷たいです。<br>(This water is cold.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">涼しい</span> (すずしい)</td>
+                                <td>Suzushii</td>
+                                <td>Cool/Refreshing</td>
+                                <td>秋は涼しいです。<br>(Autumn is cool.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">温かい</span> (あたたかい)</td>
+                                <td>Atatakai</td>
+                                <td>Warm</td>
+                                <td>春は温かいです。<br>(Spring is warm.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">湿気</span> (しっけ)</td>
+                                <td>Shikke</td>
+                                <td>Humidity</td>
+                                <td>日本の夏は湿気が多いです。<br>(Japanese summers are very humid.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">乾燥</span> (かんそう)</td>
+                                <td>Kansō</td>
+                                <td>Dry</td>
+                                <td>冬は乾燥しています。<br>(Winter is dry.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">度</span> (ど)</td>
+                                <td>Do</td>
+                                <td>Degree (temperature)</td>
+                                <td>今日は25度です。<br>(It's 25 degrees today.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Language Note:</span> Japanese has different words for "hot" and "cold" depending on whether you're describing weather or objects. Use 暑い (atsui) for hot weather and 熱い (atsui) for hot objects. Similarly, use 寒い (samui) for cold weather and 冷たい (tsumetai) for cold objects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Natural Phenomena Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Natural Weather Phenomena</h2>
+                <p class="text-gray-700 mb-4">
+                    Japan experiences various natural weather phenomena throughout the year. Here are some important terms related to these events.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-natural">
+                            <tr>
+                                <td><span class="japanese">台風</span> (たいふう)</td>
+                                <td>Taifū</td>
+                                <td>Typhoon</td>
+                                <td>台風が来ています。<br>(A typhoon is coming.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">地震</span> (じしん)</td>
+                                <td>Jishin</td>
+                                <td>Earthquake</td>
+                                <td>昨日地震がありました。<br>(There was an earthquake yesterday.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">津波</span> (つなみ)</td>
+                                <td>Tsunami</td>
+                                <td>Tsunami</td>
+                                <td>津波の警報が出ています。<br>(A tsunami warning has been issued.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">洪水</span> (こうずい)</td>
+                                <td>Kōzui</td>
+                                <td>Flood</td>
+                                <td>大雨で洪水になりました。<br>(The heavy rain caused a flood.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">虹</span> (にじ)</td>
+                                <td>Niji</td>
+                                <td>Rainbow</td>
+                                <td>雨の後に虹が出ました。<br>(A rainbow appeared after the rain.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">雷雨</span> (らいう)</td>
+                                <td>Raiu</td>
+                                <td>Thunderstorm</td>
+                                <td>昨夜は雷雨でした。<br>(There was a thunderstorm last night.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">嵐</span> (あらし)</td>
+                                <td>Arashi</td>
+                                <td>Storm</td>
+                                <td>嵐の中で運転しました。<br>(I drove in a storm.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">竜巻</span> (たつまき)</td>
+                                <td>Tatsumaki</td>
+                                <td>Tornado</td>
+                                <td>竜巻が家を破壊しました。<br>(The tornado destroyed houses.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">稲妻</span> (いなずま)</td>
+                                <td>Inazuma</td>
+                                <td>Lightning</td>
+                                <td>稲妻が空を照らしました。<br>(Lightning lit up the sky.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">吹雪</span> (ふぶき)</td>
+                                <td>Fubuki</td>
+                                <td>Blizzard</td>
+                                <td>吹雪で電車が止まりました。<br>(The trains stopped because of the blizzard.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 明日台風が来るそうです。</p>
+                        <p class="text-gray-600">A: Ashita taifū ga kuru sō desu.</p>
+                        <p class="text-gray-600">A: I heard a typhoon is coming tomorrow.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: そうですか。傘を持っていきます。</p>
+                        <p class="text-gray-600">B: Sō desu ka. Kasa o motte ikimasu.</p>
+                        <p class="text-gray-600">B: Is that so? I'll bring an umbrella.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seasons Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Seasons and Seasonal Events</h2>
+                <p class="text-gray-700 mb-4">
+                    Japan has four distinct seasons, each with its own characteristics and seasonal events. Here are the vocabulary words for seasons and related terms.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-seasons">
+                            <tr>
+                                <td><span class="japanese">季節</span> (きせつ)</td>
+                                <td>Kisetsu</td>
+                                <td>Season</td>
+                                <td>日本には四つの季節があります。<br>(There are four seasons in Japan.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">春</span> (はる)</td>
+                                <td>Haru</td>
+                                <td>Spring</td>
+                                <td>春は花が咲きます。<br>(Flowers bloom in spring.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">夏</span> (なつ)</td>
+                                <td>Natsu</td>
+                                <td>Summer</td>
+                                <td>夏は暑いです。<br>(Summer is hot.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">秋</span> (あき)</td>
+                                <td>Aki</td>
+                                <td>Autumn/Fall</td>
+                                <td>秋は葉が赤くなります。<br>(Leaves turn red in autumn.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">冬</span> (ふゆ)</td>
+                                <td>Fuyu</td>
+                                <td>Winter</td>
+                                <td>冬は雪が降ります。<br>(It snows in winter.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">梅雨</span> (つゆ)</td>
+                                <td>Tsuyu</td>
+                                <td>Rainy season</td>
+                                <td>梅雨は6月と7月です。<br>(The rainy season is in June and July.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">桜</span> (さくら)</td>
+                                <td>Sakura</td>
+                                <td>Cherry blossom</td>
+                                <td>春に桜が咲きます。<br>(Cherry blossoms bloom in spring.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">紅葉</span> (もみじ)</td>
+                                <td>Momiji</td>
+                                <td>Autumn leaves/Maple</td>
+                                <td>京都の紅葉はきれいです。<br>(The autumn leaves in Kyoto are beautiful.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">花見</span> (はなみ)</td>
+                                <td>Hanami</td>
+                                <td>Cherry blossom viewing</td>
+                                <td>友達と花見に行きました。<br>(I went cherry blossom viewing with friends.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">暦</span> (こよみ)</td>
+                                <td>Koyomi</td>
+                                <td>Calendar</td>
+                                <td>日本の暦には多くの祝日があります。<br>(There are many holidays in the Japanese calendar.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> Seasons are deeply important in Japanese culture and are frequently referenced in literature, art, and daily life. Many Japanese traditions and festivals are tied to specific seasons, such as cherry blossom viewing (花見, hanami) in spring and moon viewing (月見, tsukimi) in autumn. The changing of seasons is celebrated and observed with particular attention in Japan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercises Section -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Japanese words with their English meanings</h3>
+                    <div class="bg-white p-4 rounded-md">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="font-medium">Japanese Words:</p>
+                                <ol class="list-decimal list-inside">
+                                    <li>晴れ (はれ)</li>
+                                    <li>雨 (あめ)</li>
+                                    <li>雪 (ゆき)</li>
+                                    <li>台風 (たいふう)</li>
+                                    <li>寒い (さむい)</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <p class="font-medium">English Meanings:</p>
+                                <ol class="list-[upper-alpha] list-inside">
+                                    <li>Snow</li>
+                                    <li>Typhoon</li>
+                                    <li>Cold (weather)</li>
+                                    <li>Sunny</li>
+                                    <li>Rain</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium" onclick="alert('Answers: 1-D, 2-E, 3-A, 4-B, 5-C')">Show Answers</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Complete the sentences</h3>
+                    <div class="bg-white p-4 rounded-md">
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>
+                                <p>今日は＿＿＿です。空に雲がありません。(Today is ___. There are no clouds in the sky.)</p>
+                                <p class="text-sm text-gray-500">Options: 雨 (ame), 晴れ (hare), 曇り (kumori)</p>
+                            </li>
+                            <li>
+                                <p>冬はとても＿＿＿です。(Winter is very ___.)</p>
+                                <p class="text-sm text-gray-500">Options: 暑い (atsui), 寒い (samui), 暖かい (atatakai)</p>
+                            </li>
+                            <li>
+                                <p>傘を持って行きましょう。＿＿＿が降っています。(Let's take an umbrella. It's ___.)</p>
+                                <p class="text-sm text-gray-500">Options: 雨 (ame), 風 (kaze), 雪 (yuki)</p>
+                            </li>
+                            <li>
+                                <p>日本の＿＿＿には桜が咲きます。(Cherry blossoms bloom in Japanese ___.)</p>
+                                <p class="text-sm text-gray-500">Options: 夏 (natsu), 冬 (fuyu), 春 (haru)</p>
+                            </li>
+                            <li>
+                                <p>今日の＿＿＿は何度ですか。(What is today's ___ in degrees?)</p>
+                                <p class="text-sm text-gray-500">Options: 気温 (kion), 風 (kaze), 天気 (tenki)</p>
+                            </li>
+                        </ol>
+                        <div class="mt-4">
+                            <button class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium" onclick="alert('Answers: 1. 晴れ (hare), 2. 寒い (samui), 3. 雨 (ame), 4. 春 (haru), 5. 気温 (kion)')">Show Answers</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Translate the following sentences</h3>
+                    <div class="bg-white p-4 rounded-md">
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>
+                                <p>How is the weather today?</p>
+                            </li>
+                            <li>
+                                <p>It's raining heavily now.</p>
+                            </li>
+                            <li>
+                                <p>Summer in Japan is very humid.</p>
+                            </li>
+                            <li>
+                                <p>I like autumn because it's cool.</p>
+                            </li>
+                            <li>
+                                <p>Be careful, a typhoon is coming tomorrow.</p>
+                            </li>
+                        </ol>
+                        <div class="mt-4">
+                            <button class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium" onclick="alert('Answers: 1. 今日の天気はどうですか。(Kyō no tenki wa dō desu ka.), 2. 今、大雨が降っています。(Ima, ōame ga futte imasu.), 3. 日本の夏はとても湿気が多いです。(Nihon no natsu wa totemo shikke ga ōi desu.), 4. 秋は涼しいから好きです。(Aki wa suzushii kara suki desu.), 5. 気をつけてください、明日台風が来ます。(Ki o tsukete kudasai, ashita taifū ga kimasu.)')">Show Answers</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vocabulary Navigation Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Explore More N5 Vocabulary</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <a href="./greetings.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-hand-paper text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Greetings</h3>
+                    </a>
+                    <a href="./numbers.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-sort-numeric-up text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Numbers</h3>
+                    </a>
+                    <a href="./time.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clock text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Time</h3>
+                    </a>
+                    <a href="./family.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-users text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Family</h3>
+                    </a>
+                    <a href="./food.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-utensils text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Food</h3>
+                    </a>
+                    <a href="./colors.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-palette text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Colors</h3>
+                    </a>
+                    <a href="./animals.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-paw text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Animals</h3>
+                    </a>
+                    <a href="./transport.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-bus text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Transport</h3>
+                    </a>
+                    <a href="./activities.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-running text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Activities</h3>
+                    </a>
+                    <a href="./school.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-school text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">School</h3>
+                    </a>
+                    <a href="./weather.html" class="bg-indigo-100 border border-indigo-300 rounded-lg p-4 text-center">
+                        <i class="fas fa-cloud-sun text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Weather</h3>
+                    </a>
+                    <a href="./master-list-n5.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-list-alt text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Master List</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals in Japanese - N5 Vocabulary | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .vocabulary-table th, .vocabulary-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .vocabulary-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+        }
+        .vocabulary-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            transition: color 0.2s;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        .example-card {
+            background-color: #f8fafc;
+            border-left: 4px solid #818cf8;
+        }
+        .animal-card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .category-pets td {
+            background-color: rgba(224, 242, 254, 0.4);
+        }
+        .category-farm td {
+            background-color: rgba(254, 243, 199, 0.4);
+        }
+        .category-wild td {
+            background-color: rgba(220, 252, 231, 0.4);
+        }
+        .category-birds td {
+            background-color: rgba(253, 230, 255, 0.4);
+        }
+        .category-insects td {
+            background-color: rgba(254, 226, 226, 0.4);
+        }
+        .practice-question {
+            border-left: 4px solid #818cf8;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-2xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../resources.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Resources
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false" x-on:click="open = !open">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu" x-data="{ open: false }" x-show="open">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="../../index.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Home
+                </a>
+                <a href="../intro.html" class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    N5 Course
+                </a>
+                <a href="../../resources.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Resources
+                </a>
+                <a href="../../about.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    About
+                </a>
+                <a href="../../contact.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">Animals in Japanese</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl">Learn essential animal vocabulary for JLPT N5</p>
+            <div class="mt-8 flex justify-center">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="#common-pets" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50">
+                        Get Started
+                    </a>
+                </div>
+                <div class="ml-3 inline-flex">
+                    <a href="master-list-n5.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                        View All N5 Vocabulary
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div class="prose prose-indigo prose-lg max-w-none">
+            <!-- Introduction -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Introduction to Animal Vocabulary</h2>
+                <p class="text-gray-700 mb-4">
+                    Animal vocabulary (動物・どうぶつ・dōbutsu) is an essential part of learning any language. In Japanese, animal names are often descriptive and can offer insights into how these creatures are perceived in Japanese culture. Learning animal vocabulary will help you describe the world around you and participate in everyday conversations.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    For the JLPT N5 level, you'll focus on common animals that you're likely to encounter in daily conversation, including pets, farm animals, and some wild animals.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> Animals play significant roles in Japanese culture and folklore. For example, foxes (狐・きつね・kitsune) are considered magical creatures with shapeshifting abilities, while cats (猫・ねこ・neko) are often associated with good fortune.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Pets Section -->
+            <section id="common-pets" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Common Pets</h2>
+                <p class="text-gray-700 mb-4">
+                    Let's start with the pets commonly found in Japanese households.
+                </p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-8">
+                    <div class="animal-card">
+                        <div class="text-5xl mb-2">🐶</div>
+                        <div class="japanese text-xl">犬</div>
+                        <div>いぬ (inu)</div>
+                        <div class="text-gray-600">dog</div>
+                    </div>
+                    <div class="animal-card">
+                        <div class="text-5xl mb-2">🐱</div>
+                        <div class="japanese text-xl">猫</div>
+                        <div>ねこ (neko)</div>
+                        <div class="text-gray-600">cat</div>
+                    </div>
+                    <div class="animal-card">
+                        <div class="text-5xl mb-2">🐦</div>
+                        <div class="japanese text-xl">鳥</div>
+                        <div>とり (tori)</div>
+                        <div class="text-gray-600">bird</div>
+                    </div>
+                    <div class="animal-card">
+                        <div class="text-5xl mb-2">🐠</div>
+                        <div class="japanese text-xl">魚</div>
+                        <div>さかな (sakana)</div>
+                        <div class="text-gray-600">fish</div>
+                    </div>
+                    <div class="animal-card">
+                        <div class="text-5xl mb-2">🐹</div>
+                        <div class="japanese text-xl">ハムスター</div>
+                        <div>ハムスター (hamusutā)</div>
+                        <div class="text-gray-600">hamster</div>
+                    </div>
+                    <div class="animal-card">
+                        <div class="text-5xl mb-2">🐰</div>
+                        <div class="japanese text-xl">兎</div>
+                        <div>うさぎ (usagi)</div>
+                        <div class="text-gray-600">rabbit</div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Sentence</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-pets">
+                            <tr>
+                                <td><span class="japanese">犬</span> (いぬ)</td>
+                                <td>Inu</td>
+                                <td>Dog</td>
+                                <td>私は犬を飼っています。<br>(I have a dog.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">猫</span> (ねこ)</td>
+                                <td>Neko</td>
+                                <td>Cat</td>
+                                <td>その猫は黒いです。<br>(That cat is black.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鳥</span> (とり)</td>
+                                <td>Tori</td>
+                                <td>Bird</td>
+                                <td>鳥が空を飛んでいます。<br>(Birds are flying in the sky.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">魚</span> (さかな)</td>
+                                <td>Sakana</td>
+                                <td>Fish</td>
+                                <td>この魚はきれいです。<br>(This fish is beautiful.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ハムスター</span></td>
+                                <td>Hamusutā</td>
+                                <td>Hamster</td>
+                                <td>彼女はハムスターを二匹持っています。<br>(She has two hamsters.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">兎</span> (うさぎ)</td>
+                                <td>Usagi</td>
+                                <td>Rabbit</td>
+                                <td>うさぎは白いです。<br>(The rabbit is white.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">亀</span> (かめ)</td>
+                                <td>Kame</td>
+                                <td>Turtle</td>
+                                <td>亀はゆっくり歩きます。<br>(Turtles walk slowly.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">金魚</span> (きんぎょ)</td>
+                                <td>Kingyo</td>
+                                <td>Goldfish</td>
+                                <td>金魚は水槽の中で泳いでいます。<br>(The goldfish is swimming in the tank.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: ペットを飼っていますか。</p>
+                        <p class="text-gray-600">A: Petto o katte imasu ka?</p>
+                        <p class="text-gray-600">A: Do you have any pets?</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">B: はい、猫を二匹飼っています。</p>
+                        <p class="text-gray-600">B: Hai, neko o nihiki katte imasu.</p>
+                        <p class="text-gray-600">B: Yes, I have two cats.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">A: いいですね。私は犬が好きです。</p>
+                        <p class="text-gray-600">A: Ii desu ne. Watashi wa inu ga suki desu.</p>
+                        <p class="text-gray-600">A: That's nice. I like dogs.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                <span class="font-medium">Grammar Note:</span> When counting animals in Japanese, you use special counters called <span class="japanese">助数詞</span> (じょすうし - josūshi). For most small animals, you use <span class="japanese">匹</span> (ひき - hiki). For example, one dog is <span class="japanese">犬一匹</span> (いぬいっぴき - inu ippiki), two cats is <span class="japanese">猫二匹</span> (ねこにひき - neko nihiki).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Farm Animals Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Farm Animals</h2>
+                <p class="text-gray-700 mb-4">
+                    Farm animals are also important vocabulary for everyday conversations.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Sentence</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-farm">
+                            <tr>
+                                <td><span class="japanese">牛</span> (うし)</td>
+                                <td>Ushi</td>
+                                <td>Cow</td>
+                                <td>牛はミルクを出します。<br>(Cows produce milk.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">馬</span> (うま)</td>
+                                <td>Uma</td>
+                                <td>Horse</td>
+                                <td>彼は馬に乗るのが好きです。<br>(He likes to ride horses.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">豚</span> (ぶた)</td>
+                                <td>Buta</td>
+                                <td>Pig</td>
+                                <td>豚は泥の中で遊びます。<br>(Pigs play in mud.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">羊</span> (ひつじ)</td>
+                                <td>Hitsuji</td>
+                                <td>Sheep</td>
+                                <td>羊はフワフワしています。<br>(Sheep are fluffy.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">山羊</span> (やぎ)</td>
+                                <td>Yagi</td>
+                                <td>Goat</td>
+                                <td>山羊はチーズを作るのに使います。<br>(Goats are used to make cheese.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鶏</span> (にわとり)</td>
+                                <td>Niwatori</td>
+                                <td>Chicken</td>
+                                <td>鶏は卵を産みます。<br>(Chickens lay eggs.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">アヒル</span></td>
+                                <td>Ahiru</td>
+                                <td>Duck</td>
+                                <td>アヒルは池で泳いでいます。<br>(Ducks are swimming in the pond.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">農場に牛と馬がいます。</p>
+                        <p class="text-gray-600">Nōjō ni ushi to uma ga imasu.</p>
+                        <p class="text-gray-600">There are cows and horses on the farm.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">子供たちは羊の毛で遊んでいます。</p>
+                        <p class="text-gray-600">Kodomotachi wa hitsuji no ke de asonde imasu.</p>
+                        <p class="text-gray-600">The children are playing with sheep's wool.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wild Animals Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Wild Animals</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are some common wild animals that you may need to know in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Sentence</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-wild">
+                            <tr>
+                                <td><span class="japanese">象</span> (ぞう)</td>
+                                <td>Zō</td>
+                                <td>Elephant</td>
+                                <td>象は大きな耳を持っています。<br>(Elephants have big ears.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">虎</span> (とら)</td>
+                                <td>Tora</td>
+                                <td>Tiger</td>
+                                <td>虎は縞模様があります。<br>(Tigers have stripes.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">獅子</span> (しし)</td>
+                                <td>Shishi</td>
+                                <td>Lion</td>
+                                <td>獅子は動物の王様です。<br>(The lion is the king of animals.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">キリン</span></td>
+                                <td>Kirin</td>
+                                <td>Giraffe</td>
+                                <td>キリンは首が長いです。<br>(Giraffes have long necks.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">猿</span> (さる)</td>
+                                <td>Saru</td>
+                                <td>Monkey</td>
+                                <td>猿は木に登ります。<br>(Monkeys climb trees.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">狼</span> (おおかみ)</td>
+                                <td>Ōkami</td>
+                                <td>Wolf</td>
+                                <td>狼は月に向かって吠えます。<br>(Wolves howl at the moon.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">熊</span> (くま)</td>
+                                <td>Kuma</td>
+                                <td>Bear</td>
+                                <td>熊は冬に眠ります。<br>(Bears sleep in winter.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鹿</span> (しか)</td>
+                                <td>Shika</td>
+                                <td>Deer</td>
+                                <td>鹿は森に住んでいます。<br>(Deer live in forests.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">狐</span> (きつね)</td>
+                                <td>Kitsune</td>
+                                <td>Fox</td>
+                                <td>日本の昔話には狐が出てきます。<br>(Foxes appear in Japanese folklore.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">パンダ</span></td>
+                                <td>Panda</td>
+                                <td>Panda</td>
+                                <td>パンダは竹を食べます。<br>(Pandas eat bamboo.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 好きな動物は何ですか。</p>
+                        <p class="text-gray-600">A: Suki na dōbutsu wa nan desu ka?</p>
+                        <p class="text-gray-600">A: What's your favorite animal?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: 虎が好きです。かっこいいと思います。あなたは？</p>
+                        <p class="text-gray-600">B: Tora ga suki desu. Kakkoii to omoimasu. Anata wa?</p>
+                        <p class="text-gray-600">B: I like tigers. I think they're cool. How about you?</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japanese culture and mythology, certain animals have symbolic meanings. For example, foxes (狐・きつね) are considered clever and sometimes magical creatures, while the crane (鶴・つる) represents longevity and good fortune.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Birds and Insects Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Birds and Insects</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are some common birds and insects in Japanese.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Birds</h3>
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Notes</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-birds">
+                            <tr>
+                                <td><span class="japanese">鳥</span> (とり)</td>
+                                <td>Tori</td>
+                                <td>Bird (general)</td>
+                                <td>General term for all birds</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鶏</span> (にわとり)</td>
+                                <td>Niwatori</td>
+                                <td>Chicken</td>
+                                <td>Male is 雄鶏 (おんどり - ondori)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鴨</span> (かも)</td>
+                                <td>Kamo</td>
+                                <td>Duck</td>
+                                <td>Wild duck</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">白鳥</span> (はくちょう)</td>
+                                <td>Hakuchō</td>
+                                <td>Swan</td>
+                                <td>Literally "white bird"</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鷹</span> (たか)</td>
+                                <td>Taka</td>
+                                <td>Hawk</td>
+                                <td>Symbol of strength</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鳩</span> (はと)</td>
+                                <td>Hato</td>
+                                <td>Pigeon/Dove</td>
+                                <td>Symbol of peace</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鶴</span> (つる)</td>
+                                <td>Tsuru</td>
+                                <td>Crane</td>
+                                <td>Symbol of longevity</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Insects</h3>
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Notes</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-insects">
+                            <tr>
+                                <td><span class="japanese">虫</span> (むし)</td>
+                                <td>Mushi</td>
+                                <td>Insect (general)</td>
+                                <td>General term for bugs and insects</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">蝶</span> (ちょう)</td>
+                                <td>Chō</td>
+                                <td>Butterfly</td>
+                                <td>Symbol of transformation</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">蜂</span> (はち)</td>
+                                <td>Hachi</td>
+                                <td>Bee</td>
+                                <td>Also means "eight" (different kanji)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">蚊</span> (か)</td>
+                                <td>Ka</td>
+                                <td>Mosquito</td>
+                                <td>Common summer pest</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">蟻</span> (あり)</td>
+                                <td>Ari</td>
+                                <td>Ant</td>
+                                <td>Symbol of hard work</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">蜘蛛</span> (くも)</td>
+                                <td>Kumo</td>
+                                <td>Spider</td>
+                                <td>Also means "cloud" (different kanji)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">蝉</span> (せみ)</td>
+                                <td>Semi</td>
+                                <td>Cicada</td>
+                                <td>Symbol of summer in Japan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">蛍</span> (ほたる)</td>
+                                <td>Hotaru</td>
+                                <td>Firefly</td>
+                                <td>Symbol of summer nights</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">夏には蝉の声が聞こえます。</p>
+                        <p class="text-gray-600">Natsu ni wa semi no koe ga kikoemasu.</p>
+                        <p class="text-gray-600">In summer, you can hear the cicadas' sounds.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">庭に蝶がたくさんいます。</p>
+                        <p class="text-gray-600">Niwa ni chō ga takusan imasu.</p>
+                        <p class="text-gray-600">There are many butterflies in the garden.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese animal vocabulary with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Animals</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each Japanese animal word with its English meaning:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">いぬ</span></li>
+                                <li><span class="japanese">さる</span></li>
+                                <li><span class="japanese">うさぎ</span></li>
+                                <li><span class="japanese">きつね</span></li>
+                                <li><span class="japanese">ねこ</span></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li>Fox</li>
+                                <li>Cat</li>
+                                <li>Rabbit</li>
+                                <li>Monkey</li>
+                                <li>Dog</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>Dog (いぬ = Inu)</li>
+                            <li>Monkey (さる = Saru)</li>
+                            <li>Rabbit (うさぎ = Usagi)</li>
+                            <li>Fox (きつね = Kitsune)</li>
+                            <li>Cat (ねこ = Neko)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Animal Sounds</h3>
+                    <p class="text-gray-700 mb-3">
+                        In Japanese, animal sounds are different from those in English. Match these animals with their sounds in Japanese:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Animal:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li>Dog</li>
+                                <li>Cat</li>
+                                <li>Bird</li>
+                                <li>Frog</li>
+                                <li>Crow</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">Japanese Sound:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li>ニャー (nyā)</li>
+                                <li>ケロケロ (kero kero)</li>
+                                <li>カーカー (kā kā)</li>
+                                <li>ワンワン (wan wan)</li>
+                                <li>チュンチュン (chun chun)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>ワンワン (wan wan)</li>
+                            <li>ニャー (nyā)</li>
+                            <li>チュンチュン (chun chun)</li>
+                            <li>ケロケロ (kero kero)</li>
+                            <li>カーカー (kā kā)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with appropriate animal vocabulary:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">1. 私の＿＿＿は黒くて白いです。(My cat is black and white.)</p>
+                        <p class="japanese">2. 動物園で＿＿＿と＿＿＿を見ました。(I saw elephants and giraffes at the zoo.)</p>
+                        <p class="japanese">3. 子供は＿＿＿が怖いです。(Children are afraid of spiders.)</p>
+                        <p class="japanese">4. その＿＿＿は飼い主を探しています。(That dog is looking for its owner.)</p>
+                        <p class="japanese">5. 夏には＿＿＿の声がうるさいです。(The cicadas' sounds are noisy in summer.)</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">1. <span class="text-indigo-600">猫</span> (ねこ - neko)</p>
+                        <p class="japanese">2. <span class="text-indigo-600">象</span> (ぞう - zō) と <span class="text-indigo-600">キリン</span> (kirin)</p>
+                        <p class="japanese">3. <span class="text-indigo-600">蜘蛛</span> (くも - kumo)</p>
+                        <p class="japanese">4. <span class="text-indigo-600">犬</span> (いぬ - inu)</p>
+                        <p class="japanese">5. <span class="text-indigo-600">蝉</span> (せみ - semi)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="greetings.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Greetings</h3>
+                        <p class="text-gray-600 text-sm">Essential expressions for conversations</p>
+                    </a>
+                    <a href="numbers.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Numbers</h3>
+                        <p class="text-gray-600 text-sm">Learn counting in Japanese</p>
+                    </a>
+                    <a href="colors.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Colors</h3>
+                        <p class="text-gray-600 text-sm">Essential color vocabulary</p>
+                    </a>
+                    <a href="food.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Food</h3>
+                        <p class="text-gray-600 text-sm">Common food vocabulary</p>
+                    </a>
+                    <a href="family.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Family</h3>
+                        <p class="text-gray-600 text-sm">Family relationship terms</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Questions | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        .question-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .question-table th,
+        .question-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .question-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .question-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .yes-no {
+            border-left: 4px solid #ef4444;
+            background-color: #fee2e2;
+        }
+        .wh-question {
+            border-left: 4px solid #3b82f6;
+            background-color: #dbeafe;
+        }
+        .choice {
+            border-left: 4px solid #10b981;
+            background-color: #d1fae5;
+        }
+        .usage-card {
+            border-left: 4px solid #f59e0b;
+            background-color: #fef3c7;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Japanese Questions</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">How to ask and answer questions in Japanese</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Japanese Questions</h2>
+                <p class="text-gray-700 mb-4">
+                    Asking questions is one of the most fundamental communication skills in any language. In Japanese, forming questions is relatively simple compared to English, as it doesn't require changing the word order or using auxiliary verbs like "do" or "does."
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Instead, Japanese questions are typically formed by either adding the question particle か (ka) at the end of a sentence or using question words (like "what," "where," etc.). The intonation also rises at the end of a question, similar to many other languages.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Note:</span> In Japanese, you can also ask a question simply by raising your intonation at the end of a statement, especially in casual conversation, but using the question particle か (ka) is more formal and clearer in writing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yes/No Questions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Yes/No Questions</h2>
+                <p class="text-gray-700 mb-4">
+                    Yes/No questions in Japanese (also called closed questions) can be formed by simply adding the question particle か (ka) to the end of a statement. The word order remains the same as in a declarative sentence.
+                </p>
+                
+                <div class="yes-no p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Basic Structure for Yes/No Questions</p>
+                    <p class="text-gray-700 mb-2">Statement + か (ka)</p>
+                    <p class="text-gray-700 mb-2">Examples:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li>Statement: <span class="japanese">田中さんは学生です。</span> (Tanaka-san wa gakusei desu.) - Tanaka is a student.</li>
+                        <li>Question: <span class="japanese">田中さんは学生ですか。</span> (Tanaka-san wa gakusei desu ka?) - Is Tanaka a student?</li>
+                    </ul>
+                    <ul class="list-disc pl-6 text-gray-700 mt-2">
+                        <li>Statement: <span class="japanese">マリーさんは日本語を話します。</span> (Marī-san wa nihongo o hanashimasu.) - Mary speaks Japanese.</li>
+                        <li>Question: <span class="japanese">マリーさんは日本語を話しますか。</span> (Marī-san wa nihongo o hanashimasu ka?) - Does Mary speak Japanese?</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Casual Yes/No Questions</h3>
+                <p class="text-gray-700 mb-4">
+                    In casual conversation, the question particle か (ka) is often dropped, and the question is indicated by rising intonation. In some cases, の (no) or かな (kana) may be used instead of か (ka).
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="question-table">
+                        <thead>
+                            <tr>
+                                <th>Politeness Level</th>
+                                <th>Example Question</th>
+                                <th>Translation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Formal/Polite</td>
+                                <td><span class="japanese">あなたは日本人ですか。</span><br>(Anata wa nihonjin desu ka?)</td>
+                                <td>Are you Japanese?</td>
+                            </tr>
+                            <tr>
+                                <td>Casual with の (no)</td>
+                                <td><span class="japanese">あなたは日本人なの？</span><br>(Anata wa nihonjin na no?)</td>
+                                <td>Are you Japanese?</td>
+                            </tr>
+                            <tr>
+                                <td>Very casual (intonation)</td>
+                                <td><span class="japanese">日本人？</span><br>(Nihonjin?) (with rising intonation)</td>
+                                <td>You're Japanese?</td>
+                            </tr>
+                            <tr>
+                                <td>Self-directed with かな (kana)</td>
+                                <td><span class="japanese">彼は日本人かな。</span><br>(Kare wa nihonjin kana.)</td>
+                                <td>I wonder if he's Japanese.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Responding to Yes/No Questions</h3>
+                <p class="text-gray-700 mb-4">
+                    Responding to Yes/No questions in Japanese is slightly different from English. Instead of saying "yes" or "no" directly, Japanese responses confirm or deny the truth of the statement.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Responses:</p>
+                    <p class="font-medium mt-2">Question: <span class="japanese">日本人ですか。</span> (Nihonjin desu ka?) - Are you Japanese?</p>
+                    <ul class="list-disc pl-6 text-gray-700 mt-1">
+                        <li>Affirmative: <span class="japanese">はい、日本人です。</span> (Hai, nihonjin desu.) - Yes, I am Japanese.</li>
+                        <li>Negative: <span class="japanese">いいえ、日本人ではありません。</span> (Iie, nihonjin dewa arimasen.) - No, I am not Japanese.</li>
+                    </ul>
+                    
+                    <p class="font-medium mt-3">Question: <span class="japanese">日本語を話しませんか。</span> (Nihongo o hanashimasen ka?) - Don't you speak Japanese?</p>
+                    <ul class="list-disc pl-6 text-gray-700 mt-1">
+                        <li>Affirmative (agreeing with the negative): <span class="japanese">はい、話しません。</span> (Hai, hanashimasen.) - That's correct, I don't speak Japanese.</li>
+                        <li>Negative (disagreeing with the negative): <span class="japanese">いいえ、話します。</span> (Iie, hanashimasu.) - No, I do speak Japanese.</li>
+                    </ul>
+                </div>
+                
+                <p class="text-gray-700 mb-4">
+                    This pattern can be confusing for English speakers, as in Japanese, "hai" (はい) means "that's correct" rather than simply "yes," and "iie" (いいえ) means "that's incorrect" rather than simply "no."
+                </p>
+            </section>
+
+            <!-- Wh-Questions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Wh-Questions (Information Questions)</h2>
+                <p class="text-gray-700 mb-4">
+                    Wh-questions (also called open questions) in Japanese use question words (interrogatives) to ask for specific information. Unlike English, Japanese question words stay in the same position where the answer would be in a statement.
+                </p>
+                
+                <div class="wh-question p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Common Japanese Question Words</p>
+                    <div class="overflow-x-auto">
+                        <table class="question-table">
+                            <thead>
+                                <tr>
+                                    <th>Japanese</th>
+                                    <th>Romaji</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="japanese">何</span></td>
+                                    <td>nani / nan</td>
+                                    <td>what</td>
+                                    <td><span class="japanese">これは何ですか。</span><br>(Kore wa nan desu ka?)<br>What is this?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">誰</span></td>
+                                    <td>dare</td>
+                                    <td>who</td>
+                                    <td><span class="japanese">あの人は誰ですか。</span><br>(Ano hito wa dare desu ka?)<br>Who is that person?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">どこ</span></td>
+                                    <td>doko</td>
+                                    <td>where</td>
+                                    <td><span class="japanese">トイレはどこですか。</span><br>(Toire wa doko desu ka?)<br>Where is the toilet?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">いつ</span></td>
+                                    <td>itsu</td>
+                                    <td>when</td>
+                                    <td><span class="japanese">試験はいつですか。</span><br>(Shiken wa itsu desu ka?)<br>When is the exam?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">なぜ・どうして</span></td>
+                                    <td>naze / dōshite</td>
+                                    <td>why</td>
+                                    <td><span class="japanese">どうして日本語を勉強していますか。</span><br>(Dōshite nihongo o benkyō shite imasu ka?)<br>Why are you studying Japanese?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">どう</span></td>
+                                    <td>dō</td>
+                                    <td>how</td>
+                                    <td><span class="japanese">調子はどうですか。</span><br>(Chōshi wa dō desu ka?)<br>How are you?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">どれ</span></td>
+                                    <td>dore</td>
+                                    <td>which one</td>
+                                    <td><span class="japanese">どれが好きですか。</span><br>(Dore ga suki desu ka?)<br>Which one do you like?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">どの</span></td>
+                                    <td>dono</td>
+                                    <td>which</td>
+                                    <td><span class="japanese">どの本を読みましたか。</span><br>(Dono hon o yomimashita ka?)<br>Which book did you read?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">いくら</span></td>
+                                    <td>ikura</td>
+                                    <td>how much (cost)</td>
+                                    <td><span class="japanese">このカバンはいくらですか。</span><br>(Kono kaban wa ikura desu ka?)<br>How much is this bag?</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="japanese">何個・いくつ</span></td>
+                                    <td>nan-ko / ikutsu</td>
+                                    <td>how many</td>
+                                    <td><span class="japanese">リンゴは何個ありますか。</span><br>(Ringo wa nan-ko arimasu ka?)<br>How many apples are there?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Asking "What" Questions</h3>
+                <p class="text-gray-700 mb-4">
+                    The Japanese word for "what" is <span class="japanese">何</span> (nani), but it can change to <span class="japanese">なん</span> (nan) depending on what follows it.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Examples of <span class="japanese">何/なん</span> (nani/nan) Usage:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">これは何ですか。</span> (Kore wa nan desu ka?) - What is this?</li>
+                        <li><span class="japanese">あなたの名前は何ですか。</span> (Anata no namae wa nan desu ka?) - What is your name?</li>
+                        <li><span class="japanese">何時ですか。</span> (Nanji desu ka?) - What time is it?</li>
+                        <li><span class="japanese">何曜日ですか。</span> (Nanyōbi desu ka?) - What day of the week is it?</li>
+                        <li><span class="japanese">何歳ですか。</span> (Nansai desu ka?) - How old are you?</li>
+                        <li><span class="japanese">何人ですか。</span> (Nannin desu ka?) - How many people?</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Responding to Wh-Questions</h3>
+                <p class="text-gray-700 mb-4">
+                    When responding to wh-questions, simply provide the requested information. You can use the same sentence pattern as the question but replace the question word with the answer.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Responses:</p>
+                    <p class="font-medium mt-2">Question: <span class="japanese">トイレはどこですか。</span> (Toire wa doko desu ka?) - Where is the toilet?</p>
+                    <p class="ml-4 text-gray-700">Response: <span class="japanese">トイレは2階です。</span> (Toire wa ni-kai desu.) - The toilet is on the second floor.</p>
+                    
+                    <p class="font-medium mt-3">Question: <span class="japanese">あなたの名前は何ですか。</span> (Anata no namae wa nan desu ka?) - What is your name?</p>
+                    <p class="ml-4 text-gray-700">Response: <span class="japanese">私の名前は田中です。</span> (Watashi no namae wa Tanaka desu.) - My name is Tanaka.</p>
+                    
+                    <p class="font-medium mt-3">Question: <span class="japanese">どうして日本語を勉強していますか。</span> (Dōshite nihongo o benkyō shite imasu ka?) - Why are you studying Japanese?</p>
+                    <p class="ml-4 text-gray-700">Response: <span class="japanese">日本に行きたいからです。</span> (Nihon ni ikitai kara desu.) - Because I want to go to Japan.</p>
+                </div>
+            </section>
+
+            <!-- Choice Questions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Choice Questions</h2>
+                <p class="text-gray-700 mb-4">
+                    Choice questions in Japanese offer the listener a choice between two or more options. These are typically formed using the pattern "A か B" (A ka B) which means "A or B."
+                </p>
+                
+                <div class="choice p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Basic Structure for Choice Questions</p>
+                    <p class="text-gray-700 mb-2">Option A + か (ka) + Option B + ですか (desu ka)</p>
+                    <p class="text-gray-700 mb-2">Examples:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">コーヒーかお茶が飲みたいですか。</span><br>(Kōhī ka ocha ga nomitai desu ka?)<br>Would you like to drink coffee or tea?</li>
+                        <li><span class="japanese">電車かバスで行きますか。</span><br>(Densha ka basu de ikimasu ka?)<br>Will you go by train or bus?</li>
+                    </ul>
+                </div>
+                
+                <p class="text-gray-700 mb-4">
+                    When responding to choice questions, you can simply state your preference.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Responses:</p>
+                    <p class="font-medium mt-2">Question: <span class="japanese">コーヒーかお茶が飲みたいですか。</span><br>(Kōhī ka ocha ga nomitai desu ka?)<br>Would you like to drink coffee or tea?</p>
+                    <p class="ml-4 text-gray-700">Response: <span class="japanese">コーヒーをお願いします。</span> (Kōhī o onegaishimasu.) - Coffee, please.</p>
+                    
+                    <p class="font-medium mt-3">Question: <span class="japanese">電車かバスで行きますか。</span><br>(Densha ka basu de ikimasu ka?)<br>Will you go by train or bus?</p>
+                    <p class="ml-4 text-gray-700">Response: <span class="japanese">電車で行きます。</span> (Densha de ikimasu.) - I'll go by train.</p>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Offering More Options</h3>
+                <p class="text-gray-700 mb-4">
+                    You can offer more than two options by repeating the pattern.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="font-medium mb-1">Examples:</p>
+                    <p class="japanese mb-1">コーヒーか、お茶か、ジュースが飲みたいですか。</p>
+                    <p class="text-gray-600">Kōhī ka, ocha ka, jūsu ga nomitai desu ka?</p>
+                    <p class="text-gray-600">Would you like to drink coffee, tea, or juice?</p>
+                </div>
+            </section>
+
+            <!-- Question Patterns Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Common Question Patterns</h2>
+                <p class="text-gray-700 mb-4">
+                    Japanese has several common question patterns that are used in everyday conversation.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="question-table">
+                        <thead>
+                            <tr>
+                                <th>Pattern</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="japanese">〜は？</span><br>(~wa?)</td>
+                                <td>What about...?</td>
+                                <td><span class="japanese">田中さんは？</span><br>(Tanaka-san wa?)<br>What about Tanaka?</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">〜ませんか？</span><br>(~masen ka?)</td>
+                                <td>Won't you...?<br>(Invitation)</td>
+                                <td><span class="japanese">一緒に行きませんか？</span><br>(Issho ni ikimasen ka?)<br>Won't you go together with me?</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">〜ましょうか？</span><br>(~mashou ka?)</td>
+                                <td>Shall we...?<br>(Offering help)</td>
+                                <td><span class="japanese">荷物を持ちましょうか？</span><br>(Nimotsu o mochimashou ka?)<br>Shall I carry your luggage?</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">〜でしょうか？</span><br>(~deshou ka?)</td>
+                                <td>I wonder...?<br>(Polite inquiry)</td>
+                                <td><span class="japanese">明日は雨でしょうか？</span><br>(Ashita wa ame deshou ka?)<br>I wonder if it will rain tomorrow?</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">〜んですか？</span><br>(~n desu ka?)</td>
+                                <td>Is it that...?<br>(Seeking explanation)</td>
+                                <td><span class="japanese">日本語を勉強しているんですか？</span><br>(Nihongo o benkyō shite iru n desu ka?)<br>Is it that you're studying Japanese?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Asking Questions Politely -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Asking Questions Politely</h2>
+                <p class="text-gray-700 mb-4">
+                    In Japanese culture, politeness is important, especially when asking questions. Here are some ways to make your questions more polite.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Usage 1: Using すみません -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Using すみません (sumimasen)</h3>
+                        <p class="text-gray-700 mb-2">
+                            Start your question with すみません to apologize for the interruption or inconvenience.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">すみません、トイレはどこですか。</p>
+                            <p class="text-gray-600">Sumimasen, toire wa doko desu ka?</p>
+                            <p class="text-gray-600">Excuse me, where is the toilet?</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 2: Using ~ていただけませんか -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Using 〜ていただけませんか</h3>
+                        <p class="text-gray-700 mb-2">
+                            This very polite pattern asks if someone would be willing to do something for you.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">写真を撮っていただけませんか。</p>
+                            <p class="text-gray-600">Shashin o totte itadakemasen ka?</p>
+                            <p class="text-gray-600">Would you be kind enough to take a photo?</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 3: Using ~でしょうか -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Using 〜でしょうか (deshou ka)</h3>
+                        <p class="text-gray-700 mb-2">
+                            This adds a level of uncertainty that makes the question sound less direct and more polite.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">お名前は何でしょうか。</p>
+                            <p class="text-gray-600">Onamae wa nan deshou ka?</p>
+                            <p class="text-gray-600">May I ask what your name is?</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 4: Using ~ませんか -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Using 〜ませんか (masen ka) for Invitations</h3>
+                        <p class="text-gray-700 mb-2">
+                            This pattern is used for polite invitations or suggestions.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">一緒にお昼ご飯を食べませんか。</p>
+                            <p class="text-gray-600">Issho ni ohiru gohan o tabemasen ka?</p>
+                            <p class="text-gray-600">Would you like to have lunch together?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                <span class="font-medium">Cultural Tip:</span> In Japan, being direct can sometimes be considered impolite. Using these polite question forms, especially with people you don't know well or in formal situations, shows respect and good manners.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercises -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese questions with these exercises:
+                </p>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Yes/No Questions</h3>
+                    <p class="text-gray-700 mb-3">
+                        Convert the following statements into Yes/No questions by adding か (ka):
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            <span class="japanese">あなたは学生です。</span> (Anata wa gakusei desu.)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">あなたは学生ですか。</span> (Anata wa gakusei desu ka?)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">彼は日本人です。</span> (Kare wa nihonjin desu.)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">彼は日本人ですか。</span> (Kare wa nihonjin desu ka?)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">あの店は高いです。</span> (Ano mise wa takai desu.)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">あの店は高いですか。</span> (Ano mise wa takai desu ka?)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">明日雨が降ります。</span> (Ashita ame ga furimasu.)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">明日雨が降りますか。</span> (Ashita ame ga furimasu ka?)</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Wh-Questions</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with the appropriate question word:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            <span class="japanese">あなたの趣味は＿＿＿ですか。</span> (Anata no shumi wa ___ desu ka?)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">何</span> (nani) - What is your hobby?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">＿＿＿日本語を勉強していますか。</span> (___ nihongo o benkyō shite imasu ka?)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">どうして</span> (dōshite) or <span class="japanese">なぜ</span> (naze) - Why are you studying Japanese?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">あのかばんは＿＿＿ですか。</span> (Ano kaban wa ___ desu ka?)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">いくら</span> (ikura) - How much is that bag?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">授業は＿＿＿始まりますか。</span> (Jugyō wa ___ hajimarimasu ka?)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">いつ</span> (itsu) - When does the class start?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">＿＿＿が好きですか。</span> (___ ga suki desu ka?)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">何</span> (nani) or <span class="japanese">どれ</span> (dore) - What do you like? or Which one do you like?</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Translate into Japanese</h3>
+                    <p class="text-gray-700 mb-3">
+                        Translate these questions into Japanese:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            Where is the station?
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">駅はどこですか。</span><br>Eki wa doko desu ka?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            Do you have a car?
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">車を持っていますか。</span><br>Kuruma o motte imasu ka?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            What time is it now?
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">今何時ですか。</span><br>Ima nanji desu ka?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            Would you like coffee or tea?
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">コーヒーかお茶が欲しいですか。</span><br>Kōhī ka ocha ga hoshii desu ka?</span>
+                        </li>
+                        <li class="text-gray-700">
+                            Shall we go together?
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">一緒に行きましょうか。</span><br>Issho ni ikimashou ka?</span>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Grammar Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Grammar Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 grammar journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="basic-sentence.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Basic Sentence Structure</h3>
+                        <p class="text-gray-600 text-sm">Learn about Japanese sentence patterns</p>
+                    </a>
+                    <a href="particles-intro.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Particles Introduction</h3>
+                        <p class="text-gray-600 text-sm">Understand the crucial role of particles</p>
+                    </a>
+                    <a href="verb-intro.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Verbs Introduction</h3>
+                        <p class="text-gray-600 text-sm">Overview of Japanese verb groups</p>
+                    </a>
+                    <a href="present-tense.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Present Tense</h3>
+                        <p class="text-gray-600 text-sm">Express actions in the present</p>
+                    </a>
+                    <a href="past-tense.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Past Tense</h3>
+                        <p class="text-gray-600 text-sm">Express actions in the past</p>
+                    </a>
+                    <a href="negative-form.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Negative Form</h3>
+                        <p class="text-gray-600 text-sm">Make sentences negative</p>
+                    </a>
+                    <a href="te-form.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Te-Form</h3>
+                        <p class="text-gray-600 text-sm">The versatile connector in Japanese</p>
+                    </a>
+                    <a href="nai-form.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Nai-Form</h3>
+                        <p class="text-gray-600 text-sm">The negative form building block</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Kalimat Dasar - Nihongo Learning</title>
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP dan Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/1053/1920/1080');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        .slide-in-bottom {
+            animation: slideInBottom 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInBottom {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e53e3e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b91c1c;
+        }
+        .example-card {
+            border-left: 4px solid #e53e3e;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div x-data="{ mobileMenuOpen: false }" class="overflow-x-hidden">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md fixed w-full z-50 transition duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="../../index.html" class="flex items-center">
+                                <span class="text-red-600 text-2xl font-bold">日本語</span>
+                                <span class="ml-1 text-gray-800 text-lg font-semibold">Learning</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Links (Desktop) -->
+                    <div class="hidden md:flex md:items-center md:space-x-6">
+                        <a href="../../index.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                        <a href="../../about.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Tentang Kami</a>
+                        <a href="../../contact.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Kontak</a>
+                        <a href="../../signup.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="../../login.html" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-red-600 transition duration-300">
+                            <i class="fas" :class="{'fa-times': mobileMenuOpen, 'fa-bars': !mobileMenuOpen}"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="../../index.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Beranda</a>
+                    <a href="../../about.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Tentang Kami</a>
+                    <a href="../../contact.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Kontak</a>
+                    <a href="../../signup.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Daftar</a>
+                    <a href="../../login.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Masuk</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-image flex items-center justify-center py-32 px-4 mt-16">
+            <div class="text-center text-white max-w-3xl fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Struktur Kalimat Dasar</h1>
+                <p class="text-xl opacity-90">Mengenal pola kalimat bahasa Jepang</p>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Struktur Kalimat Bahasa Jepang</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Memahami pola dasar untuk membentuk kalimat dalam bahasa Jepang</p>
+                </div>
+
+                <div class="prose prose-lg mx-auto">
+                    <p class="text-gray-600 mb-6">
+                        Kalimat bahasa Jepang memiliki struktur yang berbeda dari bahasa Indonesia atau bahasa Inggris. Perbedaan utamanya terletak pada urutan penyusunan kata dalam kalimat. Struktur dasar kalimat bahasa Jepang adalah:
+                    </p>
+                    
+                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                        <p class="text-xl font-semibold text-center mb-4 jp-text">主語 (Subjek) + 目的語 (Objek) + 述語 (Predikat)</p>
+                        <p class="text-lg text-center text-gray-700">Subjek + Objek + Predikat/Kata Kerja</p>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-6">
+                        Ini sangat berbeda dari struktur bahasa Indonesia yang umumnya mengikuti pola Subjek + Predikat + Objek. Dalam bahasa Jepang, kata kerja (predikat) selalu berada di akhir kalimat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Sentence Patterns -->
+        <section class="py-16 px-4 bg-gray-50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Pola Kalimat Dasar</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                </div>
+
+                <!-- Pattern 1: A は B です -->
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Pola 1: A は B です</h3>
+                    <p class="text-gray-600 mb-4">
+                        Pola ini digunakan untuk menjelaskan sesuatu, identifikasi atau definisi. Ini setara dengan "A adalah B" dalam bahasa Indonesia.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">わたしは<span class="text-red-600">学生</span>です。</p>
+                        <p class="text-gray-600 italic">Watashi wa <span class="text-red-600">gakusei</span> desu.</p>
+                        <p class="text-gray-700">Saya adalah <span class="text-red-600">mahasiswa</span>.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">これは<span class="text-red-600">本</span>です。</p>
+                        <p class="text-gray-600 italic">Kore wa <span class="text-red-600">hon</span> desu.</p>
+                        <p class="text-gray-700">Ini adalah <span class="text-red-600">buku</span>.</p>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-2">
+                        <span class="font-semibold">Catatan:</span> は (wa) adalah partikel penanda topik dan です (desu) adalah kata kerja "adalah" dalam bahasa Jepang.
+                    </p>
+                </div>
+                
+                <!-- Pattern 2: A は B じゃありません -->
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Pola 2: A は B じゃありません</h3>
+                    <p class="text-gray-600 mb-4">
+                        Ini adalah bentuk negatif dari pola pertama, setara dengan "A bukan B" dalam bahasa Indonesia.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">わたしは<span class="text-red-600">先生</span>じゃありません。</p>
+                        <p class="text-gray-600 italic">Watashi wa <span class="text-red-600">sensei</span> ja arimasen.</p>
+                        <p class="text-gray-700">Saya bukan <span class="text-red-600">guru</span>.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">それは<span class="text-red-600">りんご</span>じゃありません。</p>
+                        <p class="text-gray-600 italic">Sore wa <span class="text-red-600">ringo</span> ja arimasen.</p>
+                        <p class="text-gray-700">Itu bukan <span class="text-red-600">apel</span>.</p>
+                    </div>
+                </div>
+                
+                <!-- Pattern 3: A は B ですか -->
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Pola 3: A は B ですか</h3>
+                    <p class="text-gray-600 mb-4">
+                        Pola ini digunakan untuk membentuk kalimat tanya, setara dengan "Apakah A adalah B?" dalam bahasa Indonesia.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">あなたは<span class="text-red-600">日本人</span>ですか。</p>
+                        <p class="text-gray-600 italic">Anata wa <span class="text-red-600">Nihonjin</span> desu ka.</p>
+                        <p class="text-gray-700">Apakah Anda <span class="text-red-600">orang Jepang</span>?</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">これは<span class="text-red-600">あなたの</span>ですか。</p>
+                        <p class="text-gray-600 italic">Kore wa <span class="text-red-600">anata no</span> desu ka.</p>
+                        <p class="text-gray-700">Apakah ini <span class="text-red-600">milik Anda</span>?</p>
+                    </div>
+                </div>
+                
+                <!-- Pattern 4: A は B を + Verb -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Pola 4: A は B を + Verb</h3>
+                    <p class="text-gray-600 mb-4">
+                        Pola ini digunakan untuk kalimat yang mengandung kata kerja transitif (kata kerja yang membutuhkan objek).
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">わたしは<span class="text-red-600">ごはんを</span>食べます。</p>
+                        <p class="text-gray-600 italic">Watashi wa <span class="text-red-600">gohan o</span> tabemasu.</p>
+                        <p class="text-gray-700">Saya makan <span class="text-red-600">nasi</span>.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-6">
+                        <p class="text-xl jp-text mb-2">田中さんは<span class="text-red-600">日本語を</span>勉強します。</p>
+                        <p class="text-gray-600 italic">Tanaka-san wa <span class="text-red-600">Nihongo o</span> benkyou shimasu.</p>
+                        <p class="text-gray-700">Tanaka belajar <span class="text-red-600">bahasa Jepang</span>.</p>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-2">
+                        <span class="font-semibold">Catatan:</span> を (o) adalah partikel yang menandai objek langsung dalam kalimat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Other Grammar Topics -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Lanjutkan Pembelajaran</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pelajari topik tata bahasa N5 lainnya</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="particles-intro.html" class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden group">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 group-hover:text-red-600 transition duration-300">Pengenalan Partikel</h3>
+                            <p class="text-gray-600">Belajar partikel dasar seperti は、が、を、に、で dan penggunaannya dalam kalimat.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="verb-intro.html" class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden group">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 group-hover:text-red-600 transition duration-300">Pengenalan Kata Kerja</h3>
+                            <p class="text-gray-600">Memahami dasar-dasar kata kerja bahasa Jepang dan klasifikasinya.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="../intro.html" class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden group">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 group-hover:text-red-600 transition duration-300">Kembali ke Pengenalan N5</h3>
+                            <p class="text-gray-600">Kembali ke halaman pengenalan kursus N5.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-red-500 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-white text-lg font-semibold">Learning</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Platform belajar bahasa Jepang online yang komprehensif, dirancang untuk semua level dengan materi berkualitas tinggi dan pendekatan pembelajaran yang interaktif.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigasi Cepat</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../index.html" class="text-gray-400 hover:text-white transition duration-300">Beranda</a></li>
+                            <li><a href="../../about.html" class="text-gray-400 hover:text-white transition duration-300">Tentang Kami</a></li>
+                            <li><a href="../../contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontak</a></li>
+                            <li><a href="../intro.html" class="text-gray-400 hover:text-white transition duration-300">Kursus N5</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-2 text-red-500"></i>
+                                <span class="text-gray-400">Jl. Pendidikan No. 123, Jakarta, Indonesia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1.5 mr-2 text-red-500"></i>
+                                <span class="text-gray-400">info@nihongolearning.com</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1.5 mr-2 text-red-500"></i>
+                                <span class="text-gray-400">+62 123 4567 890</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                    <p class="text-gray-400">© 2025 Nihongo Learning. Hak Cipta Dilindungi.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

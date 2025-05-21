@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N5 Study Plan | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .plan-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .phase-1 {
+            background-color: #eef2ff;
+            border-left: 4px solid #6366f1;
+        }
+        .phase-2 {
+            background-color: #ede9fe;
+            border-left: 4px solid #8b5cf6;
+        }
+        .phase-3 {
+            background-color: #dcfce7;
+            border-left: 4px solid #22c55e;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">JLPT N5 Study Plan</h1>
+            <p class="text-xl">A comprehensive 12-week study plan to prepare for the JLPT N5 exam.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Your JLPT N5 Study Plan</h2>
+                <p class="text-gray-700 mb-4">
+                    This 12-week study plan is designed to help you prepare efficiently for the JLPT N5 exam. The plan is divided into three phases, each focusing on different aspects of your preparation.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Study Tip:</span> Consistency is key! It's better to study for 30 minutes every day than to cram for 5 hours once a week. Adjust this plan to fit your schedule, but try to maintain consistency.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="plan-card phase-1">
+                        <div class="text-center mb-4">
+                            <div class="inline-block p-3 rounded-full bg-indigo-100">
+                                <i class="fas fa-book text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mt-3">Phase 1: Fundamentals</h3>
+                            <p class="text-indigo-600 font-medium">Weeks 1-4</p>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Master hiragana and katakana</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Learn basic vocabulary (100-200 words)</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Study essential grammar patterns</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Practice basic kanji (30-50 characters)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="plan-card phase-2">
+                        <div class="text-center mb-4">
+                            <div class="inline-block p-3 rounded-full bg-purple-100">
+                                <i class="fas fa-language text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mt-3">Phase 2: Building Skills</h3>
+                            <p class="text-purple-600 font-medium">Weeks 5-8</p>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Expand vocabulary (400-500 words)</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Learn intermediate grammar patterns</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Study more kanji (50-80 characters)</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Practice reading short passages</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Begin listening practice</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="plan-card phase-3">
+                        <div class="text-center mb-4">
+                            <div class="inline-block p-3 rounded-full bg-green-100">
+                                <i class="fas fa-tasks text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mt-3">Phase 3: Test Preparation</h3>
+                            <p class="text-green-600 font-medium">Weeks 9-12</p>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Complete N5 vocabulary list (800 words)</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Review all grammar patterns</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Master all N5 kanji (100 characters)</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Take practice tests regularly</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Focus on weak areas</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weekly Study Schedule -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Weekly Study Schedule</h2>
+                <p class="text-gray-700 mb-6">
+                    Here's a recommended weekly schedule to help you organize your study time effectively. Aim for at least 1-2 hours of study per day, adjusting as needed for your personal schedule.
+                </p>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200">
+                        <thead>
+                            <tr>
+                                <th class="py-3 px-4 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Day</th>
+                                <th class="py-3 px-4 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Focus Area</th>
+                                <th class="py-3 px-4 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Activities</th>
+                                <th class="py-3 px-4 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="py-3 px-4 border-b font-medium">Monday</td>
+                                <td class="py-3 px-4 border-b">Vocabulary</td>
+                                <td class="py-3 px-4 border-b">
+                                    <ul class="text-sm">
+                                        <li>• Learn new vocabulary (20 words)</li>
+                                        <li>• Review previous vocabulary</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4 border-b">1 hour</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b font-medium">Tuesday</td>
+                                <td class="py-3 px-4 border-b">Grammar</td>
+                                <td class="py-3 px-4 border-b">
+                                    <ul class="text-sm">
+                                        <li>• Study 1-2 grammar points</li>
+                                        <li>• Practice constructing sentences</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4 border-b">1 hour</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b font-medium">Wednesday</td>
+                                <td class="py-3 px-4 border-b">Kanji</td>
+                                <td class="py-3 px-4 border-b">
+                                    <ul class="text-sm">
+                                        <li>• Learn new kanji (5-10 characters)</li>
+                                        <li>• Practice writing and reading</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4 border-b">1 hour</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b font-medium">Thursday</td>
+                                <td class="py-3 px-4 border-b">Reading</td>
+                                <td class="py-3 px-4 border-b">
+                                    <ul class="text-sm">
+                                        <li>• Read short passages or dialogues</li>
+                                        <li>• Answer comprehension questions</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4 border-b">1 hour</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b font-medium">Friday</td>
+                                <td class="py-3 px-4 border-b">Listening</td>
+                                <td class="py-3 px-4 border-b">
+                                    <ul class="text-sm">
+                                        <li>• Listen to audio materials</li>
+                                        <li>• Practice shadowing techniques</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4 border-b">1 hour</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b font-medium">Saturday</td>
+                                <td class="py-3 px-4 border-b">Review</td>
+                                <td class="py-3 px-4 border-b">
+                                    <ul class="text-sm">
+                                        <li>• Review all materials from the week</li>
+                                        <li>• Take mini-quizzes to test knowledge</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4 border-b">2 hours</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 border-b font-medium">Sunday</td>
+                                <td class="py-3 px-4 border-b">Practice Test</td>
+                                <td class="py-3 px-4 border-b">
+                                    <ul class="text-sm">
+                                        <li>• In phases 2-3, take section practice tests</li>
+                                        <li>• Analyze mistakes and weak areas</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4 border-b">2 hours</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Resource Recommendations -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Recommended Resources</h2>
+                <p class="text-gray-700 mb-6">
+                    Here are some recommended resources to help you with your JLPT N5 preparation:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="plan-card">
+                        <h3 class="text-xl font-semibold mb-3">Study Materials</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-book text-indigo-500 mr-2"></i> <span class="font-medium">Genki I:</span> A great textbook for beginners covering all N5 content</li>
+                            <li><i class="fas fa-book text-indigo-500 mr-2"></i> <span class="font-medium">Minna no Nihongo I:</span> Popular textbook used in many Japanese classes</li>
+                            <li><i class="fas fa-book text-indigo-500 mr-2"></i> <span class="font-medium">Try N5:</span> Official JLPT N5 preparation book</li>
+                            <li><i class="fas fa-book text-indigo-500 mr-2"></i> <span class="font-medium">Nihongo Challenge N5:</span> Focused practice book for JLPT N5</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <h3 class="text-xl font-semibold mb-3">Online Resources</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-globe text-indigo-500 mr-2"></i> <span class="font-medium">JapLearn N5 Practice:</span> <a href="../practice/vocabulary-quiz.html" class="text-indigo-600 hover:text-indigo-800">Our free N5 practice materials</a></li>
+                            <li><i class="fas fa-globe text-indigo-500 mr-2"></i> <span class="font-medium">Tae Kim's Guide:</span> Comprehensive grammar resource</li>
+                            <li><i class="fas fa-mobile-alt text-indigo-500 mr-2"></i> <span class="font-medium">Anki:</span> Flashcard app for vocabulary</li>
+                            <li><i class="fas fa-headphones text-indigo-500 mr-2"></i> <span class="font-medium">JapanesePod101:</span> Audio lessons and materials</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Tracking -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Track Your Progress</h2>
+                <p class="text-gray-700 mb-6">
+                    Monitoring your progress is crucial for effective study. Here are some ways to track your JLPT N5 preparation:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="plan-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-list-check text-indigo-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Checklist Method</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Create checklists for each study area:
+                        </p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Vocabulary list (mark words you've learned)</li>
+                            <li>• Grammar points checklist</li>
+                            <li>• Kanji learned and mastered</li>
+                            <li>• Practice tests completed</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-chart-line text-indigo-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Progress Graph</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Track your practice test scores over time:
+                        </p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Take a practice test every 2-3 weeks</li>
+                            <li>• Chart your scores for each section</li>
+                            <li>• Note improvement areas</li>
+                            <li>• Adjust study focus based on results</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-journal-whills text-indigo-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Study Journal</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Keep a daily study journal:
+                        </p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Record what you studied each day</li>
+                            <li>• Note difficulties encountered</li>
+                            <li>• Write what worked well</li>
+                            <li>• Plan for the next day's session</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="./practice-test.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Take a Practice Test <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Exam Preparation Resources</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <a href="./exam-overview.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clipboard-list text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Exam Overview</h3>
+                    </a>
+                    <a href="./practice-test.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-tasks text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Practice Test</h3>
+                    </a>
+                    <a href="./time-management.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clock text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Time Management</h3>
+                    </a>
+                    <a href="./study-plan.html" class="bg-indigo-100 hover:bg-indigo-200 border border-indigo-300 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-calendar-alt text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Study Plan</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Exam Preparation</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./exam-overview.html" class="text-gray-300 hover:text-white">Exam Overview</a></li>
+                        <li><a href="./practice-test.html" class="text-gray-300 hover:text-white">Practice Test</a></li>
+                        <li><a href="./time-management.html" class="text-gray-300 hover:text-white">Time Management</a></li>
+                        <li><a href="./study-plan.html" class="text-indigo-300 hover:text-white">Study Plan</a></li>
+                        <li><a href="./tips-tricks.html" class="text-gray-300 hover:text-white">Tips & Tricks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

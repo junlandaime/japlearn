@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Kanji Quiz | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .quiz-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        .quiz-card.correct {
+            border-color: #10b981;
+            background-color: #ecfdf5;
+        }
+        .quiz-card.incorrect {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+        }
+        .kanji-display {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 4rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option-button:hover {
+            background-color: #f9fafb;
+        }
+        .option-button.selected {
+            background-color: #eef2ff;
+            border-color: #6366f1;
+        }
+        .option-button.correct {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+        }
+        .option-button.incorrect {
+            background-color: #fef2f2;
+            border-color: #ef4444;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        .quiz-nav-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .hint-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin-top: 1rem;
+        }
+        .kanji-info {
+            background-color: #f3f4f6;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .kanji-item {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .kanji-item:hover {
+            background-color: #f9fafb;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">N5 Kanji Quiz</h1>
+            <p class="text-xl">Test your knowledge of JLPT N5 level kanji characters.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Kanji Quiz</h2>
+                <p class="text-gray-700 mb-4">
+                    The JLPT N5 level requires knowledge of approximately 100 basic kanji characters. This quiz will help you test and improve your kanji recognition skills through multiple choice questions and matching exercises.
+                </p>
+                
+                <p class="text-gray-700 mb-4">
+                    Each question will present you with a kanji character, and you'll need to select the correct meaning or reading. After completing each question, you'll see an explanation and additional information about the kanji.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Study Tip:</span> When learning kanji, focus on recognizing the basic components (radicals) and practice writing the characters to help with memorization. Learning kanji in context through vocabulary and example sentences is also highly effective.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">How to Use This Quiz:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Choose the quiz mode (Meaning Quiz or Reading Quiz)</li>
+                        <li>Read the kanji and select the correct answer</li>
+                        <li>Check your answer and review the explanation</li>
+                        <li>Progress through the quiz to test your knowledge of all N5 kanji</li>
+                        <li>Retake the quiz regularly to reinforce your learning</li>
+                    </ol>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 flex flex-col items-center justify-center hover:border-indigo-300 hover:shadow transition duration-300 cursor-pointer" 
+                         x-data="{}" 
+                         @click="window.location.href='#meaning-quiz'">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-book text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Meaning Quiz</h3>
+                        <p class="text-gray-600 text-center">Identify the correct meaning of kanji characters</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 flex flex-col items-center justify-center hover:border-indigo-300 hover:shadow transition duration-300 cursor-pointer"
+                         x-data="{}"
+                         @click="window.location.href='#reading-quiz'">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-language text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Reading Quiz</h3>
+                        <p class="text-gray-600 text-center">Identify the correct reading of kanji characters</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meaning Quiz Section -->
+            <section id="meaning-quiz" class="mb-12" x-data="{
+                currentQuestion: 0,
+                showAnswer: false,
+                showExplanation: false,
+                selectedOption: null,
+                correctAnswers: 0,
+                questions: [
+                    {
+                        kanji: '日',
+                        options: ['sun/day', 'moon/month', 'fire', 'water'],
+                        correctAnswer: 'sun/day',
+                        explanation: 'The kanji 日 (hi/nichi) means \"sun\" or \"day\". It appears in words like 日曜日 (nichiyōbi - Sunday) and 今日 (kyō - today).',
+                        onyomi: 'ニチ (NICHI), ジツ (JITSU)',
+                        kunyomi: 'ひ (hi), -び (-bi), -か (-ka)',
+                        examples: '日本 (Nihon - Japan), 日曜日 (nichiyōbi - Sunday), 今日 (kyō - today)'
+                    },
+                    {
+                        kanji: '月',
+                        options: ['sun', 'moon/month', 'star', 'sky'],
+                        correctAnswer: 'moon/month',
+                        explanation: 'The kanji 月 (tsuki/getsu) means \"moon\" or \"month\". It appears in words like 月曜日 (getsuyōbi - Monday) and 一月 (ichigatsu - January).',
+                        onyomi: 'ゲツ (GETSU), ガツ (GATSU)',
+                        kunyomi: 'つき (tsuki)',
+                        examples: '月曜日 (getsuyōbi - Monday), 一月 (ichigatsu - January), 先月 (sengetsu - last month)'
+                    },
+                    {
+                        kanji: '水',
+                        options: ['fire', 'water', 'earth', 'wind'],
+                        correctAnswer: 'water',
+                        explanation: 'The kanji 水 (mizu) means \"water\". It appears in words like 水曜日 (suiyōbi - Wednesday) and 水泳 (suiei - swimming).',
+                        onyomi: 'スイ (SUI)',
+                        kunyomi: 'みず (mizu)',
+                        examples: '水曜日 (suiyōbi - Wednesday), 水泳 (suiei - swimming), 水分 (suibun - moisture)'
+                    },
+                    {
+                        kanji: '木',
+                        options: ['tree/wood', 'mountain', 'forest', 'bamboo'],
+                        correctAnswer: 'tree/wood',
+                        explanation: 'The kanji 木 (ki) means \"tree\" or \"wood\". It appears in words like 木曜日 (mokuyōbi - Thursday) and 木製 (mokusei - wooden).',
+                        onyomi: 'モク (MOKU), ボク (BOKU)',
+                        kunyomi: 'き (ki), こ- (ko-)',
+                        examples: '木曜日 (mokuyōbi - Thursday), 木製 (mokusei - wooden), 木材 (mokuzai - timber)'
+                    },
+                    {
+                        kanji: '火',
+                        options: ['water', 'air', 'fire', 'earth'],
+                        correctAnswer: 'fire',
+                        explanation: 'The kanji 火 (hi) means \"fire\". It appears in words like 火曜日 (kayōbi - Tuesday) and 花火 (hanabi - fireworks).',
+                        onyomi: 'カ (KA)',
+                        kunyomi: 'ひ (hi), -び (-bi)',
+                        examples: '火曜日 (kayōbi - Tuesday), 花火 (hanabi - fireworks), 火山 (kazan - volcano)'
+                    }
+                ],
+                checkAnswer() {
+                    this.showAnswer = true;
+                    if (this.selectedOption === this.questions[this.currentQuestion].correctAnswer) {
+                        this.correctAnswers++;
+                    }
+                },
+                nextQuestion() {
+                    this.showAnswer = false;
+                    this.showExplanation = false;
+                    this.selectedOption = null;
+                    if (this.currentQuestion < this.questions.length - 1) {
+                        this.currentQuestion++;
+                    }
+                },
+                prevQuestion() {
+                    this.showAnswer = false;
+                    this.showExplanation = false;
+                    this.selectedOption = null;
+                    if (this.currentQuestion > 0) {
+                        this.currentQuestion--;
+                    }
+                },
+                resetQuiz() {
+                    this.currentQuestion = 0;
+                    this.showAnswer = false;
+                    this.showExplanation = false;
+                    this.selectedOption = null;
+                    this.correctAnswers = 0;
+                }
+            }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Kanji Meaning Quiz</h2>
+                <p class="text-gray-700 mb-4">
+                    In this quiz, you'll see a kanji character and need to select its correct meaning. Choose the best answer and check your knowledge!
+                </p>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" :style="`width: ${(currentQuestion + 1) / questions.length * 100}%`"></div>
+                </div>
+                
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600">Question <span x-text="currentQuestion + 1"></span> of <span x-text="questions.length"></span></span>
+                    <span class="text-gray-600">Score: <span x-text="correctAnswers"></span>/<span x-text="currentQuestion + (showAnswer ? 1 : 0)"></span></span>
+                </div>
+                
+                <div class="quiz-card" :class="{ 'correct': showAnswer && selectedOption === questions[currentQuestion].correctAnswer, 'incorrect': showAnswer && selectedOption !== questions[currentQuestion].correctAnswer }">
+                    <p class="text-center text-gray-600 mb-2">What is the meaning of this kanji?</p>
+                    
+                    <div class="kanji-display" x-text="questions[currentQuestion].kanji"></div>
+                    
+                    <div class="mt-6 space-y-2">
+                        <template x-for="option in questions[currentQuestion].options" :key="option">
+                            <button 
+                                class="option-button" 
+                                :class="{
+                                    'selected': !showAnswer && selectedOption === option,
+                                    'correct': showAnswer && option === questions[currentQuestion].correctAnswer,
+                                    'incorrect': showAnswer && selectedOption === option && option !== questions[currentQuestion].correctAnswer
+                                }"
+                                @click="selectedOption = option"
+                                :disabled="showAnswer"
+                                x-text="option">
+                            </button>
+                        </template>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                        <button 
+                            x-show="!showAnswer" 
+                            @click="checkAnswer" 
+                            class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            :disabled="selectedOption === null">
+                            Check Answer
+                        </button>
+                        
+                        <button 
+                            x-show="showAnswer && !showExplanation" 
+                            @click="showExplanation = true" 
+                            class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Show Explanation
+                        </button>
+                        
+                        <button 
+                            x-show="showAnswer" 
+                            @click="nextQuestion" 
+                            class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            :disabled="currentQuestion >= questions.length - 1">
+                            Next Question
+                        </button>
+                        
+                        <button 
+                            @click="prevQuestion" 
+                            class="px-6 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                            :disabled="currentQuestion <= 0">
+                            Previous
+                        </button>
+                        
+                        <button 
+                            @click="resetQuiz" 
+                            class="px-6 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                            Reset Quiz
+                        </button>
+                    </div>
+                    
+                    <div x-show="showExplanation" class="mt-6 kanji-info">
+                        <h3 class="font-semibold text-lg mb-2">Kanji Information</h3>
+                        <p class="mb-2" x-text="questions[currentQuestion].explanation"></p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <p class="font-medium">On-yomi (Chinese-derived reading):</p>
+                                <p class="text-gray-700" x-text="questions[currentQuestion].onyomi"></p>
+                            </div>
+                            <div>
+                                <p class="font-medium">Kun-yomi (Japanese reading):</p>
+                                <p class="text-gray-700" x-text="questions[currentQuestion].kunyomi"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <p class="font-medium">Common Words:</p>
+                            <p class="text-gray-700" x-text="questions[currentQuestion].examples"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Reading Quiz Section -->
+            <section id="reading-quiz" class="mb-12" x-data="{
+                currentQuestion: 0,
+                showAnswer: false,
+                showExplanation: false,
+                selectedOption: null,
+                correctAnswers: 0,
+                questions: [
+                    {
+                        kanji: '大',
+                        options: ['ちい (chiisai)', 'だい (dai)', 'こう (kō)', 'てん (ten)'],
+                        correctAnswer: 'だい (dai)',
+                        explanation: 'The kanji 大 means \"big/large\". Its common reading is だい (dai) in on-yomi and おお (ō) in kun-yomi. It appears in words like 大学 (daigaku - university) and 大きい (ōkii - big).',
+                        meaning: 'big, large, great',
+                        examples: '大学 (daigaku - university), 大きい (ōkii - big), 大人 (otona - adult)'
+                    },
+                    {
+                        kanji: '小',
+                        options: ['ちい (chii)', 'しょう (shō)', 'だい (dai)', 'ちく (chiku)'],
+                        correctAnswer: 'しょう (shō)',
+                        explanation: 'The kanji 小 means \"small\". Its common reading is しょう (shō) in on-yomi and ちい (chii) in kun-yomi. It appears in words like 小学校 (shōgakkō - elementary school) and 小さい (chiisai - small).',
+                        meaning: 'small, little',
+                        examples: '小学校 (shōgakkō - elementary school), 小さい (chiisai - small), 小説 (shōsetsu - novel)'
+                    },
+                    {
+                        kanji: '山',
+                        options: ['やま (yama)', 'かわ (kawa)', 'さん (san)', 'み (mi)'],
+                        correctAnswer: 'やま (yama)',
+                        explanation: 'The kanji 山 means \"mountain\". Its common reading is さん (san) in on-yomi and やま (yama) in kun-yomi. It appears in words like 富士山 (Fujisan - Mt. Fuji) and 山道 (yamamichi - mountain path).',
+                        meaning: 'mountain',
+                        examples: '富士山 (Fujisan - Mt. Fuji), 山道 (yamamichi - mountain path), 登山 (tozan - mountain climbing)'
+                    },
+                    {
+                        kanji: '川',
+                        options: ['かわ (kawa)', 'やま (yama)', 'せん (sen)', 'みず (mizu)'],
+                        correctAnswer: 'かわ (kawa)',
+                        explanation: 'The kanji 川 means \"river\". Its common reading is せん (sen) in on-yomi and かわ (kawa) in kun-yomi. It appears in words like 川口 (kawaguchi - river mouth) and 小川 (ogawa - small river/stream).',
+                        meaning: 'river, stream',
+                        examples: '川口 (kawaguchi - river mouth), 小川 (ogawa - small river/stream), 河川 (kasen - rivers)'
+                    },
+                    {
+                        kanji: '人',
+                        options: ['ひと (hito)', 'にん (nin)', 'じん (jin)', 'all of the above'],
+                        correctAnswer: 'all of the above',
+                        explanation: 'The kanji 人 means \"person/people\". Its common readings are じん/にん (jin/nin) in on-yomi and ひと (hito) in kun-yomi. It appears in words like 日本人 (Nihonjin - Japanese person), 一人 (hitori - one person), and 人気 (ninki - popularity).',
+                        meaning: 'person, people',
+                        examples: '日本人 (Nihonjin - Japanese person), 一人 (hitori - one person), 外国人 (gaikokujin - foreigner)'
+                    }
+                ],
+                checkAnswer() {
+                    this.showAnswer = true;
+                    if (this.selectedOption === this.questions[this.currentQuestion].correctAnswer) {
+                        this.correctAnswers++;
+                    }
+                },
+                nextQuestion() {
+                    this.showAnswer = false;
+                    this.showExplanation = false;
+                    this.selectedOption = null;
+                    if (this.currentQuestion < this.questions.length - 1) {
+                        this.currentQuestion++;
+                    }
+                },
+                prevQuestion() {
+                    this.showAnswer = false;
+                    this.showExplanation = false;
+                    this.selectedOption = null;
+                    if (this.currentQuestion > 0) {
+                        this.currentQuestion--;
+                    }
+                },
+                resetQuiz() {
+                    this.currentQuestion = 0;
+                    this.showAnswer = false;
+                    this.showExplanation = false;
+                    this.selectedOption = null;
+                    this.correctAnswers = 0;
+                }
+            }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Kanji Reading Quiz</h2>
+                <p class="text-gray-700 mb-4">
+                    In this quiz, you'll see a kanji character and need to select its correct reading. Choose the best answer and check your knowledge!
+                </p>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" :style="`width: ${(currentQuestion + 1) / questions.length * 100}%`"></div>
+                </div>
+                
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600">Question <span x-text="currentQuestion + 1"></span> of <span x-text="questions.length"></span></span>
+                    <span class="text-gray-600">Score: <span x-text="correctAnswers"></span>/<span x-text="currentQuestion + (showAnswer ? 1 : 0)"></span></span>
+                </div>
+                
+                <div class="quiz-card" :class="{ 'correct': showAnswer && selectedOption === questions[currentQuestion].correctAnswer, 'incorrect': showAnswer && selectedOption !== questions[currentQuestion].correctAnswer }">
+                    <p class="text-center text-gray-600 mb-2">What is the reading of this kanji?</p>
+                    
+                    <div class="kanji-display" x-text="questions[currentQuestion].kanji"></div>
+                    
+                    <div class="mt-6 space-y-2">
+                        <template x-for="option in questions[currentQuestion].options" :key="option">
+                            <button 
+                                class="option-button" 
+                                :class="{
+                                    'selected': !showAnswer && selectedOption === option,
+                                    'correct': showAnswer && option === questions[currentQuestion].correctAnswer,
+                                    'incorrect': showAnswer && selectedOption === option && option !== questions[currentQuestion].correctAnswer
+                                }"
+                                @click="selectedOption = option"
+                                :disabled="showAnswer"
+                                x-text="option">
+                            </button>
+                        </template>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                        <button 
+                            x-show="!showAnswer" 
+                            @click="checkAnswer" 
+                            class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            :disabled="selectedOption === null">
+                            Check Answer
+                        </button>
+                        
+                        <button 
+                            x-show="showAnswer && !showExplanation" 
+                            @click="showExplanation = true" 
+                            class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Show Explanation
+                        </button>
+                        
+                        <button 
+                            x-show="showAnswer" 
+                            @click="nextQuestion" 
+                            class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            :disabled="currentQuestion >= questions.length - 1">
+                            Next Question
+                        </button>
+                        
+                        <button 
+                            @click="prevQuestion" 
+                            class="px-6 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                            :disabled="currentQuestion <= 0">
+                            Previous
+                        </button>
+                        
+                        <button 
+                            @click="resetQuiz" 
+                            class="px-6 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                            Reset Quiz
+                        </button>
+                    </div>
+                    
+                    <div x-show="showExplanation" class="mt-6 kanji-info">
+                        <h3 class="font-semibold text-lg mb-2">Kanji Information</h3>
+                        <p class="mb-2" x-text="questions[currentQuestion].explanation"></p>
+                        
+                        <div class="mt-4">
+                            <p class="font-medium">Meaning:</p>
+                            <p class="text-gray-700" x-text="questions[currentQuestion].meaning"></p>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <p class="font-medium">Common Words:</p>
+                            <p class="text-gray-700" x-text="questions[currentQuestion].examples"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kanji Reference Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">N5 Kanji Reference</h2>
+                <p class="text-gray-700 mb-4">
+                    Here's a quick reference list of common JLPT N5 kanji characters. Click on any kanji to see more information.
+                </p>
+                
+                <div class="kanji-grid">
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">日</div>
+                        <div class="text-sm mt-2">sun, day</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">月</div>
+                        <div class="text-sm mt-2">moon, month</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">火</div>
+                        <div class="text-sm mt-2">fire</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">水</div>
+                        <div class="text-sm mt-2">water</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">木</div>
+                        <div class="text-sm mt-2">tree, wood</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">金</div>
+                        <div class="text-sm mt-2">gold, money</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">土</div>
+                        <div class="text-sm mt-2">earth, soil</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">人</div>
+                        <div class="text-sm mt-2">person</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">大</div>
+                        <div class="text-sm mt-2">big, large</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">小</div>
+                        <div class="text-sm mt-2">small</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">中</div>
+                        <div class="text-sm mt-2">middle</div>
+                    </div>
+                    <div class="kanji-item">
+                        <div class="japanese text-3xl">山</div>
+                        <div class="text-sm mt-2">mountain</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="../vocabulary/master-list-n5.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md text-sm font-medium">
+                        View Complete N5 Kanji List
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer Navigation -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">More Practice Resources</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="./listening.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-headphones text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Listening Practice</h3>
+                    </a>
+                    <a href="./reading.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-book-open text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Reading Practice</h3>
+                    </a>
+                    <a href="./writing.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-pen text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Writing Practice</h3>
+                    </a>
+                    <a href="./speaking.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-microphone text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Speaking Practice</h3>
+                    </a>
+                    <a href="./kanji-quiz.html" class="bg-indigo-100 border border-indigo-300 rounded-lg p-4 text-center">
+                        <i class="fas fa-font text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Kanji Quiz</h3>
+                    </a>
+                    <a href="./vocabulary-quiz.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-list text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Vocabulary Quiz</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Practice Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./listening.html" class="text-gray-300 hover:text-white">Listening Practice</a></li>
+                        <li><a href="./reading.html" class="text-gray-300 hover:text-white">Reading Practice</a></li>
+                        <li><a href="./writing.html" class="text-gray-300 hover:text-white">Writing Practice</a></li>
+                        <li><a href="./speaking.html" class="text-gray-300 hover:text-white">Speaking Practice</a></li>
+                        <li><a href="./kanji-quiz.html" class="text-indigo-300 hover:text-white">Kanji Quiz</a></li>
+                        <li><a href="./vocabulary-quiz.html" class="text-gray-300 hover:text-white">Vocabulary Quiz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

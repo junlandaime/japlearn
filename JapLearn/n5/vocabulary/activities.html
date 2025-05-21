@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Activities Vocabulary | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .vocabulary-table th, .vocabulary-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        .vocabulary-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            font-size: 1.25rem;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        /* Category Colors */
+        .category-daily tbody tr {
+            background-color: rgba(219, 234, 254, 0.4); /* Light blue */
+        }
+        .category-recreational tbody tr {
+            background-color: rgba(254, 226, 226, 0.4); /* Light red */
+        }
+        .category-communication tbody tr {
+            background-color: rgba(220, 252, 231, 0.4); /* Light green */
+        }
+        .category-verbs tbody tr {
+            background-color: rgba(254, 240, 138, 0.4); /* Light yellow */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">Activities Vocabulary</h1>
+            <p class="text-xl">Learn essential Japanese words for daily activities, hobbies, and common actions.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Activity Vocabulary</h2>
+                <p class="text-gray-700 mb-4">
+                    Learning words for everyday activities is essential for describing your daily life, hobbies, and interactions in Japanese. This vocabulary will help you talk about what you do, what you enjoy, and how you spend your time.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Key Question:</p>
+                    <div>
+                        <p class="japanese">何をしていますか。</p>
+                        <p class="text-gray-600">Nani o shite imasu ka?</p>
+                        <p class="text-gray-600">What are you doing?</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Language Note:</span> In Japanese, many activity verbs are followed by「しています」(shite imasu) to indicate an ongoing action. This is similar to the "-ing" form in English. For example, "I am reading" would be 「読んでいます」(yonde imasu).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Daily Activities Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Daily Activities</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are common words for everyday activities in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-daily">
+                            <tr>
+                                <td><span class="japanese">起きる</span> (おきる)</td>
+                                <td>Okiru</td>
+                                <td>To wake up</td>
+                                <td>毎朝6時に起きます。<br>(I wake up at 6 o'clock every morning.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">寝る</span> (ねる)</td>
+                                <td>Neru</td>
+                                <td>To sleep</td>
+                                <td>11時に寝ます。<br>(I go to sleep at 11 o'clock.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">食べる</span> (たべる)</td>
+                                <td>Taberu</td>
+                                <td>To eat</td>
+                                <td>朝ごはんを食べます。<br>(I eat breakfast.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">飲む</span> (のむ)</td>
+                                <td>Nomu</td>
+                                <td>To drink</td>
+                                <td>コーヒーを飲みます。<br>(I drink coffee.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">行く</span> (いく)</td>
+                                <td>Iku</td>
+                                <td>To go</td>
+                                <td>学校に行きます。<br>(I go to school.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">来る</span> (くる)</td>
+                                <td>Kuru</td>
+                                <td>To come</td>
+                                <td>友達が来ました。<br>(My friend came.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">帰る</span> (かえる)</td>
+                                <td>Kaeru</td>
+                                <td>To return/go home</td>
+                                <td>家に帰ります。<br>(I return home.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">働く</span> (はたらく)</td>
+                                <td>Hataraku</td>
+                                <td>To work</td>
+                                <td>会社で働いています。<br>(I work at a company.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">勉強する</span> (べんきょうする)</td>
+                                <td>Benkyō suru</td>
+                                <td>To study</td>
+                                <td>日本語を勉強しています。<br>(I am studying Japanese.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">買い物する</span> (かいものする)</td>
+                                <td>Kaimono suru</td>
+                                <td>To shop</td>
+                                <td>スーパーで買い物をします。<br>(I go shopping at the supermarket.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 毎日何をしていますか。</p>
+                        <p class="text-gray-600">A: Mainichi nani o shite imasu ka?</p>
+                        <p class="text-gray-600">A: What do you do every day?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: 朝起きて、朝ごはんを食べて、学校に行きます。</p>
+                        <p class="text-gray-600">B: Asa okite, asagohan o tabete, gakkō ni ikimasu.</p>
+                        <p class="text-gray-600">B: I wake up in the morning, eat breakfast, and go to school.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recreational Activities Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Recreational Activities and Hobbies</h2>
+                <p class="text-gray-700 mb-4">
+                    Learn vocabulary for various hobbies and leisure activities in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-recreational">
+                            <tr>
+                                <td><span class="japanese">趣味</span> (しゅみ)</td>
+                                <td>Shumi</td>
+                                <td>Hobby</td>
+                                <td>私の趣味は読書です。<br>(My hobby is reading.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">読む</span> (よむ)</td>
+                                <td>Yomu</td>
+                                <td>To read</td>
+                                <td>本を読みます。<br>(I read books.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">書く</span> (かく)</td>
+                                <td>Kaku</td>
+                                <td>To write</td>
+                                <td>手紙を書きます。<br>(I write letters.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">聞く</span> (きく)</td>
+                                <td>Kiku</td>
+                                <td>To listen/hear</td>
+                                <td>音楽を聞きます。<br>(I listen to music.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">見る</span> (みる)</td>
+                                <td>Miru</td>
+                                <td>To watch/see</td>
+                                <td>テレビを見ます。<br>(I watch TV.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">泳ぐ</span> (およぐ)</td>
+                                <td>Oyogu</td>
+                                <td>To swim</td>
+                                <td>プールで泳ぎます。<br>(I swim in the pool.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">走る</span> (はしる)</td>
+                                <td>Hashiru</td>
+                                <td>To run</td>
+                                <td>公園で走ります。<br>(I run in the park.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">歌う</span> (うたう)</td>
+                                <td>Utau</td>
+                                <td>To sing</td>
+                                <td>カラオケで歌います。<br>(I sing at karaoke.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">踊る</span> (おどる)</td>
+                                <td>Odoru</td>
+                                <td>To dance</td>
+                                <td>友達と踊ります。<br>(I dance with friends.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">旅行する</span> (りょこうする)</td>
+                                <td>Ryokō suru</td>
+                                <td>To travel</td>
+                                <td>日本に旅行します。<br>(I travel to Japan.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 週末に何をしますか。</p>
+                        <p class="text-gray-600">A: Shūmatsu ni nani o shimasu ka?</p>
+                        <p class="text-gray-600">A: What do you do on weekends?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: 本を読んだり、音楽を聞いたりします。</p>
+                        <p class="text-gray-600">B: Hon o yondari, ongaku o kiitari shimasu.</p>
+                        <p class="text-gray-600">B: I read books and listen to music (among other things).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Communication Activities Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Communication Activities</h2>
+                <p class="text-gray-700 mb-4">
+                    These vocabulary terms are essential for describing how you communicate with others.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-communication">
+                            <tr>
+                                <td><span class="japanese">話す</span> (はなす)</td>
+                                <td>Hanasu</td>
+                                <td>To speak/talk</td>
+                                <td>日本語を話します。<br>(I speak Japanese.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">言う</span> (いう)</td>
+                                <td>Iu</td>
+                                <td>To say</td>
+                                <td>何と言いましたか。<br>(What did you say?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">質問する</span> (しつもんする)</td>
+                                <td>Shitsumon suru</td>
+                                <td>To ask a question</td>
+                                <td>先生に質問します。<br>(I ask the teacher a question.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">答える</span> (こたえる)</td>
+                                <td>Kotaeru</td>
+                                <td>To answer</td>
+                                <td>質問に答えます。<br>(I answer the question.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">電話する</span> (でんわする)</td>
+                                <td>Denwa suru</td>
+                                <td>To call/telephone</td>
+                                <td>友達に電話します。<br>(I call my friend.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">メールする</span></td>
+                                <td>Mēru suru</td>
+                                <td>To email</td>
+                                <td>先生にメールしました。<br>(I emailed the teacher.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">会う</span> (あう)</td>
+                                <td>Au</td>
+                                <td>To meet</td>
+                                <td>友達に会います。<br>(I meet my friend.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">訪ねる</span> (たずねる)</td>
+                                <td>Tazuneru</td>
+                                <td>To visit</td>
+                                <td>祖父母を訪ねます。<br>(I visit my grandparents.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">招待する</span> (しょうたいする)</td>
+                                <td>Shōtai suru</td>
+                                <td>To invite</td>
+                                <td>パーティーに招待します。<br>(I invite to a party.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">紹介する</span> (しょうかいする)</td>
+                                <td>Shōkai suru</td>
+                                <td>To introduce</td>
+                                <td>友達を紹介します。<br>(I introduce my friend.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 明日友達と会いますか。</p>
+                        <p class="text-gray-600">A: Ashita tomodachi to aimasu ka?</p>
+                        <p class="text-gray-600">A: Are you meeting your friend tomorrow?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: はい、カフェで友達と話します。</p>
+                        <p class="text-gray-600">B: Hai, kafe de tomodachi to hanashimasu.</p>
+                        <p class="text-gray-600">B: Yes, I will talk with my friend at a cafe.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Action Verbs Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Common Action Verbs</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are some versatile action verbs that are frequently used in everyday Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-verbs">
+                            <tr>
+                                <td><span class="japanese">する</span></td>
+                                <td>Suru</td>
+                                <td>To do</td>
+                                <td>宿題をします。<br>(I do homework.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">持つ</span> (もつ)</td>
+                                <td>Motsu</td>
+                                <td>To hold/have</td>
+                                <td>鞄を持っています。<br>(I am holding a bag.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">取る</span> (とる)</td>
+                                <td>Toru</td>
+                                <td>To take</td>
+                                <td>写真を取ります。<br>(I take a photo.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">使う</span> (つかう)</td>
+                                <td>Tsukau</td>
+                                <td>To use</td>
+                                <td>携帯電話を使います。<br>(I use a mobile phone.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">開ける</span> (あける)</td>
+                                <td>Akeru</td>
+                                <td>To open</td>
+                                <td>窓を開けます。<br>(I open the window.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">閉める</span> (しめる)</td>
+                                <td>Shimeru</td>
+                                <td>To close</td>
+                                <td>ドアを閉めてください。<br>(Please close the door.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">作る</span> (つくる)</td>
+                                <td>Tsukuru</td>
+                                <td>To make/create</td>
+                                <td>晩ご飯を作ります。<br>(I make dinner.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">待つ</span> (まつ)</td>
+                                <td>Matsu</td>
+                                <td>To wait</td>
+                                <td>友達を待っています。<br>(I am waiting for my friend.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">止まる</span> (とまる)</td>
+                                <td>Tomaru</td>
+                                <td>To stop</td>
+                                <td>車が止まります。<br>(The car stops.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">始まる</span> (はじまる)</td>
+                                <td>Hajimaru</td>
+                                <td>To begin</td>
+                                <td>映画が始まります。<br>(The movie begins.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentence:</p>
+                    <div>
+                        <p class="japanese">今、料理を作って、友達を待っています。</p>
+                        <p class="text-gray-600">Ima, ryōri o tsukutte, tomodachi o matte imasu.</p>
+                        <p class="text-gray-600">Now, I am making food and waiting for my friend.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Grammar Note:</span> Japanese verbs change form depending on tense and politeness level. The verbs in this lesson are shown in the polite present form (～ます/masu form). To change to the past tense, you would use ～ました (mashita).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese activity vocabulary with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Activities</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each Japanese activity word with its English meaning:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">読む</span></li>
+                                <li><span class="japanese">話す</span></li>
+                                <li><span class="japanese">食べる</span></li>
+                                <li><span class="japanese">見る</span></li>
+                                <li><span class="japanese">寝る</span></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li>To eat</li>
+                                <li>To sleep</li>
+                                <li>To speak</li>
+                                <li>To watch</li>
+                                <li>To read</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>To read (読む = yomu)</li>
+                            <li>To speak (話す = hanasu)</li>
+                            <li>To eat (食べる = taberu)</li>
+                            <li>To watch (見る = miru)</li>
+                            <li>To sleep (寝る = neru)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with the appropriate activity verbs:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">1. 毎日日本語を＿＿＿します。(I study Japanese every day.)</p>
+                        <p class="japanese">2. 私は本を＿＿＿のが好きです。(I like to read books.)</p>
+                        <p class="japanese">3. 友達と一緒に映画を＿＿＿ました。(I watched a movie with my friend.)</p>
+                        <p class="japanese">4. 昨日友達に＿＿＿ました。(I met my friend yesterday.)</p>
+                        <p class="japanese">5. 毎朝6時に＿＿＿ます。(I wake up at 6 o'clock every morning.)</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">1. <span class="text-indigo-600">勉強</span> (benkyō)</p>
+                        <p class="japanese">2. <span class="text-indigo-600">読む</span> (yomu)</p>
+                        <p class="japanese">3. <span class="text-indigo-600">見</span> (mi)</p>
+                        <p class="japanese">4. <span class="text-indigo-600">会い</span> (ai)</p>
+                        <p class="japanese">5. <span class="text-indigo-600">起き</span> (oki)</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Daily Activities</h3>
+                    <p class="text-gray-700 mb-3">
+                        Describe your daily routine in Japanese using the verbs from this lesson. Try to include at least 5 different activities.
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="text-gray-700">Example:</p>
+                        <p class="japanese">私の一日：<br>
+                        朝6時に起きます。<br>
+                        朝ごはんを食べます。<br>
+                        学校に行きます。<br>
+                        日本語を勉強します。<br>
+                        友達と話します。<br>
+                        家に帰ります。<br>
+                        11時に寝ます。</p>
+                        <p class="text-gray-600">My day:<br>
+                        I wake up at 6 in the morning.<br>
+                        I eat breakfast.<br>
+                        I go to school.<br>
+                        I study Japanese.<br>
+                        I talk with friends.<br>
+                        I return home.<br>
+                        I sleep at 11.</p>
+                    </div>
+                    <p class="text-gray-700 mt-3">
+                        Now try to create your own daily routine description using the vocabulary from this lesson.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="food.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Food</h3>
+                        <p class="text-gray-600 text-sm">Japanese food and dining vocabulary</p>
+                    </a>
+                    <a href="transport.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Transportation</h3>
+                        <p class="text-gray-600 text-sm">Travel and transportation vocabulary</p>
+                    </a>
+                    <a href="location.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Locations</h3>
+                        <p class="text-gray-600 text-sm">Places and locations vocabulary</p>
+                    </a>
+                    <a href="time.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Time</h3>
+                        <p class="text-gray-600 text-sm">Time expressions and calendar words</p>
+                    </a>
+                    <a href="school.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">School</h3>
+                        <p class="text-gray-600 text-sm">School and education vocabulary</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

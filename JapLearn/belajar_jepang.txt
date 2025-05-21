@@ -1,0 +1,35 @@
+saya ingin membuat project, website belajar belajar bahasa jepang n5 dan n4 dari dasar sampai mahir dan persiapan untuk tes n5 dan n4
+buatkan seluruh list file halaman html yang memungkinkan
+
+Edit
+Saya akan membantu Anda membuat project website belajar bahasa Jepang N5 dan N4. Mari kita buat struktur file HTML yang komprehensif untuk website ini.
+
+
+Struktur Website Belajar Bahasa Jepang N5 dan N4
+Document 
+Saya telah membuat daftar komprehensif file HTML untuk website belajar bahasa Jepang N5 dan N4 Anda. Struktur website ini dirancang untuk mengajarkan bahasa Jepang dari dasar sampai mahir dengan fokus pada persiapan ujian JLPT N5 dan N4.
+
+Beberapa poin penting dari struktur website ini:
+
+Bagian Utama:
+Halaman utama dan navigasi
+Kursus N5 (pemula)
+Kursus N4 (menengah dasar)
+Materi pendukung
+Forum dan komunitas
+Komponen interaktif
+Konten Pembelajaran:
+Pembelajaran aksara (Hiragana, Katakana, Kanji)
+Tata bahasa komprehensif
+Kosakata tematik
+Latihan untuk 4 kemampuan (mendengar, membaca, menulis, berbicara)
+Persiapan khusus ujian JLPT
+Fitur Interaktif:
+Permainan pembelajaran
+Flashcard Kanji dan kosakata
+Latihan pengucapan
+Pembuat kalimat
+Manajemen Pengguna:
+Profil dan kemajuan belajar
+Sertifikat penyelesaian
+Riwayat aktivitas

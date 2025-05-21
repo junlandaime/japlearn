@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food in Japanese - N5 Vocabulary | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .vocabulary-table th, .vocabulary-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .vocabulary-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+        }
+        .vocabulary-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            transition: color 0.2s;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        .example-card {
+            background-color: #f8fafc;
+            border-left: 4px solid #818cf8;
+        }
+        .food-card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .category-staples td {
+            background-color: rgba(224, 242, 254, 0.4);
+        }
+        .category-dishes td {
+            background-color: rgba(254, 243, 199, 0.4);
+        }
+        .category-seafood td {
+            background-color: rgba(220, 252, 231, 0.4);
+        }
+        .category-meat td {
+            background-color: rgba(253, 230, 255, 0.4);
+        }
+        .category-vegetables td {
+            background-color: rgba(254, 226, 226, 0.4);
+        }
+        .category-fruits td {
+            background-color: rgba(224, 231, 255, 0.4);
+        }
+        .category-drinks td {
+            background-color: rgba(209, 250, 229, 0.4);
+        }
+        .practice-question {
+            border-left: 4px solid #818cf8;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-2xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../resources.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Resources
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-indigo-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false" x-on:click="open = !open">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu" x-data="{ open: false }" x-show="open">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="../../index.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Home
+                </a>
+                <a href="../intro.html" class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    N5 Course
+                </a>
+                <a href="../../resources.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Resources
+                </a>
+                <a href="../../about.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    About
+                </a>
+                <a href="../../contact.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">Food in Japanese</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl">Learn essential food vocabulary for JLPT N5</p>
+            <div class="mt-8 flex justify-center">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="#staple-foods" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50">
+                        Get Started
+                    </a>
+                </div>
+                <div class="ml-3 inline-flex">
+                    <a href="master-list-n5.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                        View All N5 Vocabulary
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div class="prose prose-indigo prose-lg max-w-none">
+            <!-- Introduction -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Introduction to Food Vocabulary</h2>
+                <p class="text-gray-700 mb-4">
+                    Food vocabulary (食べ物・たべもの・tabemono) is an essential part of learning Japanese, as it allows you to navigate restaurants, grocery stores, and participate in conversations about meals and dining experiences. Japan is known for its unique cuisine and food culture, making these words especially important for anyone studying the language.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    For the JLPT N5 level, you'll focus on common food items and meals that you're likely to encounter in everyday conversations. This includes staple foods, popular dishes, and various ingredients.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> Before eating in Japan, it's customary to say "<span class="japanese">いただきます</span>" (itadakimasu), which roughly translates to "I gratefully receive," before a meal. After finishing, saying "<span class="japanese">ごちそうさま</span>" (gochisōsama) or "<span class="japanese">ごちそうさまでした</span>" (gochisōsama deshita) expresses gratitude for the meal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staple Foods Section -->
+            <section id="staple-foods" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Staple Foods</h2>
+                <p class="text-gray-700 mb-4">
+                    These are the fundamental foods that form the base of Japanese cuisine.
+                </p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-8">
+                    <div class="food-card">
+                        <div class="text-5xl mb-2">🍚</div>
+                        <div class="japanese text-xl">ご飯</div>
+                        <div>ごはん (gohan)</div>
+                        <div class="text-gray-600">rice/meal</div>
+                    </div>
+                    <div class="food-card">
+                        <div class="text-5xl mb-2">🍜</div>
+                        <div class="japanese text-xl">麺</div>
+                        <div>めん (men)</div>
+                        <div class="text-gray-600">noodles</div>
+                    </div>
+                    <div class="food-card">
+                        <div class="text-5xl mb-2">🍞</div>
+                        <div class="japanese text-xl">パン</div>
+                        <div>パン (pan)</div>
+                        <div class="text-gray-600">bread</div>
+                    </div>
+                    <div class="food-card">
+                        <div class="text-5xl mb-2">🥔</div>
+                        <div class="japanese text-xl">じゃがいも</div>
+                        <div>じゃがいも (jagaimo)</div>
+                        <div class="text-gray-600">potato</div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Sentence</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-staples">
+                            <tr>
+                                <td><span class="japanese">ご飯</span> (ごはん)</td>
+                                <td>Gohan</td>
+                                <td>Rice/Meal</td>
+                                <td>朝ご飯を食べました。<br>(I ate breakfast.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">麺</span> (めん)</td>
+                                <td>Men</td>
+                                <td>Noodles</td>
+                                <td>麺が好きです。<br>(I like noodles.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">うどん</span></td>
+                                <td>Udon</td>
+                                <td>Udon noodles</td>
+                                <td>うどんを食べましょう。<br>(Let's eat udon.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">そば</span></td>
+                                <td>Soba</td>
+                                <td>Buckwheat noodles</td>
+                                <td>そばはおいしいです。<br>(Soba is delicious.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ラーメン</span></td>
+                                <td>Rāmen</td>
+                                <td>Ramen</td>
+                                <td>ラーメンを食べに行きました。<br>(I went to eat ramen.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">パン</span></td>
+                                <td>Pan</td>
+                                <td>Bread</td>
+                                <td>朝はパンを食べます。<br>(I eat bread in the morning.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">じゃがいも</span></td>
+                                <td>Jagaimo</td>
+                                <td>Potato</td>
+                                <td>じゃがいもを買いました。<br>(I bought potatoes.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">もち</span></td>
+                                <td>Mochi</td>
+                                <td>Rice cake</td>
+                                <td>お正月にもちを食べます。<br>(We eat mochi for New Year.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 夕食は何が食べたいですか。</p>
+                        <p class="text-gray-600">A: Yūshoku wa nani ga tabetai desu ka?</p>
+                        <p class="text-gray-600">A: What would you like to eat for dinner?</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">B: ラーメンが食べたいです。</p>
+                        <p class="text-gray-600">B: Rāmen ga tabetai desu.</p>
+                        <p class="text-gray-600">B: I would like to eat ramen.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">A: いいですね。私もラーメンが好きです。</p>
+                        <p class="text-gray-600">A: Ii desu ne. Watashi mo rāmen ga suki desu.</p>
+                        <p class="text-gray-600">A: Sounds good. I like ramen too.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Popular Japanese Dishes -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Popular Japanese Dishes</h2>
+                <p class="text-gray-700 mb-4">
+                    These are common Japanese dishes and meals that you should know for JLPT N5.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Description</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-dishes">
+                            <tr>
+                                <td><span class="japanese">寿司</span> (すし)</td>
+                                <td>Sushi</td>
+                                <td>Sushi</td>
+                                <td>Vinegared rice with fish, vegetables, etc.</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">刺身</span> (さしみ)</td>
+                                <td>Sashimi</td>
+                                <td>Sashimi</td>
+                                <td>Sliced raw fish</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">天ぷら</span> (てんぷら)</td>
+                                <td>Tenpura</td>
+                                <td>Tempura</td>
+                                <td>Deep-fried vegetables and seafood</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">カレー</span></td>
+                                <td>Karē</td>
+                                <td>Curry</td>
+                                <td>Japanese-style curry with rice</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">おにぎり</span></td>
+                                <td>Onigiri</td>
+                                <td>Rice ball</td>
+                                <td>Rice ball wrapped in seaweed, often with filling</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">味噌汁</span> (みそしる)</td>
+                                <td>Misoshiru</td>
+                                <td>Miso soup</td>
+                                <td>Soup made with miso paste and dashi</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">丼</span> (どんぶり)</td>
+                                <td>Donburi</td>
+                                <td>Rice bowl dish</td>
+                                <td>Large bowl of rice with various toppings</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">焼肉</span> (やきにく)</td>
+                                <td>Yakiniku</td>
+                                <td>Grilled meat</td>
+                                <td>Japanese-style BBQ</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">お好み焼き</span> (おこのみやき)</td>
+                                <td>Okonomiyaki</td>
+                                <td>Japanese savory pancake</td>
+                                <td>Pancake with various ingredients</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">たこ焼き</span> (たこやき)</td>
+                                <td>Takoyaki</td>
+                                <td>Octopus balls</td>
+                                <td>Ball-shaped snack with octopus pieces</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">日本に行ったら、本物の寿司を食べたいです。</p>
+                        <p class="text-gray-600">Nihon ni ittara, honmono no sushi o tabetai desu.</p>
+                        <p class="text-gray-600">When I go to Japan, I want to eat authentic sushi.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">味噌汁は毎日の朝食に飲みます。</p>
+                        <p class="text-gray-600">Misoshiru wa mainichi no chōshoku ni nomimasu.</p>
+                        <p class="text-gray-600">I drink miso soup for breakfast every day.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seafood Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Seafood</h2>
+                <p class="text-gray-700 mb-4">
+                    Seafood is an important part of Japanese cuisine. As an island nation, Japan has a rich tradition of incorporating various seafood into its dishes.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-seafood">
+                            <tr>
+                                <td><span class="japanese">魚</span> (さかな)</td>
+                                <td>Sakana</td>
+                                <td>Fish</td>
+                                <td>魚を焼きます。<br>(I'll grill fish.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">エビ</span></td>
+                                <td>Ebi</td>
+                                <td>Shrimp/Prawn</td>
+                                <td>エビフライが好きです。<br>(I like fried shrimp.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">カニ</span></td>
+                                <td>Kani</td>
+                                <td>Crab</td>
+                                <td>カニを食べたことがありますか。<br>(Have you ever eaten crab?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">タコ</span></td>
+                                <td>Tako</td>
+                                <td>Octopus</td>
+                                <td>タコ焼きはおいしいです。<br>(Takoyaki is delicious.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">イカ</span></td>
+                                <td>Ika</td>
+                                <td>Squid</td>
+                                <td>イカを焼いて食べました。<br>(I grilled and ate squid.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">貝</span> (かい)</td>
+                                <td>Kai</td>
+                                <td>Shellfish</td>
+                                <td>貝のスープを作りました。<br>(I made shellfish soup.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">サーモン</span></td>
+                                <td>Sāmon</td>
+                                <td>Salmon</td>
+                                <td>サーモンの寿司が大好きです。<br>(I love salmon sushi.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">マグロ</span></td>
+                                <td>Maguro</td>
+                                <td>Tuna</td>
+                                <td>マグロの刺身を食べました。<br>(I ate tuna sashimi.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 魚は好きですか。</p>
+                        <p class="text-gray-600">A: Sakana wa suki desu ka?</p>
+                        <p class="text-gray-600">A: Do you like fish?</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">B: はい、特にサーモンが好きです。</p>
+                        <p class="text-gray-600">B: Hai, toku ni sāmon ga suki desu.</p>
+                        <p class="text-gray-600">B: Yes, I especially like salmon.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">A: 私もです。サーモンはおいしいですね。</p>
+                        <p class="text-gray-600">A: Watashi mo desu. Sāmon wa oishii desu ne.</p>
+                        <p class="text-gray-600">A: Me too. Salmon is delicious, isn't it?</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japan, seafood is often eaten fresh and raw as sashimi or in sushi. The Japanese take great pride in the freshness and quality of their seafood.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meat and Protein Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Meat and Protein</h2>
+                <p class="text-gray-700 mb-4">
+                    Here is essential vocabulary for meat and protein sources in Japanese cuisine.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-meat">
+                            <tr>
+                                <td><span class="japanese">肉</span> (にく)</td>
+                                <td>Niku</td>
+                                <td>Meat</td>
+                                <td>肉が好きですか。<br>(Do you like meat?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">牛肉</span> (ぎゅうにく)</td>
+                                <td>Gyūniku</td>
+                                <td>Beef</td>
+                                <td>牛肉のステーキを食べました。<br>(I ate a beef steak.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">豚肉</span> (ぶたにく)</td>
+                                <td>Butaniku</td>
+                                <td>Pork</td>
+                                <td>豚肉のカツレツが好きです。<br>(I like pork cutlets.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鶏肉</span> (とりにく)</td>
+                                <td>Toriniku</td>
+                                <td>Chicken</td>
+                                <td>鶏肉の唐揚げが大好きです。<br>(I love fried chicken.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ハム</span></td>
+                                <td>Hamu</td>
+                                <td>Ham</td>
+                                <td>ハムサンドイッチを作りました。<br>(I made a ham sandwich.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ソーセージ</span></td>
+                                <td>Sōsēji</td>
+                                <td>Sausage</td>
+                                <td>朝ごはんにソーセージを食べます。<br>(I eat sausage for breakfast.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">豆腐</span> (とうふ)</td>
+                                <td>Tōfu</td>
+                                <td>Tofu</td>
+                                <td>豆腐は健康に良いです。<br>(Tofu is good for health.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">卵</span> (たまご)</td>
+                                <td>Tamago</td>
+                                <td>Egg</td>
+                                <td>朝食に卵を食べます。<br>(I eat eggs for breakfast.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">納豆</span> (なっとう)</td>
+                                <td>Nattō</td>
+                                <td>Fermented soybeans</td>
+                                <td>納豆は体に良いです。<br>(Natto is good for the body.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 何の肉が好きですか。</p>
+                        <p class="text-gray-600">A: Nan no niku ga suki desu ka?</p>
+                        <p class="text-gray-600">A: What kind of meat do you like?</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">B: 鶏肉が一番好きです。あなたは？</p>
+                        <p class="text-gray-600">B: Toriniku ga ichiban suki desu. Anata wa?</p>
+                        <p class="text-gray-600">B: I like chicken the most. How about you?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">A: 私は牛肉が好きです。</p>
+                        <p class="text-gray-600">A: Watashi wa gyūniku ga suki desu.</p>
+                        <p class="text-gray-600">A: I like beef.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vegetables Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Vegetables</h2>
+                <p class="text-gray-700 mb-4">
+                    Vegetables play an important role in Japanese cuisine, both as side dishes and as ingredients in main dishes.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-vegetables">
+                            <tr>
+                                <td><span class="japanese">野菜</span> (やさい)</td>
+                                <td>Yasai</td>
+                                <td>Vegetables</td>
+                                <td>野菜をたくさん食べましょう。<br>(Let's eat lots of vegetables.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">トマト</span></td>
+                                <td>Tomato</td>
+                                <td>Tomato</td>
+                                <td>トマトのサラダを作りました。<br>(I made a tomato salad.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">キュウリ</span></td>
+                                <td>Kyūri</td>
+                                <td>Cucumber</td>
+                                <td>キュウリは好きですか。<br>(Do you like cucumber?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">玉ねぎ</span> (たまねぎ)</td>
+                                <td>Tamanegi</td>
+                                <td>Onion</td>
+                                <td>玉ねぎを切ると、目が痛いです。<br>(When cutting onions, my eyes hurt.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">にんじん</span></td>
+                                <td>Ninjin</td>
+                                <td>Carrot</td>
+                                <td>にんじんは目に良いです。<br>(Carrots are good for the eyes.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ジャガイモ</span></td>
+                                <td>Jagaimo</td>
+                                <td>Potato</td>
+                                <td>ジャガイモでカレーを作りました。<br>(I made curry with potatoes.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">キャベツ</span></td>
+                                <td>Kyabetsu</td>
+                                <td>Cabbage</td>
+                                <td>キャベツのサラダが好きです。<br>(I like cabbage salad.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ナス</span></td>
+                                <td>Nasu</td>
+                                <td>Eggplant</td>
+                                <td>ナスの味噌煮が美味しいです。<br>(Eggplant simmered in miso is delicious.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ピーマン</span></td>
+                                <td>Pīman</td>
+                                <td>Green pepper</td>
+                                <td>ピーマンの肉詰めを作りました。<br>(I made stuffed green peppers.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">大根</span> (だいこん)</td>
+                                <td>Daikon</td>
+                                <td>Japanese radish</td>
+                                <td>大根おろしを使います。<br>(I use grated daikon.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentence:</p>
+                    <div>
+                        <p class="japanese">日本の料理には多くの野菜が使われています。</p>
+                        <p class="text-gray-600">Nihon no ryōri ni wa ōku no yasai ga tsukawarete imasu.</p>
+                        <p class="text-gray-600">Many vegetables are used in Japanese cuisine.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fruits Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Fruits</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are common fruits in Japanese vocabulary.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-fruits">
+                            <tr>
+                                <td><span class="japanese">果物</span> (くだもの)</td>
+                                <td>Kudamono</td>
+                                <td>Fruit</td>
+                                <td>果物が好きです。<br>(I like fruit.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">りんご</span></td>
+                                <td>Ringo</td>
+                                <td>Apple</td>
+                                <td>赤いりんごを食べました。<br>(I ate a red apple.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">バナナ</span></td>
+                                <td>Banana</td>
+                                <td>Banana</td>
+                                <td>朝食にバナナを食べます。<br>(I eat a banana for breakfast.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">みかん</span></td>
+                                <td>Mikan</td>
+                                <td>Mandarin orange</td>
+                                <td>冬にはみかんを食べます。<br>(I eat mandarin oranges in winter.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">イチゴ</span></td>
+                                <td>Ichigo</td>
+                                <td>Strawberry</td>
+                                <td>イチゴのケーキが好きです。<br>(I like strawberry cake.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ブドウ</span></td>
+                                <td>Budō</td>
+                                <td>Grapes</td>
+                                <td>ブドウのジュースを飲みました。<br>(I drank grape juice.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">パイナップル</span></td>
+                                <td>Painappuru</td>
+                                <td>Pineapple</td>
+                                <td>パイナップルは甘いです。<br>(Pineapple is sweet.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">スイカ</span></td>
+                                <td>Suika</td>
+                                <td>Watermelon</td>
+                                <td>夏にスイカを食べます。<br>(I eat watermelon in summer.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">桃</span> (もも)</td>
+                                <td>Momo</td>
+                                <td>Peach</td>
+                                <td>桃は柔らかくて甘いです。<br>(Peaches are soft and sweet.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">梨</span> (なし)</td>
+                                <td>Nashi</td>
+                                <td>Japanese pear</td>
+                                <td>日本の梨は丸いです。<br>(Japanese pears are round.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 好きな果物は何ですか。</p>
+                        <p class="text-gray-600">A: Suki na kudamono wa nan desu ka?</p>
+                        <p class="text-gray-600">A: What is your favorite fruit?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: イチゴが一番好きです。甘くておいしいです。</p>
+                        <p class="text-gray-600">B: Ichigo ga ichiban suki desu. Amakute oishii desu.</p>
+                        <p class="text-gray-600">B: I like strawberries the most. They're sweet and delicious.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japan, fruits are often given as gifts and can be quite expensive, especially premium fruits that are perfectly shaped and blemish-free. Fruit parfaits (フルーツパフェ) are also a popular dessert in Japan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drinks Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Drinks</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are common beverages in Japanese vocabulary.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-drinks">
+                            <tr>
+                                <td><span class="japanese">飲み物</span> (のみもの)</td>
+                                <td>Nomimono</td>
+                                <td>Drink/Beverage</td>
+                                <td>冷たい飲み物が欲しいです。<br>(I want a cold drink.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">水</span> (みず)</td>
+                                <td>Mizu</td>
+                                <td>Water</td>
+                                <td>水をください。<br>(Please give me water.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">お茶</span> (おちゃ)</td>
+                                <td>Ocha</td>
+                                <td>Tea</td>
+                                <td>朝にお茶を飲みます。<br>(I drink tea in the morning.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">緑茶</span> (りょくちゃ)</td>
+                                <td>Ryokucha</td>
+                                <td>Green tea</td>
+                                <td>緑茶は健康に良いです。<br>(Green tea is good for health.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">コーヒー</span></td>
+                                <td>Kōhī</td>
+                                <td>Coffee</td>
+                                <td>コーヒーはブラックで飲みます。<br>(I drink coffee black.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ジュース</span></td>
+                                <td>Jūsu</td>
+                                <td>Juice</td>
+                                <td>オレンジジュースを飲みました。<br>(I drank orange juice.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">牛乳</span> (ぎゅうにゅう)</td>
+                                <td>Gyūnyū</td>
+                                <td>Milk</td>
+                                <td>朝に牛乳を飲みます。<br>(I drink milk in the morning.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ビール</span></td>
+                                <td>Bīru</td>
+                                <td>Beer</td>
+                                <td>夜にビールを飲みます。<br>(I drink beer at night.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">日本酒</span> (にほんしゅ)</td>
+                                <td>Nihonshu</td>
+                                <td>Sake</td>
+                                <td>日本酒を試しました。<br>(I tried sake.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">お酒</span> (おさけ)</td>
+                                <td>Osake</td>
+                                <td>Alcohol</td>
+                                <td>お酒を飲みますか。<br>(Do you drink alcohol?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 何を飲みますか。</p>
+                        <p class="text-gray-600">A: Nani o nomimasu ka?</p>
+                        <p class="text-gray-600">A: What would you like to drink?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: 緑茶をお願いします。</p>
+                        <p class="text-gray-600">B: Ryokucha o onegai shimasu.</p>
+                        <p class="text-gray-600">B: Green tea, please.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese food vocabulary with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Food Items</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each Japanese food word with its English meaning:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">ごはん</span></li>
+                                <li><span class="japanese">りんご</span></li>
+                                <li><span class="japanese">魚</span></li>
+                                <li><span class="japanese">肉</span></li>
+                                <li><span class="japanese">野菜</span></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li>Meat</li>
+                                <li>Fish</li>
+                                <li>Rice</li>
+                                <li>Vegetables</li>
+                                <li>Apple</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>Rice (ごはん = gohan)</li>
+                            <li>Apple (りんご = ringo)</li>
+                            <li>Fish (魚 = sakana)</li>
+                            <li>Meat (肉 = niku)</li>
+                            <li>Vegetables (野菜 = yasai)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Restaurant Dialogue</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the missing words in this restaurant dialogue:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">ウェイター: いらっしゃいませ。何を＿＿＿ますか。</p>
+                        <p class="text-gray-600">(Waiter: Welcome. What would you like to order?)</p>
+                        <p class="japanese">客: ＿＿＿をください。</p>
+                        <p class="text-gray-600">(Customer: I would like sushi, please.)</p>
+                        <p class="japanese">ウェイター: 飲み物は何に＿＿＿ますか。</p>
+                        <p class="text-gray-600">(Waiter: What would you like to drink?)</p>
+                        <p class="japanese">客: ＿＿＿をお願いします。</p>
+                        <p class="text-gray-600">(Customer: Green tea, please.)</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p>1. <span class="text-indigo-600">注文し</span> (chumon shi)</p>
+                        <p>2. <span class="text-indigo-600">寿司</span> (sushi)</p>
+                        <p>3. <span class="text-indigo-600">し</span> (shi)</p>
+                        <p>4. <span class="text-indigo-600">緑茶</span> (ryokucha)</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with appropriate food vocabulary:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">1. 朝ごはんに＿＿＿と＿＿＿を食べます。(I eat bread and eggs for breakfast.)</p>
+                        <p class="japanese">2. 私は辛い＿＿＿が好きです。(I like spicy curry.)</p>
+                        <p class="japanese">3. 日本の＿＿＿は美味しいです。(Japanese sushi is delicious.)</p>
+                        <p class="japanese">4. ＿＿＿は緑色で健康に良いです。(Vegetables are green and good for health.)</p>
+                        <p class="japanese">5. 暑い日には冷たい＿＿＿が飲みたいです。(I want to drink cold water on hot days.)</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">1. <span class="text-indigo-600">パン</span> (pan) と <span class="text-indigo-600">卵</span> (tamago)</p>
+                        <p class="japanese">2. <span class="text-indigo-600">カレー</span> (karē)</p>
+                        <p class="japanese">3. <span class="text-indigo-600">寿司</span> (sushi)</p>
+                        <p class="japanese">4. <span class="text-indigo-600">野菜</span> (yasai)</p>
+                        <p class="japanese">5. <span class="text-indigo-600">水</span> (mizu)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="greetings.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Greetings</h3>
+                        <p class="text-gray-600 text-sm">Essential expressions for conversations</p>
+                    </a>
+                    <a href="numbers.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Numbers</h3>
+                        <p class="text-gray-600 text-sm">Learn counting in Japanese</p>
+                    </a>
+                    <a href="colors.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Colors</h3>
+                        <p class="text-gray-600 text-sm">Essential color vocabulary</p>
+                    </a>
+                    <a href="animals.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Animals</h3>
+                        <p class="text-gray-600 text-sm">Common animal vocabulary</p>
+                    </a>
+                    <a href="family.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Family</h3>
+                        <p class="text-gray-600 text-sm">Family relationship terms</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

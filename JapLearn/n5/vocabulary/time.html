@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Time Expressions | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .vocabulary-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vocabulary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .example-card {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        .vocabulary-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .vocabulary-table th,
+        .vocabulary-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .vocabulary-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            transition: color 0.2s;
+        }
+        .audio-button:hover {
+            color: #6366f1;
+        }
+        .time-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .time-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .time-card:hover {
+            background-color: #f3f4f6;
+            transform: translateY(-2px);
+        }
+        .category-days {
+            background-color: #fee2e2;
+        }
+        .category-months {
+            background-color: #dbeafe;
+        }
+        .category-parts {
+            background-color: #d1fae5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Japanese Time Expressions</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">Essential vocabulary for telling time, days, months, and seasons</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Japanese Time Expressions</h2>
+                <p class="text-gray-700 mb-4">
+                    Time expressions are essential for everyday communication in Japanese. From telling the current time to making appointments, discussing schedules, or talking about dates and seasons, these expressions form a fundamental part of the language.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    In this lesson, we'll cover the vocabulary for days of the week, months, seasons, telling time, and other common temporal expressions used in Japanese.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> The Japanese calendar traditionally follows both the Gregorian calendar and the Imperial calendar system which marks years based on the era of the reigning emperor. The current era is Reiwa (令和), which began on May 1, 2019 when Emperor Naruhito ascended to the throne. The year 2023 is Reiwa 5 (令和5年) in the Japanese calendar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Days of the Week Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Days of the Week (曜日 - Yōbi)</h2>
+                <p class="text-gray-700 mb-4">
+                    The Japanese days of the week all end with 曜日 (yōbi), which means "day of the week." Each day is associated with a celestial body or element.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>Associated With</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-days">
+                            <tr>
+                                <td>Monday</td>
+                                <td><span class="japanese">月曜日</span></td>
+                                <td>Getsuyōbi</td>
+                                <td>Moon (月 - getsu)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td><span class="japanese">火曜日</span></td>
+                                <td>Kayōbi</td>
+                                <td>Fire/Mars (火 - ka)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td><span class="japanese">水曜日</span></td>
+                                <td>Suiyōbi</td>
+                                <td>Water/Mercury (水 - sui)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td><span class="japanese">木曜日</span></td>
+                                <td>Mokuyōbi</td>
+                                <td>Wood/Jupiter (木 - moku)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td><span class="japanese">金曜日</span></td>
+                                <td>Kin'yōbi</td>
+                                <td>Gold/Venus (金 - kin)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td><span class="japanese">土曜日</span></td>
+                                <td>Doyōbi</td>
+                                <td>Earth/Saturn (土 - do)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td><span class="japanese">日曜日</span></td>
+                                <td>Nichiyōbi</td>
+                                <td>Sun (日 - nichi)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">今日は月曜日です。</p>
+                        <p class="text-gray-600">Kyō wa getsuyōbi desu.</p>
+                        <p class="text-gray-600">Today is Monday.</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">会議は水曜日にあります。</p>
+                        <p class="text-gray-600">Kaigi wa suiyōbi ni arimasu.</p>
+                        <p class="text-gray-600">The meeting is on Wednesday.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">日曜日は何をしますか。</p>
+                        <p class="text-gray-600">Nichiyōbi wa nani o shimasu ka.</p>
+                        <p class="text-gray-600">What do you do on Sunday?</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Months of the Year Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Months of the Year (月 - Tsuki/Gatsu)</h2>
+                <p class="text-gray-700 mb-4">
+                    The Japanese months are very straightforward. They are simply numbered from 1 to 12, followed by 月 (gatsu) which means "month."
+                </p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">January</div>
+                        <div class="japanese text-xl">一月</div>
+                        <div>いちがつ (Ichigatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">February</div>
+                        <div class="japanese text-xl">二月</div>
+                        <div>にがつ (Nigatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">March</div>
+                        <div class="japanese text-xl">三月</div>
+                        <div>さんがつ (Sangatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">April</div>
+                        <div class="japanese text-xl">四月</div>
+                        <div>しがつ (Shigatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">May</div>
+                        <div class="japanese text-xl">五月</div>
+                        <div>ごがつ (Gogatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">June</div>
+                        <div class="japanese text-xl">六月</div>
+                        <div>ろくがつ (Rokugatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">July</div>
+                        <div class="japanese text-xl">七月</div>
+                        <div>しちがつ (Shichigatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">August</div>
+                        <div class="japanese text-xl">八月</div>
+                        <div>はちがつ (Hachigatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">September</div>
+                        <div class="japanese text-xl">九月</div>
+                        <div>くがつ (Kugatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">October</div>
+                        <div class="japanese text-xl">十月</div>
+                        <div>じゅうがつ (Jūgatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">November</div>
+                        <div class="japanese text-xl">十一月</div>
+                        <div>じゅういちがつ (Jūichigatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                    <div class="time-card category-months">
+                        <div class="text-lg font-bold">December</div>
+                        <div class="japanese text-xl">十二月</div>
+                        <div>じゅうにがつ (Jūnigatsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">私の誕生日は七月です。</p>
+                        <p class="text-gray-600">Watashi no tanjōbi wa shichigatsu desu.</p>
+                        <p class="text-gray-600">My birthday is in July.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">日本では四月に新学期が始まります。</p>
+                        <p class="text-gray-600">Nihon de wa shigatsu ni shin-gakki ga hajimarimasu.</p>
+                        <p class="text-gray-600">In Japan, the new school term starts in April.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Telling Time Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Telling Time (時間 - Jikan)</h2>
+                <p class="text-gray-700 mb-4">
+                    In Japanese, time is expressed using the hour followed by the minute. Hours are counted using the counter 時 (ji), and minutes use the counter 分 (fun/pun).
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Hours (時 - Ji)</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+                    <div class="time-card">
+                        <div class="text-lg font-bold">1 o'clock</div>
+                        <div class="japanese text-xl">一時</div>
+                        <div>いちじ (Ichiji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">2 o'clock</div>
+                        <div class="japanese text-xl">二時</div>
+                        <div>にじ (Niji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">3 o'clock</div>
+                        <div class="japanese text-xl">三時</div>
+                        <div>さんじ (Sanji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">4 o'clock</div>
+                        <div class="japanese text-xl">四時</div>
+                        <div>よじ (Yoji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">5 o'clock</div>
+                        <div class="japanese text-xl">五時</div>
+                        <div>ごじ (Goji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">6 o'clock</div>
+                        <div class="japanese text-xl">六時</div>
+                        <div>ろくじ (Rokuji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">7 o'clock</div>
+                        <div class="japanese text-xl">七時</div>
+                        <div>しちじ (Shichiji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">8 o'clock</div>
+                        <div class="japanese text-xl">八時</div>
+                        <div>はちじ (Hachiji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">9 o'clock</div>
+                        <div class="japanese text-xl">九時</div>
+                        <div>くじ (Kuji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">10 o'clock</div>
+                        <div class="japanese text-xl">十時</div>
+                        <div>じゅうじ (Jūji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">11 o'clock</div>
+                        <div class="japanese text-xl">十一時</div>
+                        <div>じゅういちじ (Jūichiji)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">12 o'clock</div>
+                        <div class="japanese text-xl">十二時</div>
+                        <div>じゅうにじ (Jūniji)</div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Minutes (分 - Fun/Pun)</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+                    <div class="time-card">
+                        <div class="text-lg font-bold">1 minute</div>
+                        <div class="japanese text-xl">一分</div>
+                        <div>いっぷん (Ippun)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">2 minutes</div>
+                        <div class="japanese text-xl">二分</div>
+                        <div>にふん (Nifun)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">3 minutes</div>
+                        <div class="japanese text-xl">三分</div>
+                        <div>さんぷん (Sanpun)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">5 minutes</div>
+                        <div class="japanese text-xl">五分</div>
+                        <div>ごふん (Gofun)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">10 minutes</div>
+                        <div class="japanese text-xl">十分</div>
+                        <div>じゅっぷん (Juppun)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">15 minutes</div>
+                        <div class="japanese text-xl">十五分</div>
+                        <div>じゅうごふん (Jūgofun)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">30 minutes</div>
+                        <div class="japanese text-xl">三十分</div>
+                        <div>さんじゅっぷん (Sanjuppun)</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">45 minutes</div>
+                        <div class="japanese text-xl">四十五分</div>
+                        <div>よんじゅうごふん (Yonjūgofun)</div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Putting It Together</h3>
+                <p class="text-gray-700 mb-4">
+                    To express a time, you simply combine the hour with the minutes. In Japanese, the hour comes first, followed by the minutes.
+                </p>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1:00</td>
+                                <td><span class="japanese">一時</span></td>
+                                <td>Ichiji</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>2:30</td>
+                                <td><span class="japanese">二時半</span> or <span class="japanese">二時三十分</span></td>
+                                <td>Niji-han or Niji-sanjuppun</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>9:15</td>
+                                <td><span class="japanese">九時十五分</span></td>
+                                <td>Kuji jūgofun</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>12:45</td>
+                                <td><span class="japanese">十二時四十五分</span></td>
+                                <td>Jūniji yonjūgofun</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>4:20</td>
+                                <td><span class="japanese">四時二十分</span></td>
+                                <td>Yoji nijuppun</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Note:</span> The word <span class="japanese">半</span> (han) means "half" and can be used to express half-hour times, such as 1:30 (一時半 - ichiji-han). Also, some numbers change pronunciation when combined with counters, such as 1 minute (いっぷん - ippun) instead of いちふん (ichifun).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">AM and PM</h3>
+                <p class="text-gray-700 mb-4">
+                    In Japanese, "AM" is <span class="japanese">午前</span> (gozen) and "PM" is <span class="japanese">午後</span> (gogo). These terms are placed before the time.
+                </p>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7:00 AM</td>
+                                <td><span class="japanese">午前七時</span></td>
+                                <td>Gozen shichiji</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>3:30 PM</td>
+                                <td><span class="japanese">午後三時半</span></td>
+                                <td>Gogo sanji-han</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>11:15 AM</td>
+                                <td><span class="japanese">午前十一時十五分</span></td>
+                                <td>Gozen jūichiji jūgofun</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">今、何時ですか。</p>
+                        <p class="text-gray-600">Ima, nanji desu ka.</p>
+                        <p class="text-gray-600">What time is it now?</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">午前7時に起きます。</p>
+                        <p class="text-gray-600">Gozen shichiji ni okimasu.</p>
+                        <p class="text-gray-600">I wake up at 7:00 AM.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">授業は9時から12時までです。</p>
+                        <p class="text-gray-600">Jugyō wa kuji kara jūniji made desu.</p>
+                        <p class="text-gray-600">The class is from 9:00 to 12:00.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seasons Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Seasons (季節 - Kisetsu)</h2>
+                <p class="text-gray-700 mb-4">
+                    Japan has four distinct seasons, and they play an important role in Japanese culture, art, and daily life.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div class="time-card">
+                        <div class="text-lg font-bold">Spring</div>
+                        <div class="japanese text-xl">春</div>
+                        <div>はる (Haru)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                        <p class="mt-2 text-sm text-gray-600">March-May: Cherry blossoms (桜 - sakura) bloom</p>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">Summer</div>
+                        <div class="japanese text-xl">夏</div>
+                        <div>なつ (Natsu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                        <p class="mt-2 text-sm text-gray-600">June-August: Hot and humid with many festivals</p>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">Autumn/Fall</div>
+                        <div class="japanese text-xl">秋</div>
+                        <div>あき (Aki)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                        <p class="mt-2 text-sm text-gray-600">September-November: Colorful foliage (紅葉 - kōyō)</p>
+                    </div>
+                    <div class="time-card">
+                        <div class="text-lg font-bold">Winter</div>
+                        <div class="japanese text-xl">冬</div>
+                        <div>ふゆ (Fuyu)</div>
+                        <span class="audio-button"><i class="fas fa-play-circle"></i></span>
+                        <p class="mt-2 text-sm text-gray-600">December-February: Cold with snow in many regions</p>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">日本の春はとてもきれいです。</p>
+                        <p class="text-gray-600">Nihon no haru wa totemo kirei desu.</p>
+                        <p class="text-gray-600">Spring in Japan is very beautiful.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">私の好きな季節は秋です。</p>
+                        <p class="text-gray-600">Watashi no sukina kisetsu wa aki desu.</p>
+                        <p class="text-gray-600">My favorite season is autumn.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Time Expressions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Other Useful Time Expressions</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are some common time-related expressions that are frequently used in everyday Japanese conversation.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-parts">
+                            <tr>
+                                <td><span class="japanese">今日</span></td>
+                                <td>Kyō</td>
+                                <td>Today</td>
+                                <td><span class="japanese">今日は忙しいです</span> (Kyō wa isogashii desu) - Today is busy</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">昨日</span></td>
+                                <td>Kinō</td>
+                                <td>Yesterday</td>
+                                <td><span class="japanese">昨日映画を見ました</span> (Kinō eiga o mimashita) - I watched a movie yesterday</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">明日</span></td>
+                                <td>Ashita</td>
+                                <td>Tomorrow</td>
+                                <td><span class="japanese">明日は雨です</span> (Ashita wa ame desu) - Tomorrow will be rainy</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">今週</span></td>
+                                <td>Konshū</td>
+                                <td>This week</td>
+                                <td><span class="japanese">今週はテストがあります</span> (Konshū wa tesuto ga arimasu) - There is a test this week</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">先週</span></td>
+                                <td>Senshū</td>
+                                <td>Last week</td>
+                                <td><span class="japanese">先週京都に行きました</span> (Senshū Kyōto ni ikimashita) - I went to Kyoto last week</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">来週</span></td>
+                                <td>Raishū</td>
+                                <td>Next week</td>
+                                <td><span class="japanese">来週友達に会います</span> (Raishū tomodachi ni aimasu) - I will meet my friend next week</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">今月</span></td>
+                                <td>Kongetsu</td>
+                                <td>This month</td>
+                                <td><span class="japanese">今月は忙しいです</span> (Kongetsu wa isogashii desu) - This month is busy</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">先月</span></td>
+                                <td>Sengetsu</td>
+                                <td>Last month</td>
+                                <td><span class="japanese">先月東京に行きました</span> (Sengetsu Tōkyō ni ikimashita) - I went to Tokyo last month</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">来月</span></td>
+                                <td>Raigetsu</td>
+                                <td>Next month</td>
+                                <td><span class="japanese">来月日本に行きます</span> (Raigetsu Nihon ni ikimasu) - I will go to Japan next month</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">去年</span></td>
+                                <td>Kyonen</td>
+                                <td>Last year</td>
+                                <td><span class="japanese">去年大学を卒業しました</span> (Kyonen daigaku o sotsugyō shimashita) - I graduated from university last year</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">今年</span></td>
+                                <td>Kotoshi</td>
+                                <td>This year</td>
+                                <td><span class="japanese">今年は忙しいです</span> (Kotoshi wa isogashii desu) - This year is busy</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">来年</span></td>
+                                <td>Rainen</td>
+                                <td>Next year</td>
+                                <td><span class="japanese">来年大学に入ります</span> (Rainen daigaku ni hairimasu) - I will enter university next year</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Time-Related Words and Phrases</h3>
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="japanese">〜から</span></td>
+                                <td>~kara</td>
+                                <td>from ~</td>
+                                <td><span class="japanese">9時から12時まで</span> (Kuji kara jūniji made) - From 9:00 to 12:00</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">〜まで</span></td>
+                                <td>~made</td>
+                                <td>until ~</td>
+                                <td><span class="japanese">月曜日まで</span> (Getsuyōbi made) - Until Monday</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">〜ごろ</span></td>
+                                <td>~goro</td>
+                                <td>around ~</td>
+                                <td><span class="japanese">3時ごろ</span> (Sanji goro) - Around 3:00</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎日</span></td>
+                                <td>Mainichi</td>
+                                <td>Every day</td>
+                                <td><span class="japanese">毎日勉強します</span> (Mainichi benkyō shimasu) - I study every day</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎週</span></td>
+                                <td>Maishū</td>
+                                <td>Every week</td>
+                                <td><span class="japanese">毎週日曜日に教会に行きます</span> (Maishū nichiyōbi ni kyōkai ni ikimasu) - I go to church every Sunday</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎月</span></td>
+                                <td>Maigetsu</td>
+                                <td>Every month</td>
+                                <td><span class="japanese">毎月お金を貯めます</span> (Maigetsu okane o tamemasu) - I save money every month</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎年</span></td>
+                                <td>Maitoshi</td>
+                                <td>Every year</td>
+                                <td><span class="japanese">毎年誕生日にケーキを食べます</span> (Maitoshi tanjōbi ni kēki o tabemasu) - I eat cake on my birthday every year</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese time expressions with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Days of the Week</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each day of the week with its correct Japanese name:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li>Monday</li>
+                                <li>Thursday</li>
+                                <li>Saturday</li>
+                                <li>Tuesday</li>
+                                <li>Sunday</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">日曜日</span> (Nichiyōbi)</li>
+                                <li><span class="japanese">月曜日</span> (Getsuyōbi)</li>
+                                <li><span class="japanese">火曜日</span> (Kayōbi)</li>
+                                <li><span class="japanese">木曜日</span> (Mokuyōbi)</li>
+                                <li><span class="japanese">土曜日</span> (Doyōbi)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li><span class="japanese">月曜日</span> (Getsuyōbi)</li>
+                            <li><span class="japanese">木曜日</span> (Mokuyōbi)</li>
+                            <li><span class="japanese">土曜日</span> (Doyōbi)</li>
+                            <li><span class="japanese">火曜日</span> (Kayōbi)</li>
+                            <li><span class="japanese">日曜日</span> (Nichiyōbi)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Telling Time</h3>
+                    <p class="text-gray-700 mb-3">
+                        Write these times in Japanese:
+                    </p>
+                    <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                        <li>3:30 PM</li>
+                        <li>7:15 AM</li>
+                        <li>10:45</li>
+                        <li>12:00 noon</li>
+                        <li>8:50 PM</li>
+                    </ol>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li><span class="japanese">午後三時半</span> (Gogo sanji-han) or <span class="japanese">午後三時三十分</span> (Gogo sanji sanjuppun)</li>
+                            <li><span class="japanese">午前七時十五分</span> (Gozen shichiji jūgofun)</li>
+                            <li><span class="japanese">十時四十五分</span> (Jūji yonjūgofun)</li>
+                            <li><span class="japanese">十二時</span> (Jūniji) or <span class="japanese">お昼</span> (Ohiru)</li>
+                            <li><span class="japanese">午後八時五十分</span> (Gogo hachiji gojuppun)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Complete the Dialogue</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with appropriate time expressions:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">A: すみません、＿＿＿＿ですか。</p>
+                        <p class="japanese">B: ＿＿＿＿です。</p>
+                        <p class="japanese">A: ありがとうございます。授業は＿＿＿＿からですね。</p>
+                        <p class="japanese">B: はい、そうです。＿＿＿＿までです。</p>
+                        <p class="japanese">A: ＿＿＿＿はテストがありますか。</p>
+                        <p class="japanese">B: いいえ、＿＿＿＿です。</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">A: すみません、<span class="text-indigo-600">今何時</span>ですか。 (Sumimasen, ima nanji desu ka?)</p>
+                        <p class="japanese">B: <span class="text-indigo-600">九時</span>です。 (Kuji desu.)</p>
+                        <p class="japanese">A: ありがとうございます。授業は<span class="text-indigo-600">午前十時</span>からですね。 (Arigatō gozaimasu. Jugyō wa gozen jūji kara desu ne.)</p>
+                        <p class="japanese">B: はい、そうです。<span class="text-indigo-600">十二時</span>までです。 (Hai, sō desu. Jūniji made desu.)</p>
+                        <p class="japanese">A: <span class="text-indigo-600">来週</span>はテストがありますか。 (Raishū wa tesuto ga arimasu ka?)</p>
+                        <p class="japanese">B: いいえ、<span class="text-indigo-600">再来週</span>です。 (Iie, saraishū desu.)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="numbers.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Numbers</h3>
+                        <p class="text-gray-600 text-sm">Learn counting in Japanese</p>
+                    </a>
+                    <a href="greetings.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Greetings</h3>
+                        <p class="text-gray-600 text-sm">Essential expressions for conversations</p>
+                    </a>
+                    <a href="school.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">School Terms</h3>
+                        <p class="text-gray-600 text-sm">Vocabulary for the classroom</p>
+                    </a>
+                    <a href="activities.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Daily Activities</h3>
+                        <p class="text-gray-600 text-sm">Vocabulary for everyday actions</p>
+                    </a>
+                    <a href="weather.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Weather</h3>
+                        <p class="text-gray-600 text-sm">Words for weather conditions</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

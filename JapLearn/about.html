@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Nihongo Learning</title>
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP dan Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/1023/1920/1080');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        .slide-in-bottom {
+            animation: slideInBottom 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInBottom {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e53e3e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div x-data="{ mobileMenuOpen: false }" class="overflow-x-hidden">
+
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md fixed w-full z-50 transition duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="index.html" class="flex items-center">
+                                <span class="text-red-600 text-2xl font-bold">日本語</span>
+                                <span class="ml-1 text-gray-800 text-lg font-semibold">Learning</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Links (Desktop) -->
+                    <div class="hidden md:flex md:items-center md:space-x-6">
+                        <a href="index.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                        <a href="#" class="text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Tentang Kami</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Kontak</a>
+                        <a href="signup.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="login.html" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-red-600 transition duration-300">
+                            <i class="fas" :class="{'fa-times': mobileMenuOpen, 'fa-bars': !mobileMenuOpen}"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Beranda</a>
+                    <a href="#" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-red-600 bg-gray-50 transition duration-300">Tentang Kami</a>
+                    <a href="contact.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Kontak</a>
+                    <a href="signup.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Daftar</a>
+                    <a href="login.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Masuk</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-image flex items-center justify-center py-32 px-4 mt-16">
+            <div class="text-center text-white max-w-3xl fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Tentang Kami</h1>
+                <p class="text-xl opacity-90">Kenali lebih dekat tim di balik Nihongo Learning</p>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Cerita Kami</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto"></div>
+                </div>
+                <div class="prose prose-lg mx-auto">
+                    <p class="text-gray-600 mb-6">
+                        Nihongo Learning dimulai pada tahun 2022 dengan misi sederhana: membuat pembelajaran bahasa Jepang menjadi lebih mudah diakses dan menyenangkan bagi pelajar Indonesia. Kami menyadari bahwa bahasa Jepang memiliki kompleksitas tersendiri dengan tiga jenis aksara berbeda dan struktur tata bahasa yang sangat berbeda dari bahasa Indonesia.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Berawal dari kelompok kecil pengajar bahasa Jepang yang bersemangat untuk berbagi pengetahuan mereka secara online, Nihongo Learning kini telah tumbuh menjadi platform pembelajaran komprehensif dengan ribuan pengguna dari seluruh Indonesia.
+                    </p>
+                    <p class="text-gray-600">
+                        Kami terus berkomitmen untuk memberikan materi berkualitas tinggi dan pengalaman belajar yang interaktif untuk membantu setiap pelajar mencapai tujuan mereka dalam memahami dan menguasai bahasa Jepang.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Mission Section -->
+        <section class="py-16 px-4 bg-gray-50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Misi Kami</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-8 slide-in-bottom" style="animation-delay: 0.1s;">
+                        <div class="rounded-full bg-red-100 w-16 h-16 flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Menginspirasi Pembelajaran</h3>
+                        <p class="text-gray-600">
+                            Kami bertujuan untuk menginspirasi lebih banyak orang Indonesia untuk mempelajari bahasa dan budaya Jepang melalui metode yang menyenangkan dan efektif.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-8 slide-in-bottom" style="animation-delay: 0.2s;">
+                        <div class="rounded-full bg-red-100 w-16 h-16 flex items-center justify-center mb-6">
+                            <i class="fas fa-users text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Membangun Komunitas</h3>
+                        <p class="text-gray-600">
+                            Kami menciptakan lingkungan pembelajaran yang inklusif di mana para pelajar dapat terhubung, berkolaborasi, dan tumbuh bersama dalam perjalanan bahasa mereka.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-8 slide-in-bottom" style="animation-delay: 0.3s;">
+                        <div class="rounded-full bg-red-100 w-16 h-16 flex items-center justify-center mb-6">
+                            <i class="fas fa-graduation-cap text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Memfasilitasi Keberhasilan JLPT</h3>
+                        <p class="text-gray-600">
+                            Kami berkomitmen untuk mempersiapkan siswa menghadapi ujian JLPT melalui kurikulum terstruktur yang mencakup semua aspek ujian.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-8 slide-in-bottom" style="animation-delay: 0.4s;">
+                        <div class="rounded-full bg-red-100 w-16 h-16 flex items-center justify-center mb-6">
+                            <i class="fas fa-globe-asia text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Menjembatani Budaya</h3>
+                        <p class="text-gray-600">
+                            Kami tidak hanya mengajarkan bahasa, tetapi juga memberikan wawasan tentang budaya Jepang untuk memperkaya pengalaman belajar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Tim Kami</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kenali para profesional berdedikasi yang membuat Nihongo Learning menjadi platform pembelajaran bahasa Jepang terbaik di Indonesia</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md slide-in-bottom" style="animation-delay: 0.1s;">
+                        <img src="https://picsum.photos/id/64/600/400" alt="Foto Rina Tanaka" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1">Rina Tanaka</h3>
+                            <p class="text-gray-500 mb-4">Founder & Lead Instructor</p>
+                            <p class="text-gray-600 mb-4">
+                                Lulusan Sastra Jepang Universitas Indonesia dengan pengalaman mengajar 10 tahun. Pemegang sertifikasi N1 dan berpengalaman tinggal di Tokyo selama 5 tahun.
+                            </p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-500 hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-blue-500 transition"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md slide-in-bottom" style="animation-delay: 0.2s;">
+                        <img src="https://picsum.photos/id/91/600/400" alt="Foto Budi Santoso" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1">Budi Santoso</h3>
+                            <p class="text-gray-500 mb-4">Curriculum Developer</p>
+                            <p class="text-gray-600 mb-4">
+                                Master pendidikan bahasa dari Waseda University. Spesialis dalam pengembangan kurikulum pembelajaran bahasa dan pemegang sertifikasi JLPT N1.
+                            </p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-500 hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-blue-500 transition"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md slide-in-bottom" style="animation-delay: 0.3s;">
+                        <img src="https://picsum.photos/id/26/600/400" alt="Foto Andi Wirawan" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1">Andi Wirawan</h3>
+                            <p class="text-gray-500 mb-4">Technical Lead</p>
+                            <p class="text-gray-600 mb-4">
+                                Developer berpengalaman dengan spesialisasi dalam platform e-learning. Bekerja selama 8 tahun di Jepang dan fasih berbahasa Jepang dengan level N2.
+                            </p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-500 hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-blue-500 transition"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Bergabunglah dengan Perjalanan Bahasa Jepang Kami</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">Mulai petualangan bahasa Jepang Anda dengan Nihongo Learning sekarang dan rasakan perbedaannya.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="signup.html" class="inline-block px-6 py-3 bg-white text-red-600 font-medium rounded-lg shadow hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-user-plus mr-2"></i> Daftar Sekarang
+                    </a>
+                    <a href="contact.html" class="inline-block px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-red-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-envelope mr-2"></i> Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-red-500 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-white text-lg font-semibold">Learning</span>
+                        </div>
+                        <p class="text-sm">Platform belajar bahasa Jepang terbaik untuk persiapan JLPT N5 dan N4.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Sitemap</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                            <li><a href="#" class="text-red-400 transition">Tentang Kami</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Syarat & Ketentuan</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 text-sm text-center">
+                    <p>&copy; 2025 Nihongo Learning. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

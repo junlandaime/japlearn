@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Transportation Vocabulary | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .vocabulary-table th, .vocabulary-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        .vocabulary-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            font-size: 1.25rem;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        /* Category Colors */
+        .category-public-transport tbody tr {
+            background-color: rgba(219, 234, 254, 0.4); /* Light blue */
+        }
+        .category-vehicles tbody tr {
+            background-color: rgba(254, 226, 226, 0.4); /* Light red */
+        }
+        .category-travel tbody tr {
+            background-color: rgba(220, 252, 231, 0.4); /* Light green */
+        }
+        .category-directions tbody tr {
+            background-color: rgba(254, 240, 138, 0.4); /* Light yellow */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">Transportation Vocabulary</h1>
+            <p class="text-xl">Learn essential Japanese words and phrases for getting around and using different modes of transportation.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Transportation in Japanese</h2>
+                <p class="text-gray-700 mb-4">
+                    Japan has one of the most advanced and efficient transportation systems in the world. Learning transportation vocabulary in Japanese is essential for travelers and language learners alike. In this lesson, we'll cover various types of transportation, from public transit to personal vehicles, along with useful phrases for getting around.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Key Phrase:</p>
+                    <div>
+                        <p class="japanese">どうやって行きますか？</p>
+                        <p class="text-gray-600">Dō yatte ikimasu ka?</p>
+                        <p class="text-gray-600">How do you go there?</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japan, public transportation is typically very punctual. Trains and buses often arrive and depart exactly on time, and delays of even a few minutes are considered significant.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Public Transportation Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Public Transportation</h2>
+                <p class="text-gray-700 mb-4">
+                    Public transportation is a cornerstone of Japanese daily life, especially in urban areas. Here are the essential vocabulary terms for different types of public transport in Japan.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-public-transport">
+                            <tr>
+                                <td><span class="japanese">電車</span> (でんしゃ)</td>
+                                <td>Densha</td>
+                                <td>Train</td>
+                                <td>電車で学校に行きます。<br>(I go to school by train.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">バス</span></td>
+                                <td>Basu</td>
+                                <td>Bus</td>
+                                <td>バスに乗ります。<br>(I'm getting on the bus.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">地下鉄</span> (ちかてつ)</td>
+                                <td>Chikatetsu</td>
+                                <td>Subway</td>
+                                <td>地下鉄は速いです。<br>(The subway is fast.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">新幹線</span> (しんかんせん)</td>
+                                <td>Shinkansen</td>
+                                <td>Bullet train</td>
+                                <td>新幹線で大阪に行きました。<br>(I went to Osaka by bullet train.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">タクシー</span></td>
+                                <td>Takushī</td>
+                                <td>Taxi</td>
+                                <td>タクシーを呼んでください。<br>(Please call a taxi.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">駅</span> (えき)</td>
+                                <td>Eki</td>
+                                <td>Station</td>
+                                <td>駅はどこですか。<br>(Where is the station?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">バス停</span> (バスてい)</td>
+                                <td>Basu tei</td>
+                                <td>Bus stop</td>
+                                <td>バス停で待っています。<br>(I'm waiting at the bus stop.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">切符</span> (きっぷ)</td>
+                                <td>Kippu</td>
+                                <td>Ticket</td>
+                                <td>切符を買いました。<br>(I bought a ticket.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">定期券</span> (ていきけん)</td>
+                                <td>Teikiken</td>
+                                <td>Commuter pass</td>
+                                <td>定期券を持っています。<br>(I have a commuter pass.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">乗り換え</span> (のりかえ)</td>
+                                <td>Norikae</td>
+                                <td>Transfer</td>
+                                <td>乗り換えはどこですか。<br>(Where is the transfer?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 東京駅までどうやって行きますか。</p>
+                        <p class="text-gray-600">A: Tōkyō eki made dō yatte ikimasu ka.</p>
+                        <p class="text-gray-600">A: How do I get to Tokyo Station?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: この地下鉄に乗って、新宿駅で乗り換えてください。</p>
+                        <p class="text-gray-600">B: Kono chikatetsu ni notte, Shinjuku eki de norikae shite kudasai.</p>
+                        <p class="text-gray-600">B: Take this subway and transfer at Shinjuku Station.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vehicles Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Vehicles and Personal Transportation</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are the common terms for vehicles and personal modes of transportation in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-vehicles">
+                            <tr>
+                                <td><span class="japanese">車</span> (くるま)</td>
+                                <td>Kuruma</td>
+                                <td>Car</td>
+                                <td>新しい車を買いました。<br>(I bought a new car.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">自転車</span> (じてんしゃ)</td>
+                                <td>Jitensha</td>
+                                <td>Bicycle</td>
+                                <td>自転車で学校に行きます。<br>(I go to school by bicycle.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">バイク</span></td>
+                                <td>Baiku</td>
+                                <td>Motorcycle</td>
+                                <td>彼はバイクを持っています。<br>(He has a motorcycle.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">船</span> (ふね)</td>
+                                <td>Fune</td>
+                                <td>Ship/Boat</td>
+                                <td>船で旅行しました。<br>(I traveled by ship.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">飛行機</span> (ひこうき)</td>
+                                <td>Hikōki</td>
+                                <td>Airplane</td>
+                                <td>飛行機で東京に行きます。<br>(I'm going to Tokyo by airplane.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ヘリコプター</span></td>
+                                <td>Herikoputā</td>
+                                <td>Helicopter</td>
+                                <td>ヘリコプターを見ました。<br>(I saw a helicopter.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">トラック</span></td>
+                                <td>Torakku</td>
+                                <td>Truck</td>
+                                <td>大きいトラックが道路にあります。<br>(There is a big truck on the road.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">救急車</span> (きゅうきゅうしゃ)</td>
+                                <td>Kyūkyūsha</td>
+                                <td>Ambulance</td>
+                                <td>救急車が来ました。<br>(An ambulance came.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">消防車</span> (しょうぼうしゃ)</td>
+                                <td>Shōbōsha</td>
+                                <td>Fire truck</td>
+                                <td>消防車のサイレンが聞こえます。<br>(I can hear the fire truck siren.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">パトカー</span></td>
+                                <td>Patokā</td>
+                                <td>Police car</td>
+                                <td>パトカーが止まっています。<br>(A police car is stopped.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentence:</p>
+                    <div>
+                        <p class="japanese">私は毎日自転車で会社に行きます。</p>
+                        <p class="text-gray-600">Watashi wa mainichi jitensha de kaisha ni ikimasu.</p>
+                        <p class="text-gray-600">I go to work by bicycle every day.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Travel Verbs and Phrases Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Travel Verbs and Phrases</h2>
+                <p class="text-gray-700 mb-4">
+                    These essential verbs and phrases will help you talk about transportation and travel in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-travel">
+                            <tr>
+                                <td><span class="japanese">行く</span> (いく)</td>
+                                <td>Iku</td>
+                                <td>To go</td>
+                                <td>学校に行きます。<br>(I go to school.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">来る</span> (くる)</td>
+                                <td>Kuru</td>
+                                <td>To come</td>
+                                <td>友達が来ました。<br>(My friend came.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">戻る</span> (もどる)</td>
+                                <td>Modoru</td>
+                                <td>To return</td>
+                                <td>家に戻ります。<br>(I return home.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">乗る</span> (のる)</td>
+                                <td>Noru</td>
+                                <td>To ride, to get on</td>
+                                <td>バスに乗ります。<br>(I get on the bus.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">降りる</span> (おりる)</td>
+                                <td>Oriru</td>
+                                <td>To get off</td>
+                                <td>駅で降ります。<br>(I get off at the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">運転する</span> (うんてんする)</td>
+                                <td>Unten suru</td>
+                                <td>To drive</td>
+                                <td>車を運転します。<br>(I drive a car.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">歩く</span> (あるく)</td>
+                                <td>Aruku</td>
+                                <td>To walk</td>
+                                <td>駅まで歩きます。<br>(I walk to the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">止まる</span> (とまる)</td>
+                                <td>Tomaru</td>
+                                <td>To stop</td>
+                                <td>バスが止まります。<br>(The bus stops.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">出発する</span> (しゅっぱつする)</td>
+                                <td>Shuppatsu suru</td>
+                                <td>To depart</td>
+                                <td>電車は7時に出発します。<br>(The train departs at 7 o'clock.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">到着する</span> (とうちゃくする)</td>
+                                <td>Tōchaku suru</td>
+                                <td>To arrive</td>
+                                <td>飛行機は9時に到着します。<br>(The plane arrives at 9 o'clock.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Useful Travel Phrases:</p>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="japanese">これはどこ行きのバスですか。</p>
+                            <p class="text-gray-600">Kore wa doko iki no basu desu ka.</p>
+                            <p class="text-gray-600">Where does this bus go?</p>
+                        </div>
+                        <div>
+                            <p class="japanese">次の駅は何ですか。</p>
+                            <p class="text-gray-600">Tsugi no eki wa nan desu ka.</p>
+                            <p class="text-gray-600">What is the next station?</p>
+                        </div>
+                        <div>
+                            <p class="japanese">このバスは＿＿に行きますか。</p>
+                            <p class="text-gray-600">Kono basu wa ___ ni ikimasu ka.</p>
+                            <p class="text-gray-600">Does this bus go to ___?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Directions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Directions and Location Words</h2>
+                <p class="text-gray-700 mb-4">
+                    Knowing how to ask for and understand directions is essential when using transportation in Japan.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-directions">
+                            <tr>
+                                <td><span class="japanese">右</span> (みぎ)</td>
+                                <td>Migi</td>
+                                <td>Right</td>
+                                <td>右に曲がってください。<br>(Please turn right.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">左</span> (ひだり)</td>
+                                <td>Hidari</td>
+                                <td>Left</td>
+                                <td>左に曲がってください。<br>(Please turn left.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">まっすぐ</span></td>
+                                <td>Massugu</td>
+                                <td>Straight ahead</td>
+                                <td>まっすぐ行ってください。<br>(Please go straight.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">曲がる</span> (まがる)</td>
+                                <td>Magaru</td>
+                                <td>To turn</td>
+                                <td>次の角で右に曲がります。<br>(Turn right at the next corner.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">近く</span> (ちかく)</td>
+                                <td>Chikaku</td>
+                                <td>Near</td>
+                                <td>駅の近くに住んでいます。<br>(I live near the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">遠く</span> (とおく)</td>
+                                <td>Tōku</td>
+                                <td>Far</td>
+                                <td>学校は家から遠いです。<br>(The school is far from my house.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">前</span> (まえ)</td>
+                                <td>Mae</td>
+                                <td>In front of</td>
+                                <td>駅の前で待っています。<br>(I'm waiting in front of the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">後ろ</span> (うしろ)</td>
+                                <td>Ushiro</td>
+                                <td>Behind</td>
+                                <td>銀行は郵便局の後ろです。<br>(The bank is behind the post office.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">隣</span> (となり)</td>
+                                <td>Tonari</td>
+                                <td>Next to</td>
+                                <td>スーパーは駅の隣です。<br>(The supermarket is next to the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">交差点</span> (こうさてん)</td>
+                                <td>Kōsaten</td>
+                                <td>Intersection</td>
+                                <td>交差点で右に曲がってください。<br>(Please turn right at the intersection.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue: Asking for Directions</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: すみません、東京駅はどこですか。</p>
+                        <p class="text-gray-600">A: Sumimasen, Tōkyō eki wa doko desu ka.</p>
+                        <p class="text-gray-600">A: Excuse me, where is Tokyo Station?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: まっすぐ行って、二つ目の交差点を右に曲がると、左側にあります。</p>
+                        <p class="text-gray-600">B: Massugu itte, futatsu-me no kōsaten o migi ni magaru to, hidari gawa ni arimasu.</p>
+                        <p class="text-gray-600">B: Go straight, turn right at the second intersection, and it will be on your left.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your knowledge of Japanese transportation vocabulary with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Transportation Words</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each Japanese word with its English equivalent:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">電車</span></li>
+                                <li><span class="japanese">自転車</span></li>
+                                <li><span class="japanese">バス</span></li>
+                                <li><span class="japanese">飛行機</span></li>
+                                <li><span class="japanese">タクシー</span></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li>Bicycle</li>
+                                <li>Airplane</li>
+                                <li>Bus</li>
+                                <li>Train</li>
+                                <li>Taxi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>Train (電車 = densha)</li>
+                            <li>Bicycle (自転車 = jitensha)</li>
+                            <li>Bus (バス = basu)</li>
+                            <li>Airplane (飛行機 = hikōki)</li>
+                            <li>Taxi (タクシー = takushī)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Fill in the Blanks</h3>
+                    <p class="text-gray-700 mb-3">
+                        Complete the sentences with the appropriate transportation vocabulary:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">1. 私は毎日＿＿＿で学校に行きます。(I go to school by train every day.)</p>
+                        <p class="japanese">2. ＿＿＿に乗るために切符が必要です。(You need a ticket to get on the bus.)</p>
+                        <p class="japanese">3. 東京から大阪まで＿＿＿で行きました。(I went from Tokyo to Osaka by bullet train.)</p>
+                        <p class="japanese">4. 彼は＿＿＿を運転します。(He drives a car.)</p>
+                        <p class="japanese">5. 次の＿＿＿で降りてください。(Please get off at the next station.)</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">1. <span class="text-indigo-600">電車</span> (densha)</p>
+                        <p class="japanese">2. <span class="text-indigo-600">バス</span> (basu)</p>
+                        <p class="japanese">3. <span class="text-indigo-600">新幹線</span> (shinkansen)</p>
+                        <p class="japanese">4. <span class="text-indigo-600">車</span> (kuruma)</p>
+                        <p class="japanese">5. <span class="text-indigo-600">駅</span> (eki)</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Asking for Directions</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match the Japanese questions with their English translations:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ol class="list-alpha pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">駅はどこですか。</span></li>
+                                <li><span class="japanese">このバスはどこに行きますか。</span></li>
+                                <li><span class="japanese">次の電車は何時ですか。</span></li>
+                                <li><span class="japanese">ここから近いですか。</span></li>
+                                <li><span class="japanese">どうやって空港に行きますか。</span></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li>When is the next train?</li>
+                                <li>Where does this bus go?</li>
+                                <li>How do I get to the airport?</li>
+                                <li>Where is the station?</li>
+                                <li>Is it close from here?</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p>A-4: Where is the station? (駅はどこですか。 = Eki wa doko desu ka.)</p>
+                        <p>B-2: Where does this bus go? (このバスはどこに行きますか。 = Kono basu wa doko ni ikimasu ka.)</p>
+                        <p>C-1: When is the next train? (次の電車は何時ですか。 = Tsugi no densha wa nanji desu ka.)</p>
+                        <p>D-5: Is it close from here? (ここから近いですか。 = Koko kara chikai desu ka.)</p>
+                        <p>E-3: How do I get to the airport? (どうやって空港に行きますか。 = Dō yatte kūkō ni ikimasu ka.)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="greetings.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Greetings</h3>
+                        <p class="text-gray-600 text-sm">Essential expressions for conversations</p>
+                    </a>
+                    <a href="numbers.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Numbers</h3>
+                        <p class="text-gray-600 text-sm">Learn counting in Japanese</p>
+                    </a>
+                    <a href="food.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Food</h3>
+                        <p class="text-gray-600 text-sm">Japanese food and dining vocabulary</p>
+                    </a>
+                    <a href="location.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Locations</h3>
+                        <p class="text-gray-600 text-sm">Places and locations vocabulary</p>
+                    </a>
+                    <a href="time.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Time</h3>
+                        <p class="text-gray-600 text-sm">Time expressions and calendar words</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Negative Form | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            border-left: 4px solid #6366f1;
+            background-color: #eef2ff;
+        }
+        .verb-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .verb-table th,
+        .verb-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .verb-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .verb-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .godan {
+            border-left: 4px solid #ef4444;
+            background-color: #fee2e2;
+        }
+        .ichidan {
+            border-left: 4px solid #3b82f6;
+            background-color: #dbeafe;
+        }
+        .irregular {
+            border-left: 4px solid #10b981;
+            background-color: #d1fae5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Negative Form</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">Expressing negation in Japanese</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Negative Forms in Japanese</h2>
+                <p class="text-gray-700 mb-4">
+                    In Japanese, the negative form is used to express denial, refusal, or the absence of something. It's one of the fundamental grammatical forms you need to learn in order to communicate effectively.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Unlike English, where we add "not" to negate sentences, Japanese uses different conjugation patterns depending on the type of word (verb, adjective, or noun) and the level of politeness.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Note:</span> In this lesson, we'll cover both plain (casual) and polite negative forms. Plain forms are used with friends and family, while polite forms are used in more formal situations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verbs in Negative Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Negative Forms of Verbs</h2>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-3">Plain Negative Form</h3>
+                <p class="text-gray-700 mb-4">
+                    The plain negative form is used in casual conversations with friends and family, in written Japanese, and in subordinate clauses.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Verb Group</th>
+                                <th>How to Form</th>
+                                <th>Dictionary Form</th>
+                                <th>Plain Negative Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Group 1 (Godan)</td>
+                                <td>Change final う-row kana to あ-row + ない</td>
+                                <td><span class="japanese">話す</span> (hanasu - to speak)</td>
+                                <td><span class="japanese">話さない</span> (hanasanai)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 1 (Godan)</td>
+                                <td>Change final う-row kana to あ-row + ない</td>
+                                <td><span class="japanese">飲む</span> (nomu - to drink)</td>
+                                <td><span class="japanese">飲まない</span> (nomanai)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 1 (Godan)</td>
+                                <td>Change final う-row kana to あ-row + ない</td>
+                                <td><span class="japanese">書く</span> (kaku - to write)</td>
+                                <td><span class="japanese">書かない</span> (kakanai)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 2 (Ichidan)</td>
+                                <td>Remove る and add ない</td>
+                                <td><span class="japanese">食べる</span> (taberu - to eat)</td>
+                                <td><span class="japanese">食べない</span> (tabenai)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 2 (Ichidan)</td>
+                                <td>Remove る and add ない</td>
+                                <td><span class="japanese">見る</span> (miru - to see)</td>
+                                <td><span class="japanese">見ない</span> (minai)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 3 (する)</td>
+                                <td>Change する to しない</td>
+                                <td><span class="japanese">する</span> (suru - to do)</td>
+                                <td><span class="japanese">しない</span> (shinai)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 3 (来る)</td>
+                                <td>Change 来る to 来ない</td>
+                                <td><span class="japanese">来る</span> (kuru - to come)</td>
+                                <td><span class="japanese">来ない</span> (konai)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="godan p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2">Group 1 (Godan) Verbs</p>
+                        <p class="text-gray-700 mb-1">
+                            Change final う-row kana to あ-row + ない
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">行く → 行かない</span> (iku → ikanai)<br>
+                            <span class="japanese">待つ → 待たない</span> (matsu → matanai)<br>
+                            <span class="japanese">読む → 読まない</span> (yomu → yomanai)
+                        </p>
+                    </div>
+                    <div class="ichidan p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2">Group 2 (Ichidan) Verbs</p>
+                        <p class="text-gray-700 mb-1">
+                            Simply replace る with ない
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">見る → 見ない</span> (miru → minai)<br>
+                            <span class="japanese">食べる → 食べない</span> (taberu → tabenai)<br>
+                            <span class="japanese">起きる → 起きない</span> (okiru → okinai)
+                        </p>
+                    </div>
+                    <div class="irregular p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2">Group 3 (Irregular) Verbs</p>
+                        <p class="text-gray-700 mb-1">
+                            Special conjugations
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">する → しない</span> (suru → shinai)<br>
+                            <span class="japanese">来る → 来ない</span> (kuru → konai)<br>
+                            <span class="japanese">勉強する → 勉強しない</span> (benkyō suru → benkyō shinai)
+                        </p>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Polite Negative Form</h3>
+                <p class="text-gray-700 mb-4">
+                    The polite negative form is used in formal situations, with people you don't know well, with superiors, or in business settings.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Verb Group</th>
+                                <th>How to Form</th>
+                                <th>Dictionary Form</th>
+                                <th>Polite Negative Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Group 1 (Godan)</td>
+                                <td>Form the polite stem (ます form), then replace ます with ません</td>
+                                <td><span class="japanese">話す</span> (hanasu)</td>
+                                <td><span class="japanese">話しません</span> (hanashimasen)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 1 (Godan)</td>
+                                <td>Form the polite stem (ます form), then replace ます with ません</td>
+                                <td><span class="japanese">飲む</span> (nomu)</td>
+                                <td><span class="japanese">飲みません</span> (nomimasen)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 2 (Ichidan)</td>
+                                <td>Form the polite stem (ます form), then replace ます with ません</td>
+                                <td><span class="japanese">食べる</span> (taberu)</td>
+                                <td><span class="japanese">食べません</span> (tabemasen)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 2 (Ichidan)</td>
+                                <td>Form the polite stem (ます form), then replace ます with ません</td>
+                                <td><span class="japanese">見る</span> (miru)</td>
+                                <td><span class="japanese">見ません</span> (mimasen)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 3 (する)</td>
+                                <td>Change します to しません</td>
+                                <td><span class="japanese">する</span> (suru)</td>
+                                <td><span class="japanese">しません</span> (shimasen)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 3 (来る)</td>
+                                <td>Change 来ます to 来ません</td>
+                                <td><span class="japanese">来る</span> (kuru)</td>
+                                <td><span class="japanese">来ません</span> (kimasen)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of Verbs in Negative Form</h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">私は肉を食べない。</span> (Plain Negative)</p>
+                        <p class="text-gray-700 mb-1">Watashi wa niku o tabenai.</p>
+                        <p class="text-gray-600">I don't eat meat.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">彼は日本語を話しません。</span> (Polite Negative)</p>
+                        <p class="text-gray-700 mb-1">Kare wa nihongo o hanashimasen.</p>
+                        <p class="text-gray-600">He doesn't speak Japanese.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">明日、学校に行かない。</span> (Plain Negative)</p>
+                        <p class="text-gray-700 mb-1">Ashita, gakkō ni ikanai.</p>
+                        <p class="text-gray-600">I won't go to school tomorrow.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">友達は来ません。</span> (Polite Negative)</p>
+                        <p class="text-gray-700 mb-1">Tomodachi wa kimasen.</p>
+                        <p class="text-gray-600">My friend isn't coming.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Adjectives in Negative Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Negative Forms of Adjectives</h2>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">い-Adjectives</h3>
+                <p class="text-gray-700 mb-4">
+                    For い-adjectives, replace the final い with くない for plain form, or くないです for polite form:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Form</th>
+                                <th>How to Form</th>
+                                <th>Positive Form</th>
+                                <th>Negative Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Plain Negative</td>
+                                <td>Replace final い with くない</td>
+                                <td><span class="japanese">高い</span> (takai - expensive)</td>
+                                <td><span class="japanese">高くない</span> (takakunai)</td>
+                            </tr>
+                            <tr>
+                                <td>Plain Negative</td>
+                                <td>Replace final い with くない</td>
+                                <td><span class="japanese">大きい</span> (ōkii - big)</td>
+                                <td><span class="japanese">大きくない</span> (ōkikunai)</td>
+                            </tr>
+                            <tr>
+                                <td>Polite Negative</td>
+                                <td>Replace final い with くないです</td>
+                                <td><span class="japanese">高い</span> (takai - expensive)</td>
+                                <td><span class="japanese">高くないです</span> (takakunai desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Polite Negative</td>
+                                <td>Replace final い with くないです</td>
+                                <td><span class="japanese">大きい</span> (ōkii - big)</td>
+                                <td><span class="japanese">大きくないです</span> (ōkikunai desu)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">な-Adjectives</h3>
+                <p class="text-gray-700 mb-4">
+                    For な-adjectives, add じゃない for plain form, or じゃないです for polite form:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Form</th>
+                                <th>How to Form</th>
+                                <th>Positive Form</th>
+                                <th>Negative Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Plain Negative</td>
+                                <td>Add じゃない</td>
+                                <td><span class="japanese">静か</span> (shizuka - quiet)</td>
+                                <td><span class="japanese">静かじゃない</span> (shizuka ja nai)</td>
+                            </tr>
+                            <tr>
+                                <td>Plain Negative</td>
+                                <td>Add じゃない</td>
+                                <td><span class="japanese">便利</span> (benri - convenient)</td>
+                                <td><span class="japanese">便利じゃない</span> (benri ja nai)</td>
+                            </tr>
+                            <tr>
+                                <td>Polite Negative</td>
+                                <td>Add じゃないです</td>
+                                <td><span class="japanese">静か</span> (shizuka - quiet)</td>
+                                <td><span class="japanese">静かじゃないです</span> (shizuka ja nai desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Polite Negative</td>
+                                <td>Add じゃないです</td>
+                                <td><span class="japanese">便利</span> (benri - convenient)</td>
+                                <td><span class="japanese">便利じゃないです</span> (benri ja nai desu)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of Adjectives in Negative Form</h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">このりんごは大きくない。</span> (Plain Negative)</p>
+                        <p class="text-gray-700 mb-1">Kono ringo wa ōkikunai.</p>
+                        <p class="text-gray-600">This apple is not big.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">このホテルは高くないです。</span> (Polite Negative)</p>
+                        <p class="text-gray-700 mb-1">Kono hoteru wa takakunai desu.</p>
+                        <p class="text-gray-600">This hotel is not expensive.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">彼の部屋は静かじゃない。</span> (Plain Negative)</p>
+                        <p class="text-gray-700 mb-1">Kare no heya wa shizuka ja nai.</p>
+                        <p class="text-gray-600">His room is not quiet.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">この駅は便利じゃないです。</span> (Polite Negative)</p>
+                        <p class="text-gray-700 mb-1">Kono eki wa benri ja nai desu.</p>
+                        <p class="text-gray-600">This station is not convenient.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nouns in Negative Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Negative Forms of Nouns</h2>
+                <p class="text-gray-700 mb-4">
+                    For nouns, we use じゃない (ja nai) for plain form, or じゃないです (ja nai desu) / ではありません (dewa arimasen) for polite form:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Form</th>
+                                <th>How to Form</th>
+                                <th>Positive Form</th>
+                                <th>Negative Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Plain Negative</td>
+                                <td>Add じゃない</td>
+                                <td><span class="japanese">学生だ</span> (gakusei da - am a student)</td>
+                                <td><span class="japanese">学生じゃない</span> (gakusei ja nai)</td>
+                            </tr>
+                            <tr>
+                                <td>Polite Negative</td>
+                                <td>Add じゃないです or ではありません</td>
+                                <td><span class="japanese">学生です</span> (gakusei desu)</td>
+                                <td><span class="japanese">学生じゃないです</span> (gakusei ja nai desu)<br>or<br><span class="japanese">学生ではありません</span> (gakusei dewa arimasen)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of Nouns in Negative Form</h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">私は先生じゃない。</span> (Plain Negative)</p>
+                        <p class="text-gray-700 mb-1">Watashi wa sensei ja nai.</p>
+                        <p class="text-gray-600">I am not a teacher.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">彼は日本人じゃないです。</span> (Polite Negative)</p>
+                        <p class="text-gray-700 mb-1">Kare wa nihonjin ja nai desu.</p>
+                        <p class="text-gray-600">He is not Japanese.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">これは私の本じゃない。</span> (Plain Negative)</p>
+                        <p class="text-gray-700 mb-1">Kore wa watashi no hon ja nai.</p>
+                        <p class="text-gray-600">This is not my book.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">あれはりんごではありません。</span> (Polite Negative)</p>
+                        <p class="text-gray-700 mb-1">Are wa ringo dewa arimasen.</p>
+                        <p class="text-gray-600">That is not an apple.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Negative Expressions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Special Negative Expressions</h2>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. ない (nai) as an Adjective</h3>
+                <p class="text-gray-700 mb-4">
+                    The word <span class="japanese">ない</span> (nai) can also function as an い-adjective on its own, meaning "non-existent" or "there is not":
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">お金がない。</span></p>
+                    <p class="text-gray-700 mb-1">Okane ga nai.</p>
+                    <p class="text-gray-600">I don't have money. (lit: Money doesn't exist)</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. じゃなくて (ja nakute)</h3>
+                <p class="text-gray-700 mb-4">
+                    Used to correct information, similar to "not X, but Y" in English:
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">私は先生じゃなくて、学生です。</span></p>
+                    <p class="text-gray-700 mb-1">Watashi wa sensei ja nakute, gakusei desu.</p>
+                    <p class="text-gray-600">I'm not a teacher, but a student.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. ないで (naide)</h3>
+                <p class="text-gray-700 mb-4">
+                    Used to express "without doing something" or "instead of doing something":
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">朝ご飯を食べないで、学校に行きました。</span></p>
+                    <p class="text-gray-700 mb-1">Asagohan o tabenaide, gakkō ni ikimashita.</p>
+                    <p class="text-gray-600">I went to school without eating breakfast.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. なければなりません / なきゃ (nakerebanarimasen / nakya)</h3>
+                <p class="text-gray-700 mb-4">
+                    Used to express obligation ("must do" or "have to do"):
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">宿題をしなければなりません。</span></p>
+                    <p class="text-gray-700 mb-1">Shukudai o shinakereba narimasen.</p>
+                    <p class="text-gray-600">I must do my homework.</p>
+                </div>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">早く行かなきゃ。</span> (Casual)</p>
+                    <p class="text-gray-700 mb-1">Hayaku ikanakya.</p>
+                    <p class="text-gray-600">I gotta go early.</p>
+                </div>
+            </section>
+
+            <!-- Past Negative Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Past Negative Forms</h2>
+                <p class="text-gray-700 mb-4">
+                    To express that something did not happen in the past, we need to use the past negative form:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Plain Present Negative</th>
+                                <th>Plain Past Negative</th>
+                                <th>Polite Past Negative</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Verb (Group 1)</td>
+                                <td><span class="japanese">話さない</span> (hanasanai)</td>
+                                <td><span class="japanese">話さなかった</span> (hanasanakatta)</td>
+                                <td><span class="japanese">話しませんでした</span> (hanashimasen deshita)</td>
+                            </tr>
+                            <tr>
+                                <td>Verb (Group 2)</td>
+                                <td><span class="japanese">食べない</span> (tabenai)</td>
+                                <td><span class="japanese">食べなかった</span> (tabenakatta)</td>
+                                <td><span class="japanese">食べませんでした</span> (tabemasen deshita)</td>
+                            </tr>
+                            <tr>
+                                <td>い-Adjective</td>
+                                <td><span class="japanese">高くない</span> (takakunai)</td>
+                                <td><span class="japanese">高くなかった</span> (takakunakatta)</td>
+                                <td><span class="japanese">高くなかったです</span> (takakunakatta desu)</td>
+                            </tr>
+                            <tr>
+                                <td>な-Adjective</td>
+                                <td><span class="japanese">静かじゃない</span> (shizuka ja nai)</td>
+                                <td><span class="japanese">静かじゃなかった</span> (shizuka ja nakatta)</td>
+                                <td><span class="japanese">静かじゃなかったです</span> (shizuka ja nakatta desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Noun</td>
+                                <td><span class="japanese">学生じゃない</span> (gakusei ja nai)</td>
+                                <td><span class="japanese">学生じゃなかった</span> (gakusei ja nakatta)</td>
+                                <td><span class="japanese">学生じゃなかったです</span> (gakusei ja nakatta desu)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of Past Negative Forms</h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">昨日、映画を見なかった。</span> (Plain Past Negative)</p>
+                        <p class="text-gray-700 mb-1">Kinō, eiga o minakatta.</p>
+                        <p class="text-gray-600">I didn't watch a movie yesterday.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">先週、日本に行きませんでした。</span> (Polite Past Negative)</p>
+                        <p class="text-gray-700 mb-1">Senshū, nihon ni ikimasen deshita.</p>
+                        <p class="text-gray-600">I didn't go to Japan last week.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">その料理は美味しくなかった。</span> (Plain Past Negative)</p>
+                        <p class="text-gray-700 mb-1">Sono ryōri wa oishikunakatta.</p>
+                        <p class="text-gray-600">That dish wasn't delicious.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">彼は先生じゃなかったです。</span> (Polite Past Negative)</p>
+                        <p class="text-gray-700 mb-1">Kare wa sensei ja nakatta desu.</p>
+                        <p class="text-gray-600">He wasn't a teacher.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Exercise 1: Convert to Negative Form</h3>
+                    <p class="text-gray-700 mb-4">Convert these positive forms to their plain negative form:</p>
+                    <ol class="list-decimal pl-6 mb-4 text-gray-700">
+                        <li><span class="japanese">飲む</span> (nomu - to drink)</li>
+                        <li><span class="japanese">食べる</span> (taberu - to eat)</li>
+                        <li><span class="japanese">高い</span> (takai - expensive)</li>
+                        <li><span class="japanese">元気</span> (genki - energetic)</li>
+                        <li><span class="japanese">学生だ</span> (gakusei da - am a student)</li>
+                    </ol>
+                    <div class="mt-4 p-4 bg-white rounded border border-gray-200">
+                        <p class="font-semibold mb-2">Answers:</p>
+                        <ol class="list-decimal pl-6 text-gray-700">
+                            <li><span class="japanese">飲まない</span> (nomanai)</li>
+                            <li><span class="japanese">食べない</span> (tabenai)</li>
+                            <li><span class="japanese">高くない</span> (takakunai)</li>
+                            <li><span class="japanese">元気じゃない</span> (genki ja nai)</li>
+                            <li><span class="japanese">学生じゃない</span> (gakusei ja nai)</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Exercise 2: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-4">Fill in the blanks with the appropriate negative form:</p>
+                    <ol class="list-decimal pl-6 mb-4 text-gray-700">
+                        <li>私は肉を___________。(食べる - plain negative)</li>
+                        <li>彼は日本語を___________。(話す - polite negative)</li>
+                        <li>このカバンは___________。(高い - plain negative)</li>
+                        <li>あの部屋は___________。(静か - polite negative)</li>
+                        <li>私は学生___________。(だ - polite past negative)</li>
+                    </ol>
+                    <div class="mt-4 p-4 bg-white rounded border border-gray-200">
+                        <p class="font-semibold mb-2">Answers:</p>
+                        <ol class="list-decimal pl-6 text-gray-700">
+                            <li>私は肉を<span class="font-bold">食べない</span>。(Watashi wa niku o tabenai.)</li>
+                            <li>彼は日本語を<span class="font-bold">話しません</span>。(Kare wa nihongo o hanashimasen.)</li>
+                            <li>このカバンは<span class="font-bold">高くない</span>。(Kono kaban wa takakunai.)</li>
+                            <li>あの部屋は<span class="font-bold">静かじゃないです</span>。(Ano heya wa shizuka ja nai desu.)</li>
+                            <li>私は学生<span class="font-bold">じゃなかったです</span>。(Watashi wa gakusei ja nakatta desu.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grammar Navigation -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Other N5 Grammar Topics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="basic-sentence.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Basic Sentence Structure</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn the fundamental structure of Japanese sentences</p>
+                    </a>
+                    <a href="particles-intro.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Introduction to Particles</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn about は、が、を、に、で and their uses</p>
+                    </a>
+                    <a href="verb-intro.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Introduction to Verbs</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn the basics of Japanese verbs</p>
+                    </a>
+                    <a href="adjectives.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Adjectives</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn about i-adjectives and na-adjectives</p>
+                    </a>
+                    <a href="present-tense.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Present Tense</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn how to express actions in the present</p>
+                    </a>
+                    <a href="past-tense.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Past Tense</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn how to express actions in the past</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="xl:col-span-1">
+                    <h3 class="text-lg font-semibold">JapLearn</h3>
+                    <p class="mt-2 text-sm text-gray-300">Your journey to Japanese fluency begins here.</p>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Instagram</span>
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Twitter</span>
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">YouTube</span>
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Courses</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="../intro.html" class="text-base text-gray-300 hover:text-white">N5 Beginner</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">N4 Elementary</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">JLPT Prep</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Conversational</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="../../contact.html" class="text-base text-gray-300 hover:text-white">Contact</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">FAQ</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Community</a></li>
+                            <li><a href="../../about.html" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <p class="mt-8 text-base text-gray-400 md:mt-0">&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

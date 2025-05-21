@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Adjectives - i-adjectives & na-adjectives | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .adjective-example {
+            border-left: 4px solid #f59e0b;
+            background-color: #fef3c7;
+        }
+        .i-adjective {
+            border-left: 4px solid #ef4444;
+            background-color: #fee2e2;
+        }
+        .na-adjective {
+            border-left: 4px solid #3b82f6;
+            background-color: #dbeafe;
+        }
+        .conjugation-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .conjugation-table th,
+        .conjugation-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .conjugation-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .conjugation-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Japanese Adjectives</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">Understanding i-adjectives & na-adjectives</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            <!-- Introduction -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Japanese Adjectives</h2>
+                <p class="text-gray-700 mb-4">
+                    In Japanese, adjectives are used to describe nouns, just like in English. However, Japanese adjectives are divided into two main types: <span class="font-semibold text-red-600">い-adjectives</span> (i-adjectives) and <span class="font-semibold text-blue-600">な-adjectives</span> (na-adjectives). These two groups behave differently in terms of conjugation and usage.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Understanding the difference between these two types is essential for constructing grammatically correct sentences in Japanese. Let's explore each type in detail.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                Unlike in English, Japanese adjectives can conjugate (change form) depending on tense, politeness level, and whether they're affirmative or negative.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- I-Adjectives Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">い-Adjectives (i-adjectives)</h2>
+                <p class="text-gray-700 mb-4">
+                    い-adjectives (形容詞, keiyōshi) always end with the hiragana character <span class="japanese font-semibold">い</span> (i). They can directly modify nouns without any additional particles.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    These adjectives conjugate by changing the ending <span class="japanese font-semibold">い</span> (i).
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Common い-Adjectives</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="i-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">大きい</span> (おおきい - ōkii)</p>
+                        <p class="text-gray-700">Big, large</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">大きい家</span> (おおきいいえ - ōkii ie) = A big house
+                        </p>
+                    </div>
+                    <div class="i-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">小さい</span> (ちいさい - chiisai)</p>
+                        <p class="text-gray-700">Small, little</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">小さい猫</span> (ちいさいねこ - chiisai neko) = A small cat
+                        </p>
+                    </div>
+                    <div class="i-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">高い</span> (たかい - takai)</p>
+                        <p class="text-gray-700">High, expensive</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">高い山</span> (たかいやま - takai yama) = A high mountain
+                        </p>
+                    </div>
+                    <div class="i-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">安い</span> (やすい - yasui)</p>
+                        <p class="text-gray-700">Cheap, inexpensive</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">安いレストラン</span> (やすいレストラン - yasui resutoran) = A cheap restaurant
+                        </p>
+                    </div>
+                    <div class="i-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">新しい</span> (あたらしい - atarashii)</p>
+                        <p class="text-gray-700">New</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">新しい車</span> (あたらしいくるま - atarashii kuruma) = A new car
+                        </p>
+                    </div>
+                    <div class="i-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">古い</span> (ふるい - furui)</p>
+                        <p class="text-gray-700">Old (for objects)</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">古い本</span> (ふるいほん - furui hon) = An old book
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Conjugation of い-Adjectives</h3>
+                <div class="overflow-x-auto mb-6">
+                    <table class="conjugation-table">
+                        <thead>
+                            <tr>
+                                <th>Form</th>
+                                <th>Pattern</th>
+                                <th>Example (大きい - big)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Present Affirmative (Plain)</td>
+                                <td>[adjective]</td>
+                                <td><span class="japanese">大きい</span> (おおきい - ōkii)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Affirmative (Plain)</td>
+                                <td>[stem] + かった</td>
+                                <td><span class="japanese">大きかった</span> (おおきかった - ōkikatta)</td>
+                            </tr>
+                            <tr>
+                                <td>Present Negative (Plain)</td>
+                                <td>[stem] + くない</td>
+                                <td><span class="japanese">大きくない</span> (おおきくない - ōkikunai)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Negative (Plain)</td>
+                                <td>[stem] + くなかった</td>
+                                <td><span class="japanese">大きくなかった</span> (おおきくなかった - ōkikunakatta)</td>
+                            </tr>
+                            <tr>
+                                <td>Present Affirmative (Polite)</td>
+                                <td>[stem] + いです</td>
+                                <td><span class="japanese">大きいです</span> (おおきいです - ōkii desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Affirmative (Polite)</td>
+                                <td>[stem] + かったです</td>
+                                <td><span class="japanese">大きかったです</span> (おおきかったです - ōkikatta desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Present Negative (Polite)</td>
+                                <td>[stem] + くないです</td>
+                                <td><span class="japanese">大きくないです</span> (おおきくないです - ōkikunai desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Negative (Polite)</td>
+                                <td>[stem] + くなかったです</td>
+                                <td><span class="japanese">大きくなかったです</span> (おおきくなかったです - ōkikunakatta desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Te-form</td>
+                                <td>[stem] + くて</td>
+                                <td><span class="japanese">大きくて</span> (おおきくて - ōkikute)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of い-Adjectives in Sentences</h3>
+                <div class="space-y-4 mb-6">
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">この本は新しいです。</span></p>
+                        <p class="text-gray-700 mb-1">Kono hon wa atarashii desu.</p>
+                        <p class="text-gray-600">This book is new.</p>
+                    </div>
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">あの山は高かったです。</span></p>
+                        <p class="text-gray-700 mb-1">Ano yama wa takakatta desu.</p>
+                        <p class="text-gray-600">That mountain was high.</p>
+                    </div>
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">このコーヒーは熱くないです。</span></p>
+                        <p class="text-gray-700 mb-1">Kono kōhī wa atsukunai desu.</p>
+                        <p class="text-gray-600">This coffee is not hot.</p>
+                    </div>
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">昨日の映画は面白くなかったです。</span></p>
+                        <p class="text-gray-700 mb-1">Kinō no eiga wa omoshirokunakatta desu.</p>
+                        <p class="text-gray-600">Yesterday's movie was not interesting.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Na-Adjectives Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">な-Adjectives (na-adjectives)</h2>
+                <p class="text-gray-700 mb-4">
+                    な-adjectives (形容動詞, keiyōdōshi) do not end with <span class="japanese font-semibold">い</span> (i) and require the particle <span class="japanese font-semibold">な</span> (na) when they directly modify a noun.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    These adjectives behave more like nouns and use the copula (です/だ) in their conjugations.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Common な-Adjectives</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="na-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">綺麗</span> (きれい - kirei)</p>
+                        <p class="text-gray-700">Beautiful, clean</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">綺麗な花</span> (きれいなはな - kirei na hana) = A beautiful flower
+                        </p>
+                    </div>
+                    <div class="na-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">静か</span> (しずか - shizuka)</p>
+                        <p class="text-gray-700">Quiet</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">静かな場所</span> (しずかなばしょ - shizuka na basho) = A quiet place
+                        </p>
+                    </div>
+                    <div class="na-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">便利</span> (べんり - benri)</p>
+                        <p class="text-gray-700">Convenient</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">便利なアプリ</span> (べんりなアプリ - benri na apuri) = A convenient app
+                        </p>
+                    </div>
+                    <div class="na-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">元気</span> (げんき - genki)</p>
+                        <p class="text-gray-700">Healthy, energetic</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">元気な子供</span> (げんきなこども - genki na kodomo) = A healthy child
+                        </p>
+                    </div>
+                    <div class="na-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">暇</span> (ひま - hima)</p>
+                        <p class="text-gray-700">Free, having spare time</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">暇な時間</span> (ひまなじかん - hima na jikan) = Free time
+                        </p>
+                    </div>
+                    <div class="na-adjective p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2"><span class="japanese">簡単</span> (かんたん - kantan)</p>
+                        <p class="text-gray-700">Easy, simple</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="japanese">簡単な問題</span> (かんたんなもんだい - kantan na mondai) = An easy problem
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Conjugation of な-Adjectives</h3>
+                <div class="overflow-x-auto mb-6">
+                    <table class="conjugation-table">
+                        <thead>
+                            <tr>
+                                <th>Form</th>
+                                <th>Pattern</th>
+                                <th>Example (綺麗 - beautiful)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Present Affirmative (Plain)</td>
+                                <td>[adj] + だ</td>
+                                <td><span class="japanese">綺麗だ</span> (きれいだ - kirei da)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Affirmative (Plain)</td>
+                                <td>[adj] + だった</td>
+                                <td><span class="japanese">綺麗だった</span> (きれいだった - kirei datta)</td>
+                            </tr>
+                            <tr>
+                                <td>Present Negative (Plain)</td>
+                                <td>[adj] + じゃない</td>
+                                <td><span class="japanese">綺麗じゃない</span> (きれいじゃない - kirei ja nai)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Negative (Plain)</td>
+                                <td>[adj] + じゃなかった</td>
+                                <td><span class="japanese">綺麗じゃなかった</span> (きれいじゃなかった - kirei ja nakatta)</td>
+                            </tr>
+                            <tr>
+                                <td>Present Affirmative (Polite)</td>
+                                <td>[adj] + です</td>
+                                <td><span class="japanese">綺麗です</span> (きれいです - kirei desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Affirmative (Polite)</td>
+                                <td>[adj] + でした</td>
+                                <td><span class="japanese">綺麗でした</span> (きれいでした - kirei deshita)</td>
+                            </tr>
+                            <tr>
+                                <td>Present Negative (Polite)</td>
+                                <td>[adj] + じゃないです</td>
+                                <td><span class="japanese">綺麗じゃないです</span> (きれいじゃないです - kirei ja nai desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Negative (Polite)</td>
+                                <td>[adj] + じゃなかったです</td>
+                                <td><span class="japanese">綺麗じゃなかったです</span> (きれいじゃなかったです - kirei ja nakatta desu)</td>
+                            </tr>
+                            <tr>
+                                <td>Te-form</td>
+                                <td>[adj] + で</td>
+                                <td><span class="japanese">綺麗で</span> (きれいで - kirei de)</td>
+                            </tr>
+                            <tr>
+                                <td>Attributive Form</td>
+                                <td>[adj] + な</td>
+                                <td><span class="japanese">綺麗な</span> (きれいな - kirei na)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of な-Adjectives in Sentences</h3>
+                <div class="space-y-4 mb-6">
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">この部屋は静かです。</span></p>
+                        <p class="text-gray-700 mb-1">Kono heya wa shizuka desu.</p>
+                        <p class="text-gray-600">This room is quiet.</p>
+                    </div>
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">昨日のパーティーは賑やかでした。</span></p>
+                        <p class="text-gray-700 mb-1">Kinō no pātī wa nigiyaka deshita.</p>
+                        <p class="text-gray-600">Yesterday's party was lively.</p>
+                    </div>
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">彼は元気じゃないです。</span></p>
+                        <p class="text-gray-700 mb-1">Kare wa genki ja nai desu.</p>
+                        <p class="text-gray-600">He is not well.</p>
+                    </div>
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">あのレストランは有名じゃなかったです。</span></p>
+                        <p class="text-gray-700 mb-1">Ano resutoran wa yūmei ja nakatta desu.</p>
+                        <p class="text-gray-600">That restaurant was not famous.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Differences Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Key Differences Between い-Adjectives and な-Adjectives</h2>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="conjugation-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>い-Adjectives</th>
+                                <th>な-Adjectives</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ending</td>
+                                <td>Always end in <span class="japanese">い</span> (i)</td>
+                                <td>Do not end in <span class="japanese">い</span> (most of the time)</td>
+                            </tr>
+                            <tr>
+                                <td>Attributive Form</td>
+                                <td>Used as is (e.g., <span class="japanese">高い山</span>)</td>
+                                <td>Requires <span class="japanese">な</span> (e.g., <span class="japanese">静かな部屋</span>)</td>
+                            </tr>
+                            <tr>
+                                <td>Past Form</td>
+                                <td>Replace <span class="japanese">い</span> with <span class="japanese">かった</span></td>
+                                <td>Add <span class="japanese">だった</span></td>
+                            </tr>
+                            <tr>
+                                <td>Negative Form</td>
+                                <td>Replace <span class="japanese">い</span> with <span class="japanese">くない</span></td>
+                                <td>Add <span class="japanese">じゃない</span></td>
+                            </tr>
+                            <tr>
+                                <td>Te-form</td>
+                                <td>Replace <span class="japanese">い</span> with <span class="japanese">くて</span></td>
+                                <td>Add <span class="japanese">で</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Note:</span> There are a few exceptions to these rules. For example, the adjective <span class="japanese">きれい</span> (kirei, "beautiful") ends with い but is actually a な-adjective, not an い-adjective. This is because the い is part of the word itself, not the adjective ending.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Cases Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Special Cases and Exceptions</h2>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. い-Adjectives That Look Like な-Adjectives</h3>
+                <p class="text-gray-700 mb-4">
+                    Some な-adjectives end with the character <span class="japanese">い</span> (i), which can be confusing for beginners. Here are some common examples:
+                </p>
+                <ul class="list-disc pl-6 mb-6 text-gray-700">
+                    <li><span class="japanese">きれい</span> (kirei - beautiful/clean)</li>
+                    <li><span class="japanese">嫌い</span> (きらい - kirai - disliked)</li>
+                    <li><span class="japanese">苦手</span> (にがて - nigate - not good at)</li>
+                    <li><span class="japanese">有名</span> (ゆうめい - yūmei - famous)</li>
+                </ul>
+                <p class="text-gray-700 mb-4">
+                    Remember, even though these end with <span class="japanese">い</span>, they follow な-adjective conjugation patterns.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. No-Adjectives</h3>
+                <p class="text-gray-700 mb-4">
+                    Some nouns can function like adjectives when followed by the particle <span class="japanese">の</span> (no). These are sometimes called "no-adjectives":
+                </p>
+                <div class="space-y-4 mb-6">
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">日本の食べ物</span></p>
+                        <p class="text-gray-700 mb-1">Nihon no tabemono</p>
+                        <p class="text-gray-600">Japanese food</p>
+                    </div>
+                    <div class="adjective-example p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">木の椅子</span></p>
+                        <p class="text-gray-700 mb-1">Ki no isu</p>
+                        <p class="text-gray-600">Wooden chair</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Exercise 1: Identify the Type of Adjective</h3>
+                    <p class="text-gray-700 mb-4">Determine whether each adjective is an い-adjective or a な-adjective:</p>
+                    <ol class="list-decimal pl-6 mb-4 text-gray-700">
+                        <li><span class="japanese">楽しい</span> (たのしい - tanoshii - fun)</li>
+                        <li><span class="japanese">親切</span> (しんせつ - shinsetsu - kind)</li>
+                        <li><span class="japanese">有名</span> (ゆうめい - yūmei - famous)</li>
+                        <li><span class="japanese">寒い</span> (さむい - samui - cold)</li>
+                        <li><span class="japanese">便利</span> (べんり - benri - convenient)</li>
+                    </ol>
+                    <div class="mt-4 p-4 bg-white rounded border border-gray-200">
+                        <p class="font-semibold mb-2">Answers:</p>
+                        <ol class="list-decimal pl-6 text-gray-700">
+                            <li><span class="japanese">楽しい</span> - い-adjective</li>
+                            <li><span class="japanese">親切</span> - な-adjective</li>
+                            <li><span class="japanese">有名</span> - な-adjective (despite ending in い)</li>
+                            <li><span class="japanese">寒い</span> - い-adjective</li>
+                            <li><span class="japanese">便利</span> - な-adjective</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Exercise 2: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-4">Fill in the blanks with the correct form of the adjective:</p>
+                    <ol class="list-decimal pl-6 mb-4 text-gray-700">
+                        <li>この映画は面白_____です。(interesting - present affirmative)</li>
+                        <li>あの店は静か_____でした。(quiet - past affirmative)</li>
+                        <li>このコーヒーは熱_____ないです。(hot - present negative)</li>
+                        <li>彼女は元気_____なかったです。(energetic - past negative)</li>
+                        <li>日本語は難し_____て、面白いです。(difficult - te-form)</li>
+                    </ol>
+                    <div class="mt-4 p-4 bg-white rounded border border-gray-200">
+                        <p class="font-semibold mb-2">Answers:</p>
+                        <ol class="list-decimal pl-6 text-gray-700">
+                            <li>この映画は面白<span class="font-bold">い</span>です。(Kono eiga wa omoshiroi desu.)</li>
+                            <li>あの店は静か<span class="font-bold">で</span>した。(Ano mise wa shizuka deshita.)</li>
+                            <li>このコーヒーは熱<span class="font-bold">く</span>ないです。(Kono kōhī wa atsuku nai desu.)</li>
+                            <li>彼女は元気<span class="font-bold">じゃ</span>なかったです。(Kanojo wa genki ja nakatta desu.)</li>
+                            <li>日本語は難し<span class="font-bold">く</span>て、面白いです。(Nihongo wa muzukashikute, omoshiroi desu.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grammar Navigation -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Other N5 Grammar Topics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="basic-sentence.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Basic Sentence Structure</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn the fundamental structure of Japanese sentences</p>
+                    </a>
+                    <a href="particles-intro.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Introduction to Particles</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn about は、が、を、に、で and their uses</p>
+                    </a>
+                    <a href="verb-intro.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Introduction to Verbs</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn the basics of Japanese verbs</p>
+                    </a>
+                    <a href="present-tense.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Present Tense</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn how to express actions in the present</p>
+                    </a>
+                    <a href="past-tense.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Past Tense</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn how to express actions in the past</p>
+                    </a>
+                    <a href="negative-form.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Negative Form</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn how to negate verbs and adjectives</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="xl:col-span-1">
+                    <h3 class="text-lg font-semibold">JapLearn</h3>
+                    <p class="mt-2 text-sm text-gray-300">Your journey to Japanese fluency begins here.</p>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Instagram</span>
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Twitter</span>
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">YouTube</span>
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Courses</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="../intro.html" class="text-base text-gray-300 hover:text-white">N5 Beginner</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">N4 Elementary</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">JLPT Prep</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Conversational</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="../../contact.html" class="text-base text-gray-300 hover:text-white">Contact</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">FAQ</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Community</a></li>
+                            <li><a href="../../about.html" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <p class="mt-8 text-base text-gray-400 md:mt-0">&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

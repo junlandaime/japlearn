@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengenalan Bahasa Jepang - Nihongo Learning</title>
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP dan Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/1053/1920/1080');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        .slide-in-bottom {
+            animation: slideInBottom 0.8s ease-out;
+        }
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInBottom {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e53e3e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div x-data="{ mobileMenuOpen: false, showScrollTop: false, checkScroll() { this.showScrollTop = window.scrollY > 500; } }" x-init="window.addEventListener('scroll', checkScroll)" class="overflow-x-hidden">
+
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md fixed w-full z-50 transition duration-300" :class="{ 'bg-opacity-95': window.scrollY > 50 }">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="../index.html" class="flex items-center">
+                                <span class="text-red-600 text-2xl font-bold">日本語</span>
+                                <span class="ml-1 text-gray-800 text-lg font-semibold">Learning</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Links (Desktop) -->
+                    <div class="hidden md:flex md:items-center md:space-x-6">
+                        <a href="../index.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                        <a href="../about.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Tentang Kami</a>
+                        <a href="../contact.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Kontak</a>
+                        <a href="../signup.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="../login.html" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-red-600 transition duration-300">
+                            <i class="fas" :class="{'fa-times': mobileMenuOpen, 'fa-bars': !mobileMenuOpen}"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="../index.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Beranda</a>
+                    <a href="../about.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Tentang Kami</a>
+                    <a href="../contact.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Kontak</a>
+                    <a href="../signup.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Daftar</a>
+                    <a href="../login.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Masuk</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-image flex items-center justify-center py-32 px-4 mt-16">
+            <div class="text-center text-white max-w-3xl fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Pengenalan Bahasa Jepang</h1>
+                <p class="text-xl opacity-90">Langkah pertama dalam perjalanan belajar Bahasa Jepang</p>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="bg-white py-4 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="flex items-center space-x-2">
+                        <li>
+                            <a href="../index.html" class="text-gray-500 hover:text-red-600">
+                                <i class="fas fa-home"></i>
+                                <span class="sr-only">Beranda</span>
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                        </li>
+                        <li>
+                            <span class="text-gray-700">N5 (Pemula)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                        </li>
+                        <li>
+                            <span class="text-red-600 font-medium">Pengenalan</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- N5 Course Navigation -->
+        <div class="bg-gray-100 py-3">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex overflow-x-auto space-x-4 pb-2 scrollbar-hide">
+                    <a href="intro.html" class="whitespace-nowrap px-3 py-2 bg-red-600 text-white rounded text-sm font-medium">
+                        <i class="fas fa-book-open mr-2"></i>Pengenalan
+                    </a>
+                    <a href="hiragana.html" class="whitespace-nowrap px-3 py-2 bg-white hover:bg-gray-50 text-gray-700 rounded text-sm font-medium transition">
+                        <i class="fas fa-pen mr-2"></i>Hiragana
+                    </a>
+                    <a href="katakana.html" class="whitespace-nowrap px-3 py-2 bg-white hover:bg-gray-50 text-gray-700 rounded text-sm font-medium transition">
+                        <i class="fas fa-pen-fancy mr-2"></i>Katakana
+                    </a>
+                    <a href="basic-kanji.html" class="whitespace-nowrap px-3 py-2 bg-white hover:bg-gray-50 text-gray-700 rounded text-sm font-medium transition">
+                        <i class="fas fa-kanji mr-2"></i>Kanji Dasar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Selamat Datang di Perjalanan Bahasa Jepang Anda!</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-8"></div>
+                    
+                    <div class="prose prose-lg max-w-4xl mx-auto">
+                        <p class="text-gray-600 mb-6">
+                            Bahasa Jepang adalah salah satu bahasa dengan karakter unik yang digunakan oleh lebih dari 125 juta orang di dunia. Bahasa ini memiliki struktur dan aksara yang sangat berbeda dari bahasa Indonesia, menjadikannya tantangan yang menarik untuk dipelajari.
+                        </p>
+                        
+                        <div class="bg-red-50 rounded-lg p-6 mb-8 border-l-4 border-red-500">
+                            <h3 class="text-xl font-semibold text-red-800 mb-3">
+                                <i class="fas fa-lightbulb mr-2"></i>Tentang JLPT N5
+                            </h3>
+                            <p class="text-gray-700">
+                                <strong>JLPT (Japanese Language Proficiency Test)</strong> level N5 adalah tingkatan pemula dalam ujian kemampuan bahasa Jepang internasional. Pada level ini, Anda diharapkan mampu memahami kalimat dasar Bahasa Jepang dan percakapan harian sederhana.
+                            </p>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Sistem Penulisan Bahasa Jepang</h3>
+                        
+                        <p class="text-gray-600 mb-6">
+                            Bahasa Jepang menggunakan tiga jenis aksara utama yang saling melengkapi:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                                <div class="bg-red-600 text-white py-3 px-4 font-semibold">
+                                    <span class="jp-text text-xl">ひらがな</span> - Hiragana
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-600">
+                                        Aksara dasar yang digunakan untuk kata-kata asli Jepang, akhiran tata bahasa, dan partikel. Terdiri dari 46 karakter dasar.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                                <div class="bg-red-600 text-white py-3 px-4 font-semibold">
+                                    <span class="jp-text text-xl">カタカナ</span> - Katakana
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-600">
+                                        Digunakan untuk kata-kata serapan dari bahasa asing, onomatope, dan penekanan. Memiliki bentuk yang lebih kaku dari Hiragana.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                                <div class="bg-red-600 text-white py-3 px-4 font-semibold">
+                                    <span class="jp-text text-xl">漢字</span> - Kanji
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-600">
+                                        Karakter yang berasal dari Cina, digunakan untuk kata benda, kata kerja, dan kata sifat. Untuk level N5, Anda perlu menguasai sekitar 100 Kanji.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Tata Bahasa Dasar</h3>
+                        
+                        <p class="text-gray-600 mb-6">
+                            Struktur kalimat dasar Bahasa Jepang adalah Subjek-Objek-Kata Kerja (SOV), berbeda dengan Bahasa Indonesia yang menggunakan pola Subjek-Kata Kerja-Objek (SVO).
+                        </p>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 mb-8 border border-gray-200">
+                            <h4 class="text-lg font-semibold text-gray-700 mb-3">Contoh perbedaan struktur kalimat:</h4>
+                            
+                            <div class="mb-4">
+                                <p class="font-medium text-gray-700">Bahasa Indonesia (SVO):</p>
+                                <p class="pl-4 text-gray-600">Saya membaca buku.</p>
+                                <p class="pl-4 text-gray-500 italic">Subjek - Kata Kerja - Objek</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-medium text-gray-700">Bahasa Jepang (SOV):</p>
+                                <p class="pl-4 text-gray-600 jp-text">わたしは ほんを よみます。</p>
+                                <p class="pl-4 text-gray-600">Watashi wa hon o yomimasu.</p>
+                                <p class="pl-4 text-gray-500 italic">Subjek - Objek - Kata Kerja</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Fitur Penting Bahasa Jepang</h3>
+                        
+                        <ul class="list-disc pl-6 space-y-3 text-gray-600 mb-8">
+                            <li><strong>Partikel</strong> - Kata-kata kecil seperti は (wa), が (ga), を (o), dan に (ni) yang menunjukkan fungsi kata dalam kalimat.</li>
+                            <li><strong>Kata kerja</strong> - Selalu diletakkan di akhir kalimat dan memiliki berbagai bentuk konjugasi.</li>
+                            <li><strong>Tingkatan kesopanan</strong> - Bahasa Jepang memiliki tingkatan bahasa formal dan informal yang berbeda.</li>
+                            <li><strong>Penggunaan honorifik</strong> - Akhiran seperti -さん (-san), -先生 (-sensei) untuk menunjukkan rasa hormat.</li>
+                            <li><strong>Kosakata tematik</strong> - Banyak kosakata Jepang diorganisir berdasarkan tema atau konteks.</li>
+                        </ul>
+                        
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Apa yang Akan Anda Pelajari</h3>
+                        
+                        <p class="text-gray-600 mb-6">
+                            Dalam kursus N5 ini, Anda akan mempelajari:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white rounded-lg p-4 shadow border-l-4 border-red-500">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Seluruh Hiragana dan Katakana</span>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow border-l-4 border-red-500">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Sekitar 100 Kanji dasar</span>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow border-l-4 border-red-500">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">800+ kosakata dasar</span>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow border-l-4 border-red-500">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Tata bahasa dasar untuk percakapan sehari-hari</span>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow border-l-4 border-red-500">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Cara memperkenalkan diri dan berinteraksi</span>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow border-l-4 border-red-500">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Kemampuan mendengar dan membaca dasar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg p-8 mb-8">
+                            <h3 class="text-xl font-bold mb-4">Tips Belajar Bahasa Jepang</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-yellow-300 mt-1 mr-3"></i>
+                                    <span>Belajar secara konsisten setiap hari, meski hanya 15-30 menit</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-yellow-300 mt-1 mr-3"></i>
+                                    <span>Gunakan kartu flash untuk menghafalkan Hiragana, Katakana, dan Kanji</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-yellow-300 mt-1 mr-3"></i>
+                                    <span>Dengarkan audio dan ucapkan kata-kata dengan keras</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-yellow-300 mt-1 mr-3"></i>
+                                    <span>Praktikkan menulis aksara Jepang secara teratur</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-yellow-300 mt-1 mr-3"></i>
+                                    <span>Bergabunglah dengan forum diskusi untuk bertanya dan berbagi pengalaman</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Ayo Mulai!</h3>
+                        
+                        <p class="text-gray-600 mb-8">
+                            Siap untuk memulai perjalanan belajar Bahasa Jepang? Langkah pertama Anda adalah menguasai aksara Hiragana, dasar dari semua pembelajaran Bahasa Jepang.
+                        </p>
+                        
+                        <div class="text-center">
+                            <a href="hiragana.html" class="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                                <span>Lanjut ke Pelajaran Hiragana</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-red-500 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-white text-lg font-semibold">Learning</span>
+                        </div>
+                        <p class="text-sm">Platform belajar bahasa Jepang terbaik untuk persiapan JLPT N5 dan N4.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Pembelajaran</h3>
+                        <ul class="space-y-2">
+                            <li><a href="intro.html" class="text-red-400 transition">Pengenalan</a></li>
+                            <li><a href="hiragana.html" class="text-gray-400 hover:text-white transition">Hiragana</a></li>
+                            <li><a href="katakana.html" class="text-gray-400 hover:text-white transition">Katakana</a></li>
+                            <li><a href="basic-kanji.html" class="text-gray-400 hover:text-white transition">Kanji Dasar</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Sitemap</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                            <li><a href="../about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                            <li><a href="../contact.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 text-sm text-center">
+                    <p>&copy; 2025 Nihongo Learning. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll to top button -->
+        <button 
+            @click="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            x-show="showScrollTop" 
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-10"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            class="fixed right-8 bottom-8 bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-red-700 focus:outline-none">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Numbers | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .vocabulary-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vocabulary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .example-card {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        .vocabulary-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .vocabulary-table th,
+        .vocabulary-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .vocabulary-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            transition: color 0.2s;
+        }
+        .audio-button:hover {
+            color: #6366f1;
+        }
+        .category-native {
+            background-color: #fee2e2;
+        }
+        .category-sino {
+            background-color: #dbeafe;
+        }
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+        .number-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .number-card:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Japanese Numbers</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">Essential counting system for everyday life</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Japanese Numbers</h2>
+                <p class="text-gray-700 mb-4">
+                    The Japanese number system can be a bit complex at first because it uses two different counting systems: the native Japanese numbers (和語 - wago) and Sino-Japanese numbers (漢語 - kango). The native Japanese numbers are typically used for counting up to 10, while the Sino-Japanese system (based on Chinese) is used for most other purposes, especially in formal contexts.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    In this lesson, we'll learn both systems and how to count objects using Japanese counters (助数詞 - josūshi), which are special suffixes attached to numbers depending on what is being counted.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japan, certain numbers have cultural significance. The number 4 (四 - shi) is considered unlucky because it sounds like the word for death (死 - shi). Similarly, the number 9 (九 - ku) can be unlucky as it sounds like the word for suffering (苦 - ku). On the other hand, 8 (八 - hachi) is considered lucky because its shape widens from top to bottom, suggesting growth and prosperity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Basic Numbers Section (1-10) -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Basic Numbers (1-10)</h2>
+                <p class="text-gray-700 mb-4">
+                    Let's start with the numbers 1 through 10 in both the native Japanese and Sino-Japanese systems.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>Kanji</th>
+                                <th>Native Japanese (Wago)</th>
+                                <th>Sino-Japanese (Kango)</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><span class="japanese">一</span></td>
+                                <td class="category-native"><span class="japanese">ひとつ</span> (hitotsu)</td>
+                                <td class="category-sino"><span class="japanese">いち</span> (ichi)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><span class="japanese">二</span></td>
+                                <td class="category-native"><span class="japanese">ふたつ</span> (futatsu)</td>
+                                <td class="category-sino"><span class="japanese">に</span> (ni)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><span class="japanese">三</span></td>
+                                <td class="category-native"><span class="japanese">みっつ</span> (mittsu)</td>
+                                <td class="category-sino"><span class="japanese">さん</span> (san)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><span class="japanese">四</span></td>
+                                <td class="category-native"><span class="japanese">よっつ</span> (yottsu)</td>
+                                <td class="category-sino"><span class="japanese">し / よん</span> (shi / yon)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><span class="japanese">五</span></td>
+                                <td class="category-native"><span class="japanese">いつつ</span> (itsutsu)</td>
+                                <td class="category-sino"><span class="japanese">ご</span> (go)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><span class="japanese">六</span></td>
+                                <td class="category-native"><span class="japanese">むっつ</span> (muttsu)</td>
+                                <td class="category-sino"><span class="japanese">ろく</span> (roku)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><span class="japanese">七</span></td>
+                                <td class="category-native"><span class="japanese">ななつ</span> (nanatsu)</td>
+                                <td class="category-sino"><span class="japanese">しち / なな</span> (shichi / nana)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><span class="japanese">八</span></td>
+                                <td class="category-native"><span class="japanese">やっつ</span> (yattsu)</td>
+                                <td class="category-sino"><span class="japanese">はち</span> (hachi)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><span class="japanese">九</span></td>
+                                <td class="category-native"><span class="japanese">ここのつ</span> (kokonotsu)</td>
+                                <td class="category-sino"><span class="japanese">きゅう / く</span> (kyū / ku)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td><span class="japanese">十</span></td>
+                                <td class="category-native"><span class="japanese">とお</span> (tō)</td>
+                                <td class="category-sino"><span class="japanese">じゅう</span> (jū)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="flex justify-center items-center mb-6">
+                    <div class="mr-4 text-center">
+                        <div class="w-4 h-4 inline-block bg-red-200"></div>
+                        <span class="text-sm ml-1">Native Japanese</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-4 h-4 inline-block bg-blue-200"></div>
+                        <span class="text-sm ml-1">Sino-Japanese</span>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Important Notes:</p>
+                    <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                        <li>The native Japanese numbers (hitotsu, futatsu, etc.) are often used when counting objects without using specific counters.</li>
+                        <li>The number 4 can be pronounced as either "shi" or "yon". "Yon" is often preferred since "shi" sounds like the word for death.</li>
+                        <li>Similarly, 7 can be "shichi" or "nana", and 9 can be "kyū" or "ku". The pronunciation often depends on the counter used.</li>
+                        <li>When counting from 1 to 10, Japanese people typically use the Sino-Japanese numbers (ichi, ni, san...).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Numbers 11-99 Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Numbers 11-99</h2>
+                <p class="text-gray-700 mb-4">
+                    For numbers beyond 10, Japanese primarily uses the Sino-Japanese number system. The numbers are formed by combining the basic digits in a logical pattern.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Tens (10, 20, 30, etc.)</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+                    <div class="number-card">
+                        <div class="text-xl font-bold">10</div>
+                        <div class="japanese">十</div>
+                        <div>じゅう (jū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">20</div>
+                        <div class="japanese">二十</div>
+                        <div>にじゅう (nijū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">30</div>
+                        <div class="japanese">三十</div>
+                        <div>さんじゅう (sanjū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">40</div>
+                        <div class="japanese">四十</div>
+                        <div>よんじゅう (yonjū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">50</div>
+                        <div class="japanese">五十</div>
+                        <div>ごじゅう (gojū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">60</div>
+                        <div class="japanese">六十</div>
+                        <div>ろくじゅう (rokujū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">70</div>
+                        <div class="japanese">七十</div>
+                        <div>ななじゅう (nanajū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">80</div>
+                        <div class="japanese">八十</div>
+                        <div>はちじゅう (hachijū)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">90</div>
+                        <div class="japanese">九十</div>
+                        <div>きゅうじゅう (kyūjū)</div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Examples of Combined Numbers</h3>
+                <p class="text-gray-700 mb-4">
+                    To form numbers between the tens, simply add the ones digit after the tens. For example:
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="number-card">
+                        <div class="text-xl font-bold">11</div>
+                        <div class="japanese">十一</div>
+                        <div>じゅういち (jūichi)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">25</div>
+                        <div class="japanese">二十五</div>
+                        <div>にじゅうご (nijūgo)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">47</div>
+                        <div class="japanese">四十七</div>
+                        <div>よんじゅうなな (yonjūnana)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">83</div>
+                        <div class="japanese">八十三</div>
+                        <div>はちじゅうさん (hachijūsan)</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Larger Numbers Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Larger Numbers (100-10,000)</h2>
+                <p class="text-gray-700 mb-4">
+                    The Japanese numbering system has unique names for each power of 10, making it easy to form larger numbers.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>Kanji</th>
+                                <th>Japanese</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>100</td>
+                                <td><span class="japanese">百</span></td>
+                                <td><span class="japanese">ひゃく</span> (hyaku)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>1,000</td>
+                                <td><span class="japanese">千</span></td>
+                                <td><span class="japanese">せん</span> (sen)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>10,000</td>
+                                <td><span class="japanese">万</span></td>
+                                <td><span class="japanese">まん</span> (man)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>100,000,000</td>
+                                <td><span class="japanese">億</span></td>
+                                <td><span class="japanese">おく</span> (oku)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Examples of Larger Numbers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="number-card">
+                        <div class="text-xl font-bold">248</div>
+                        <div class="japanese">二百四十八</div>
+                        <div>にひゃくよんじゅうはち (nihyaku-yonjū-hachi)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">1,356</div>
+                        <div class="japanese">千三百五十六</div>
+                        <div>せんさんびゃくごじゅうろく (sen-sanbyaku-gojū-roku)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">8,700</div>
+                        <div class="japanese">八千七百</div>
+                        <div>はっせんななひゃく (hassen-nanahyaku)</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="text-xl font-bold">25,000</div>
+                        <div class="japanese">二万五千</div>
+                        <div>にまんごせん (niman-gosen)</div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Pronunciation Changes:</span> Some numbers change pronunciation when combined:
+                                <ul class="list-disc pl-5 mt-1">
+                                    <li>300: <span class="japanese">三百 (さんびゃく)</span> sanbyaku (not "san-hyaku")</li>
+                                    <li>600: <span class="japanese">六百 (ろっぴゃく)</span> roppyaku (not "roku-hyaku")</li>
+                                    <li>800: <span class="japanese">八百 (はっぴゃく)</span> happyaku (not "hachi-hyaku")</li>
+                                    <li>3,000: <span class="japanese">三千 (さんぜん)</span> sanzen (not "san-sen")</li>
+                                    <li>8,000: <span class="japanese">八千 (はっせん)</span> hassen (not "hachi-sen")</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Counters Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Japanese Counters (助数詞)</h2>
+                <p class="text-gray-700 mb-4">
+                    In Japanese, you need to use specific counters after numbers depending on what you're counting. These are similar to how we say "2 sheets of paper" or "3 pieces of cake" in English, but Japanese has many more of these and they are mandatory.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Counter</th>
+                                <th>Japanese</th>
+                                <th>Used For</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>〜人</td>
+                                <td><span class="japanese">〜にん / 〜り / 〜ひとり</span><br>〜nin / 〜ri / 〜hitori</td>
+                                <td>People</td>
+                                <td><span class="japanese">三人</span> (sannin) - three people</td>
+                            </tr>
+                            <tr>
+                                <td>〜つ</td>
+                                <td><span class="japanese">〜つ</span><br>〜tsu</td>
+                                <td>General objects</td>
+                                <td><span class="japanese">五つ</span> (itsutsu) - five items</td>
+                            </tr>
+                            <tr>
+                                <td>〜個</td>
+                                <td><span class="japanese">〜こ</span><br>〜ko</td>
+                                <td>Small objects</td>
+                                <td><span class="japanese">二個</span> (niko) - two small items</td>
+                            </tr>
+                            <tr>
+                                <td>〜本</td>
+                                <td><span class="japanese">〜ほん</span><br>〜hon</td>
+                                <td>Long cylindrical objects</td>
+                                <td><span class="japanese">一本</span> (ippon) - one bottle/pen</td>
+                            </tr>
+                            <tr>
+                                <td>〜枚</td>
+                                <td><span class="japanese">〜まい</span><br>〜mai</td>
+                                <td>Flat objects</td>
+                                <td><span class="japanese">四枚</span> (yonmai) - four sheets/plates</td>
+                            </tr>
+                            <tr>
+                                <td>〜冊</td>
+                                <td><span class="japanese">〜さつ</span><br>〜satsu</td>
+                                <td>Books</td>
+                                <td><span class="japanese">三冊</span> (sansatsu) - three books</td>
+                            </tr>
+                            <tr>
+                                <td>〜台</td>
+                                <td><span class="japanese">〜だい</span><br>〜dai</td>
+                                <td>Machines/vehicles</td>
+                                <td><span class="japanese">二台</span> (nidai) - two cars/computers</td>
+                            </tr>
+                            <tr>
+                                <td>〜杯</td>
+                                <td><span class="japanese">〜はい</span><br>〜hai</td>
+                                <td>Cups/glasses</td>
+                                <td><span class="japanese">一杯</span> (ippai) - one cup</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Examples with Counters:</p>
+                    <div class="mb-3">
+                        <p class="japanese">学生が三人います。</p>
+                        <p class="text-gray-600">Gakusei ga sannin imasu.</p>
+                        <p class="text-gray-600">There are three students.</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">リンゴを二つ食べました。</p>
+                        <p class="text-gray-600">Ringo o futatsu tabemashita.</p>
+                        <p class="text-gray-600">I ate two apples.</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">ビールを一杯ください。</p>
+                        <p class="text-gray-600">Bīru o ippai kudasai.</p>
+                        <p class="text-gray-600">One beer, please.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">切手を十枚買いました。</p>
+                        <p class="text-gray-600">Kitte o jūmai kaimashita.</p>
+                        <p class="text-gray-600">I bought ten stamps.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Pronunciation Changes:</span> Some numbers change pronunciation when combined with counters:
+                                <ul class="list-disc pl-5 mt-1">
+                                    <li>1 + hon → <span class="japanese">一本 (いっぽん)</span> ippon</li>
+                                    <li>3 + nin → <span class="japanese">三人 (さんにん)</span> sannin</li>
+                                    <li>6 + satsu → <span class="japanese">六冊 (ろくさつ)</span> rokusatsu</li>
+                                    <li>8 + hai → <span class="japanese">八杯 (はっぱい)</span> happai</li>
+                                    <li>10 + ko → <span class="japanese">十個 (じゅっこ)</span> jukko</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese numbers with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Number Recognition</h3>
+                    <p class="text-gray-700 mb-3">
+                        Write the Arabic numeral for these Japanese numbers:
+                    </p>
+                    <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                        <li><span class="japanese">じゅうに</span> (jūni)</li>
+                        <li><span class="japanese">にじゅうはち</span> (nijūhachi)</li>
+                        <li><span class="japanese">さんびゃくよんじゅうご</span> (sanbyaku-yonjū-go)</li>
+                        <li><span class="japanese">せんきゅうひゃくはちじゅうよん</span> (sen-kyūhyaku-hachijū-yon)</li>
+                        <li><span class="japanese">いちまんさんぜんにひゃく</span> (ichiman-sanzen-nihyaku)</li>
+                    </ol>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>12</li>
+                            <li>28</li>
+                            <li>345</li>
+                            <li>1,984</li>
+                            <li>13,200</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Using Counters</h3>
+                    <p class="text-gray-700 mb-3">
+                        Choose the correct counter for each item:
+                    </p>
+                    <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                        <li>3 books: <span class="japanese">本 ___</span> or <span class="japanese">冊 ___</span> or <span class="japanese">個 ___</span>?</li>
+                        <li>2 dogs: <span class="japanese">人 ___</span> or <span class="japanese">匹 ___</span> or <span class="japanese">台 ___</span>?</li>
+                        <li>5 cars: <span class="japanese">台 ___</span> or <span class="japanese">枚 ___</span> or <span class="japanese">杯 ___</span>?</li>
+                        <li>1 pen: <span class="japanese">本 ___</span> or <span class="japanese">個 ___</span> or <span class="japanese">冊 ___</span>?</li>
+                        <li>4 people: <span class="japanese">個 ___</span> or <span class="japanese">人 ___</span> or <span class="japanese">匹 ___</span>?</li>
+                    </ol>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li><span class="japanese">三冊</span> (sansatsu) - 冊 is used for books</li>
+                            <li><span class="japanese">二匹</span> (nihiki) - 匹 is used for small animals</li>
+                            <li><span class="japanese">五台</span> (godai) - 台 is used for machines/vehicles</li>
+                            <li><span class="japanese">一本</span> (ippon) - 本 is used for long cylindrical objects</li>
+                            <li><span class="japanese">四人</span> (yonin) - 人 is used for people</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="time.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Time Expressions</h3>
+                        <p class="text-gray-600 text-sm">Days, months, and time vocabulary</p>
+                    </a>
+                    <a href="greetings.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Greetings</h3>
+                        <p class="text-gray-600 text-sm">Essential expressions for conversations</p>
+                    </a>
+                    <a href="family.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Family Terms</h3>
+                        <p class="text-gray-600 text-sm">Words for family members</p>
+                    </a>
+                    <a href="school.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">School Terms</h3>
+                        <p class="text-gray-600 text-sm">Vocabulary for the classroom</p>
+                    </a>
+                    <a href="food.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Food</h3>
+                        <p class="text-gray-600 text-sm">Food, drinks, and dining vocabulary</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

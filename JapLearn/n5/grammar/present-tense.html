@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Present Tense | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            border-left: 4px solid #f97316;
+            background-color: #fff7ed;
+        }
+        .verb-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .verb-table th,
+        .verb-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .verb-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .verb-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .godan {
+            border-left: 4px solid #ef4444;
+            background-color: #fee2e2;
+        }
+        .ichidan {
+            border-left: 4px solid #3b82f6;
+            background-color: #dbeafe;
+        }
+        .irregular {
+            border-left: 4px solid #10b981;
+            background-color: #d1fae5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Present Tense</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">Expressing current and habitual actions in Japanese</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to the Present Tense in Japanese</h2>
+                <p class="text-gray-700 mb-4">
+                    In Japanese, what we call the "present tense" is actually used to express both present and future actions. This form is also known as the "non-past tense" because it covers any action that isn't in the past.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    The present tense in Japanese is used to express:
+                </p>
+                <ul class="list-disc pl-8 mb-6 text-gray-700">
+                    <li>Current actions or states (I eat, I am eating)</li>
+                    <li>Habitual actions (I eat breakfast every day)</li>
+                    <li>Future actions (I will eat dinner later)</li>
+                    <li>General truths (Water boils at 100°C)</li>
+                </ul>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Note:</span> Unlike English, Japanese doesn't distinguish between simple present (I eat) and present continuous (I am eating). The context usually makes it clear which meaning is intended.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Plain Present Tense Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Plain Present Tense Form</h2>
+                <p class="text-gray-700 mb-4">
+                    The plain form of present tense (also called dictionary form) is used in casual conversations with friends and family, in written Japanese, and in subordinate clauses.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-3">For Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    The plain present form of verbs is their dictionary form:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="godan p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2">Group 1 (Godan) Verbs</p>
+                        <p class="text-gray-700 mb-1">
+                            End with any of the う-row kana: <span class="japanese">う, つ, る, く, ぐ, す, ぬ, ぶ, む</span>
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Examples: <span class="japanese">話す</span> (hanasu - to speak), <span class="japanese">飲む</span> (nomu - to drink)
+                        </p>
+                    </div>
+                    <div class="ichidan p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2">Group 2 (Ichidan) Verbs</p>
+                        <p class="text-gray-700 mb-1">
+                            End with <span class="japanese">る</span> preceded by an い or え sound
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Examples: <span class="japanese">食べる</span> (taberu - to eat), <span class="japanese">見る</span> (miru - to see)
+                        </p>
+                    </div>
+                    <div class="irregular p-4 rounded-md">
+                        <p class="text-lg font-semibold mb-2">Group 3 (Irregular) Verbs</p>
+                        <p class="text-gray-700 mb-1">
+                            Just two verbs: <span class="japanese">する</span> (suru - to do) and <span class="japanese">来る</span> (kuru - to come)
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Plus their compounds, like <span class="japanese">勉強する</span> (benkyō suru - to study)
+                        </p>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Adjectives</h3>
+                <p class="text-gray-700 mb-4">
+                    Adjectives also have plain present forms:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="p-4 rounded-md" style="border-left: 4px solid #ef4444; background-color: #fee2e2;">
+                        <p class="text-lg font-semibold mb-2">い-Adjectives</p>
+                        <p class="text-gray-700 mb-1">
+                            Used as is, with the <span class="japanese">い</span> ending
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Examples: <span class="japanese">高い</span> (takai - expensive/high), <span class="japanese">大きい</span> (ōkii - big)
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-md" style="border-left: 4px solid #3b82f6; background-color: #dbeafe;">
+                        <p class="text-lg font-semibold mb-2">な-Adjectives</p>
+                        <p class="text-gray-700 mb-1">
+                            Add <span class="japanese">だ</span> after the adjective
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Examples: <span class="japanese">静かだ</span> (shizuka da - quiet), <span class="japanese">綺麗だ</span> (kirei da - beautiful)
+                        </p>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Nouns</h3>
+                <p class="text-gray-700 mb-4">
+                    When a noun functions as the predicate, add <span class="japanese">だ</span> after the noun:
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">私は学生だ。</span></p>
+                    <p class="text-gray-700 mb-1">Watashi wa gakusei da.</p>
+                    <p class="text-gray-600">I am a student.</p>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of Plain Present Tense</h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">私は毎日ご飯を食べる。</span></p>
+                        <p class="text-gray-700 mb-1">Watashi wa mainichi gohan o taberu.</p>
+                        <p class="text-gray-600">I eat rice every day.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">友達は今映画を見る。</span></p>
+                        <p class="text-gray-700 mb-1">Tomodachi wa ima eiga o miru.</p>
+                        <p class="text-gray-600">My friend is watching a movie now.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">彼は日本語を話す。</span></p>
+                        <p class="text-gray-700 mb-1">Kare wa nihongo o hanasu.</p>
+                        <p class="text-gray-600">He speaks Japanese.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">このりんごは大きい。</span></p>
+                        <p class="text-gray-700 mb-1">Kono ringo wa ōkii.</p>
+                        <p class="text-gray-600">This apple is big.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">あの部屋は静かだ。</span></p>
+                        <p class="text-gray-700 mb-1">Ano heya wa shizuka da.</p>
+                        <p class="text-gray-600">That room is quiet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Polite Present Tense Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Polite Present Tense Form (〜ます Form)</h2>
+                <p class="text-gray-700 mb-4">
+                    The polite form of present tense is used in formal situations, with people you don't know well, with superiors, or in business settings.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    To form the polite present tense, you need to convert the verb to its <span class="japanese">ます</span> (masu) form:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Verb Type</th>
+                                <th>How to Form</th>
+                                <th>Dictionary Form</th>
+                                <th>Polite Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Group 1 (Godan)</td>
+                                <td>Change the last kana from う-row to い-row + <span class="japanese">ます</span></td>
+                                <td><span class="japanese">話す</span> (hanasu)</td>
+                                <td><span class="japanese">話します</span> (hanashimasu)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 1 (Godan)</td>
+                                <td>Change the last kana from う-row to い-row + <span class="japanese">ます</span></td>
+                                <td><span class="japanese">買う</span> (kau)</td>
+                                <td><span class="japanese">買います</span> (kaimasu)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 2 (Ichidan)</td>
+                                <td>Remove final <span class="japanese">る</span> + <span class="japanese">ます</span></td>
+                                <td><span class="japanese">食べる</span> (taberu)</td>
+                                <td><span class="japanese">食べます</span> (tabemasu)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 2 (Ichidan)</td>
+                                <td>Remove final <span class="japanese">る</span> + <span class="japanese">ます</span></td>
+                                <td><span class="japanese">見る</span> (miru)</td>
+                                <td><span class="japanese">見ます</span> (mimasu)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 3 (する)</td>
+                                <td>Change <span class="japanese">する</span> to <span class="japanese">します</span></td>
+                                <td><span class="japanese">する</span> (suru)</td>
+                                <td><span class="japanese">します</span> (shimasu)</td>
+                            </tr>
+                            <tr>
+                                <td>Group 3 (来る)</td>
+                                <td>Change <span class="japanese">来る</span> to <span class="japanese">来ます</span></td>
+                                <td><span class="japanese">来る</span> (kuru)</td>
+                                <td><span class="japanese">来ます</span> (kimasu)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Adjectives</h3>
+                <p class="text-gray-700 mb-4">
+                    Adjectives also have polite present forms:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Adjective Type</th>
+                                <th>How to Form</th>
+                                <th>Plain Form</th>
+                                <th>Polite Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>い-Adjectives</td>
+                                <td>Keep the <span class="japanese">い</span> ending + <span class="japanese">です</span></td>
+                                <td><span class="japanese">高い</span> (takai)</td>
+                                <td><span class="japanese">高いです</span> (takai desu)</td>
+                            </tr>
+                            <tr>
+                                <td>な-Adjectives</td>
+                                <td>Add <span class="japanese">です</span> (no <span class="japanese">だ</span>)</td>
+                                <td><span class="japanese">静かだ</span> (shizuka da)</td>
+                                <td><span class="japanese">静かです</span> (shizuka desu)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">For Nouns</h3>
+                <p class="text-gray-700 mb-4">
+                    For nouns, replace <span class="japanese">だ</span> with <span class="japanese">です</span>:
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">私は学生です。</span></p>
+                    <p class="text-gray-700 mb-1">Watashi wa gakusei desu.</p>
+                    <p class="text-gray-600">I am a student.</p>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Examples of Polite Present Tense</h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">私は毎日ご飯を食べます。</span></p>
+                        <p class="text-gray-700 mb-1">Watashi wa mainichi gohan o tabemasu.</p>
+                        <p class="text-gray-600">I eat rice every day.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">友達は今映画を見ます。</span></p>
+                        <p class="text-gray-700 mb-1">Tomodachi wa ima eiga o mimasu.</p>
+                        <p class="text-gray-600">My friend is watching a movie now.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">彼は日本語を話します。</span></p>
+                        <p class="text-gray-700 mb-1">Kare wa nihongo o hanashimasu.</p>
+                        <p class="text-gray-600">He speaks Japanese.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">このりんごは大きいです。</span></p>
+                        <p class="text-gray-700 mb-1">Kono ringo wa ōkii desu.</p>
+                        <p class="text-gray-600">This apple is big.</p>
+                    </div>
+                    <div class="example-card p-4 rounded-md">
+                        <p class="text-lg mb-1"><span class="japanese">あの部屋は静かです。</span></p>
+                        <p class="text-gray-700 mb-1">Ano heya wa shizuka desu.</p>
+                        <p class="text-gray-600">That room is quiet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Present Tense Usage Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Using the Present Tense</h2>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Current Actions or States</h3>
+                <p class="text-gray-700 mb-4">
+                    The present tense can describe actions that are happening now:
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">今、私は本を読みます。</span></p>
+                    <p class="text-gray-700 mb-1">Ima, watashi wa hon o yomimasu.</p>
+                    <p class="text-gray-600">I am reading a book now.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Habitual Actions</h3>
+                <p class="text-gray-700 mb-4">
+                    The present tense is used for actions that happen regularly:
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">私は毎朝コーヒーを飲みます。</span></p>
+                    <p class="text-gray-700 mb-1">Watashi wa maiasa kōhī o nomimasu.</p>
+                    <p class="text-gray-600">I drink coffee every morning.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Future Actions</h3>
+                <p class="text-gray-700 mb-4">
+                    The present tense can also express future actions, often with time words:
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">明日、友達に会います。</span></p>
+                    <p class="text-gray-700 mb-1">Ashita, tomodachi ni aimasu.</p>
+                    <p class="text-gray-600">I will meet my friend tomorrow.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. General Truths</h3>
+                <p class="text-gray-700 mb-4">
+                    The present tense is used for facts that are always true:
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">太陽は東から昇ります。</span></p>
+                    <p class="text-gray-700 mb-1">Taiyō wa higashi kara noborimasu.</p>
+                    <p class="text-gray-600">The sun rises from the east.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Ability or Potential</h3>
+                <p class="text-gray-700 mb-4">
+                    The present tense with potential form can express ability:
+                </p>
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg mb-1"><span class="japanese">彼は日本語が話せます。</span></p>
+                    <p class="text-gray-700 mb-1">Kare wa nihongo ga hanasemasu.</p>
+                    <p class="text-gray-600">He can speak Japanese.</p>
+                </div>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Note:</span> The potential form (<span class="japanese">話せる</span>, <span class="japanese">食べられる</span>, etc.) will be covered in more detail in a separate lesson.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Expressions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Common Time Expressions with Present Tense</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are some time expressions that are frequently used with the present tense:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="japanese">今</span></td>
+                                <td>ima</td>
+                                <td>Now</td>
+                                <td><span class="japanese">今、勉強します。</span> (Ima, benkyō shimasu.)<br>I am studying now.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎日</span></td>
+                                <td>mainichi</td>
+                                <td>Every day</td>
+                                <td><span class="japanese">毎日、走ります。</span> (Mainichi, hashirimasu.)<br>I run every day.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎朝</span></td>
+                                <td>maiasa</td>
+                                <td>Every morning</td>
+                                <td><span class="japanese">毎朝、新聞を読みます。</span> (Maiasa, shinbun o yomimasu.)<br>I read the newspaper every morning.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎週</span></td>
+                                <td>maishū</td>
+                                <td>Every week</td>
+                                <td><span class="japanese">毎週、映画を見ます。</span> (Maishū, eiga o mimasu.)<br>I watch a movie every week.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎月</span></td>
+                                <td>maigetsu/maitsuki</td>
+                                <td>Every month</td>
+                                <td><span class="japanese">毎月、友達に会います。</span> (Maigetsu, tomodachi ni aimasu.)<br>I meet my friend every month.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">毎年</span></td>
+                                <td>maitoshi/mainan</td>
+                                <td>Every year</td>
+                                <td><span class="japanese">毎年、日本に行きます。</span> (Maitoshi, Nihon ni ikimasu.)<br>I go to Japan every year.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">いつも</span></td>
+                                <td>itsumo</td>
+                                <td>Always</td>
+                                <td><span class="japanese">いつも、ここで昼ご飯を食べます。</span> (Itsumo, koko de hiru gohan o tabemasu.)<br>I always eat lunch here.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">時々</span></td>
+                                <td>tokidoki</td>
+                                <td>Sometimes</td>
+                                <td><span class="japanese">時々、映画館に行きます。</span> (Tokidoki, eigakan ni ikimasu.)<br>I sometimes go to the movie theater.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">明日</span></td>
+                                <td>ashita</td>
+                                <td>Tomorrow</td>
+                                <td><span class="japanese">明日、試験があります。</span> (Ashita, shiken ga arimasu.)<br>There is an exam tomorrow.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">来週</span></td>
+                                <td>raishū</td>
+                                <td>Next week</td>
+                                <td><span class="japanese">来週、京都に行きます。</span> (Raishū, Kyōto ni ikimasu.)<br>I will go to Kyoto next week.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Exercise 1: Convert to Polite Form</h3>
+                    <p class="text-gray-700 mb-4">Convert these plain present tense verbs to their polite form:</p>
+                    <ol class="list-decimal pl-6 mb-4 text-gray-700">
+                        <li><span class="japanese">飲む</span> (nomu - to drink)</li>
+                        <li><span class="japanese">食べる</span> (taberu - to eat)</li>
+                        <li><span class="japanese">行く</span> (iku - to go)</li>
+                        <li><span class="japanese">する</span> (suru - to do)</li>
+                        <li><span class="japanese">見る</span> (miru - to see)</li>
+                    </ol>
+                    <div class="mt-4 p-4 bg-white rounded border border-gray-200">
+                        <p class="font-semibold mb-2">Answers:</p>
+                        <ol class="list-decimal pl-6 text-gray-700">
+                            <li><span class="japanese">飲みます</span> (nomimasu)</li>
+                            <li><span class="japanese">食べます</span> (tabemasu)</li>
+                            <li><span class="japanese">行きます</span> (ikimasu)</li>
+                            <li><span class="japanese">します</span> (shimasu)</li>
+                            <li><span class="japanese">見ます</span> (mimasu)</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Exercise 2: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-4">Fill in the blanks with the appropriate present tense form:</p>
+                    <ol class="list-decimal pl-6 mb-4 text-gray-700">
+                        <li>私は毎日日本語を勉強___________。(する - polite form)</li>
+                        <li>彼は水を___________。(飲む - plain form)</li>
+                        <li>明日、友達と映画を___________。(見る - polite form)</li>
+                        <li>この本は___________。(面白い - polite form)</li>
+                        <li>あの部屋は___________。(静か - plain form)</li>
+                    </ol>
+                    <div class="mt-4 p-4 bg-white rounded border border-gray-200">
+                        <p class="font-semibold mb-2">Answers:</p>
+                        <ol class="list-decimal pl-6 text-gray-700">
+                            <li>私は毎日日本語を勉強<span class="font-bold">します</span>。(Watashi wa mainichi nihongo o benkyō shimasu.)</li>
+                            <li>彼は水を<span class="font-bold">飲む</span>。(Kare wa mizu o nomu.)</li>
+                            <li>明日、友達と映画を<span class="font-bold">見ます</span>。(Ashita, tomodachi to eiga o mimasu.)</li>
+                            <li>この本は<span class="font-bold">面白いです</span>。(Kono hon wa omoshiroi desu.)</li>
+                            <li>あの部屋は<span class="font-bold">静かだ</span>。(Ano heya wa shizuka da.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grammar Navigation -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Other N5 Grammar Topics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="basic-sentence.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Basic Sentence Structure</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn the fundamental structure of Japanese sentences</p>
+                    </a>
+                    <a href="particles-intro.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Introduction to Particles</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn about は、が、を、に、で and their uses</p>
+                    </a>
+                    <a href="verb-intro.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Introduction to Verbs</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn the basics of Japanese verbs</p>
+                    </a>
+                    <a href="adjectives.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Adjectives</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn about i-adjectives and na-adjectives</p>
+                    </a>
+                    <a href="past-tense.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Past Tense</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn how to express actions in the past</p>
+                    </a>
+                    <a href="negative-form.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <h3 class="font-semibold text-indigo-600">Negative Form</h3>
+                        <p class="text-gray-600 text-sm mt-1">Learn how to negate verbs and adjectives</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="xl:col-span-1">
+                    <h3 class="text-lg font-semibold">JapLearn</h3>
+                    <p class="mt-2 text-sm text-gray-300">Your journey to Japanese fluency begins here.</p>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Instagram</span>
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Twitter</span>
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">YouTube</span>
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Courses</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="../intro.html" class="text-base text-gray-300 hover:text-white">N5 Beginner</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">N4 Elementary</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">JLPT Prep</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Conversational</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="../../contact.html" class="text-base text-gray-300 hover:text-white">Contact</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">FAQ</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Community</a></li>
+                            <li><a href="../../about.html" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <p class="mt-8 text-base text-gray-400 md:mt-0">&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

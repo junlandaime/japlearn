@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Location Vocabulary | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .vocabulary-table th, .vocabulary-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        .vocabulary-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            font-size: 1.25rem;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        /* Category Colors */
+        .category-places tbody tr {
+            background-color: rgba(219, 234, 254, 0.4); /* Light blue */
+        }
+        .category-buildings tbody tr {
+            background-color: rgba(254, 226, 226, 0.4); /* Light red */
+        }
+        .category-public tbody tr {
+            background-color: rgba(220, 252, 231, 0.4); /* Light green */
+        }
+        .category-position tbody tr {
+            background-color: rgba(254, 240, 138, 0.4); /* Light yellow */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">Location Vocabulary</h1>
+            <p class="text-xl">Learn essential Japanese words for places, buildings, and describing locations.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Location Vocabulary</h2>
+                <p class="text-gray-700 mb-4">
+                    Whether you're trying to find your way around a Japanese city or describing where something is located, knowing location vocabulary is essential. In this lesson, we'll learn words for different places, buildings, and position expressions in Japanese.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Key Question:</p>
+                    <div>
+                        <p class="japanese">＿＿はどこですか。</p>
+                        <p class="text-gray-600">___ wa doko desu ka?</p>
+                        <p class="text-gray-600">Where is ___?</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japan, addresses are organized by areas rather than street names. Typically, an address includes the prefecture, municipality, district, block, and building number. This can sometimes make it challenging for visitors to find specific locations, which is why landmark-based directions are very common.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Places Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Common Places</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are the essential vocabulary terms for different types of places in Japan.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-places">
+                            <tr>
+                                <td><span class="japanese">場所</span> (ばしょ)</td>
+                                <td>Basho</td>
+                                <td>Place</td>
+                                <td>いい場所を知っています。<br>(I know a good place.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">町</span> (まち)</td>
+                                <td>Machi</td>
+                                <td>Town</td>
+                                <td>この町は静かです。<br>(This town is quiet.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">市</span> (し)</td>
+                                <td>Shi</td>
+                                <td>City</td>
+                                <td>東京市に住んでいます。<br>(I live in Tokyo city.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">国</span> (くに)</td>
+                                <td>Kuni</td>
+                                <td>Country</td>
+                                <td>日本はきれいな国です。<br>(Japan is a beautiful country.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">住所</span> (じゅうしょ)</td>
+                                <td>Jūsho</td>
+                                <td>Address</td>
+                                <td>住所を教えてください。<br>(Please tell me your address.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">通り</span> (とおり)</td>
+                                <td>Tōri</td>
+                                <td>Street</td>
+                                <td>この通りは有名です。<br>(This street is famous.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">道</span> (みち)</td>
+                                <td>Michi</td>
+                                <td>Road/Path</td>
+                                <td>この道をまっすぐ行ってください。<br>(Please go straight down this road.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">橋</span> (はし)</td>
+                                <td>Hashi</td>
+                                <td>Bridge</td>
+                                <td>橋を渡ってください。<br>(Please cross the bridge.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">角</span> (かど)</td>
+                                <td>Kado</td>
+                                <td>Corner</td>
+                                <td>角で右に曲がってください。<br>(Please turn right at the corner.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">交差点</span> (こうさてん)</td>
+                                <td>Kōsaten</td>
+                                <td>Intersection</td>
+                                <td>次の交差点で左に曲がってください。<br>(Please turn left at the next intersection.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 駅はどこですか。</p>
+                        <p class="text-gray-600">A: Eki wa doko desu ka?</p>
+                        <p class="text-gray-600">A: Where is the station?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: この通りをまっすぐ行って、二つ目の交差点を右に曲がると、左側にあります。</p>
+                        <p class="text-gray-600">B: Kono tōri o massugu itte, futatsu-me no kōsaten o migi ni magaru to, hidari gawa ni arimasu.</p>
+                        <p class="text-gray-600">B: Go straight down this street, turn right at the second intersection, and it will be on your left side.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Building Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Buildings and Establishments</h2>
+                <p class="text-gray-700 mb-4">
+                    Learn the vocabulary for common buildings and establishments in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-buildings">
+                            <tr>
+                                <td><span class="japanese">建物</span> (たてもの)</td>
+                                <td>Tatemono</td>
+                                <td>Building</td>
+                                <td>この建物は古いです。<br>(This building is old.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">家</span> (いえ)</td>
+                                <td>Ie</td>
+                                <td>House</td>
+                                <td>私の家は駅の近くです。<br>(My house is near the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">アパート</span></td>
+                                <td>Apāto</td>
+                                <td>Apartment</td>
+                                <td>アパートに住んでいます。<br>(I live in an apartment.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">学校</span> (がっこう)</td>
+                                <td>Gakkō</td>
+                                <td>School</td>
+                                <td>学校は9時に始まります。<br>(School starts at 9 o'clock.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">大学</span> (だいがく)</td>
+                                <td>Daigaku</td>
+                                <td>University</td>
+                                <td>東京大学で勉強しています。<br>(I'm studying at Tokyo University.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">病院</span> (びょういん)</td>
+                                <td>Byōin</td>
+                                <td>Hospital</td>
+                                <td>病院はどこですか。<br>(Where is the hospital?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">図書館</span> (としょかん)</td>
+                                <td>Toshokan</td>
+                                <td>Library</td>
+                                <td>図書館で本を借ります。<br>(I borrow books at the library.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">スーパー</span></td>
+                                <td>Sūpā</td>
+                                <td>Supermarket</td>
+                                <td>スーパーで買い物をします。<br>(I go shopping at the supermarket.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">コンビニ</span></td>
+                                <td>Konbini</td>
+                                <td>Convenience store</td>
+                                <td>コンビニでお弁当を買いました。<br>(I bought a bento at the convenience store.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">レストラン</span></td>
+                                <td>Resutoran</td>
+                                <td>Restaurant</td>
+                                <td>あのレストランは美味しいです。<br>(That restaurant is delicious.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentence:</p>
+                    <div>
+                        <p class="japanese">銀行は郵便局の隣にあります。</p>
+                        <p class="text-gray-600">Ginkō wa yūbinkyoku no tonari ni arimasu.</p>
+                        <p class="text-gray-600">The bank is next to the post office.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Public Places Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Public Places and Facilities</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are important vocabulary words for public places and facilities in Japan.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-public">
+                            <tr>
+                                <td><span class="japanese">駅</span> (えき)</td>
+                                <td>Eki</td>
+                                <td>Station</td>
+                                <td>駅まで歩きました。<br>(I walked to the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">空港</span> (くうこう)</td>
+                                <td>Kūkō</td>
+                                <td>Airport</td>
+                                <td>空港に行きます。<br>(I'm going to the airport.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">公園</span> (こうえん)</td>
+                                <td>Kōen</td>
+                                <td>Park</td>
+                                <td>公園で遊びます。<br>(I play in the park.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">銀行</span> (ぎんこう)</td>
+                                <td>Ginkō</td>
+                                <td>Bank</td>
+                                <td>銀行でお金を降ろします。<br>(I withdraw money at the bank.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">郵便局</span> (ゆうびんきょく)</td>
+                                <td>Yūbinkyoku</td>
+                                <td>Post office</td>
+                                <td>郵便局で手紙を出します。<br>(I send letters at the post office.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">警察署</span> (けいさつしょ)</td>
+                                <td>Keisatsusho</td>
+                                <td>Police station</td>
+                                <td>警察署に行きました。<br>(I went to the police station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">映画館</span> (えいがかん)</td>
+                                <td>Eigakan</td>
+                                <td>Movie theater</td>
+                                <td>映画館で映画を見ました。<br>(I watched a movie at the movie theater.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">デパート</span></td>
+                                <td>Depāto</td>
+                                <td>Department store</td>
+                                <td>デパートで服を買います。<br>(I buy clothes at the department store.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">美術館</span> (びじゅつかん)</td>
+                                <td>Bijutsukan</td>
+                                <td>Art museum</td>
+                                <td>美術館に行きたいです。<br>(I want to go to the art museum.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">動物園</span> (どうぶつえん)</td>
+                                <td>Dōbutsuen</td>
+                                <td>Zoo</td>
+                                <td>週末に動物園に行きます。<br>(I go to the zoo on weekends.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: すみません、近くにコンビニはありますか。</p>
+                        <p class="text-gray-600">A: Sumimasen, chikaku ni konbini wa arimasu ka?</p>
+                        <p class="text-gray-600">A: Excuse me, is there a convenience store nearby?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: はい、この通りを右に曲がると、左側にあります。</p>
+                        <p class="text-gray-600">B: Hai, kono tōri o migi ni magaru to, hidari gawa ni arimasu.</p>
+                        <p class="text-gray-600">B: Yes, if you turn right at this street, it's on the left side.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Position Words Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Position and Direction Words</h2>
+                <p class="text-gray-700 mb-4">
+                    These words will help you describe the position or location of objects and places.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-position">
+                            <tr>
+                                <td><span class="japanese">上</span> (うえ)</td>
+                                <td>Ue</td>
+                                <td>Above/On top</td>
+                                <td>テーブルの上に本があります。<br>(There is a book on the table.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">下</span> (した)</td>
+                                <td>Shita</td>
+                                <td>Below/Under</td>
+                                <td>ベッドの下に猫がいます。<br>(There is a cat under the bed.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">前</span> (まえ)</td>
+                                <td>Mae</td>
+                                <td>In front of</td>
+                                <td>駅の前で待っています。<br>(I'm waiting in front of the station.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">後ろ</span> (うしろ)</td>
+                                <td>Ushiro</td>
+                                <td>Behind</td>
+                                <td>あなたの後ろにいます。<br>(I am behind you.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">隣</span> (となり)</td>
+                                <td>Tonari</td>
+                                <td>Next to</td>
+                                <td>私の隣に座ってください。<br>(Please sit next to me.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">中</span> (なか)</td>
+                                <td>Naka</td>
+                                <td>Inside</td>
+                                <td>箱の中に何がありますか。<br>(What is inside the box?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">外</span> (そと)</td>
+                                <td>Soto</td>
+                                <td>Outside</td>
+                                <td>外は寒いです。<br>(It's cold outside.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">間</span> (あいだ)</td>
+                                <td>Aida</td>
+                                <td>Between</td>
+                                <td>椅子と机の間にいます。<br>(I am between the chair and the desk.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">右</span> (みぎ)</td>
+                                <td>Migi</td>
+                                <td>Right</td>
+                                <td>右に曲がってください。<br>(Please turn right.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">左</span> (ひだり)</td>
+                                <td>Hidari</td>
+                                <td>Left</td>
+                                <td>左に曲がってください。<br>(Please turn left.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="japanese">カバンは机の上にあります。</p>
+                            <p class="text-gray-600">Kaban wa tsukue no ue ni arimasu.</p>
+                            <p class="text-gray-600">The bag is on the desk.</p>
+                        </div>
+                        <div>
+                            <p class="japanese">コンビニは病院の隣にあります。</p>
+                            <p class="text-gray-600">Konbini wa byōin no tonari ni arimasu.</p>
+                            <p class="text-gray-600">The convenience store is next to the hospital.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese location vocabulary with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Places</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each Japanese location word with its English meaning:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">図書館</span></li>
+                                <li><span class="japanese">病院</span></li>
+                                <li><span class="japanese">学校</span></li>
+                                <li><span class="japanese">銀行</span></li>
+                                <li><span class="japanese">公園</span></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li>School</li>
+                                <li>Bank</li>
+                                <li>Hospital</li>
+                                <li>Park</li>
+                                <li>Library</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>Library (図書館 = toshokan)</li>
+                            <li>Hospital (病院 = byōin)</li>
+                            <li>School (学校 = gakkō)</li>
+                            <li>Bank (銀行 = ginkō)</li>
+                            <li>Park (公園 = kōen)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with the appropriate location vocabulary:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">1. 駅は学校の＿＿＿にあります。(The station is next to the school.)</p>
+                        <p class="japanese">2. 本は机の＿＿＿にあります。(The book is on the desk.)</p>
+                        <p class="japanese">3. 電車は＿＿＿で待ってください。(Please wait for the train at the station.)</p>
+                        <p class="japanese">4. ＿＿＿で映画を見ました。(I watched a movie at the movie theater.)</p>
+                        <p class="japanese">5. 東京は日本の＿＿＿です。(Tokyo is a city in Japan.)</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">1. <span class="text-indigo-600">隣</span> (tonari)</p>
+                        <p class="japanese">2. <span class="text-indigo-600">上</span> (ue)</p>
+                        <p class="japanese">3. <span class="text-indigo-600">駅</span> (eki)</p>
+                        <p class="japanese">4. <span class="text-indigo-600">映画館</span> (eigakan)</p>
+                        <p class="japanese">5. <span class="text-indigo-600">市</span> (shi)</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Asking for Directions</h3>
+                    <p class="text-gray-700 mb-3">
+                        Practice asking for directions using these question patterns:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="japanese">1. ＿＿＿はどこですか。</p>
+                                <p class="text-gray-600">___ wa doko desu ka.</p>
+                                <p class="text-gray-600">Where is ___?</p>
+                            </div>
+                            <div>
+                                <p class="japanese">2. ＿＿＿はこの近くにありますか。</p>
+                                <p class="text-gray-600">___ wa kono chikaku ni arimasu ka.</p>
+                                <p class="text-gray-600">Is there a ___ nearby?</p>
+                            </div>
+                            <div>
+                                <p class="japanese">3. ＿＿＿までどうやって行きますか。</p>
+                                <p class="text-gray-600">___ made dō yatte ikimasu ka.</p>
+                                <p class="text-gray-600">How do I get to ___?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mt-3">
+                        Try to create your own questions using these patterns with different places like 病院 (hospital), 銀行 (bank), 駅 (station), etc.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="greetings.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Greetings</h3>
+                        <p class="text-gray-600 text-sm">Essential expressions for conversations</p>
+                    </a>
+                    <a href="transport.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Transportation</h3>
+                        <p class="text-gray-600 text-sm">Travel and transportation vocabulary</p>
+                    </a>
+                    <a href="food.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Food</h3>
+                        <p class="text-gray-600 text-sm">Japanese food and dining vocabulary</p>
+                    </a>
+                    <a href="time.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Time</h3>
+                        <p class="text-gray-600 text-sm">Time expressions and calendar words</p>
+                    </a>
+                    <a href="activities.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Activities</h3>
+                        <p class="text-gray-600 text-sm">Common actions and activities</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

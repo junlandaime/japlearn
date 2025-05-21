@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Writing Practice | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .practice-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .writing-exercise {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .stroke-order {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .stroke-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70px;
+        }
+        .stroke-image {
+            width: 60px;
+            height: 60px;
+            background-color: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 32px;
+            margin-bottom: 0.5rem;
+        }
+        .stroke-number {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .grid-paper {
+            background-color: white;
+            background-image: 
+                linear-gradient(#f0f0f0 1px, transparent 1px),
+                linear-gradient(90deg, #f0f0f0 1px, transparent 1px);
+            background-size: 25px 25px;
+            border: 1px solid #e5e7eb;
+            margin: 1rem 0;
+            height: 150px;
+            width: 100%;
+        }
+        .completed-example {
+            background-color: #f9fafb;
+            border: 1px dashed #d1d5db;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">N5 Writing Practice</h1>
+            <p class="text-xl">Learn to write hiragana, katakana, and basic kanji characters for JLPT N5 level.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Writing Practice</h2>
+                <p class="text-gray-700 mb-4">
+                    Writing is a fundamental skill for learning Japanese. At the N5 level, you'll need to be able to write hiragana, katakana, and about 100 basic kanji characters. This page offers a variety of writing exercises to help you practice and improve your Japanese writing skills.
+                </p>
+                
+                <p class="text-gray-700 mb-4">
+                    The exercises are designed to help you learn the correct stroke order, practice writing characters, and eventually form complete sentences. You can practice on paper and then check your writing against the examples provided.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Writing Tip:</span> Always follow the correct stroke order when writing Japanese characters. Stroke order is important for producing well-formed characters and developing proper writing habits. It also helps with recognition and reading speed later on.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">How to Use This Page:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Study the character and its stroke order</li>
+                        <li>Practice writing the character on paper, following the correct stroke order</li>
+                        <li>Check your writing against the example</li>
+                        <li>Practice writing words and sentences using the characters you've learned</li>
+                        <li>Review regularly to maintain your skills</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Hiragana Writing Exercise -->
+            <section class="mb-12" x-data="{ showExample: false }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 1: Basic Hiragana Characters</h2>
+                <p class="text-gray-700 mb-4">
+                    Let's start with some basic hiragana characters. Hiragana is the most basic Japanese phonetic script, used for writing native Japanese words, grammatical elements, and sometimes for entire texts.
+                </p>
+                
+                <div class="writing-exercise">
+                    <h3 class="font-semibold text-lg mb-3">あ (a)</h3>
+                    <p class="mb-3">This is one of the five basic vowels in Japanese. Here's how to write it:</p>
+                    
+                    <div class="stroke-order">
+                        <div class="stroke-step">
+                            <div class="stroke-image">あ</div>
+                            <span class="stroke-number">Complete</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M30,30 C40,20 70,30 60,50 C50,70 20,70 40,50" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 1</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M55,40 L70,70" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 2</span>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-4 mb-2">Now it's your turn! Practice writing あ several times on paper. Remember to follow the stroke order shown above.</p>
+                    
+                    <button @click="showExample = !showExample" class="mt-4 bg-indigo-100 hover:bg-indigo-200 text-indigo-800 px-4 py-2 rounded-md text-sm font-medium">
+                        <span x-show="!showExample">Show Example</span>
+                        <span x-show="showExample">Hide Example</span>
+                    </button>
+                    
+                    <div x-show="showExample" class="completed-example">
+                        <p class="mb-2 font-medium">Example:</p>
+                        <div class="flex items-center">
+                            <span class="japanese text-4xl mr-4">あ　あ　あ　あ　あ</span>
+                            <span class="text-gray-600 text-sm">(Practice writing this character multiple times)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Katakana Writing Exercise -->
+            <section class="mb-12" x-data="{ showExample: false }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 2: Basic Katakana Characters</h2>
+                <p class="text-gray-700 mb-4">
+                    Now let's practice writing katakana. Katakana is mainly used for writing foreign words, names, and loanwords in Japanese.
+                </p>
+                
+                <div class="writing-exercise">
+                    <h3 class="font-semibold text-lg mb-3">ア (a)</h3>
+                    <p class="mb-3">This is the katakana equivalent of hiragana あ. Here's how to write it:</p>
+                    
+                    <div class="stroke-order">
+                        <div class="stroke-step">
+                            <div class="stroke-image">ア</div>
+                            <span class="stroke-number">Complete</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M30,30 L70,30" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 1</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M60,30 L40,70" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 2</span>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-4 mb-2">Now it's your turn! Practice writing ア several times on paper. Remember to follow the stroke order shown above.</p>
+                    
+                    <button @click="showExample = !showExample" class="mt-4 bg-indigo-100 hover:bg-indigo-200 text-indigo-800 px-4 py-2 rounded-md text-sm font-medium">
+                        <span x-show="!showExample">Show Example</span>
+                        <span x-show="showExample">Hide Example</span>
+                    </button>
+                    
+                    <div x-show="showExample" class="completed-example">
+                        <p class="mb-2 font-medium">Example:</p>
+                        <div class="flex items-center">
+                            <span class="japanese text-4xl mr-4">ア　ア　ア　ア　ア</span>
+                            <span class="text-gray-600 text-sm">(Practice writing this character multiple times)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Basic Kanji Writing Exercise -->
+            <section class="mb-12" x-data="{ showExample: false }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 3: Basic Kanji Characters</h2>
+                <p class="text-gray-700 mb-4">
+                    Now let's try writing some basic kanji characters. At the N5 level, you're expected to know about 100 basic kanji characters.
+                </p>
+                
+                <div class="writing-exercise">
+                    <h3 class="font-semibold text-lg mb-3">日 (sun, day)</h3>
+                    <p class="mb-3">This kanji means "sun" or "day". Here's how to write it:</p>
+                    
+                    <div class="stroke-order">
+                        <div class="stroke-step">
+                            <div class="stroke-image">日</div>
+                            <span class="stroke-number">Complete</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M30,30 L70,30" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 1</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M30,30 L30,70" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 2</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M30,70 L70,70" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 3</span>
+                        </div>
+                        <div class="stroke-step">
+                            <div class="stroke-image">
+                                <svg width="50" height="50" viewBox="0 0 100 100">
+                                    <path d="M70,30 L70,70" stroke="#000" fill="none" stroke-width="6" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="stroke-number">Stroke 4</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <p class="mb-2 font-medium">Practice with related words:</p>
+                        <ul class="list-disc list-inside space-y-2 mb-4">
+                            <li><span class="japanese">日本</span> (にほん - nihon) - Japan</li>
+                            <li><span class="japanese">日曜日</span> (にちようび - nichiyōbi) - Sunday</li>
+                            <li><span class="japanese">今日</span> (きょう - kyō) - Today</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="mt-4 mb-2">Now it's your turn! Practice writing 日 several times on paper. Remember to follow the stroke order shown above.</p>
+                    
+                    <button @click="showExample = !showExample" class="mt-4 bg-indigo-100 hover:bg-indigo-200 text-indigo-800 px-4 py-2 rounded-md text-sm font-medium">
+                        <span x-show="!showExample">Show Example</span>
+                        <span x-show="showExample">Hide Example</span>
+                    </button>
+                    
+                    <div x-show="showExample" class="completed-example">
+                        <p class="mb-2 font-medium">Example:</p>
+                        <div class="flex items-center">
+                            <span class="japanese text-4xl mr-4">日　日　日　日　日</span>
+                            <span class="text-gray-600 text-sm">(Practice writing this character multiple times)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sentence Writing Exercise -->
+            <section class="mb-12" x-data="{ showExample: false }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 4: Writing Simple Sentences</h2>
+                <p class="text-gray-700 mb-4">
+                    Now let's practice writing simple sentences using the characters you've learned.
+                </p>
+                
+                <div class="writing-exercise">
+                    <h3 class="font-semibold text-lg mb-3">Simple Sentence Practice</h3>
+                    
+                    <div class="mb-5">
+                        <p class="mb-2 font-medium">Try writing this sentence:</p>
+                        <p class="japanese text-xl mb-3">今日は日曜日です。</p>
+                        <p class="text-gray-600 mb-4">Romaji: Kyō wa nichiyōbi desu.</p>
+                        <p class="text-gray-600">Translation: Today is Sunday.</p>
+                    </div>
+                    
+                    <p class="mb-3">Use the grid below as a guide for practicing this sentence on paper:</p>
+                    <div class="grid-paper"></div>
+                    
+                    <button @click="showExample = !showExample" class="mt-4 bg-indigo-100 hover:bg-indigo-200 text-indigo-800 px-4 py-2 rounded-md text-sm font-medium">
+                        <span x-show="!showExample">Show Example</span>
+                        <span x-show="showExample">Hide Example</span>
+                    </button>
+                    
+                    <div x-show="showExample" class="completed-example">
+                        <p class="mb-2 font-medium">Example:</p>
+                        <div class="japanese text-2xl">今日は日曜日です。</div>
+                        <p class="text-gray-600 mt-2 text-sm">
+                            Note: When writing, make sure your characters are properly spaced and aligned. Practice writing from left to right, with each character taking up roughly the same amount of space.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Navigation -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">More Practice Resources</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="./listening.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-headphones text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Listening Practice</h3>
+                    </a>
+                    <a href="./reading.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-book-open text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Reading Practice</h3>
+                    </a>
+                    <a href="./writing.html" class="bg-indigo-100 border border-indigo-300 rounded-lg p-4 text-center">
+                        <i class="fas fa-pen text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Writing Practice</h3>
+                    </a>
+                    <a href="./speaking.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-microphone text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Speaking Practice</h3>
+                    </a>
+                    <a href="./kanji-quiz.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-font text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Kanji Quiz</h3>
+                    </a>
+                    <a href="./vocabulary-quiz.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-list text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Vocabulary Quiz</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Practice Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./listening.html" class="text-gray-300 hover:text-white">Listening Practice</a></li>
+                        <li><a href="./reading.html" class="text-gray-300 hover:text-white">Reading Practice</a></li>
+                        <li><a href="./writing.html" class="text-indigo-300 hover:text-white">Writing Practice</a></li>
+                        <li><a href="./speaking.html" class="text-gray-300 hover:text-white">Speaking Practice</a></li>
+                        <li><a href="./vocabulary-quiz.html" class="text-gray-300 hover:text-white">Vocabulary Quiz</a></li>
+                        <li><a href="./grammar-quiz.html" class="text-gray-300 hover:text-white">Grammar Quiz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

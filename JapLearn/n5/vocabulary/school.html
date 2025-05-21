@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 School Vocabulary | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .vocabulary-table th, .vocabulary-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        .vocabulary-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            font-size: 1.25rem;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        /* Category Colors */
+        .category-places tbody tr {
+            background-color: rgba(219, 234, 254, 0.4); /* Light blue */
+        }
+        .category-people tbody tr {
+            background-color: rgba(254, 226, 226, 0.4); /* Light red */
+        }
+        .category-objects tbody tr {
+            background-color: rgba(220, 252, 231, 0.4); /* Light green */
+        }
+        .category-subjects tbody tr {
+            background-color: rgba(254, 240, 138, 0.4); /* Light yellow */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">School Vocabulary</h1>
+            <p class="text-xl">Learn essential Japanese words for school, education, and classroom settings.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to School Vocabulary</h2>
+                <p class="text-gray-700 mb-4">
+                    Education is highly valued in Japanese culture, and understanding vocabulary related to school and learning is essential for students of Japanese. In this lesson, we'll cover words related to school facilities, people, subjects, and classroom objects.
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Key Phrase:</p>
+                    <div>
+                        <p class="japanese">学校で勉強します。</p>
+                        <p class="text-gray-600">Gakkō de benkyō shimasu.</p>
+                        <p class="text-gray-600">I study at school.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> The Japanese school year typically begins in April and ends in March, divided into three terms. Students in Japan usually attend school Monday through Friday, and sometimes half-day on Saturday. Japanese schools often emphasize group harmony and responsibility, with students participating in cleaning their classrooms and serving lunch.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- School Places Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">School Places and Facilities</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are the vocabulary words for different places within a school and types of educational institutions.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-places">
+                            <tr>
+                                <td><span class="japanese">学校</span> (がっこう)</td>
+                                <td>Gakkō</td>
+                                <td>School</td>
+                                <td>学校は9時に始まります。<br>(School starts at 9 o'clock.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">小学校</span> (しょうがっこう)</td>
+                                <td>Shōgakkō</td>
+                                <td>Elementary school</td>
+                                <td>弟は小学校に通っています。<br>(My younger brother attends elementary school.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">中学校</span> (ちゅうがっこう)</td>
+                                <td>Chūgakkō</td>
+                                <td>Junior high school</td>
+                                <td>中学校は3年間です。<br>(Junior high school is for three years.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">高校</span> (こうこう)</td>
+                                <td>Kōkō</td>
+                                <td>High school</td>
+                                <td>高校を卒業しました。<br>(I graduated from high school.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">大学</span> (だいがく)</td>
+                                <td>Daigaku</td>
+                                <td>University</td>
+                                <td>大学で経済学を勉強しています。<br>(I'm studying economics at university.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">教室</span> (きょうしつ)</td>
+                                <td>Kyōshitsu</td>
+                                <td>Classroom</td>
+                                <td>教室に入ります。<br>(I enter the classroom.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">職員室</span> (しょくいんしつ)</td>
+                                <td>Shokuinshitsu</td>
+                                <td>Staff room/Teachers' office</td>
+                                <td>先生は職員室にいます。<br>(The teacher is in the staff room.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">図書館</span> (としょかん)</td>
+                                <td>Toshokan</td>
+                                <td>Library</td>
+                                <td>図書館で本を借ります。<br>(I borrow books from the library.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">体育館</span> (たいいくかん)</td>
+                                <td>Taiikukan</td>
+                                <td>Gymnasium</td>
+                                <td>体育館でバスケットボールをします。<br>(I play basketball in the gymnasium.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">校庭</span> (こうてい)</td>
+                                <td>Kōtei</td>
+                                <td>Schoolyard</td>
+                                <td>校庭で運動します。<br>(I exercise in the schoolyard.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: どこに行きますか。</p>
+                        <p class="text-gray-600">A: Doko ni ikimasu ka?</p>
+                        <p class="text-gray-600">A: Where are you going?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: 図書館に行きます。本を借りたいです。</p>
+                        <p class="text-gray-600">B: Toshokan ni ikimasu. Hon o karitai desu.</p>
+                        <p class="text-gray-600">B: I'm going to the library. I want to borrow a book.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- School People Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">People at School</h2>
+                <p class="text-gray-700 mb-4">
+                    Learn vocabulary for people you'll encounter in a school environment.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-people">
+                            <tr>
+                                <td><span class="japanese">先生</span> (せんせい)</td>
+                                <td>Sensei</td>
+                                <td>Teacher</td>
+                                <td>田中先生は数学を教えます。<br>(Mr. Tanaka teaches math.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">学生</span> (がくせい)</td>
+                                <td>Gakusei</td>
+                                <td>Student</td>
+                                <td>私は学生です。<br>(I am a student.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">生徒</span> (せいと)</td>
+                                <td>Seito</td>
+                                <td>Pupil (primary/secondary school)</td>
+                                <td>彼は良い生徒です。<br>(He is a good pupil.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">校長</span> (こうちょう)</td>
+                                <td>Kōchō</td>
+                                <td>Principal</td>
+                                <td>校長先生が話しています。<br>(The principal is speaking.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">クラスメート</span></td>
+                                <td>Kurasumeito</td>
+                                <td>Classmate</td>
+                                <td>彼女は私のクラスメートです。<br>(She is my classmate.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">友達</span> (ともだち)</td>
+                                <td>Tomodachi</td>
+                                <td>Friend</td>
+                                <td>彼は私の友達です。<br>(He is my friend.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">クラス</span></td>
+                                <td>Kurasu</td>
+                                <td>Class (group of students)</td>
+                                <td>私のクラスは30人です。<br>(There are 30 people in my class.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">先輩</span> (せんぱい)</td>
+                                <td>Senpai</td>
+                                <td>Senior student</td>
+                                <td>山田先輩は優しいです。<br>(Senior Yamada is kind.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">後輩</span> (こうはい)</td>
+                                <td>Kōhai</td>
+                                <td>Junior student</td>
+                                <td>後輩を助けます。<br>(I help my junior.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">留学生</span> (りゅうがくせい)</td>
+                                <td>Ryūgakusei</td>
+                                <td>International student</td>
+                                <td>私は留学生です。<br>(I am an international student.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: あの人は誰ですか。</p>
+                        <p class="text-gray-600">A: Ano hito wa dare desu ka?</p>
+                        <p class="text-gray-600">A: Who is that person?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: 木村先生です。日本語を教えています。</p>
+                        <p class="text-gray-600">B: Kimura-sensei desu. Nihongo o oshiete imasu.</p>
+                        <p class="text-gray-600">B: That's Professor Kimura. He teaches Japanese.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Classroom Objects Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Classroom Objects</h2>
+                <p class="text-gray-700 mb-4">
+                    These are common objects and supplies you'll find in a Japanese classroom.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-objects">
+                            <tr>
+                                <td><span class="japanese">机</span> (つくえ)</td>
+                                <td>Tsukue</td>
+                                <td>Desk</td>
+                                <td>本を机の上に置きます。<br>(I put the book on the desk.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">椅子</span> (いす)</td>
+                                <td>Isu</td>
+                                <td>Chair</td>
+                                <td>椅子に座ります。<br>(I sit on the chair.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">黒板</span> (こくばん)</td>
+                                <td>Kokuban</td>
+                                <td>Blackboard</td>
+                                <td>先生は黒板に書きます。<br>(The teacher writes on the blackboard.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ホワイトボード</span></td>
+                                <td>Howaitobōdo</td>
+                                <td>Whiteboard</td>
+                                <td>ホワイトボードに書いてください。<br>(Please write on the whiteboard.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ノート</span></td>
+                                <td>Nōto</td>
+                                <td>Notebook</td>
+                                <td>ノートに書きます。<br>(I write in my notebook.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">教科書</span> (きょうかしょ)</td>
+                                <td>Kyōkasho</td>
+                                <td>Textbook</td>
+                                <td>教科書を読みます。<br>(I read the textbook.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">鉛筆</span> (えんぴつ)</td>
+                                <td>Enpitsu</td>
+                                <td>Pencil</td>
+                                <td>鉛筆で書きます。<br>(I write with a pencil.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ペン</span></td>
+                                <td>Pen</td>
+                                <td>Pen</td>
+                                <td>青いペンで書きます。<br>(I write with a blue pen.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">消しゴム</span> (けしゴム)</td>
+                                <td>Keshigomu</td>
+                                <td>Eraser</td>
+                                <td>消しゴムで消します。<br>(I erase with an eraser.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">かばん</span></td>
+                                <td>Kaban</td>
+                                <td>Bag/Backpack</td>
+                                <td>かばんに本を入れます。<br>(I put books in my bag.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: すみません、ペンを貸してください。</p>
+                        <p class="text-gray-600">A: Sumimasen, pen o kashite kudasai.</p>
+                        <p class="text-gray-600">A: Excuse me, could you lend me a pen, please?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">B: はい、どうぞ。</p>
+                        <p class="text-gray-600">B: Hai, dōzo.</p>
+                        <p class="text-gray-600">B: Yes, here you are.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- School Subjects Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">School Subjects</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are the common academic subjects taught in Japanese schools.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-subjects">
+                            <tr>
+                                <td><span class="japanese">国語</span> (こくご)</td>
+                                <td>Kokugo</td>
+                                <td>Japanese language (as a subject)</td>
+                                <td>国語の授業は面白いです。<br>(The Japanese language class is interesting.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">数学</span> (すうがく)</td>
+                                <td>Sūgaku</td>
+                                <td>Mathematics</td>
+                                <td>数学が得意です。<br>(I'm good at mathematics.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">英語</span> (えいご)</td>
+                                <td>Eigo</td>
+                                <td>English</td>
+                                <td>英語を勉強しています。<br>(I'm studying English.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">理科</span> (りか)</td>
+                                <td>Rika</td>
+                                <td>Science</td>
+                                <td>理科の実験が好きです。<br>(I like science experiments.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">社会</span> (しゃかい)</td>
+                                <td>Shakai</td>
+                                <td>Social Studies</td>
+                                <td>社会の宿題をしています。<br>(I'm doing my social studies homework.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">歴史</span> (れきし)</td>
+                                <td>Rekishi</td>
+                                <td>History</td>
+                                <td>歴史が大好きです。<br>(I love history.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">地理</span> (ちり)</td>
+                                <td>Chiri</td>
+                                <td>Geography</td>
+                                <td>地理のテストがあります。<br>(There is a geography test.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">体育</span> (たいいく)</td>
+                                <td>Taiiku</td>
+                                <td>Physical Education</td>
+                                <td>体育の時間にバスケットボールをします。<br>(We play basketball during P.E. class.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">音楽</span> (おんがく)</td>
+                                <td>Ongaku</td>
+                                <td>Music</td>
+                                <td>音楽の授業で歌います。<br>(We sing in music class.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">美術</span> (びじゅつ)</td>
+                                <td>Bijutsu</td>
+                                <td>Art</td>
+                                <td>美術の授業で絵を描きます。<br>(We draw pictures in art class.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div class="mb-3">
+                        <p class="japanese">A: 何の授業が好きですか。</p>
+                        <p class="text-gray-600">A: Nan no jugyō ga suki desu ka?</p>
+                        <p class="text-gray-600">A: What class do you like?</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">B: 数学の授業が一番好きです。</p>
+                        <p class="text-gray-600">B: Sūgaku no jugyō ga ichiban suki desu.</p>
+                        <p class="text-gray-600">B: I like math class the most.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">A: 私は英語の授業が好きです。</p>
+                        <p class="text-gray-600">A: Watashi wa eigo no jugyō ga suki desu.</p>
+                        <p class="text-gray-600">A: I like English class.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Study Vocabulary Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Study-Related Vocabulary</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are words related to studying and academic activities.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Example Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="japanese">勉強</span> (べんきょう)</td>
+                                <td>Benkyō</td>
+                                <td>Study</td>
+                                <td>毎日日本語を勉強します。<br>(I study Japanese every day.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">授業</span> (じゅぎょう)</td>
+                                <td>Jugyō</td>
+                                <td>Lesson/Class</td>
+                                <td>授業は9時に始まります。<br>(The lesson starts at 9.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">宿題</span> (しゅくだい)</td>
+                                <td>Shukudai</td>
+                                <td>Homework</td>
+                                <td>宿題をしなければなりません。<br>(I must do my homework.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">テスト</span></td>
+                                <td>Tesuto</td>
+                                <td>Test</td>
+                                <td>明日テストがあります。<br>(There is a test tomorrow.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">試験</span> (しけん)</td>
+                                <td>Shiken</td>
+                                <td>Examination</td>
+                                <td>期末試験の準備をしています。<br>(I'm preparing for the final exam.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">成績</span> (せいせき)</td>
+                                <td>Seiseki</td>
+                                <td>Grades/Results</td>
+                                <td>成績が良くなりました。<br>(My grades improved.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">答え</span> (こたえ)</td>
+                                <td>Kotae</td>
+                                <td>Answer</td>
+                                <td>この問題の答えは何ですか。<br>(What is the answer to this problem?)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">質問</span> (しつもん)</td>
+                                <td>Shitsumon</td>
+                                <td>Question</td>
+                                <td>質問があります。<br>(I have a question.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">卒業</span> (そつぎょう)</td>
+                                <td>Sotsugyō</td>
+                                <td>Graduation</td>
+                                <td>来年卒業します。<br>(I will graduate next year.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">入学</span> (にゅうがく)</td>
+                                <td>Nyūgaku</td>
+                                <td>Enrollment/Admission</td>
+                                <td>大学に入学しました。<br>(I entered university.)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Learning Tip:</span> In Japanese schools, students often stay in one classroom while teachers move between rooms. Also, students typically clean their own classrooms and take turns serving lunch to their peers, which is part of learning responsibility and teamwork in Japanese education.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercises Section -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Japanese words with their English meanings</h3>
+                    <div class="bg-white p-4 rounded-md">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="font-medium">Japanese Words:</p>
+                                <ol class="list-decimal list-inside">
+                                    <li>先生 (せんせい)</li>
+                                    <li>教室 (きょうしつ)</li>
+                                    <li>黒板 (こくばん)</li>
+                                    <li>数学 (すうがく)</li>
+                                    <li>宿題 (しゅくだい)</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <p class="font-medium">English Meanings:</p>
+                                <ol class="list-[upper-alpha] list-inside">
+                                    <li>Homework</li>
+                                    <li>Mathematics</li>
+                                    <li>Classroom</li>
+                                    <li>Teacher</li>
+                                    <li>Blackboard</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium" onclick="alert('Answers: 1-D, 2-C, 3-E, 4-B, 5-A')">Show Answers</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Complete the sentences</h3>
+                    <div class="bg-white p-4 rounded-md">
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>
+                                <p>私は＿＿＿で数学を勉強します。(I study mathematics at school.)</p>
+                                <p class="text-sm text-gray-500">Options: 教室 (kyōshitsu), 学校 (gakkō), 図書館 (toshokan)</p>
+                            </li>
+                            <li>
+                                <p>＿＿＿は黒板に書きます。(The teacher writes on the blackboard.)</p>
+                                <p class="text-sm text-gray-500">Options: 学生 (gakusei), 先生 (sensei), 友達 (tomodachi)</p>
+                            </li>
+                            <li>
+                                <p>この＿＿＿はとても難しいです。(This textbook is very difficult.)</p>
+                                <p class="text-sm text-gray-500">Options: ノート (nōto), 教科書 (kyōkasho), ペン (pen)</p>
+                            </li>
+                            <li>
+                                <p>明日＿＿＿があります。(There is a test tomorrow.)</p>
+                                <p class="text-sm text-gray-500">Options: 授業 (jugyō), テスト (tesuto), 質問 (shitsumon)</p>
+                            </li>
+                            <li>
+                                <p>私は＿＿＿で日本語を書きます。(I write Japanese with a pencil.)</p>
+                                <p class="text-sm text-gray-500">Options: 鉛筆 (enpitsu), 消しゴム (keshigomu), かばん (kaban)</p>
+                            </li>
+                        </ol>
+                        <div class="mt-4">
+                            <button class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium" onclick="alert('Answers: 1. 学校 (gakkō), 2. 先生 (sensei), 3. 教科書 (kyōkasho), 4. テスト (tesuto), 5. 鉛筆 (enpitsu)')">Show Answers</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Translate the following sentences</h3>
+                    <div class="bg-white p-4 rounded-md">
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>
+                                <p>I go to the library to study.</p>
+                            </li>
+                            <li>
+                                <p>The classroom is on the second floor.</p>
+                            </li>
+                            <li>
+                                <p>Please lend me your eraser.</p>
+                            </li>
+                            <li>
+                                <p>My teacher is very kind.</p>
+                            </li>
+                            <li>
+                                <p>I will graduate from university next year.</p>
+                            </li>
+                        </ol>
+                        <div class="mt-4">
+                            <button class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium" onclick="alert('Answers: 1. 図書館に勉強しに行きます。(Toshokan ni benkyō shi ni ikimasu.), 2. 教室は2階にあります。(Kyōshitsu wa ni-kai ni arimasu.), 3. 消しゴムを貸してください。(Keshigomu o kashite kudasai.), 4. 私の先生はとても親切です。(Watashi no sensei wa totemo shinsetsu desu.), 5. 来年大学を卒業します。(Rainen daigaku o sotsugyō shimasu.)')">Show Answers</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vocabulary Navigation Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Explore More N5 Vocabulary</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <a href="./greetings.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-hand-paper text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Greetings</h3>
+                    </a>
+                    <a href="./numbers.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-sort-numeric-up text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Numbers</h3>
+                    </a>
+                    <a href="./time.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clock text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Time</h3>
+                    </a>
+                    <a href="./family.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-users text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Family</h3>
+                    </a>
+                    <a href="./food.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-utensils text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Food</h3>
+                    </a>
+                    <a href="./colors.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-palette text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Colors</h3>
+                    </a>
+                    <a href="./animals.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-paw text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Animals</h3>
+                    </a>
+                    <a href="./transport.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-bus text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Transport</h3>
+                    </a>
+                    <a href="./activities.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-running text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Activities</h3>
+                    </a>
+                    <a href="./school.html" class="bg-indigo-100 border border-indigo-300 rounded-lg p-4 text-center">
+                        <i class="fas fa-school text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">School</h3>
+                    </a>
+                    <a href="./weather.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-cloud-sun text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Weather</h3>
+                    </a>
+                    <a href="./master-list-n5.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-list-alt text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Master List</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

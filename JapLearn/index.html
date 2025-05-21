@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihongo Learning - Belajar Bahasa Jepang N5 & N4</title>
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP dan Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/1023/1920/1080');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        .slide-in-bottom {
+            animation: slideInBottom 0.8s ease-out;
+        }
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInBottom {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e53e3e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div x-data="{ 
+        mobileMenuOpen: false,
+        courseTabs: 'n5',
+        testimonials: [
+            { 
+                name: 'Dian Sastro', 
+                image: 'https://picsum.photos/id/64/300/300', 
+                text: 'Saya berhasil lulus JLPT N5 setelah belajar di Nihongo Learning selama 3 bulan. Materinya sangat terstruktur!', 
+                level: 'Lulus JLPT N5' 
+            },
+            { 
+                name: 'Budi Setiawan', 
+                image: 'https://picsum.photos/id/91/300/300', 
+                text: 'Platform terbaik untuk belajar bahasa Jepang. Materi N4 sangat membantu persiapan ujian saya.', 
+                level: 'Lulus JLPT N4' 
+            },
+            { 
+                name: 'Ratna Dewi', 
+                image: 'https://picsum.photos/id/26/300/300', 
+                text: 'Dari nol hingga bisa berbicara bahasa Jepang dalam 6 bulan. Domo arigatou Nihongo Learning!', 
+                level: 'Lulus JLPT N5' 
+            }
+        ],
+        features: [
+            { 
+                icon: 'fa-book', 
+                title: 'Materi Lengkap', 
+                desc: 'Materi pembelajaran komprehensif dari dasar hingga mahir untuk N5 dan N4'
+            },
+            { 
+                icon: 'fa-graduation-cap', 
+                title: 'Persiapan Ujian', 
+                desc: 'Latihan ujian JLPT dengan format yang mirip dengan ujian asli'
+            },
+            { 
+                icon: 'fa-comments', 
+                title: 'Forum Diskusi', 
+                desc: 'Diskusi dengan sesama pelajar dan mendapat bantuan dari native speaker'
+            },
+            { 
+                icon: 'fa-gamepad', 
+                title: 'Mini Games', 
+                desc: 'Belajar sambil bermain dengan game interaktif yang menyenangkan'
+            },
+            { 
+                icon: 'fa-chart-line', 
+                title: 'Progress Tracking', 
+                desc: 'Pantau kemajuan belajar dengan sistem tracking yang detail'
+            },
+            { 
+                icon: 'fa-mobile-screen', 
+                title: 'Mobile Friendly', 
+                desc: 'Akses materi pembelajaran dari perangkat mana saja'
+            }
+        ],
+        faqItems: [
+            { 
+                question: 'Apakah saya bisa belajar bahasa Jepang dari nol?', 
+                answer: 'Tentu saja! Kami menyediakan materi mulai dari pengenalan dasar huruf Hiragana dan Katakana. Kurikulum kami dirancang untuk pemula yang belum memiliki pengetahuan bahasa Jepang sama sekali.',
+                isOpen: false 
+            },
+            { 
+                question: 'Berapa lama waktu yang dibutuhkan untuk menguasai level N5?', 
+                answer: 'Dengan belajar secara konsisten 1-2 jam sehari, rata-rata siswa kami berhasil menguasai materi N5 dalam waktu 3-6 bulan. Namun, kecepatan belajar setiap orang berbeda-beda.',
+                isOpen: false 
+            },
+            { 
+                question: 'Apakah ada sertifikat setelah menyelesaikan kursus?', 
+                answer: 'Ya, kami menyediakan sertifikat penyelesaian digital untuk setiap level kursus yang telah diselesaikan. Sertifikat ini dapat diunduh dari profil Anda.',
+                isOpen: false 
+            },
+            { 
+                question: 'Apakah website ini menyediakan latihan persiapan ujian JLPT?', 
+                answer: 'Tentu! Kami menyediakan simulasi ujian JLPT dengan format yang mirip dengan ujian asli, lengkap dengan pembahasan untuk setiap soal.',
+                isOpen: false 
+            },
+            { 
+                question: 'Bagaimana cara mengakses materi pembelajaran?', 
+                answer: 'Setelah mendaftar, Anda akan memiliki akses ke semua materi pembelajaran melalui dashboard pengguna. Materi tersedia dalam format teks, audio, dan video interaktif.',
+                isOpen: false 
+            }
+        ],
+        showScrollTop: false,
+        checkScroll() {
+            this.showScrollTop = window.scrollY > 500;
+        }
+    }" x-init="window.addEventListener('scroll', checkScroll)" class="overflow-x-hidden">
+
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md fixed w-full z-50 transition duration-300" :class="{ 'bg-opacity-95': window.scrollY > 50 }">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <span class="text-red-600 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-gray-800 text-lg font-semibold">Learning</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Links (Desktop) -->
+                    <div class="hidden md:flex md:items-center md:space-x-6">
+                        <a href="#home" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                        <a href="#courses" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Kursus</a>
+                        <a href="#features" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Fitur</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Testimoni</a>
+                        <a href="#faq" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">FAQ</a>
+                        <a href="#" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500" aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars block h-6 w-6" x-show="!mobileMenuOpen"></i>
+                            <i class="fas fa-times block h-6 w-6" x-show="mobileMenuOpen"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#home" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Beranda</a>
+                    <a href="#courses" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Kursus</a>
+                    <a href="#features" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Fitur</a>
+                    <a href="#testimonials" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Testimoni</a>
+                    <a href="#faq" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">FAQ</a>
+                    <div class="flex mt-3 space-x-2">
+                        <a href="#" class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="#" class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-image min-h-screen flex items-center justify-center px-4">
+            <div class="text-center text-white max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in jp-text">
+                    日本語を学ぼう！
+                </h1>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 slide-in-bottom">
+                    Belajar Bahasa Jepang dari Dasar
+                </h2>
+                <p class="text-lg sm:text-xl mb-8 slide-in-bottom" style="animation-delay: 0.2s;">
+                    Persiapan lengkap untuk ujian JLPT N5 dan N4 dengan materi terstruktur, latihan interaktif, dan komunitas belajar yang mendukung
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 slide-in-bottom" style="animation-delay: 0.4s;">
+                    <a href="#courses" class="px-8 py-3 rounded-lg bg-red-600 hover:bg-red-700 text-white font-medium text-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-book-open mr-2"></i> Mulai Belajar
+                    </a>
+                    <a href="#features" class="px-8 py-3 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 border-2 border-white text-white font-medium text-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-info-circle mr-2"></i> Pelajari Selengkapnya
+                    </a>
+                </div>
+                <div class="mt-12 flex justify-center space-x-6 slide-in-bottom" style="animation-delay: 0.6s;">
+                    <div class="text-center">
+                        <div class="font-bold text-3xl">500+</div>
+                        <div class="text-sm">Pelajar Aktif</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold text-3xl">100+</div>
+                        <div class="text-sm">Materi Pembelajaran</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold text-3xl">95%</div>
+                        <div class="text-sm">Tingkat Kelulusan</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Section -->
+        <section id="courses" class="py-16 px-4 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Kursus Bahasa Jepang</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pilih level pembelajaran yang sesuai dengan kemampuan Anda</p>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex justify-center mb-8">
+                        <div class="inline-flex rounded-md shadow-sm">
+                            <button @click="courseTabs = 'n5'" :class="{ 'bg-red-600 text-white': courseTabs === 'n5', 'bg-white text-gray-700': courseTabs !== 'n5' }" class="px-6 py-3 font-medium rounded-l-lg border border-gray-200 transition duration-300">
+                                <i class="fas fa-star mr-2"></i> Level N5 (Pemula)
+                            </button>
+                            <button @click="courseTabs = 'n4'" :class="{ 'bg-red-600 text-white': courseTabs === 'n4', 'bg-white text-gray-700': courseTabs !== 'n4' }" class="px-6 py-3 font-medium rounded-r-lg border border-gray-200 transition duration-300">
+                                <i class="fas fa-star-half-alt mr-2"></i> Level N4 (Menengah)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- N5 Content -->
+                    <div x-show="courseTabs === 'n5'" x-transition class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:shadow-xl hover:-translate-y-2">
+                            <img src="https://picsum.photos/id/1055/800/500" alt="Pembelajaran Dasar" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 text-xs font-semibold text-red-600 bg-red-100 rounded-full">Pemula</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Pengenalan Bahasa Jepang</h3>
+                                <p class="text-gray-600 mb-4">Mempelajari dasar-dasar huruf Hiragana, Katakana, dan pengenalan Kanji dasar untuk level N5.</p>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-book mr-2"></i> 15 Modul
+                                    <i class="fas fa-clock ml-4 mr-2"></i> 30 Jam
+                                </div>
+                                <a href="#" class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition duration-300">
+                                    <i class="fas fa-play-circle mr-2"></i> Mulai Belajar
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:shadow-xl hover:-translate-y-2">
+                            <img src="https://picsum.photos/id/20/800/500" alt="Tata Bahasa N5" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 text-xs font-semibold text-red-600 bg-red-100 rounded-full">Pemula</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Tata Bahasa N5</h3>
+                                <p class="text-gray-600 mb-4">Mempelajari struktur kalimat dasar, partikel, kata kerja, dan bentuk-bentuk gramatikal level N5.</p>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-book mr-2"></i> 20 Modul
+                                    <i class="fas fa-clock ml-4 mr-2"></i> 40 Jam
+                                </div>
+                                <a href="#" class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition duration-300">
+                                    <i class="fas fa-play-circle mr-2"></i> Mulai Belajar
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:shadow-xl hover:-translate-y-2">
+                            <img src="https://picsum.photos/id/42/800/500" alt="Persiapan Ujian N5" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 text-xs font-semibold text-red-600 bg-red-100 rounded-full">Pemula</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Persiapan Ujian N5</h3>
+                                <p class="text-gray-600 mb-4">Latihan persiapan lengkap untuk ujian JLPT N5 dengan simulasi soal dan pembahasan.</p>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-book mr-2"></i> 12 Modul
+                                    <i class="fas fa-clock ml-4 mr-2"></i> 25 Jam
+                                </div>
+                                <a href="#" class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition duration-300">
+                                    <i class="fas fa-play-circle mr-2"></i> Mulai Belajar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- N4 Content -->
+                    <div x-show="courseTabs === 'n4'" x-transition class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:shadow-xl hover:-translate-y-2">
+                            <img src="https://picsum.photos/id/367/800/500" alt="Menengah Dasar" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full">Menengah</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Pengenalan Level N4</h3>
+                                <p class="text-gray-600 mb-4">Meningkatkan kemampuan bahasa Jepang dengan Kanji dan kosakata yang lebih kompleks.</p>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-book mr-2"></i> 15 Modul
+                                    <i class="fas fa-clock ml-4 mr-2"></i> 35 Jam
+                                </div>
+                                <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition duration-300">
+                                    <i class="fas fa-play-circle mr-2"></i> Mulai Belajar
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:shadow-xl hover:-translate-y-2">
+                            <img src="https://picsum.photos/id/24/800/500" alt="Tata Bahasa N4" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full">Menengah</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Tata Bahasa N4</h3>
+                                <p class="text-gray-600 mb-4">Mempelajari struktur kalimat kompleks, bentuk potensial, kausatif, pasif, dan honorifik.</p>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-book mr-2"></i> 25 Modul
+                                    <i class="fas fa-clock ml-4 mr-2"></i> 50 Jam
+                                </div>
+                                <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition duration-300">
+                                    <i class="fas fa-play-circle mr-2"></i> Mulai Belajar
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:shadow-xl hover:-translate-y-2">
+                            <img src="https://picsum.photos/id/26/800/500" alt="Persiapan Ujian N4" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full">Menengah</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Persiapan Ujian N4</h3>
+                                <p class="text-gray-600 mb-4">Latihan persiapan lengkap untuk ujian JLPT N4 dengan simulasi soal dan pembahasan.</p>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-book mr-2"></i> 15 Modul
+                                    <i class="fas fa-clock ml-4 mr-2"></i> 30 Jam
+                                </div>
+                                <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition duration-300">
+                                    <i class="fas fa-play-circle mr-2"></i> Mulai Belajar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-th-list mr-2"></i> Lihat Semua Kursus
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-16 px-4 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Fitur Utama</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Berikan pembelajaran terbaik untuk menguasai bahasa Jepang dengan fitur-fitur unggulan kami</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <template x-for="(feature, index) in features" :key="index">
+                        <div class="bg-white rounded-xl shadow-lg p-6 transform transition duration-500 hover:shadow-xl hover:-translate-y-2" 
+                             :class="{'slide-in-left': index % 3 === 0, 'fade-in': index % 3 === 1, 'slide-in-right': index % 3 === 2}"
+                             :style="`animation-delay: ${index * 0.1}s`">
+                            <div class="w-14 h-14 bg-red-100 text-red-600 rounded-full flex items-center justify-center mb-5">
+                                <i :class="`fas ${feature.icon} text-2xl`"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3" x-text="feature.title"></h3>
+                            <p class="text-gray-600" x-text="feature.desc"></p>
+                        </div>
+                    </template>
+                </div>
+                
+                <div class="mt-20 flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Belajar Kapan Saja, Dimana Saja</h3>
+                        <p class="text-gray-600 mb-6">
+                            Akses materi pembelajaran dari perangkat apa saja, kapan saja, dan dimana saja. Kami menyediakan platform belajar yang fleksibel untuk membantu Anda belajar bahasa Jepang dengan nyaman sesuai jadwal Anda.
+                        </p>
+                        <ul class="mb-8">
+                            <li class="flex items-start mb-3">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Materi pembelajaran yang dapat diakses 24/7</span>
+                            </li>
+                            <li class="flex items-start mb-3">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Sinkronisasi progres belajar antar perangkat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Mode offline untuk belajar tanpa internet</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center px-5 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition duration-300">
+                            <i class="fas fa-laptop mr-2"></i> Coba Gratis 7 Hari
+                        </a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://picsum.photos/id/0/800/600" alt="Belajar Fleksibel" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Methods Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Metode Pembelajaran</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pendekatan komprehensif untuk memastikan kesuksesan belajar Anda</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="md:w-1/2 animate-float">
+                        <img src="https://picsum.photos/id/3/800/600" alt="Metode Pembelajaran" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="mb-8 p-6 bg-red-50 rounded-xl transform transition duration-500 hover:shadow-md hover:-translate-y-1">
+                            <div class="flex items-start">
+                                <div class="bg-red-100 text-red-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-headphones text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Listening Practice</h3>
+                                    <p class="text-gray-600">Dengarkanlah audio percakapan asli bahasa Jepang untuk melatih pendengaran dan pengucapan Anda dengan benar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8 p-6 bg-blue-50 rounded-xl transform transition duration-500 hover:shadow-md hover:-translate-y-1">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-book-reader text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Reading Comprehension</h3>
+                                    <p class="text-gray-600">Tingkatkan kemampuan membaca dengan berbagai teks bahasa Jepang dari tingkat dasar hingga menengah.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8 p-6 bg-green-50 rounded-xl transform transition duration-500 hover:shadow-md hover:-translate-y-1">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-green-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-pen text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Writing Exercise</h3>
+                                    <p class="text-gray-600">Praktikkan menulis karakter Jepang dengan panduan langkah demi langkah dan umpan balik langsung.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 bg-yellow-50 rounded-xl transform transition duration-500 hover:shadow-md hover:-translate-y-1">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 text-yellow-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-comments text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Speaking Practice</h3>
+                                    <p class="text-gray-600">Berlatih percakapan dengan native speaker dan dapatkan umpan balik untuk meningkatkan kemampuan berbicara Anda.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 px-4 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-3">Apa Kata Mereka</h2>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">Dengarkan pengalaman sukses para pelajar bahasa Jepang di platform kami</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <template x-for="(testimonial, index) in testimonials" :key="index">
+                        <div class="bg-gray-800 rounded-xl p-6 transform transition duration-500 hover:shadow-xl hover:-translate-y-2"
+                             :style="`animation-delay: ${index * 0.2}s`">
+                            <div class="flex items-center mb-4">
+                                <img :src="testimonial.image" class="w-12 h-12 rounded-full object-cover mr-4" :alt="testimonial.name">
+                                <div>
+                                    <h4 class="font-bold" x-text="testimonial.name"></h4>
+                                    <p class="text-sm text-gray-400" x-text="testimonial.level"></p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-4" x-text="testimonial.text"></p>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                
+                <div class="mt-16 text-center">
+                    <a href="#" class="inline-flex items-center px-6 py-3 bg-white text-gray-900 rounded-lg transition duration-300 transform hover:bg-gray-100 hover:scale-105">
+                        <i class="fas fa-users mr-2"></i> Lihat Semua Testimoni
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 px-4 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Pertanyaan Umum</h2>
+                    <p class="text-lg text-gray-600">Jawaban untuk pertanyaan yang sering ditanyakan</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <template x-for="(item, index) in faqItems" :key="index">
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <button 
+                                @click="item.isOpen = !item.isOpen" 
+                                class="flex justify-between items-center w-full p-5 text-left bg-white hover:bg-gray-50 transition-colors"
+                                :class="{ 'border-b border-gray-200': item.isOpen }">
+                                <span class="font-medium text-gray-900" x-text="item.question"></span>
+                                <i class="fas" :class="item.isOpen ? 'fa-chevron-up text-red-600' : 'fa-chevron-down text-gray-400'"></i>
+                            </button>
+                            <div 
+                                x-show="item.isOpen" 
+                                x-transition:enter="transition ease-out duration-200" 
+                                x-transition:enter-start="opacity-0 transform -translate-y-2" 
+                                x-transition:enter-end="opacity-100 transform translate-y-0" 
+                                class="p-5 bg-gray-50">
+                                <p class="text-gray-600" x-text="item.answer"></p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                
+                <div class="mt-12 bg-red-50 rounded-xl p-8 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Masih Punya Pertanyaan?</h3>
+                    <p class="text-gray-600 mb-6">Jika Anda tidak menemukan jawaban dari pertanyaan Anda, jangan ragu untuk menghubungi kami.</p>
+                    <a href="#" class="inline-flex items-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition duration-300">
+                        <i class="fas fa-envelope mr-2"></i> Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Mulai Perjalanan Bahasa Jepang Anda Sekarang!</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">Bergabunglah dengan ribuan pelajar yang telah berhasil menguasai bahasa Jepang dengan mudah dan menyenangkan.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="px-8 py-3 bg-white text-red-600 font-medium rounded-lg transition duration-300 transform hover:bg-gray-100 hover:scale-105">
+                        <i class="fas fa-user-plus mr-2"></i> Daftar Gratis
+                    </a>
+                    <a href="#courses" class="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-red-600 font-medium rounded-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-th-list mr-2"></i> Jelajahi Kursus
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-red-500 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-white text-lg font-semibold">Learning</span>
+                        </div>
+                        <p class="mb-4">Platform pembelajaran bahasa Jepang terlengkap untuk persiapan JLPT N5 dan N4 dari dasar hingga mahir.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white text-lg font-semibold mb-4">Kursus</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Level N5 (Pemula)</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Level N4 (Menengah)</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Persiapan Ujian JLPT</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Percakapan Sehari-hari</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Budaya Jepang</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white text-lg font-semibold mb-4">Tautan</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kontak</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Syarat & Ketentuan</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white text-lg font-semibold mb-4">Kontak</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-red-500"></i>
+                                <span>Jl. Pendidikan No. 123, Jakarta, Indonesia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-red-500"></i>
+                                <span>info@nihongolearning.id</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3 text-red-500"></i>
+                                <span>+62 812 3456 7890</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8 mt-8 text-center text-sm">
+                    <p>&copy; 2025 Nihongo Learning. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button 
+            @click="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            x-show="showScrollTop" 
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-10"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            class="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-red-700 transition duration-300">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+</body>
+</html>

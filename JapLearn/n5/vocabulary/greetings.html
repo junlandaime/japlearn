@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Greetings | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .vocabulary-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vocabulary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .example-card {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        .vocabulary-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .vocabulary-table th,
+        .vocabulary-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .vocabulary-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            transition: color 0.2s;
+        }
+        .audio-button:hover {
+            color: #6366f1;
+        }
+        .category-formal {
+            background-color: #fee2e2;
+        }
+        .category-casual {
+            background-color: #dbeafe;
+        }
+        .category-all-purpose {
+            background-color: #d1fae5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Japanese Greetings</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">Essential expressions for everyday conversations</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Japanese Greetings</h2>
+                <p class="text-gray-700 mb-4">
+                    Greetings (あいさつ - aisatsu) are an essential part of Japanese culture and daily communication. In Japan, proper greetings show respect and establish good relationships. The Japanese language has specific greetings for different times of day, situations, and levels of formality.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Learning these basic expressions will help you navigate social interactions in Japanese and make a positive impression. Many Japanese greetings come with appropriate bowing gestures, which vary depending on the level of formality.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japanese culture, bowing (お辞儀 - ojigi) accompanies many greetings. The depth and duration of the bow indicate the level of respect. A slight nod is casual, while a deep bow shows profound respect.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Basic Greetings Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Basic Daily Greetings</h2>
+                <p class="text-gray-700 mb-4">
+                    These are the most common greetings you'll use throughout the day in Japanese.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="category-formal">
+                                <td><span class="japanese">おはようございます</span></td>
+                                <td>Ohayō gozaimasu</td>
+                                <td>Good morning</td>
+                                <td>Formal greeting used in the morning until around 10-11 AM</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-casual">
+                                <td><span class="japanese">おはよう</span></td>
+                                <td>Ohayō</td>
+                                <td>Morning / Hi</td>
+                                <td>Casual morning greeting for friends and family</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-formal">
+                                <td><span class="japanese">こんにちは</span></td>
+                                <td>Konnichiwa</td>
+                                <td>Good afternoon / Hello</td>
+                                <td>All-purpose greeting used from late morning to early evening</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-formal">
+                                <td><span class="japanese">こんばんは</span></td>
+                                <td>Konbanwa</td>
+                                <td>Good evening</td>
+                                <td>Evening greeting used after sunset</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-all-purpose">
+                                <td><span class="japanese">さようなら</span></td>
+                                <td>Sayōnara</td>
+                                <td>Goodbye</td>
+                                <td>Used when parting for a longer period</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-casual">
+                                <td><span class="japanese">じゃあね</span></td>
+                                <td>Jā ne</td>
+                                <td>See you / Later</td>
+                                <td>Casual goodbye when you'll see someone again soon</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="flex justify-center items-center mb-6">
+                    <div class="mr-4 text-center">
+                        <div class="w-4 h-4 inline-block bg-red-200"></div>
+                        <span class="text-sm ml-1">Formal</span>
+                    </div>
+                    <div class="mr-4 text-center">
+                        <div class="w-4 h-4 inline-block bg-blue-200"></div>
+                        <span class="text-sm ml-1">Casual</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-4 h-4 inline-block bg-green-200"></div>
+                        <span class="text-sm ml-1">All-purpose</span>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogues:</p>
+                    <div class="mb-3">
+                        <p class="font-medium">Morning greeting at work:</p>
+                        <p class="japanese">A: おはようございます。</p>
+                        <p class="text-gray-600">A: Ohayō gozaimasu.</p>
+                        <p class="japanese">B: おはようございます。お元気ですか。</p>
+                        <p class="text-gray-600">B: Ohayō gozaimasu. O-genki desu ka?</p>
+                        <p class="text-gray-600">Translation: A: Good morning. B: Good morning. How are you?</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Evening casual greeting:</p>
+                        <p class="japanese">A: こんばんは、田中さん。</p>
+                        <p class="text-gray-600">A: Konbanwa, Tanaka-san.</p>
+                        <p class="japanese">B: あ、こんばんは、鈴木さん。</p>
+                        <p class="text-gray-600">B: A, konbanwa, Suzuki-san.</p>
+                        <p class="text-gray-600">Translation: A: Good evening, Mr. Tanaka. B: Oh, good evening, Mr. Suzuki.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Polite Expressions Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Polite Expressions and Thank You</h2>
+                <p class="text-gray-700 mb-4">
+                    These expressions are essential for showing politeness and gratitude in Japanese culture.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="category-formal">
+                                <td><span class="japanese">ありがとうございます</span></td>
+                                <td>Arigatō gozaimasu</td>
+                                <td>Thank you very much</td>
+                                <td>Formal expression of gratitude</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-casual">
+                                <td><span class="japanese">ありがとう</span></td>
+                                <td>Arigatō</td>
+                                <td>Thank you</td>
+                                <td>Casual expression of gratitude</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-formal">
+                                <td><span class="japanese">どういたしまして</span></td>
+                                <td>Dō itashimashite</td>
+                                <td>You're welcome</td>
+                                <td>Formal response to thanks</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-casual">
+                                <td><span class="japanese">いいえ</span></td>
+                                <td>Iie</td>
+                                <td>No / Not at all</td>
+                                <td>Casual response to thanks or apologies</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-formal">
+                                <td><span class="japanese">すみません</span></td>
+                                <td>Sumimasen</td>
+                                <td>Excuse me / I'm sorry / Thank you</td>
+                                <td>Multi-purpose polite expression for attention, apologies, or gratitude</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-formal">
+                                <td><span class="japanese">失礼します</span></td>
+                                <td>Shitsurei shimasu</td>
+                                <td>Excuse me / Pardon me</td>
+                                <td>Polite expression when entering/leaving a room or situation</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogues:</p>
+                    <div class="mb-3">
+                        <p class="font-medium">Expressing gratitude:</p>
+                        <p class="japanese">A: これをどうぞ。</p>
+                        <p class="text-gray-600">A: Kore o dōzo.</p>
+                        <p class="japanese">B: ありがとうございます。</p>
+                        <p class="text-gray-600">B: Arigatō gozaimasu.</p>
+                        <p class="japanese">A: どういたしまして。</p>
+                        <p class="text-gray-600">A: Dō itashimashite.</p>
+                        <p class="text-gray-600">Translation: A: Here you are. B: Thank you very much. A: You're welcome.</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Getting someone's attention:</p>
+                        <p class="japanese">A: すみません、トイレはどこですか。</p>
+                        <p class="text-gray-600">A: Sumimasen, toire wa doko desu ka?</p>
+                        <p class="japanese">B: あちらです。</p>
+                        <p class="text-gray-600">B: Achira desu.</p>
+                        <p class="text-gray-600">Translation: A: Excuse me, where is the restroom? B: It's over there.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Asking About Well-Being Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Asking About Well-Being</h2>
+                <p class="text-gray-700 mb-4">
+                    In Japanese, there are various ways to ask how someone is doing, depending on the level of formality and the relationship between speakers.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>English</th>
+                                <th>Usage</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="category-formal">
+                                <td><span class="japanese">お元気ですか</span></td>
+                                <td>O-genki desu ka</td>
+                                <td>How are you?</td>
+                                <td>Standard polite way to ask about someone's well-being</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-formal">
+                                <td><span class="japanese">お元気でしたか</span></td>
+                                <td>O-genki deshita ka</td>
+                                <td>Have you been well?</td>
+                                <td>Used when meeting someone after a long time</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-casual">
+                                <td><span class="japanese">元気？</span></td>
+                                <td>Genki?</td>
+                                <td>How are you? / Are you good?</td>
+                                <td>Casual way to ask friends how they are</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-formal">
+                                <td><span class="japanese">調子はどうですか</span></td>
+                                <td>Chōshi wa dō desu ka</td>
+                                <td>How are you doing? / How's it going?</td>
+                                <td>More casual-polite way to ask about condition</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-all-purpose">
+                                <td><span class="japanese">元気です</span></td>
+                                <td>Genki desu</td>
+                                <td>I'm fine / I'm well</td>
+                                <td>Standard response to "O-genki desu ka"</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr class="category-casual">
+                                <td><span class="japanese">まあまあです</span></td>
+                                <td>Maa maa desu</td>
+                                <td>I'm so-so / I'm okay</td>
+                                <td>Honest response when you're not feeling great</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Dialogue:</p>
+                    <div>
+                        <p class="japanese">A: 山田さん、お久しぶりです。お元気でしたか。</p>
+                        <p class="text-gray-600">A: Yamada-san, o-hisashiburi desu. O-genki deshita ka?</p>
+                        <p class="japanese">B: はい、元気です。鈴木さんはどうですか。</p>
+                        <p class="text-gray-600">B: Hai, genki desu. Suzuki-san wa dō desu ka?</p>
+                        <p class="japanese">A: おかげさまで元気です。</p>
+                        <p class="text-gray-600">A: Okagesama de genki desu.</p>
+                        <p class="text-gray-600">Translation: A: Mr. Yamada, it's been a long time. Have you been well? B: Yes, I'm well. How about you, Mr. Suzuki? A: Thanks to you, I'm doing well.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> The phrase <span class="japanese">おかげさまで</span> (okagesama de) literally means "thanks to you" and is commonly used when responding that you're doing well. It acknowledges that your well-being is partly due to the support or good wishes of others.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese greetings with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Greeting</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each situation with the most appropriate Japanese greeting:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Situations:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li>Meeting your boss at 8:30 AM</li>
+                                <li>Running into a friend at 2:00 PM</li>
+                                <li>Saying goodbye to a colleague you'll see tomorrow</li>
+                                <li>Asking a stranger for directions</li>
+                                <li>Thanking someone for a gift</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">Greetings:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">おはようございます</span> (Ohayō gozaimasu)</li>
+                                <li><span class="japanese">こんにちは</span> (Konnichiwa)</li>
+                                <li><span class="japanese">またあした</span> (Mata ashita)</li>
+                                <li><span class="japanese">すみません</span> (Sumimasen)</li>
+                                <li><span class="japanese">ありがとうございます</span> (Arigatō gozaimasu)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li><span class="japanese">おはようございます</span> (Ohayō gozaimasu)</li>
+                            <li><span class="japanese">こんにちは</span> (Konnichiwa)</li>
+                            <li><span class="japanese">またあした</span> (Mata ashita)</li>
+                            <li><span class="japanese">すみません</span> (Sumimasen)</li>
+                            <li><span class="japanese">ありがとうございます</span> (Arigatō gozaimasu)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Complete the Dialogue</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with appropriate greetings:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">A: ＿＿＿＿。元気ですか。</p>
+                        <p class="japanese">B: はい、＿＿＿＿。あなたは？</p>
+                        <p class="japanese">A: 私も元気です。＿＿＿＿。</p>
+                        <p class="japanese">B: いいえ、＿＿＿＿。</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">A: <span class="text-indigo-600">こんにちは</span>。元気ですか。 (Konnichiwa. Genki desu ka?)</p>
+                        <p class="japanese">B: はい、<span class="text-indigo-600">元気です</span>。あなたは？ (Hai, genki desu. Anata wa?)</p>
+                        <p class="japanese">A: 私も元気です。<span class="text-indigo-600">ありがとうございます</span>。 (Watashi mo genki desu. Arigatō gozaimasu.)</p>
+                        <p class="japanese">B: いいえ、<span class="text-indigo-600">どういたしまして</span>。 (Iie, dō itashimashite.)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="numbers.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Numbers</h3>
+                        <p class="text-gray-600 text-sm">Learn counting in Japanese</p>
+                    </a>
+                    <a href="time.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Time Expressions</h3>
+                        <p class="text-gray-600 text-sm">Days, months, and time vocabulary</p>
+                    </a>
+                    <a href="family.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Family Terms</h3>
+                        <p class="text-gray-600 text-sm">Words for family members</p>
+                    </a>
+                    <a href="activities.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Daily Activities</h3>
+                        <p class="text-gray-600 text-sm">Vocabulary for everyday actions</p>
+                    </a>
+                    <a href="location.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Locations</h3>
+                        <p class="text-gray-600 text-sm">Places and direction words</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

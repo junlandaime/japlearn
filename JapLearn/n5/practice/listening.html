@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Listening Practice | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            font-size: 1.25rem;
+        }
+        .audio-button:hover {
+            color: #4338ca;
+        }
+        .question-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .question-card.correct {
+            border-color: #10b981;
+            background-color: #ecfdf5;
+        }
+        .question-card.incorrect {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+        }
+        .option-label {
+            display: block;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option-label:hover {
+            background-color: #f9fafb;
+        }
+        .option-label.selected {
+            background-color: #eef2ff;
+            border-color: #6366f1;
+        }
+        .option-label.correct {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+        }
+        .option-label.incorrect {
+            background-color: #fef2f2;
+            border-color: #ef4444;
+        }
+        .hidden-option {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">N5 Listening Practice</h1>
+            <p class="text-xl">Improve your Japanese listening skills with these JLPT N5 level exercises.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Listening Practice</h2>
+                <p class="text-gray-700 mb-4">
+                    Listening is one of the four key language skills tested in the JLPT (Japanese Language Proficiency Test). At the N5 level, you'll need to be able to understand basic conversations, simple instructions, and short announcements in Japanese.
+                </p>
+                
+                <p class="text-gray-700 mb-4">
+                    This page offers a variety of listening exercises that mimic the format of the JLPT N5 test. Each exercise includes an audio clip followed by questions to test your comprehension. The exercises gradually increase in difficulty to help you build your skills.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Practice Tip:</span> When practicing listening, focus on understanding the main idea first, then gradually work on catching specific details. Don't worry if you don't understand every word - this is normal and will improve with practice.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">How to Use This Page:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Listen to the audio clip (you can replay it as many times as needed)</li>
+                        <li>Answer the questions based on what you heard</li>
+                        <li>Check your answers by clicking the "Check Answers" button</li>
+                        <li>Review the explanations for any questions you got wrong</li>
+                        <li>Move on to the next exercise when you're ready</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Listening Exercise 1: Simple Greetings -->
+            <section class="mb-12" x-data="{ showAnswers: false, selectedAnswers: {}, correct: {} }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 1: Simple Greetings</h2>
+                <p class="text-gray-700 mb-4">
+                    In this exercise, you'll hear short greetings and need to identify the appropriate responses or situations. Listen carefully to the audio and select the best answer for each question.
+                </p>
+                
+                <div class="bg-gray-100 p-4 rounded-lg mb-6 flex items-center">
+                    <button class="audio-button mr-3 text-2xl">
+                        <i class="fas fa-play-circle"></i>
+                    </button>
+                    <div>
+                        <p class="font-medium">Listening Exercise 1</p>
+                        <p class="text-sm text-gray-600">Audio duration: 01:24</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <!-- Question 1 -->
+                    <div class="question-card" :class="{ 'correct': showAnswers && correct[1], 'incorrect': showAnswers && !correct[1] }">
+                        <h3 class="font-semibold text-lg mb-3">Question 1</h3>
+                        <p class="mb-4">What time of day is the greeting "おはようございます" (Ohayō gozaimasu) typically used?</p>
+                        
+                        <div class="space-y-2">
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[1] === 'A', 'correct': showAnswers && 'A' === 'A', 'incorrect': showAnswers && selectedAnswers[1] === 'A' && 'A' !== 'A' }">
+                                <input type="radio" name="q1" value="A" class="hidden-option" @change="selectedAnswers[1] = 'A'">
+                                <span>A. Morning</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[1] === 'B', 'correct': showAnswers && 'A' === 'B', 'incorrect': showAnswers && selectedAnswers[1] === 'B' && 'A' !== 'B' }">
+                                <input type="radio" name="q1" value="B" class="hidden-option" @change="selectedAnswers[1] = 'B'">
+                                <span>B. Afternoon</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[1] === 'C', 'correct': showAnswers && 'A' === 'C', 'incorrect': showAnswers && selectedAnswers[1] === 'C' && 'A' !== 'C' }">
+                                <input type="radio" name="q1" value="C" class="hidden-option" @change="selectedAnswers[1] = 'C'">
+                                <span>C. Evening</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[1] === 'D', 'correct': showAnswers && 'A' === 'D', 'incorrect': showAnswers && selectedAnswers[1] === 'D' && 'A' !== 'D' }">
+                                <input type="radio" name="q1" value="D" class="hidden-option" @change="selectedAnswers[1] = 'D'">
+                                <span>D. Night</span>
+                            </label>
+                        </div>
+                        
+                        <div x-show="showAnswers" class="mt-4 p-3 bg-blue-50 text-blue-800 rounded-md">
+                            <p class="font-medium">Correct Answer: A. Morning</p>
+                            <p class="text-sm mt-1">Explanation: "おはようございます" is the standard Japanese morning greeting, equivalent to "Good morning" in English. It's typically used from when you wake up until around 10 or 11 AM.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-card" :class="{ 'correct': showAnswers && correct[2], 'incorrect': showAnswers && !correct[2] }">
+                        <h3 class="font-semibold text-lg mb-3">Question 2</h3>
+                        <p class="mb-4">You hear: "すみません、トイレはどこですか？" What is the person asking for?</p>
+                        
+                        <div class="space-y-2">
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[2] === 'A', 'correct': showAnswers && 'B' === 'A', 'incorrect': showAnswers && selectedAnswers[2] === 'A' && 'B' !== 'A' }">
+                                <input type="radio" name="q2" value="A" class="hidden-option" @change="selectedAnswers[2] = 'A'">
+                                <span>A. The time</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[2] === 'B', 'correct': showAnswers && 'B' === 'B', 'incorrect': showAnswers && selectedAnswers[2] === 'B' && 'B' !== 'B' }">
+                                <input type="radio" name="q2" value="B" class="hidden-option" @change="selectedAnswers[2] = 'B'">
+                                <span>B. The location of the bathroom</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[2] === 'C', 'correct': showAnswers && 'B' === 'C', 'incorrect': showAnswers && selectedAnswers[2] === 'C' && 'B' !== 'C' }">
+                                <input type="radio" name="q2" value="C" class="hidden-option" @change="selectedAnswers[2] = 'C'">
+                                <span>C. The train station</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[2] === 'D', 'correct': showAnswers && 'B' === 'D', 'incorrect': showAnswers && selectedAnswers[2] === 'D' && 'B' !== 'D' }">
+                                <input type="radio" name="q2" value="D" class="hidden-option" @change="selectedAnswers[2] = 'D'">
+                                <span>D. A restaurant</span>
+                            </label>
+                        </div>
+                        
+                        <div x-show="showAnswers" class="mt-4 p-3 bg-blue-50 text-blue-800 rounded-md">
+                            <p class="font-medium">Correct Answer: B. The location of the bathroom</p>
+                            <p class="text-sm mt-1">Explanation: "トイレはどこですか" means "Where is the bathroom?" The person is asking for directions to the bathroom/toilet.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question-card" :class="{ 'correct': showAnswers && correct[3], 'incorrect': showAnswers && !correct[3] }">
+                        <h3 class="font-semibold text-lg mb-3">Question 3</h3>
+                        <p class="mb-4">You hear: "いらっしゃいませ" (Irasshaimase). Where are you most likely to hear this?</p>
+                        
+                        <div class="space-y-2">
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[3] === 'A', 'correct': showAnswers && 'C' === 'A', 'incorrect': showAnswers && selectedAnswers[3] === 'A' && 'C' !== 'A' }">
+                                <input type="radio" name="q3" value="A" class="hidden-option" @change="selectedAnswers[3] = 'A'">
+                                <span>A. At school</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[3] === 'B', 'correct': showAnswers && 'C' === 'B', 'incorrect': showAnswers && selectedAnswers[3] === 'B' && 'C' !== 'B' }">
+                                <input type="radio" name="q3" value="B" class="hidden-option" @change="selectedAnswers[3] = 'B'">
+                                <span>B. At a friend's house</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[3] === 'C', 'correct': showAnswers && 'C' === 'C', 'incorrect': showAnswers && selectedAnswers[3] === 'C' && 'C' !== 'C' }">
+                                <input type="radio" name="q3" value="C" class="hidden-option" @change="selectedAnswers[3] = 'C'">
+                                <span>C. At a shop or restaurant</span>
+                            </label>
+                            
+                            <label class="option-label" :class="{ 'selected': selectedAnswers[3] === 'D', 'correct': showAnswers && 'C' === 'D', 'incorrect': showAnswers && selectedAnswers[3] === 'D' && 'C' !== 'D' }">
+                                <input type="radio" name="q3" value="D" class="hidden-option" @change="selectedAnswers[3] = 'D'">
+                                <span>D. At a train station</span>
+                            </label>
+                        </div>
+                        
+                        <div x-show="showAnswers" class="mt-4 p-3 bg-blue-50 text-blue-800 rounded-md">
+                            <p class="font-medium">Correct Answer: C. At a shop or restaurant</p>
+                            <p class="text-sm mt-1">Explanation: "いらっしゃいませ" is a formal welcome phrase used in shops, restaurants, and other businesses when customers enter. It's equivalent to "Welcome" or "May I help you?"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <button @click="showAnswers = true; correct = {1: selectedAnswers[1] === 'A', 2: selectedAnswers[2] === 'B', 3: selectedAnswers[3] === 'C'}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md text-sm font-medium">
+                        Check Answers
+                    </button>
+                    <button @click="showAnswers = false; selectedAnswers = {}; correct = {}" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-md text-sm font-medium">
+                        Reset
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Practice Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./listening.html" class="text-indigo-300 hover:text-white">Listening Practice</a></li>
+                        <li><a href="./reading.html" class="text-gray-300 hover:text-white">Reading Practice</a></li>
+                        <li><a href="./writing.html" class="text-gray-300 hover:text-white">Writing Practice</a></li>
+                        <li><a href="./speaking.html" class="text-gray-300 hover:text-white">Speaking Practice</a></li>
+                        <li><a href="./vocabulary-quiz.html" class="text-gray-300 hover:text-white">Vocabulary Quiz</a></li>
+                        <li><a href="./grammar-quiz.html" class="text-gray-300 hover:text-white">Grammar Quiz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N5 Exam Overview | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .info-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .exam-section {
+            margin-bottom: 2rem;
+        }
+        .section-language {
+            background-color: #eef2ff;
+            border-left: 4px solid #6366f1;
+        }
+        .section-reading {
+            background-color: #dcfce7;
+            border-left: 4px solid #15803d;
+        }
+        .section-listening {
+            background-color: #ede9fe;
+            border-left: 4px solid #6d28d9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">JLPT N5 Exam Overview</h1>
+            <p class="text-xl">Learn about the structure, content, and requirements of the Japanese Language Proficiency Test (JLPT) N5 level.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">What is the JLPT N5?</h2>
+                <p class="text-gray-700 mb-4">
+                    The Japanese Language Proficiency Test (JLPT) is the largest standardized test of Japanese language proficiency for non-native speakers. The N5 level is the starting point of the JLPT, testing basic Japanese language skills. It measures your ability to understand basic Japanese in everyday situations.
+                </p>
+                
+                <p class="text-gray-700 mb-4">
+                    According to the official JLPT website, passing the N5 level certifies that you:
+                </p>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="italic">
+                        "Can understand some basic Japanese. One is able to read and understand typical expressions and sentences written in hiragana, katakana, and basic kanji. One is also able to listen and comprehend conversations about topics regularly encountered in daily life and classroom situations, and is able to pick up necessary information from short conversations spoken slowly."
+                    </p>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Exam Information:</span> The JLPT is held twice a year in most countries (July and December). Registration typically opens 3-4 months before the exam date. Visit the <a href="https://www.jlpt.jp/e/" class="text-indigo-600 hover:text-indigo-800" target="_blank">official JLPT website</a> for specific dates and registration information in your country.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Structure -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">JLPT N5 Exam Structure</h2>
+                <p class="text-gray-700 mb-4">
+                    The JLPT N5 exam consists of two main sections: "Language Knowledge (Vocabulary/Grammar) & Reading" and "Listening." Here's a breakdown of each section:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="info-card section-language">
+                        <h3 class="text-xl font-semibold mb-3">Language Knowledge & Reading</h3>
+                        <p class="mb-3"><span class="font-medium">Duration:</span> 105 minutes</p>
+                        <p class="mb-3"><span class="font-medium">Total Points:</span> 120 points</p>
+                        
+                        <div class="mt-4">
+                            <h4 class="font-medium text-lg mb-2">This section tests:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Vocabulary (basic words and phrases)</li>
+                                <li>Grammar (basic sentence structures)</li>
+                                <li>Reading comprehension (short passages)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card section-listening">
+                        <h3 class="text-xl font-semibold mb-3">Listening</h3>
+                        <p class="mb-3"><span class="font-medium">Duration:</span> Approximately 40 minutes</p>
+                        <p class="mb-3"><span class="font-medium">Total Points:</span> 60 points</p>
+                        
+                        <div class="mt-4">
+                            <h4 class="font-medium text-lg mb-2">This section tests:</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Ability to understand basic conversations</li>
+                                <li>Picking out key information from short dialogues</li>
+                                <li>Comprehending simple instructions and statements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold mb-3">Passing Score</h3>
+                    <p class="text-gray-700 mb-4">
+                        To pass the JLPT N5, you need to:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Score above the minimum required score in <strong>each</strong> section (typically around 38% for each section)</li>
+                        <li>Achieve a total score of at least 80 points out of the total 180 points (approximately 44%)</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">
+                        Note that the exact passing scores can vary slightly from year to year. The JLPT uses a scaled scoring system, so the raw points might be adjusted.
+                    </p>
+                </div>
+            </section>
+
+            <!-- What to Expect -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">What to Expect on the JLPT N5</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                    <div class="info-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-book text-indigo-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Vocabulary</h3>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Approximately 800 basic words</li>
+                            <li>Common everyday vocabulary</li>
+                            <li>Basic adjectives and verbs</li>
+                            <li>Essential expressions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-paragraph text-indigo-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Grammar</h3>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Basic sentence structures</li>
+                            <li>Essential particles (は, が, を, に, で)</li>
+                            <li>Simple tenses (present, past)</li>
+                            <li>Basic question forms</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-font text-indigo-500 text-3xl"></i>
+                            <h3 class="text-xl font-semibold mt-2">Kanji</h3>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Approximately 100 basic kanji</li>
+                            <li>Common kanji used in everyday life</li>
+                            <li>Simple compound words</li>
+                            <li>Basic kanji readings</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-indigo-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-3">Example Question Types</h3>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-medium text-lg mb-2">Vocabulary Section:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Choose the correct reading for a kanji word</li>
+                            <li>Select the appropriate word to complete a sentence</li>
+                            <li>Match pictures with the correct vocabulary</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-medium text-lg mb-2">Grammar Section:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Select the correct particle to complete a sentence</li>
+                            <li>Choose the correct word order</li>
+                            <li>Fill in blanks in conversations with appropriate responses</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-medium text-lg mb-2">Reading Section:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Read short passages and answer comprehension questions</li>
+                            <li>Understand simple instructions or notices</li>
+                            <li>Interpret basic information from schedules or advertisements</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="font-medium text-lg mb-2">Listening Section:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Listen to short dialogues and select the appropriate picture</li>
+                            <li>Answer questions about conversations</li>
+                            <li>Choose the correct response to a spoken statement</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preparation Resources -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Preparation Resources</h2>
+                <p class="text-gray-700 mb-6">
+                    Here are some recommended resources to help you prepare for the JLPT N5 exam:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="info-card">
+                        <h3 class="text-xl font-semibold mb-3">Official JLPT Resources</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <a href="https://www.jlpt.jp/e/samples/sample12.html" class="text-indigo-600 hover:text-indigo-800" target="_blank">Official JLPT N5 Sample Questions</a></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <a href="https://www.jlpt.jp/e/reference/books.html" class="text-indigo-600 hover:text-indigo-800" target="_blank">Official JLPT Workbooks</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="text-xl font-semibold mb-3">JapLearn N5 Practice Resources</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <a href="../practice/vocabulary-quiz.html" class="text-indigo-600 hover:text-indigo-800">N5 Vocabulary Quiz</a></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <a href="../practice/grammar-quiz.html" class="text-indigo-600 hover:text-indigo-800">N5 Grammar Quiz</a></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <a href="../practice/kanji-quiz.html" class="text-indigo-600 hover:text-indigo-800">N5 Kanji Quiz</a></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <a href="../practice/reading.html" class="text-indigo-600 hover:text-indigo-800">N5 Reading Practice</a></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> <a href="../practice/listening.html" class="text-indigo-600 hover:text-indigo-800">N5 Listening Practice</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <a href="./practice-test.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Take a JLPT N5 Practice Test <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Exam Preparation Resources</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <a href="./exam-overview.html" class="bg-indigo-100 hover:bg-indigo-200 border border-indigo-300 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clipboard-list text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Exam Overview</h3>
+                    </a>
+                    <a href="./practice-test.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-tasks text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Practice Test</h3>
+                    </a>
+                    <a href="./time-management.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clock text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Time Management</h3>
+                    </a>
+                    <a href="./study-plan.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-calendar-alt text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Study Plan</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Exam Preparation</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./exam-overview.html" class="text-indigo-300 hover:text-white">Exam Overview</a></li>
+                        <li><a href="./practice-test.html" class="text-gray-300 hover:text-white">Practice Test</a></li>
+                        <li><a href="./time-management.html" class="text-gray-300 hover:text-white">Time Management</a></li>
+                        <li><a href="./study-plan.html" class="text-gray-300 hover:text-white">Study Plan</a></li>
+                        <li><a href="./tips-tricks.html" class="text-gray-300 hover:text-white">Tips & Tricks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

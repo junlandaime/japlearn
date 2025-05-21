@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Te-Form | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        .verb-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .verb-table th,
+        .verb-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .verb-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .verb-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .godan {
+            border-left: 4px solid #ef4444;
+            background-color: #fee2e2;
+        }
+        .ichidan {
+            border-left: 4px solid #3b82f6;
+            background-color: #dbeafe;
+        }
+        .irregular {
+            border-left: 4px solid #10b981;
+            background-color: #d1fae5;
+        }
+        .usage-card {
+            border-left: 4px solid #f59e0b;
+            background-color: #fef3c7;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Te-Form</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">The versatile て form in Japanese grammar</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to the Te-Form</h2>
+                <p class="text-gray-700 mb-4">
+                    The Te-form (て形, te-kei) is one of the most important and versatile grammar forms in Japanese. It serves as a connector and foundation for many grammar structures and has multiple uses in everyday conversation.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    The te-form gets its name from the fact that verbs in this form end with either て (te) or で (de). Understanding how to form and use the te-form is crucial for advancing your Japanese language skills.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Note:</span> The te-form is not a tense by itself. Rather, it's a conjugation form that connects to other grammar structures or verbs to create different meanings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Form the Te-Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">How to Form the Te-Form</h2>
+                <p class="text-gray-700 mb-4">
+                    The te-form is created from the dictionary form of verbs through specific conjugation patterns. The process differs slightly depending on the verb group.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-3">Group 1 (Godan) Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    For Group 1 (Godan) verbs, the conjugation rule depends on the final kana in the dictionary form:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Ending</th>
+                                <th>Rule</th>
+                                <th>Dictionary Form</th>
+                                <th>Te-Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>う (u)<br>つ (tsu)<br>る (ru)</td>
+                                <td>Replace with って (tte)</td>
+                                <td><span class="japanese">買う</span> (kau - to buy)<br><span class="japanese">待つ</span> (matsu - to wait)<br><span class="japanese">売る</span> (uru - to sell)</td>
+                                <td><span class="japanese">買って</span> (katte)<br><span class="japanese">待って</span> (matte)<br><span class="japanese">売って</span> (utte)</td>
+                            </tr>
+                            <tr>
+                                <td>む (mu)<br>ぶ (bu)<br>ぬ (nu)</td>
+                                <td>Replace with んで (nde)</td>
+                                <td><span class="japanese">飲む</span> (nomu - to drink)<br><span class="japanese">遊ぶ</span> (asobu - to play)<br><span class="japanese">死ぬ</span> (shinu - to die)</td>
+                                <td><span class="japanese">飲んで</span> (nonde)<br><span class="japanese">遊んで</span> (asonde)<br><span class="japanese">死んで</span> (shinde)</td>
+                            </tr>
+                            <tr>
+                                <td>く (ku)</td>
+                                <td>Replace with いて (ite)</td>
+                                <td><span class="japanese">書く</span> (kaku - to write)<br><span class="japanese">行く</span> (iku - to go)</td>
+                                <td><span class="japanese">書いて</span> (kaite)<br><span class="japanese">行って</span> (itte) - exception</td>
+                            </tr>
+                            <tr>
+                                <td>ぐ (gu)</td>
+                                <td>Replace with いで (ide)</td>
+                                <td><span class="japanese">泳ぐ</span> (oyogu - to swim)</td>
+                                <td><span class="japanese">泳いで</span> (oyoide)</td>
+                            </tr>
+                            <tr>
+                                <td>す (su)</td>
+                                <td>Replace with して (shite)</td>
+                                <td><span class="japanese">話す</span> (hanasu - to speak)</td>
+                                <td><span class="japanese">話して</span> (hanashite)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="godan p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Group 1 (Godan) Te-Form Rules</p>
+                    <p class="text-gray-700 mb-2">To remember the patterns:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">う、つ、る → って</span>: The kana becomes small <span class="japanese">っ</span> + <span class="japanese">て</span></li>
+                        <li><span class="japanese">む、ぶ、ぬ → んで</span>: The kana is replaced with <span class="japanese">ん</span> + <span class="japanese">で</span></li>
+                        <li><span class="japanese">く → いて</span>: The kana is replaced with <span class="japanese">い</span> + <span class="japanese">て</span></li>
+                        <li><span class="japanese">ぐ → いで</span>: The kana is replaced with <span class="japanese">い</span> + <span class="japanese">で</span></li>
+                        <li><span class="japanese">す → して</span>: The kana is replaced with <span class="japanese">し</span> + <span class="japanese">て</span></li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-2">
+                        <span class="font-semibold">Note:</span> <span class="japanese">行く</span> (iku - to go) is an exception and becomes <span class="japanese">行って</span> (itte)
+                    </p>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Group 2 (Ichidan) Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    For Group 2 (Ichidan) verbs, the conjugation is simple:
+                </p>
+                
+                <div class="ichidan p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Group 2 (Ichidan) Te-Form Rule</p>
+                    <p class="text-gray-700 mb-2">Remove the final <span class="japanese">る</span> (ru) and add <span class="japanese">て</span> (te)</p>
+                    <p class="text-gray-700 mb-2">Examples:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">食べる</span> (taberu - to eat) → <span class="japanese">食べて</span> (tabete)</li>
+                        <li><span class="japanese">見る</span> (miru - to see) → <span class="japanese">見て</span> (mite)</li>
+                        <li><span class="japanese">起きる</span> (okiru - to wake up) → <span class="japanese">起きて</span> (okite)</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Group 3 (Irregular) Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    For the two irregular verbs:
+                </p>
+                
+                <div class="irregular p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Group 3 (Irregular) Te-Form Rules</p>
+                    <p class="text-gray-700 mb-2">These need to be memorized:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">する</span> (suru - to do) → <span class="japanese">して</span> (shite)</li>
+                        <li><span class="japanese">来る</span> (kuru - to come) → <span class="japanese">来て</span> (kite)</li>
+                    </ul>
+                    <p class="text-gray-700 mt-2">For compound verbs using <span class="japanese">する</span>:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">勉強する</span> (benkyō suru - to study) → <span class="japanese">勉強して</span> (benkyō shite)</li>
+                        <li><span class="japanese">運転する</span> (unten suru - to drive) → <span class="japanese">運転して</span> (unten shite)</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Adjectives and Nouns in Te-Form</h3>
+                <p class="text-gray-700 mb-4">
+                    Adjectives and nouns can also be conjugated into a te-form equivalent:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Rule</th>
+                                <th>Example</th>
+                                <th>Te-Form Equivalent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>い-Adjectives</td>
+                                <td>Replace い with くて</td>
+                                <td><span class="japanese">高い</span> (takai - expensive)</td>
+                                <td><span class="japanese">高くて</span> (takakute)</td>
+                            </tr>
+                            <tr>
+                                <td>な-Adjectives</td>
+                                <td>Add で</td>
+                                <td><span class="japanese">静か</span> (shizuka - quiet)</td>
+                                <td><span class="japanese">静かで</span> (shizuka de)</td>
+                            </tr>
+                            <tr>
+                                <td>Nouns</td>
+                                <td>Add で</td>
+                                <td><span class="japanese">学生</span> (gakusei - student)</td>
+                                <td><span class="japanese">学生で</span> (gakusei de)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Usage of Te-Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Usage of the Te-Form</h2>
+                <p class="text-gray-700 mb-4">
+                    The te-form has many important functions in Japanese. Here are the main uses:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Usage 1: Connecting Actions -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Connecting Actions (And, Then)</h3>
+                        <p class="text-gray-700 mb-2">
+                            The te-form connects two or more actions that happen in sequence or simultaneously.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">朝ご飯を食べて、学校に行きます。</p>
+                            <p class="text-gray-600">Asa gohan o tabete, gakkō ni ikimasu.</p>
+                            <p class="text-gray-600">I eat breakfast and go to school.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 2: Making Requests -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Making Requests</h3>
+                        <p class="text-gray-700 mb-2">
+                            The te-form by itself can be used to make polite requests.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">ここに名前を書いて。</p>
+                            <p class="text-gray-600">Koko ni namae o kaite.</p>
+                            <p class="text-gray-600">Please write your name here.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 3: Te + imasu (Continuous Action) -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Continuous Actions (〜ています)</h3>
+                        <p class="text-gray-700 mb-2">
+                            Te-form + いる/います (iru/imasu) expresses ongoing actions or states.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">彼は今テレビを見ています。</p>
+                            <p class="text-gray-600">Kare wa ima terebi o mite imasu.</p>
+                            <p class="text-gray-600">He is watching TV now.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 4: Permission or Prohibition -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Permission or Prohibition</h3>
+                        <p class="text-gray-700 mb-2">
+                            Te-form + も (mo) or はいけない (wa ikenai) expresses permission or prohibition.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">ここで写真を撮ってもいいです。</p>
+                            <p class="text-gray-600">Koko de shashin o totte mo ii desu.</p>
+                            <p class="text-gray-600">You may take pictures here.</p>
+                            <p class="japanese mb-1">教室で食べてはいけません。</p>
+                            <p class="text-gray-600">Kyōshitsu de tabete wa ikemasen.</p>
+                            <p class="text-gray-600">You must not eat in the classroom.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Usage 5: Te + Giving/Receiving Verbs -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Giving and Receiving Actions</h3>
+                        <p class="text-gray-700 mb-2">
+                            Te-form + あげる/くれる/もらう (ageru/kureru/morau) expresses giving or receiving actions.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">友達に本を貸してあげました。</p>
+                            <p class="text-gray-600">Tomodachi ni hon o kashite agemashita.</p>
+                            <p class="text-gray-600">I lent a book to my friend.</p>
+                            <p class="japanese mb-1">母が弁当を作ってくれました。</p>
+                            <p class="text-gray-600">Haha ga bentō o tsukutte kuremashita.</p>
+                            <p class="text-gray-600">My mother made a bento for me.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 6: Te + oku (Preparation) -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Preparation or Advance Action</h3>
+                        <p class="text-gray-700 mb-2">
+                            Te-form + おく (oku) expresses doing something in advance or as preparation.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">明日の会議の資料を準備しておきます。</p>
+                            <p class="text-gray-600">Ashita no kaigi no shiryō o junbi shite okimasu.</p>
+                            <p class="text-gray-600">I will prepare the materials for tomorrow's meeting in advance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 7: Te + shimau (Regrettable or Completed Action) -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Completed or Regrettable Actions</h3>
+                        <p class="text-gray-700 mb-2">
+                            Te-form + しまう (shimau) expresses a completed action or regrettable outcome.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">宿題を忘れてしまいました。</p>
+                            <p class="text-gray-600">Shukudai o wasurete shimaimashita.</p>
+                            <p class="text-gray-600">I forgot my homework (regrettably).</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 8: Te + miru (Try Doing) -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Trying Something</h3>
+                        <p class="text-gray-700 mb-2">
+                            Te-form + みる (miru) expresses trying to do something or seeing how it goes.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Example:</p>
+                            <p class="japanese mb-1">この料理を作ってみました。</p>
+                            <p class="text-gray-600">Kono ryōri o tsukutte mimashita.</p>
+                            <p class="text-gray-600">I tried making this dish.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                <span class="font-medium">Tip:</span> The te-form is often called the "glue" of Japanese grammar because it connects so many different grammar points. Mastering this form will significantly improve your conversational ability.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Expressions with Te-Form -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Common Expressions with Te-Form</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are some common expressions and phrases that use the te-form:
+                </p>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Expression</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>〜てください<br>(~te kudasai)</td>
+                                <td>Please do ~</td>
+                                <td><span class="japanese">窓を開けてください。</span><br>Mado o akete kudasai.<br>Please open the window.</td>
+                            </tr>
+                            <tr>
+                                <td>〜ていただけませんか<br>(~te itadakemasen ka)</td>
+                                <td>Could you please do ~ (very polite)</td>
+                                <td><span class="japanese">手伝っていただけませんか。</span><br>Tetsudatte itadakemasen ka.<br>Could you please help me?</td>
+                            </tr>
+                            <tr>
+                                <td>〜てから<br>(~te kara)</td>
+                                <td>After doing ~</td>
+                                <td><span class="japanese">宿題をしてから、テレビを見ます。</span><br>Shukudai o shite kara, terebi o mimasu.<br>I'll watch TV after doing my homework.</td>
+                            </tr>
+                            <tr>
+                                <td>〜ても<br>(~te mo)</td>
+                                <td>Even if ~</td>
+                                <td><span class="japanese">雨が降っても、行きます。</span><br>Ame ga futte mo, ikimasu.<br>Even if it rains, I will go.</td>
+                            </tr>
+                            <tr>
+                                <td>〜てもいいですか<br>(~te mo ii desu ka)</td>
+                                <td>May I ~?</td>
+                                <td><span class="japanese">ここに座ってもいいですか。</span><br>Koko ni suwatte mo ii desu ka.<br>May I sit here?</td>
+                            </tr>
+                            <tr>
+                                <td>〜ている間<br>(~te iru aida)</td>
+                                <td>While ~</td>
+                                <td><span class="japanese">寝ている間に、泥棒が入りました。</span><br>Nete iru aida ni, dorobō ga hairimashita.<br>While I was sleeping, a thief broke in.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Practice Exercises -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of the te-form with these exercises:
+                </p>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Convert to Te-Form</h3>
+                    <p class="text-gray-700 mb-3">
+                        Convert the following verbs to their te-form:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            <span class="japanese">読む</span> (yomu - to read)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">読んで</span> (yonde)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">話す</span> (hanasu - to speak)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">話して</span> (hanashite)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">帰る</span> (kaeru - to return)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">帰って</span> (kaette)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">食べる</span> (taberu - to eat)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">食べて</span> (tabete)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">泳ぐ</span> (oyogu - to swim)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">泳いで</span> (oyoide)</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-3">
+                        Use the te-form to complete these sentences:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            <span class="japanese">朝ご飯を食べ＿＿、学校に行きます。</span><br>
+                            Asa gohan o tabe___, gakkō ni ikimasu.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">食べて</span> (tabete)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">ここで写真を撮っ＿＿もいいですか。</span><br>
+                            Koko de shashin o tot___ mo ii desu ka.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">撮って</span> (totte)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">音楽を聞い＿＿います。</span><br>
+                            Ongaku o kii___ imasu.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">聞いて</span> (kiite)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">窓を開け＿＿ください。</span><br>
+                            Mado o ake___ kudasai.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">開けて</span> (akete)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">日本語を勉強し＿＿みました。</span><br>
+                            Nihongo o benkyō shi___ mimashita.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">勉強して</span> (benkyō shite)</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Translate into Japanese</h3>
+                    <p class="text-gray-700 mb-3">
+                        Translate these sentences into Japanese using the te-form:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            I read a book and went to sleep.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">本を読んで、寝ました。</span><br>Hon o yonde, nemashita.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            Please wait here.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">ここで待ってください。</span><br>Koko de matte kudasai.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            He is watching TV now.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">彼は今テレビを見ています。</span><br>Kare wa ima terebi o mite imasu.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            May I open the window?
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">窓を開けてもいいですか。</span><br>Mado o akete mo ii desu ka.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            I want to try eating sushi.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">寿司を食べてみたいです。</span><br>Sushi o tabete mitai desu.</span>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Grammar Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Grammar Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 grammar journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="basic-sentence.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Basic Sentence Structure</h3>
+                        <p class="text-gray-600 text-sm">Learn about Japanese sentence patterns</p>
+                    </a>
+                    <a href="particles-intro.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Particles Introduction</h3>
+                        <p class="text-gray-600 text-sm">Understand the crucial role of particles</p>
+                    </a>
+                    <a href="verb-intro.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Verbs Introduction</h3>
+                        <p class="text-gray-600 text-sm">Overview of Japanese verb groups</p>
+                    </a>
+                    <a href="present-tense.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Present Tense</h3>
+                        <p class="text-gray-600 text-sm">Express actions in the present</p>
+                    </a>
+                    <a href="past-tense.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Past Tense</h3>
+                        <p class="text-gray-600 text-sm">Express actions in the past</p>
+                    </a>
+                    <a href="negative-form.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Negative Form</h3>
+                        <p class="text-gray-600 text-sm">Make sentences negative</p>
+                    </a>
+                    <a href="nai-form.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Nai-Form</h3>
+                        <p class="text-gray-600 text-sm">The negative form building block</p>
+                    </a>
+                    <a href="question.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Questions</h3>
+                        <p class="text-gray-600 text-sm">Asking questions in Japanese</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

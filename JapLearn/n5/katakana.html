@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Katakana - Nihongo Learning</title>
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP dan Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/119/1920/1080');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        .slide-in-bottom {
+            animation: slideInBottom 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInBottom {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e53e3e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div x-data="{ mobileMenuOpen: false }" class="overflow-x-hidden">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md fixed w-full z-50 transition duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="../index.html" class="flex items-center">
+                                <span class="text-red-600 text-2xl font-bold">日本語</span>
+                                <span class="ml-1 text-gray-800 text-lg font-semibold">Learning</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Links (Desktop) -->
+                    <div class="hidden md:flex md:items-center md:space-x-6">
+                        <a href="../index.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                        <a href="../about.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Tentang Kami</a>
+                        <a href="../contact.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Kontak</a>
+                        <a href="../signup.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="../login.html" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-red-600 transition duration-300">
+                            <i class="fas" :class="{'fa-times': mobileMenuOpen, 'fa-bars': !mobileMenuOpen}"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="../index.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Beranda</a>
+                    <a href="../about.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Tentang Kami</a>
+                    <a href="../contact.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Kontak</a>
+                    <a href="../signup.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Daftar</a>
+                    <a href="../login.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Masuk</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-image flex items-center justify-center py-32 px-4 mt-16">
+            <div class="text-center text-white max-w-3xl fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Belajar Katakana</h1>
+                <p class="text-xl opacity-90">Menguasai sistem penulisan untuk kata serapan dalam bahasa Jepang</p>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Mengenal Katakana</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Katakana adalah salah satu dari tiga sistem penulisan yang digunakan dalam bahasa Jepang</p>
+                </div>
+
+                <div class="prose prose-lg mx-auto mb-12">
+                    <p class="text-gray-600 mb-6">
+                        Katakana (カタカナ) adalah sistem tulisan fonetis yang digunakan terutama untuk menulis kata-kata serapan dari bahasa asing, nama asing, istilah ilmiah, dan juga untuk penekanan (seperti huruf kapital atau huruf miring dalam bahasa Indonesia). Sama seperti Hiragana, Katakana terdiri dari 46 karakter dasar.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Meskipun Katakana mewakili bunyi yang sama dengan Hiragana, bentuk karakternya sangat berbeda. Katakana umumnya lebih kaku dan bersudut dibandingkan dengan Hiragana yang lebih bulat dan mengalir.
+                    </p>
+                    <p class="text-gray-600">
+                        Setelah Anda menguasai Hiragana, mempelajari Katakana menjadi lebih mudah karena korespondesi suara yang sama. Menguasai Katakana akan membantu Anda membaca kata-kata serapan dan istilah internasional yang banyak digunakan dalam bahasa Jepang modern.
+                    </p>
+                </div>
+
+                <div class="bg-red-50 rounded-xl p-6 border border-red-100 shadow-sm mb-12">
+                    <h3 class="text-xl font-semibold text-red-700 mb-4">Penggunaan Katakana</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Kata serapan dari bahasa asing (contoh: コンピューター kompyuutaa = komputer)</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Nama orang asing dan tempat asing (contoh: アメリカ Amerika = Amerika)</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Istilah ilmiah dan teknis (contoh: エネルギー enerugii = energi)</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Onomatope atau kata tiruan bunyi (contoh: ワンワン wanwan = guk guk)</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Penekanan kata atau frasa (seperti italics atau huruf kapital)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Katakana Chart Section -->
+        <section class="py-16 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Tabel Katakana</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">46 karakter dasar Katakana dikelompokkan berdasarkan bunyi vokal dan konsonan</p>
+                </div>
+
+                <!-- Basic Katakana -->
+                <div class="bg-white rounded-xl shadow-md p-8 mb-12">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Karakter Dasar</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-center mb-8">
+                            <thead>
+                                <tr>
+                                    <th class="px-2 py-3 bg-red-50 text-red-600"></th>
+                                    <th class="px-4 py-3 bg-red-50 text-red-600">a</th>
+                                    <th class="px-4 py-3 bg-red-50 text-red-600">i</th>
+                                    <th class="px-4 py-3 bg-red-50 text-red-600">u</th>
+                                    <th class="px-4 py-3 bg-red-50 text-red-600">e</th>
+                                    <th class="px-4 py-3 bg-red-50 text-red-600">o</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr class="divide-x">
+                                    <td class="px-2 py-4 bg-red-50 text-red-600 font-medium"></td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ア</div>
+                                        <div class="text-sm text-gray-500">a</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">イ</div>
+                                        <div class="text-sm text-gray-500">i</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ウ</div>
+                                        <div class="text-sm text-gray-500">u</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">エ</div>
+                                        <div class="text-sm text-gray-500">e</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">オ</div>
+                                        <div class="text-sm text-gray-500">o</div>
+                                    </td>
+                                </tr>
+                                <tr class="divide-x">
+                                    <td class="px-2 py-4 bg-red-50 text-red-600 font-medium">k</td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">カ</div>
+                                        <div class="text-sm text-gray-500">ka</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">キ</div>
+                                        <div class="text-sm text-gray-500">ki</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ク</div>
+                                        <div class="text-sm text-gray-500">ku</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ケ</div>
+                                        <div class="text-sm text-gray-500">ke</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">コ</div>
+                                        <div class="text-sm text-gray-500">ko</div>
+                                    </td>
+                                </tr>
+                                <tr class="divide-x">
+                                    <td class="px-2 py-4 bg-red-50 text-red-600 font-medium">s</td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">サ</div>
+                                        <div class="text-sm text-gray-500">sa</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">シ</div>
+                                        <div class="text-sm text-gray-500">shi</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ス</div>
+                                        <div class="text-sm text-gray-500">su</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">セ</div>
+                                        <div class="text-sm text-gray-500">se</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ソ</div>
+                                        <div class="text-sm text-gray-500">so</div>
+                                    </td>
+                                </tr>
+                                <tr class="divide-x">
+                                    <td class="px-2 py-4 bg-red-50 text-red-600 font-medium">t</td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">タ</div>
+                                        <div class="text-sm text-gray-500">ta</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">チ</div>
+                                        <div class="text-sm text-gray-500">chi</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ツ</div>
+                                        <div class="text-sm text-gray-500">tsu</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">テ</div>
+                                        <div class="text-sm text-gray-500">te</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ト</div>
+                                        <div class="text-sm text-gray-500">to</div>
+                                    </td>
+                                </tr>
+                                <tr class="divide-x">
+                                    <td class="px-2 py-4 bg-red-50 text-red-600 font-medium">n</td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ナ</div>
+                                        <div class="text-sm text-gray-500">na</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ニ</div>
+                                        <div class="text-sm text-gray-500">ni</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ヌ</div>
+                                        <div class="text-sm text-gray-500">nu</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ネ</div>
+                                        <div class="text-sm text-gray-500">ne</div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <div class="jp-text text-3xl mb-1">ノ</div>
+                                        <div class="text-sm text-gray-500">no</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Foreign Words Examples Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Contoh Kata Serapan dalam Katakana</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Beberapa contoh kata bahasa asing yang ditulis dengan Katakana dalam bahasa Jepang</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="jp-text text-3xl mb-2 text-gray-800">コンピューター</div>
+                        <div class="font-medium text-gray-600 mb-1">Konpyuutaa</div>
+                        <div class="text-gray-500">Komputer</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="jp-text text-3xl mb-2 text-gray-800">スマートフォン</div>
+                        <div class="font-medium text-gray-600 mb-1">Sumaatofon</div>
+                        <div class="text-gray-500">Smartphone</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="jp-text text-3xl mb-2 text-gray-800">インターネット</div>
+                        <div class="font-medium text-gray-600 mb-1">Intaanetto</div>
+                        <div class="text-gray-500">Internet</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="jp-text text-3xl mb-2 text-gray-800">テレビ</div>
+                        <div class="font-medium text-gray-600 mb-1">Terebi</div>
+                        <div class="text-gray-500">Televisi (dari "television")</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="jp-text text-3xl mb-2 text-gray-800">アイスクリーム</div>
+                        <div class="font-medium text-gray-600 mb-1">Aisukuriimu</div>
+                        <div class="text-gray-500">Es Krim (dari "ice cream")</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="jp-text text-3xl mb-2 text-gray-800">ハンバーガー</div>
+                        <div class="font-medium text-gray-600 mb-1">Hanbaagaa</div>
+                        <div class="text-gray-500">Hamburger</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continue Learning Section -->
+        <section class="py-16 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Lanjutkan Pembelajaran Anda</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">Setelah mempelajari Hiragana dan Katakana, lanjutkan dengan mempelajari Kanji dasar.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="hiragana.html" class="inline-block px-6 py-3 bg-white text-red-600 font-medium rounded-lg shadow hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-pencil-alt mr-2"></i> Belajar Hiragana
+                    </a>
+                    <a href="basic-kanji.html" class="inline-block px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-red-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-book mr-2"></i> Pelajari Kanji Dasar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-red-500 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-white text-lg font-semibold">Learning</span>
+                        </div>
+                        <p class="text-sm">Platform belajar bahasa Jepang terbaik untuk persiapan JLPT N5 dan N4.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigasi</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                            <li><a href="../about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                            <li><a href="../contact.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Kursus N5</h3>
+                        <ul class="space-y-2">
+                            <li><a href="intro.html" class="text-gray-400 hover:text-white transition">Pengantar</a></li>
+                            <li><a href="hiragana.html" class="text-gray-400 hover:text-white transition">Hiragana</a></li>
+                            <li><a href="#" class="text-red-400 transition">Katakana</a></li>
+                            <li><a href="basic-kanji.html" class="text-gray-400 hover:text-white transition">Kanji Dasar</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 text-sm text-center">
+                    <p>&copy; 2025 Nihongo Learning. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

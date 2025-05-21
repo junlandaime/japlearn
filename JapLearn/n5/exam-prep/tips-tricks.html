@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N5 Tips & Tricks | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .tip-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .section-pre {
+            background-color: #eef2ff;
+            border-left: 4px solid #6366f1;
+        }
+        .section-during {
+            background-color: #ede9fe;
+            border-left: 4px solid #8b5cf6;
+        }
+        .section-after {
+            background-color: #dcfce7;
+            border-left: 4px solid #22c55e;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">JLPT N5 Tips & Tricks</h1>
+            <p class="text-xl">Expert advice to help you succeed on your JLPT N5 exam.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Tips for JLPT N5 Success</h2>
+                <p class="text-gray-700 mb-4">
+                    The JLPT N5 can be challenging, but with the right preparation and strategies, you can maximize your chances of success. Here are expert tips to help you before, during, and after the exam.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Remember:</span> The key to success is consistent preparation and a strategic approach to the exam. Don't just memorize—understand the material and practice regularly in realistic test conditions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Before the Exam Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Before the Exam</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="tip-card section-pre">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-indigo-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Study Strategies</h3>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Consistent practice:</span> Study in short, frequent sessions rather than cramming</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Use mnemonics:</span> Create memory aids for kanji and vocabulary</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Immerse yourself:</span> Listen to Japanese music, watch anime with subtitles</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Group study:</span> Find study partners to practice conversation</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Active recall:</span> Test yourself rather than just reviewing notes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-card section-pre">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book text-indigo-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Preparation Checklist</h3>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">One month before:</span> Complete full practice tests weekly</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Two weeks before:</span> Focus on your weak areas</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">One week before:</span> Review grammar points and vocabulary</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Day before:</span> Light review, relax, and get plenty of sleep</li>
+                            <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> <span class="font-medium">Morning of:</span> Eat a good breakfast and arrive early</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tip-card mt-6">
+                    <h3 class="text-xl font-semibold mb-3">Final Week Preparation</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <div class="font-medium text-blue-800 mb-2">Practice with Time Constraints</div>
+                            <p class="text-sm text-gray-700">
+                                Take at least one full practice test under timed conditions. This builds stamina and helps you manage your time effectively during the actual exam.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <div class="font-medium text-blue-800 mb-2">Review, Don't Cram</div>
+                            <p class="text-sm text-gray-700">
+                                Focus on reviewing what you already know rather than trying to learn new material. Solidify your understanding of core concepts.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <div class="font-medium text-blue-800 mb-2">Prepare Your Exam Kit</div>
+                            <p class="text-sm text-gray-700">
+                                Gather everything you'll need: ID, admission ticket, pencils, eraser, watch, and water. Pack your bag the night before.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- During the Exam Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">During the Exam</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                    <div class="tip-card section-during">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-language text-purple-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Language Knowledge</h3>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Answer questions you know first</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Use process of elimination for difficult questions</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Look for context clues in grammar questions</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Double-check kanji readings carefully</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-card section-during">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book-open text-purple-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Reading Section</h3>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Skim the passage before reading questions</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Focus on the first and last sentences</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Look for key words in the questions</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Don't get stuck on unknown words</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-card section-during">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-headphones text-purple-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Listening Section</h3>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Read all questions before audio plays</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Focus on understanding the main idea</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Take brief notes if helpful</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Pay attention to question words, numbers, and times</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tip-card mt-6 section-during">
+                    <h3 class="text-xl font-semibold mb-3">General Exam Strategies</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium text-purple-700 mb-2">Time Management</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Allocate time to each section before starting</li>
+                                <li>• Set mini-deadlines for yourself during the test</li>
+                                <li>• Move on if stuck on a question for too long</li>
+                                <li>• Leave 5 minutes at the end to check your answers</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-purple-700 mb-2">Mental Focus</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Take deep breaths if you feel anxious</li>
+                                <li>• Focus only on the current question</li>
+                                <li>• Don't worry about questions you've already answered</li>
+                                <li>• Remember to pace yourself throughout the exam</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 mt-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-red-700">
+                                <span class="font-medium">Common Mistakes to Avoid:</span>
+                            </p>
+                            <ul class="mt-1 text-sm text-red-700">
+                                <li>• Spending too much time on difficult questions</li>
+                                <li>• Changing answers without a good reason</li>
+                                <li>• Rushing through sections and missing details</li>
+                                <li>• Forgetting to transfer answers to the answer sheet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- After the Exam Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">After the Exam</h2>
+                
+                <div class="tip-card section-after">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-green-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">Post-Exam Reflection</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-4">
+                        Whether you pass or not, take time to reflect on your experience. This reflection will help you improve for future tests or higher JLPT levels.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium text-green-700 mb-2">If You Pass</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Celebrate your achievement!</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Consider preparing for the N4 level</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Continue practicing to maintain skills</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Apply your knowledge in real-world situations</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-green-700 mb-2">If You Don't Pass</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> It's okay! Many pass on their second attempt</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Analyze which sections were challenging</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Adjust your study plan accordingly</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Consider working with a tutor for weak areas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-indigo-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-center">Success Stories</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-indigo-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="italic text-gray-700">
+                                        "I failed my first attempt at N5 because I focused too much on vocabulary and not enough on listening. For my second attempt, I practiced listening every day using Japanese podcasts. I passed with a score of 120/180!"
+                                    </p>
+                                    <p class="mt-2 text-sm font-medium text-gray-500">— Sarah, 24, United States</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-indigo-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="italic text-gray-700">
+                                        "Time management was my biggest challenge. I practiced with timed tests every weekend for a month before the exam. This training helped me finish all sections comfortably and even have time to review my answers."
+                                    </p>
+                                    <p class="mt-2 text-sm font-medium text-gray-500">— Miguel, 30, Spain</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Exam Preparation Resources</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <a href="./exam-overview.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clipboard-list text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Exam Overview</h3>
+                    </a>
+                    <a href="./practice-test.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-tasks text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Practice Test</h3>
+                    </a>
+                    <a href="./time-management.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-clock text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Time Management</h3>
+                    </a>
+                    <a href="./study-plan.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-calendar-alt text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Study Plan</h3>
+                    </a>
+                    <a href="./tips-tricks.html" class="bg-indigo-100 hover:bg-indigo-200 border border-indigo-300 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-lightbulb text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Tips & Tricks</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Exam Preparation</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./exam-overview.html" class="text-gray-300 hover:text-white">Exam Overview</a></li>
+                        <li><a href="./practice-test.html" class="text-gray-300 hover:text-white">Practice Test</a></li>
+                        <li><a href="./time-management.html" class="text-gray-300 hover:text-white">Time Management</a></li>
+                        <li><a href="./study-plan.html" class="text-gray-300 hover:text-white">Study Plan</a></li>
+                        <li><a href="./tips-tricks.html" class="text-indigo-300 hover:text-white">Tips & Tricks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

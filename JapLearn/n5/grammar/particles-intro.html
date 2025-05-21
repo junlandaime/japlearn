@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengenalan Partikel - Nihongo Learning</title>
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP dan Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .jp-text { font-family: 'Noto Sans JP', sans-serif; }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/1053/1920/1080');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in { animation: fadeIn 1s; }
+        .slide-in-bottom { animation: slideInBottom 0.8s ease-out; }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInBottom {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb {
+            background: #e53e3e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: #b91c1c; }
+        .example-card { border-left: 4px solid #e53e3e; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div x-data="{ mobileMenuOpen: false }" class="overflow-x-hidden">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md fixed w-full z-50 transition duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="../../index.html" class="flex items-center">
+                                <span class="text-red-600 text-2xl font-bold">日本語</span>
+                                <span class="ml-1 text-gray-800 text-lg font-semibold">Learning</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Links (Desktop) -->
+                    <div class="hidden md:flex md:items-center md:space-x-6">
+                        <a href="../../index.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                        <a href="../../about.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Tentang Kami</a>
+                        <a href="../../contact.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Kontak</a>
+                        <a href="../../signup.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="../../login.html" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-red-600 transition duration-300">
+                            <i class="fas" :class="{'fa-times': mobileMenuOpen, 'fa-bars': !mobileMenuOpen}"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="../../index.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Beranda</a>
+                    <a href="../../about.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Tentang Kami</a>
+                    <a href="../../contact.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Kontak</a>
+                    <a href="../../signup.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Daftar</a>
+                    <a href="../../login.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Masuk</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-image flex items-center justify-center py-32 px-4 mt-16">
+            <div class="text-center text-white max-w-3xl fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Pengenalan Partikel Bahasa Jepang</h1>
+                <p class="text-xl opacity-90">Memahami partikel は、が、を、に、で dan penggunaannya</p>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Apa Itu Partikel?</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Memahami fungsi dan penggunaan partikel dasar dalam bahasa Jepang</p>
+                </div>
+
+                <div class="prose prose-lg mx-auto">
+                    <p class="text-gray-600 mb-6">
+                        Partikel dalam bahasa Jepang adalah kata-kata kecil yang menunjukkan hubungan antara kata-kata dalam kalimat. Partikel ini sangat penting karena mereka menunjukkan fungsi gramatikal kata-kata dalam kalimat, seperti subjek, objek, lokasi, dan lainnya.
+                    </p>
+                    
+                    <p class="text-gray-600 mb-6">
+                        Partikel dalam bahasa Jepang biasanya ditulis dengan Hiragana dan diletakkan setelah kata yang mereka modifikasi. Berikut adalah lima partikel dasar yang perlu dikuasai untuk level N5.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Particles Detail Section -->
+        <section class="py-16 px-4 bg-gray-50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Lima Partikel Dasar</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                </div>
+
+                <!-- は Particle -->
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-red-600 jp-text mr-3">は</span>
+                        <div>
+                            <p class="text-gray-600 text-lg font-semibold">Wa (は)</p>
+                            <p class="text-gray-500">Partikel Penanda Topik</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">
+                        Partikel は (wa) digunakan untuk menunjukkan topik kalimat. Topik adalah apa yang sedang dibicarakan dalam kalimat.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">わたし<span class="text-red-600">は</span>学生です。</p>
+                        <p class="text-gray-600 italic">Watashi <span class="text-red-600">wa</span> gakusei desu.</p>
+                        <p class="text-gray-700">Saya adalah mahasiswa.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">東京<span class="text-red-600">は</span>大きい都市です。</p>
+                        <p class="text-gray-600 italic">Tokyo <span class="text-red-600">wa</span> ookii toshi desu.</p>
+                        <p class="text-gray-700">Tokyo adalah kota besar.</p>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm">
+                        <span class="font-semibold">Catatan:</span> Meskipun ditulis dengan huruf hiragana は, partikel ini dibaca "wa", bukan "ha".
+                    </p>
+                </div>
+                
+                <!-- が Particle -->
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-red-600 jp-text mr-3">が</span>
+                        <div>
+                            <p class="text-gray-600 text-lg font-semibold">Ga (が)</p>
+                            <p class="text-gray-500">Partikel Penanda Subjek</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">
+                        Partikel が (ga) digunakan untuk menunjukkan subjek kalimat. Perbedaan utama dengan は adalah が lebih menekankan pada subjek dan sering digunakan dalam kalimat tanya atau untuk informasi baru.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">だれ<span class="text-red-600">が</span>先生ですか。</p>
+                        <p class="text-gray-600 italic">Dare <span class="text-red-600">ga</span> sensei desu ka.</p>
+                        <p class="text-gray-700">Siapa yang guru?</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">鳥<span class="text-red-600">が</span>空を飛んでいます。</p>
+                        <p class="text-gray-600 italic">Tori <span class="text-red-600">ga</span> sora o tondeimasu.</p>
+                        <p class="text-gray-700">Burung sedang terbang di langit.</p>
+                    </div>
+                </div>
+                
+                <!-- を Particle -->
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-red-600 jp-text mr-3">を</span>
+                        <div>
+                            <p class="text-gray-600 text-lg font-semibold">O (を)</p>
+                            <p class="text-gray-500">Partikel Penanda Objek Langsung</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">
+                        Partikel を (o) digunakan untuk menunjukkan objek langsung dari kata kerja transitif. Objek langsung adalah sesuatu yang menerima tindakan dari kata kerja.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">わたしはりんご<span class="text-red-600">を</span>食べます。</p>
+                        <p class="text-gray-600 italic">Watashi wa ringo <span class="text-red-600">o</span> tabemasu.</p>
+                        <p class="text-gray-700">Saya makan apel.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">彼は本<span class="text-red-600">を</span>読みます。</p>
+                        <p class="text-gray-600 italic">Kare wa hon <span class="text-red-600">o</span> yomimasu.</p>
+                        <p class="text-gray-700">Dia membaca buku.</p>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm">
+                        <span class="font-semibold">Catatan:</span> Meskipun ditulis dengan huruf hiragana を, partikel ini dibaca "o", bukan "wo".
+                    </p>
+                </div>
+                
+                <!-- に Particle -->
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-red-600 jp-text mr-3">に</span>
+                        <div>
+                            <p class="text-gray-600 text-lg font-semibold">Ni (に)</p>
+                            <p class="text-gray-500">Partikel Penanda Lokasi/Waktu/Penerima</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">
+                        Partikel に (ni) memiliki beberapa fungsi, termasuk menunjukkan lokasi keberadaan, tujuan pergerakan, waktu, atau penerima suatu tindakan.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">わたしは学校<span class="text-red-600">に</span>行きます。</p>
+                        <p class="text-gray-600 italic">Watashi wa gakkou <span class="text-red-600">ni</span> ikimasu.</p>
+                        <p class="text-gray-700">Saya pergi ke sekolah.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">7時<span class="text-red-600">に</span>起きます。</p>
+                        <p class="text-gray-600 italic">Shichi-ji <span class="text-red-600">ni</span> okimasu.</p>
+                        <p class="text-gray-700">Saya bangun pada jam 7.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">先生<span class="text-red-600">に</span>プレゼントをあげます。</p>
+                        <p class="text-gray-600 italic">Sensei <span class="text-red-600">ni</span> purezento o agemasu.</p>
+                        <p class="text-gray-700">Saya memberikan hadiah kepada guru.</p>
+                    </div>
+                </div>
+                
+                <!-- で Particle -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-red-600 jp-text mr-3">で</span>
+                        <div>
+                            <p class="text-gray-600 text-lg font-semibold">De (で)</p>
+                            <p class="text-gray-500">Partikel Penanda Tempat Kegiatan/Alat</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">
+                        Partikel で (de) digunakan untuk menunjukkan tempat di mana suatu kegiatan terjadi atau alat/cara yang digunakan untuk melakukan suatu tindakan.
+                    </p>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">図書館<span class="text-red-600">で</span>勉強します。</p>
+                        <p class="text-gray-600 italic">Toshokan <span class="text-red-600">de</span> benkyou shimasu.</p>
+                        <p class="text-gray-700">Saya belajar di perpustakaan.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">バス<span class="text-red-600">で</span>学校に行きます。</p>
+                        <p class="text-gray-600 italic">Basu <span class="text-red-600">de</span> gakkou ni ikimasu.</p>
+                        <p class="text-gray-700">Saya pergi ke sekolah dengan bus.</p>
+                    </div>
+                    
+                    <div class="example-card bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-xl jp-text mb-2">日本語<span class="text-red-600">で</span>話しましょう。</p>
+                        <p class="text-gray-600 italic">Nihongo <span class="text-red-600">de</span> hanashimashou.</p>
+                        <p class="text-gray-700">Mari berbicara dalam bahasa Jepang.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Other Grammar Topics -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Lanjutkan Pembelajaran</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pelajari topik tata bahasa N5 lainnya</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="basic-sentence.html" class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden group">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 group-hover:text-red-600 transition duration-300">Struktur Kalimat Dasar</h3>
+                            <p class="text-gray-600">Memahami struktur dasar kalimat dalam bahasa Jepang.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="verb-intro.html" class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden group">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 group-hover:text-red-600 transition duration-300">Pengenalan Kata Kerja</h3>
+                            <p class="text-gray-600">Memahami dasar-dasar kata kerja bahasa Jepang dan klasifikasinya.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="../intro.html" class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden group">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 group-hover:text-red-600 transition duration-300">Kembali ke Pengenalan N5</h3>
+                            <p class="text-gray-600">Kembali ke halaman pengenalan kursus N5.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-red-500 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-white text-lg font-semibold">Learning</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Platform belajar bahasa Jepang online yang komprehensif, dirancang untuk semua level dengan materi berkualitas tinggi dan pendekatan pembelajaran yang interaktif.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigasi Cepat</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../index.html" class="text-gray-400 hover:text-white transition duration-300">Beranda</a></li>
+                            <li><a href="../../about.html" class="text-gray-400 hover:text-white transition duration-300">Tentang Kami</a></li>
+                            <li><a href="../../contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontak</a></li>
+                            <li><a href="../intro.html" class="text-gray-400 hover:text-white transition duration-300">Kursus N5</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-2 text-red-500"></i>
+                                <span class="text-gray-400">Jl. Pendidikan No. 123, Jakarta, Indonesia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1.5 mr-2 text-red-500"></i>
+                                <span class="text-gray-400">info@nihongolearning.com</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1.5 mr-2 text-red-500"></i>
+                                <span class="text-gray-400">+62 123 4567 890</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                    <p class="text-gray-400">© 2025 Nihongo Learning. Hak Cipta Dilindungi.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

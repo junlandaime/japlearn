@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Nai-Form | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        .verb-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .verb-table th,
+        .verb-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .verb-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .verb-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .godan {
+            border-left: 4px solid #ef4444;
+            background-color: #fee2e2;
+        }
+        .ichidan {
+            border-left: 4px solid #3b82f6;
+            background-color: #dbeafe;
+        }
+        .irregular {
+            border-left: 4px solid #10b981;
+            background-color: #d1fae5;
+        }
+        .usage-card {
+            border-left: 4px solid #f59e0b;
+            background-color: #fef3c7;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Nai-Form</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">The fundamental building block for negation in Japanese</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to the Nai-Form</h2>
+                <p class="text-gray-700 mb-4">
+                    The Nai-form (ない形, nai-kei) is a fundamental conjugation pattern in Japanese grammar. It's called the "nai-form" because it typically ends with ない (nai), which expresses negation in Japanese. However, the nai-form serves as more than just a negative form - it's a building block for many other grammatical structures.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Understanding how to create and use the nai-form is essential for expressing negation, creating conditional statements, and forming certain other grammatical structures in Japanese.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Important:</span> The nai-form is sometimes called the "negative stem" or "negative base" because it's the foundation for creating negative expressions and other grammatical forms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Form the Nai-Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">How to Form the Nai-Form</h2>
+                <p class="text-gray-700 mb-4">
+                    Forming the nai-form depends on the type of word (verb, adjective, or noun) and, in the case of verbs, the verb group.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-3">Group 1 (Godan) Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    For Group 1 (Godan) verbs, the nai-form is created by changing the final sound from the "u" row to the corresponding sound in the "a" row, and then adding ない (nai).
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Dictionary Form</th>
+                                <th>Step 1: Change to "a" sound</th>
+                                <th>Step 2: Add ない</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="japanese">話す</span> (hanasu - to speak)</td>
+                                <td><span class="japanese">話さ</span> (hanasa)</td>
+                                <td><span class="japanese">話さない</span> (hanasanai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">飲む</span> (nomu - to drink)</td>
+                                <td><span class="japanese">飲ま</span> (noma)</td>
+                                <td><span class="japanese">飲まない</span> (nomanai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">書く</span> (kaku - to write)</td>
+                                <td><span class="japanese">書か</span> (kaka)</td>
+                                <td><span class="japanese">書かない</span> (kakanai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">泳ぐ</span> (oyogu - to swim)</td>
+                                <td><span class="japanese">泳が</span> (oyoga)</td>
+                                <td><span class="japanese">泳がない</span> (oyoganai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">遊ぶ</span> (asobu - to play)</td>
+                                <td><span class="japanese">遊ば</span> (asoba)</td>
+                                <td><span class="japanese">遊ばない</span> (asobanai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">死ぬ</span> (shinu - to die)</td>
+                                <td><span class="japanese">死な</span> (shina)</td>
+                                <td><span class="japanese">死なない</span> (shinanai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">待つ</span> (matsu - to wait)</td>
+                                <td><span class="japanese">待た</span> (mata)</td>
+                                <td><span class="japanese">待たない</span> (matanai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">売る</span> (uru - to sell)</td>
+                                <td><span class="japanese">売ら</span> (ura)</td>
+                                <td><span class="japanese">売らない</span> (uranai)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="japanese">ある</span> (aru - to exist)</td>
+                                <td><span class="japanese">あら</span> (ara)</td>
+                                <td><span class="japanese">ない</span> (nai) - irregular</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="godan p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Group 1 (Godan) Nai-Form Sound Changes</p>
+                    <p class="text-gray-700 mb-2">Here's a summary of the sound changes:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">う (u) → わ (wa)</span>: <span class="japanese">買う (kau) → 買わない (kawanai)</span></li>
+                        <li><span class="japanese">く (ku) → か (ka)</span>: <span class="japanese">書く (kaku) → 書かない (kakanai)</span></li>
+                        <li><span class="japanese">ぐ (gu) → が (ga)</span>: <span class="japanese">泳ぐ (oyogu) → 泳がない (oyoganai)</span></li>
+                        <li><span class="japanese">す (su) → さ (sa)</span>: <span class="japanese">話す (hanasu) → 話さない (hanasanai)</span></li>
+                        <li><span class="japanese">つ (tsu) → た (ta)</span>: <span class="japanese">持つ (motsu) → 持たない (motanai)</span></li>
+                        <li><span class="japanese">ぬ (nu) → な (na)</span>: <span class="japanese">死ぬ (shinu) → 死なない (shinanai)</span></li>
+                        <li><span class="japanese">ぶ (bu) → ば (ba)</span>: <span class="japanese">遊ぶ (asobu) → 遊ばない (asobanai)</span></li>
+                        <li><span class="japanese">む (mu) → ま (ma)</span>: <span class="japanese">飲む (nomu) → 飲まない (nomanai)</span></li>
+                        <li><span class="japanese">る (ru) → ら (ra)</span>: <span class="japanese">売る (uru) → 売らない (uranai)</span></li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-2">
+                        <span class="font-semibold">Exception:</span> <span class="japanese">ある</span> (aru - to exist) becomes <span class="japanese">ない</span> (nai) in the negative, not <span class="japanese">あらない</span> (aranai)
+                    </p>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Group 2 (Ichidan) Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    For Group 2 (Ichidan) verbs, the nai-form is much simpler to create:
+                </p>
+                
+                <div class="ichidan p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Group 2 (Ichidan) Nai-Form Rule</p>
+                    <p class="text-gray-700 mb-2">Remove the final <span class="japanese">る</span> (ru) and add <span class="japanese">ない</span> (nai)</p>
+                    <p class="text-gray-700 mb-2">Examples:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">食べる</span> (taberu - to eat) → <span class="japanese">食べない</span> (tabenai)</li>
+                        <li><span class="japanese">見る</span> (miru - to see) → <span class="japanese">見ない</span> (minai)</li>
+                        <li><span class="japanese">起きる</span> (okiru - to wake up) → <span class="japanese">起きない</span> (okinai)</li>
+                        <li><span class="japanese">寝る</span> (neru - to sleep) → <span class="japanese">寝ない</span> (nenai)</li>
+                        <li><span class="japanese">着る</span> (kiru - to wear) → <span class="japanese">着ない</span> (kinai)</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Group 3 (Irregular) Verbs</h3>
+                <p class="text-gray-700 mb-4">
+                    For the two irregular verbs:
+                </p>
+                
+                <div class="irregular p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Group 3 (Irregular) Nai-Form</p>
+                    <p class="text-gray-700 mb-2">These need to be memorized:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">する</span> (suru - to do) → <span class="japanese">しない</span> (shinai)</li>
+                        <li><span class="japanese">来る</span> (kuru - to come) → <span class="japanese">来ない</span> (konai)</li>
+                    </ul>
+                    <p class="text-gray-700 mt-2">For compound verbs using <span class="japanese">する</span>:</p>
+                    <ul class="list-disc pl-6 text-gray-700">
+                        <li><span class="japanese">勉強する</span> (benkyō suru - to study) → <span class="japanese">勉強しない</span> (benkyō shinai)</li>
+                        <li><span class="japanese">運転する</span> (unten suru - to drive) → <span class="japanese">運転しない</span> (unten shinai)</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Adjectives in Nai-Form</h3>
+                <p class="text-gray-700 mb-4">
+                    For i-adjectives, the nai-form is part of their negative conjugation:
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Dictionary Form</th>
+                                <th>Nai-Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>i-Adjectives</td>
+                                <td><span class="japanese">高い</span> (takai - expensive)</td>
+                                <td><span class="japanese">高くない</span> (takakunai)</td>
+                            </tr>
+                            <tr>
+                                <td>na-Adjectives</td>
+                                <td><span class="japanese">静か</span> (shizuka - quiet)</td>
+                                <td><span class="japanese">静かではない</span> (shizuka dewa nai)<br>or <span class="japanese">静かじゃない</span> (shizuka ja nai)</td>
+                            </tr>
+                            <tr>
+                                <td>Nouns</td>
+                                <td><span class="japanese">学生</span> (gakusei - student)</td>
+                                <td><span class="japanese">学生ではない</span> (gakusei dewa nai)<br>or <span class="japanese">学生じゃない</span> (gakusei ja nai)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p class="text-gray-700 mb-4">
+                    For i-adjectives, remove final い (i) and add くない (kunai). For na-adjectives and nouns, add ではない/じゃない (dewa nai/ja nai).
+                </p>
+            </section>
+
+            <!-- Usage of Nai-Form Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Usage of the Nai-Form</h2>
+                <p class="text-gray-700 mb-4">
+                    The nai-form is not only used for negation but also serves as a foundation for several other grammatical structures. Here are the main uses:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Usage 1: Simple Negation -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Simple Negation</h3>
+                        <p class="text-gray-700 mb-2">
+                            The most direct use of the nai-form is to express that something does not happen or is not the case.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">私は肉を食べない。</p>
+                            <p class="text-gray-600">Watashi wa niku o tabenai.</p>
+                            <p class="text-gray-600">I don't eat meat.</p>
+                            <p class="japanese mb-1">彼は日本語を話さない。</p>
+                            <p class="text-gray-600">Kare wa nihongo o hanasanai.</p>
+                            <p class="text-gray-600">He doesn't speak Japanese.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 2: Nai-form + de -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Nai-form + で (de) - "Without doing"</h3>
+                        <p class="text-gray-700 mb-2">
+                            Nai-form + で expresses doing something without doing another action.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">朝ご飯を食べないで学校に行きました。</p>
+                            <p class="text-gray-600">Asa gohan o tabenai de gakkō ni ikimashita.</p>
+                            <p class="text-gray-600">I went to school without eating breakfast.</p>
+                            <p class="japanese mb-1">宿題をしないで寝ました。</p>
+                            <p class="text-gray-600">Shukudai o shinai de nemashita.</p>
+                            <p class="text-gray-600">I went to sleep without doing my homework.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 3: Conditional Forms -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Conditional Forms (〜なければ/〜ないと)</h3>
+                        <p class="text-gray-700 mb-2">
+                            The nai-form is used to create conditional statements with なければ (nakereba) or ないと (nai to).
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">勉強しなければいけません。</p>
+                            <p class="text-gray-600">Benkyō shinakereba ikemasen.</p>
+                            <p class="text-gray-600">I must study. (Literally: If I don't study, it won't do.)</p>
+                            <p class="japanese mb-1">早く起きないと、遅刻します。</p>
+                            <p class="text-gray-600">Hayaku okinai to, chikoku shimasu.</p>
+                            <p class="text-gray-600">If I don't wake up early, I'll be late.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 4: Before something happens -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Before Something Happens (〜ないうちに)</h3>
+                        <p class="text-gray-700 mb-2">
+                            Nai-form + うちに (uchi ni) means "before something happens" or "while something is not happening."
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">雨が降らないうちに、家に帰りましょう。</p>
+                            <p class="text-gray-600">Ame ga furanai uchi ni, ie ni kaerimashou.</p>
+                            <p class="text-gray-600">Let's go home before it rains.</p>
+                            <p class="japanese mb-1">忘れないうちに、メモしておきます。</p>
+                            <p class="text-gray-600">Wasurenai uchi ni, memo shite okimasu.</p>
+                            <p class="text-gray-600">I'll make a note before I forget.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Usage 5: Potential Form Negation -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Potential Form Negation</h3>
+                        <p class="text-gray-700 mb-2">
+                            The nai-form is used to negate the potential form of verbs, expressing inability.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">日本語が話せない。</p>
+                            <p class="text-gray-600">Nihongo ga hanasenai.</p>
+                            <p class="text-gray-600">I can't speak Japanese.</p>
+                            <p class="japanese mb-1">明日来られない。</p>
+                            <p class="text-gray-600">Ashita korarenai.</p>
+                            <p class="text-gray-600">I can't come tomorrow.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 6: Expressing Prohibition -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Expressing Prohibition (〜ないでください)</h3>
+                        <p class="text-gray-700 mb-2">
+                            Nai-form + でください (de kudasai) is used to politely ask someone not to do something.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">ここで写真を撮らないでください。</p>
+                            <p class="text-gray-600">Koko de shashin o toranai de kudasai.</p>
+                            <p class="text-gray-600">Please do not take pictures here.</p>
+                            <p class="japanese mb-1">遅れないでください。</p>
+                            <p class="text-gray-600">Okurenai de kudasai.</p>
+                            <p class="text-gray-600">Please don't be late.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 7: Nai-form + ように -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Expressing Purpose or Goal (〜ないように)</h3>
+                        <p class="text-gray-700 mb-2">
+                            Nai-form + ように (yō ni) expresses purpose or taking precautions to prevent something.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">風邪を引かないように、マスクをします。</p>
+                            <p class="text-gray-600">Kaze o hikanai yō ni, masuku o shimasu.</p>
+                            <p class="text-gray-600">I wear a mask so that I don't catch a cold.</p>
+                            <p class="japanese mb-1">忘れないように、カレンダーに書きました。</p>
+                            <p class="text-gray-600">Wasurenai yō ni, karenda ni kakimashita.</p>
+                            <p class="text-gray-600">I wrote it on the calendar so that I don't forget.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage 8: Expressing Concern -->
+                    <div class="usage-card p-4 rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Expressing Concern (〜ないかと思います)</h3>
+                        <p class="text-gray-700 mb-2">
+                            Nai-form + かと思います (ka to omoimasu) expresses concern or worry that something might not happen.
+                        </p>
+                        <div class="example-card p-3 rounded-md">
+                            <p class="font-medium mb-1">Examples:</p>
+                            <p class="japanese mb-1">間に合わないかと思います。</p>
+                            <p class="text-gray-600">Ma ni awanai ka to omoimasu.</p>
+                            <p class="text-gray-600">I'm concerned that I might not make it in time.</p>
+                            <p class="japanese mb-1">彼が来ないかと心配しています。</p>
+                            <p class="text-gray-600">Kare ga konai ka to shinpai shite imasu.</p>
+                            <p class="text-gray-600">I'm worried that he might not come.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                <span class="font-medium">Tip:</span> The nai-form is one of the most versatile forms in Japanese grammar. Many advanced grammar structures build upon this form, so mastering it early will help you progress more quickly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Exercises -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of the nai-form with these exercises:
+                </p>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Convert to Nai-Form</h3>
+                    <p class="text-gray-700 mb-3">
+                        Convert the following verbs to their nai-form:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            <span class="japanese">行く</span> (iku - to go)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">行かない</span> (ikanai)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">見る</span> (miru - to see)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">見ない</span> (minai)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">買う</span> (kau - to buy)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">買わない</span> (kawanai)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">勉強する</span> (benkyō suru - to study)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">勉強しない</span> (benkyō shinai)</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">高い</span> (takai - expensive)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">高くない</span> (takakunai)</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with the appropriate nai-form:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            <span class="japanese">明日は学校に＿＿＿。</span> (行く - iku)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">行かない</span> (ikanai)<br>明日は学校に行かない。<br>Ashita wa gakkō ni ikanai.<br>I won't go to school tomorrow.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">このケーキはあまり＿＿＿です。</span> (おいしい - oishii)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">おいしくない</span> (oishikunai)<br>このケーキはあまりおいしくないです。<br>Kono kēki wa amari oishikunai desu.<br>This cake is not very delicious.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">彼は日本語が＿＿＿。</span> (話せる - hanaseru)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">話せない</span> (hanasenai)<br>彼は日本語が話せない。<br>Kare wa nihongo ga hanasenai.<br>He can't speak Japanese.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">昨日は忙しくて、テレビを＿＿＿でした。</span> (見る - miru)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">見ない</span> (minai)<br>昨日は忙しくて、テレビを見なかったです。<br>Kinō wa isogashikute, terebi o minakatta desu.<br>I was busy yesterday, so I didn't watch TV.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            <span class="japanese">私は肉を＿＿＿で生活しています。</span> (食べる - taberu)
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">食べない</span> (tabenai)<br>私は肉を食べないで生活しています。<br>Watashi wa niku o tabenai de seikatsu shite imasu.<br>I live without eating meat.</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Translate into Japanese</h3>
+                    <p class="text-gray-700 mb-3">
+                        Translate these sentences into Japanese using the nai-form:
+                    </p>
+                    <ol class="list-decimal pl-8 mb-4 space-y-2">
+                        <li class="text-gray-700">
+                            I don't understand Japanese grammar.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">日本語の文法が分かりません。</span><br>Nihongo no bunpō ga wakarimasen.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            This restaurant is not expensive.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">このレストランは高くないです。</span><br>Kono resutoran wa takakunai desu.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            I must go to school tomorrow.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">明日学校に行かなければなりません。</span><br>Ashita gakkō ni ikanakereba narimasen.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            Please don't enter this room.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">この部屋に入らないでください。</span><br>Kono heya ni hairanai de kudasai.</span>
+                        </li>
+                        <li class="text-gray-700">
+                            Let's go home before it rains.
+                            <button class="ml-4 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 py-1 px-2 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answer</button>
+                            <span class="hidden text-green-600 ml-2"><span class="japanese">雨が降らないうちに、帰りましょう。</span><br>Ame ga furanai uchi ni, kaerimashou.</span>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Grammar Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Grammar Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 grammar journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="basic-sentence.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Basic Sentence Structure</h3>
+                        <p class="text-gray-600 text-sm">Learn about Japanese sentence patterns</p>
+                    </a>
+                    <a href="particles-intro.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Particles Introduction</h3>
+                        <p class="text-gray-600 text-sm">Understand the crucial role of particles</p>
+                    </a>
+                    <a href="verb-intro.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Verbs Introduction</h3>
+                        <p class="text-gray-600 text-sm">Overview of Japanese verb groups</p>
+                    </a>
+                    <a href="present-tense.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Present Tense</h3>
+                        <p class="text-gray-600 text-sm">Express actions in the present</p>
+                    </a>
+                    <a href="past-tense.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Past Tense</h3>
+                        <p class="text-gray-600 text-sm">Express actions in the past</p>
+                    </a>
+                    <a href="negative-form.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Negative Form</h3>
+                        <p class="text-gray-600 text-sm">Make sentences negative</p>
+                    </a>
+                    <a href="te-form.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Te-Form</h3>
+                        <p class="text-gray-600 text-sm">The versatile connector in Japanese</p>
+                    </a>
+                    <a href="question.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Questions</h3>
+                        <p class="text-gray-600 text-sm">Asking questions in Japanese</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

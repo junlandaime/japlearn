@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Kanji Dasar N5 - Nihongo Learning</title>
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Google Fonts - Noto Sans JP dan Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/383/1920/1080');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        .slide-in-bottom {
+            animation: slideInBottom 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInBottom {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e53e3e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div x-data="{ mobileMenuOpen: false }" class="overflow-x-hidden">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md fixed w-full z-50 transition duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="../index.html" class="flex items-center">
+                                <span class="text-red-600 text-2xl font-bold">日本語</span>
+                                <span class="ml-1 text-gray-800 text-lg font-semibold">Learning</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Links (Desktop) -->
+                    <div class="hidden md:flex md:items-center md:space-x-6">
+                        <a href="../index.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                        <a href="../about.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Tentang Kami</a>
+                        <a href="../contact.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Kontak</a>
+                        <a href="../signup.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar
+                        </a>
+                        <a href="../login.html" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-red-600 transition duration-300">
+                            <i class="fas" :class="{'fa-times': mobileMenuOpen, 'fa-bars': !mobileMenuOpen}"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="../index.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Beranda</a>
+                    <a href="../about.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Tentang Kami</a>
+                    <a href="../contact.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Kontak</a>
+                    <a href="../signup.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Daftar</a>
+                    <a href="../login.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50 transition duration-300">Masuk</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-image flex items-center justify-center py-32 px-4 mt-16">
+            <div class="text-center text-white max-w-3xl fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Belajar Kanji Dasar N5</h1>
+                <p class="text-xl opacity-90">Mengenal 100 Kanji yang perlu dikuasai untuk level JLPT N5</p>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Mengenal Kanji</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kanji adalah karakter yang berasal dari China yang digunakan dalam bahasa Jepang</p>
+                </div>
+
+                <div class="prose prose-lg mx-auto mb-12">
+                    <p class="text-gray-600 mb-6">
+                        Kanji (漢字) adalah salah satu dari tiga sistem tulisan dalam bahasa Jepang. Berbeda dengan Hiragana dan Katakana yang merupakan sistem tulisan fonetis, Kanji adalah karakter logografik yang mewakili konsep atau ide tertentu. Setiap karakter Kanji memiliki satu atau lebih cara pengucapan dan makna.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Untuk ujian JLPT level N5, Anda perlu menguasai sekitar 100 Kanji dasar. Kanji-kanji ini adalah karakter paling sering digunakan yang akan membantu Anda memahami teks Jepang sederhana dan berkomunikasi dalam situasi sehari-hari.
+                    </p>
+                    <p class="text-gray-600">
+                        Pada halaman ini, Anda akan belajar Kanji-kanji level N5 beserta cara pengucapan, arti, dan contoh penggunaannya dalam kalimat. Mempelajari Kanji satu per satu dengan metode yang terstruktur akan memudahkan proses penguasaan.
+                    </p>
+                </div>
+
+                <div class="bg-red-50 rounded-xl p-6 border border-red-100 shadow-sm mb-12">
+                    <h3 class="text-xl font-semibold text-red-700 mb-4">Tips Mempelajari Kanji</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Pelajari urutan goresan untuk setiap Kanji</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Perhatikan radikal (komponen dasar) yang membentuk Kanji</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Buat kartu pengingat (flashcards) dan latih secara rutin</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Kaitkan Kanji dengan cerita atau gambar untuk memudahkan ingatan</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+                            <span>Latih penulisan Kanji secara konsisten dan berulang</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Kanji Section -->
+        <section class="py-16 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Kanji Level N5</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Berikut adalah beberapa Kanji dasar yang perlu dikuasai untuk level JLPT N5</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- Kanji Cards -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="jp-text text-5xl font-bold text-gray-800">日</div>
+                                <div class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">N5</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Cara Baca:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">ニチ (nichi)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">ジツ (jitsu)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">ひ (hi)</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Arti:</div>
+                                <div class="text-gray-700">matahari, hari, Jepang</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm mb-1">Contoh:</div>
+                                <div class="jp-text mb-1">日本 (にほん) - Nihon - Jepang</div>
+                                <div class="jp-text mb-1">今日 (きょう) - Kyou - Hari ini</div>
+                                <div class="jp-text">日曜日 (にちようび) - Nichiyoubi - Hari Minggu</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="jp-text text-5xl font-bold text-gray-800">人</div>
+                                <div class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">N5</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Cara Baca:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">ジン (jin)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">ニン (nin)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">ひと (hito)</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Arti:</div>
+                                <div class="text-gray-700">orang, manusia</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm mb-1">Contoh:</div>
+                                <div class="jp-text mb-1">日本人 (にほんじん) - Nihonjin - Orang Jepang</div>
+                                <div class="jp-text mb-1">一人 (ひとり) - Hitori - Satu orang</div>
+                                <div class="jp-text">外国人 (がいこくじん) - Gaikokujin - Orang asing</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="jp-text text-5xl font-bold text-gray-800">水</div>
+                                <div class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">N5</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Cara Baca:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">スイ (sui)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">みず (mizu)</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Arti:</div>
+                                <div class="text-gray-700">air</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm mb-1">Contoh:</div>
+                                <div class="jp-text mb-1">水曜日 (すいようび) - Suiyoubi - Hari Rabu</div>
+                                <div class="jp-text mb-1">お水 (おみず) - Omizu - Air (sopan)</div>
+                                <div class="jp-text">水泳 (すいえい) - Suiei - Berenang</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="jp-text text-5xl font-bold text-gray-800">山</div>
+                                <div class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">N5</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Cara Baca:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">サン (san)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">やま (yama)</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Arti:</div>
+                                <div class="text-gray-700">gunung</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm mb-1">Contoh:</div>
+                                <div class="jp-text mb-1">富士山 (ふじさん) - Fujisan - Gunung Fuji</div>
+                                <div class="jp-text mb-1">山田 (やまだ) - Yamada - Nama keluarga umum di Jepang</div>
+                                <div class="jp-text">登山 (とざん) - Tozan - Mendaki gunung</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="jp-text text-5xl font-bold text-gray-800">先</div>
+                                <div class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">N5</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Cara Baca:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">セン (sen)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">さき (saki)</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Arti:</div>
+                                <div class="text-gray-700">sebelum, depan, dahulu</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm mb-1">Contoh:</div>
+                                <div class="jp-text mb-1">先生 (せんせい) - Sensei - Guru</div>
+                                <div class="jp-text mb-1">先週 (せんしゅう) - Senshuu - Minggu lalu</div>
+                                <div class="jp-text">先に (さきに) - Sakini - Terlebih dahulu</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="jp-text text-5xl font-bold text-gray-800">生</div>
+                                <div class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">N5</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Cara Baca:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">セイ (sei)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">ショウ (shou)</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">い.きる (i.kiru)</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-gray-500 text-sm mb-1">Arti:</div>
+                                <div class="text-gray-700">hidup, mentah, kelahiran, siswa</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm mb-1">Contoh:</div>
+                                <div class="jp-text mb-1">学生 (がくせい) - Gakusei - Pelajar</div>
+                                <div class="jp-text mb-1">先生 (せんせい) - Sensei - Guru</div>
+                                <div class="jp-text">生まれる (うまれる) - Umareru - Lahir</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-gray-600 mb-4">Ini hanya beberapa contoh dari 100 Kanji yang perlu dikuasai untuk level N5.</p>
+                    <a href="#" class="inline-block px-6 py-3 bg-red-600 text-white font-medium rounded-lg shadow hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-book mr-2"></i> Lihat Daftar Lengkap Kanji N5
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kanji Learning Resources Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Sumber Belajar Kanji</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Referensi dan alat bantu untuk mempermudah pembelajaran Kanji</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full mb-4">
+                            <i class="fas fa-mobile-alt text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Aplikasi Mobile</h3>
+                        <p class="text-gray-600 mb-4">Aplikasi untuk latihan Kanji di mana saja dan kapan saja:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Anki (Flashcards)</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Kanji Study</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Japanese Kanji Tree</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Duolingo</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full mb-4">
+                            <i class="fas fa-book text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Buku Rekomendasi</h3>
+                        <p class="text-gray-600 mb-4">Buku-buku terstruktur untuk mempelajari Kanji:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Basic Kanji Book, Vol. 1</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Remembering the Kanji</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Kanji Look and Learn</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Kanji Power Handbook for JLPT N5</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full mb-4">
+                            <i class="fas fa-laptop text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Website Belajar</h3>
+                        <p class="text-gray-600 mb-4">Situs web dengan sumber daya Kanji gratis:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Jisho.org</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> WaniKani</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Tofugu</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> KanjiDamage</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <div class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full mb-4">
+                            <i class="fas fa-pen-fancy text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Teknik Belajar</h3>
+                        <p class="text-gray-600 mb-4">Metode efektif untuk menguasai Kanji:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Metode Spaced Repetition</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Teknik Mnemonik</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Analisis Komponen Radikal</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Penulisan Berulang</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continue Learning Section -->
+        <section class="py-16 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Lanjutkan Pembelajaran Anda</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">Kembali ke halaman utama kursus N5 untuk melanjutkan perjalanan belajar bahasa Jepang.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="intro.html" class="inline-block px-6 py-3 bg-white text-red-600 font-medium rounded-lg shadow hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-arrow-left mr-2"></i> Kembali ke Pengantar
+                    </a>
+                    <a href="hiragana.html" class="inline-block px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-red-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-pencil-alt mr-2"></i> Belajar Hiragana
+                    </a>
+                    <a href="katakana.html" class="inline-block px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-red-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-pencil-alt mr-2"></i> Belajar Katakana
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-red-500 text-2xl font-bold">日本語</span>
+                            <span class="ml-1 text-white text-lg font-semibold">Learning</span>
+                        </div>
+                        <p class="text-sm">Platform belajar bahasa Jepang terbaik untuk persiapan JLPT N5 dan N4.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigasi</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                            <li><a href="../about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                            <li><a href="../contact.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Kursus N5</h3>
+                        <ul class="space-y-2">
+                            <li><a href="intro.html" class="text-gray-400 hover:text-white transition">Pengantar</a></li>
+                            <li><a href="hiragana.html" class="text-gray-400 hover:text-white transition">Hiragana</a></li>
+                            <li><a href="katakana.html" class="text-gray-400 hover:text-white transition">Katakana</a></li>
+                            <li><a href="#" class="text-red-400 transition">Kanji Dasar</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 text-sm text-center">
+                    <p>&copy; 2025 Nihongo Learning. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N5 Speaking Practice | JapLearn</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .example-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #4f46e5;
+        }
+        .practice-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .speaking-dialog {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .person-a {
+            background-color: #eef2ff;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            max-width: 80%;
+            margin-left: auto;
+        }
+        .person-b {
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            max-width: 80%;
+        }
+        .practice-button {
+            background-color: #4f46e5;
+            color: white;
+            border-radius: 0.375rem;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+        .practice-button:hover {
+            background-color: #4338ca;
+        }
+        .pronunciation-tip {
+            background-color: #fef3c7;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-indigo-600 text-lg font-bold">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="../intro.html" class="text-indigo-600 border-indigo-500 px-3 py-2 text-sm font-medium border-b-2">N5 Course</a>
+                        <a href="../../resources.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="../../about.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="../../contact.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">N5 Speaking Practice</h1>
+            <p class="text-xl">Improve your Japanese speaking skills with interactive practice exercises.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Speaking Practice</h2>
+                <p class="text-gray-700 mb-4">
+                    Speaking is an essential skill for mastering Japanese. At the N5 level, you'll need to be able to hold basic conversations, introduce yourself, ask and answer simple questions, and navigate everyday situations.
+                </p>
+                
+                <p class="text-gray-700 mb-4">
+                    This page offers a variety of speaking exercises that mimic real-life conversations. Each exercise includes a dialogue with audio pronunciation guides to help you practice your speaking skills.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Speaking Tip:</span> Practice speaking aloud, even if you're alone. Listen to the audio samples and try to mimic the pronunciation, rhythm, and intonation. Recording yourself and comparing with the original can also be very helpful.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">How to Use This Page:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>Read through the dialogue</li>
+                        <li>Listen to the audio samples for correct pronunciation</li>
+                        <li>Practice speaking the lines out loud</li>
+                        <li>Try to memorize common phrases and expressions</li>
+                        <li>Use the role-play exercises to practice in different situations</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Speaking Exercise 1: Greetings -->
+            <section class="mb-12" x-data="{ audio1: false, audio2: false, audio3: false, audio4: false }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 1: Basic Greetings</h2>
+                <p class="text-gray-700 mb-4">
+                    Let's start with some basic greetings. Practice these common expressions that you'll use in everyday conversations.
+                </p>
+                
+                <div class="speaking-dialog">
+                    <h3 class="font-semibold text-lg mb-3">Dialogue: Meeting Someone New</h3>
+                    
+                    <div class="mb-6">
+                        <div class="person-b">
+                            <p class="japanese font-medium">こんにちは。</p>
+                            <p class="text-gray-600 text-sm">Konnichiwa.</p>
+                            <p class="text-gray-600 text-sm italic">Hello.</p>
+                            <button @click="audio1 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-a">
+                            <p class="japanese font-medium">こんにちは。はじめまして。</p>
+                            <p class="text-gray-600 text-sm">Konnichiwa. Hajimemashite.</p>
+                            <p class="text-gray-600 text-sm italic">Hello. Nice to meet you.</p>
+                            <button @click="audio2 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-b">
+                            <p class="japanese font-medium">私は田中です。あなたは？</p>
+                            <p class="text-gray-600 text-sm">Watashi wa Tanaka desu. Anata wa?</p>
+                            <p class="text-gray-600 text-sm italic">I am Tanaka. And you?</p>
+                            <button @click="audio3 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-a">
+                            <p class="japanese font-medium">私は山田です。どうぞよろしく。</p>
+                            <p class="text-gray-600 text-sm">Watashi wa Yamada desu. Dōzo yoroshiku.</p>
+                            <p class="text-gray-600 text-sm italic">I am Yamada. Nice to meet you (Please treat me well).</p>
+                            <button @click="audio4 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="pronunciation-tip">
+                        <p class="font-medium mb-1">Pronunciation Tips:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>In "こんにちは (Konnichiwa)", the "chi" sound is softer than in English, more like "konni<b>ch</b>iwa".</li>
+                            <li>For "はじめまして (Hajimemashite)", emphasize the "ma" slightly: "haji<b>me</b>mashite".</li>
+                            <li>The "u" in "です (desu)" is often very soft or almost silent, so it sounds more like "des".</li>
+                            <li>For "よろしく (yoroshiku)", there's a slight roll to the "r" sound, somewhere between an English "r" and "l".</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">Practice Exercise:</h4>
+                        <p class="mb-3">Try practicing this dialogue with a friend, or by yourself playing both roles. Focus on proper pronunciation and natural flow.</p>
+                        <p>You can also try substituting your own name in place of "Yamada" or using different greetings like:</p>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <li><span class="japanese">おはようございます</span> (Ohayō gozaimasu) - Good morning</li>
+                            <li><span class="japanese">こんばんは</span> (Konbanwa) - Good evening</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Speaking Exercise 2: Asking and Answering Questions -->
+            <section class="mb-12" x-data="{ audio1: false, audio2: false, audio3: false, audio4: false, audio5: false, audio6: false }">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 2: Asking and Answering Questions</h2>
+                <p class="text-gray-700 mb-4">
+                    Now let's practice asking and answering basic questions in Japanese. These question patterns are essential for everyday conversations.
+                </p>
+                
+                <div class="speaking-dialog">
+                    <h3 class="font-semibold text-lg mb-3">Dialogue: Getting to Know Someone</h3>
+                    
+                    <div class="mb-6">
+                        <div class="person-b">
+                            <p class="japanese font-medium">出身はどこですか？</p>
+                            <p class="text-gray-600 text-sm">Shusshin wa doko desu ka?</p>
+                            <p class="text-gray-600 text-sm italic">Where are you from?</p>
+                            <button @click="audio1 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-a">
+                            <p class="japanese font-medium">アメリカ出身です。田中さんは？</p>
+                            <p class="text-gray-600 text-sm">Amerika shusshin desu. Tanaka-san wa?</p>
+                            <p class="text-gray-600 text-sm italic">I'm from America. And you, Tanaka-san?</p>
+                            <button @click="audio2 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-b">
+                            <p class="japanese font-medium">私は東京出身です。</p>
+                            <p class="text-gray-600 text-sm">Watashi wa Tokyo shusshin desu.</p>
+                            <p class="text-gray-600 text-sm italic">I'm from Tokyo.</p>
+                            <button @click="audio3 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-a">
+                            <p class="japanese font-medium">何歳ですか？</p>
+                            <p class="text-gray-600 text-sm">Nan-sai desu ka?</p>
+                            <p class="text-gray-600 text-sm italic">How old are you?</p>
+                            <button @click="audio4 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-b">
+                            <p class="japanese font-medium">25歳です。趣味は何ですか？</p>
+                            <p class="text-gray-600 text-sm">Nijū-go-sai desu. Shumi wa nan desu ka?</p>
+                            <p class="text-gray-600 text-sm italic">I'm 25 years old. What are your hobbies?</p>
+                            <button @click="audio5 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                        
+                        <div class="person-a">
+                            <p class="japanese font-medium">音楽を聴くことと、映画を見ることです。</p>
+                            <p class="text-gray-600 text-sm">Ongaku o kiku koto to, eiga o miru koto desu.</p>
+                            <p class="text-gray-600 text-sm italic">Listening to music and watching movies.</p>
+                            <button @click="audio6 = true" class="text-indigo-600 hover:text-indigo-800 text-sm flex items-center mt-2">
+                                <i class="fas fa-play-circle mr-1"></i> Listen
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="pronunciation-tip">
+                        <p class="font-medium mb-1">Pronunciation Tips:</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>Question particles like "か (ka)" should have a slight rising intonation at the end.</li>
+                            <li>In "どこ (doko)", both syllables are pronounced with equal stress.</li>
+                            <li>The "r" in "アメリカ (Amerika)" is pronounced more like a flap, similar to the "tt" in "butter" in American English.</li>
+                            <li>For numbers like "25歳 (nijū-go-sai)", there is a slight pause between "nijū" and "go".</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">Practice Exercise:</h4>
+                        <p class="mb-3">Try asking and answering these questions with your own information. Practice with the following question patterns:</p>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <li><span class="japanese">〜は何ですか？</span> (~ wa nan desu ka?) - What is ~?</li>
+                            <li><span class="japanese">〜はどこですか？</span> (~ wa doko desu ka?) - Where is ~?</li>
+                            <li><span class="japanese">〜はいつですか？</span> (~ wa itsu desu ka?) - When is ~?</li>
+                            <li><span class="japanese">〜はだれですか？</span> (~ wa dare desu ka?) - Who is ~?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Speaking Exercise 3: Role Play -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Exercise 3: Role Play Scenarios</h2>
+                <p class="text-gray-700 mb-4">
+                    Practice your speaking skills with these common real-life scenarios. Try to act them out as naturally as possible.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="practice-card">
+                        <h3 class="font-semibold text-lg mb-3">At a Restaurant</h3>
+                        <p class="mb-3">Practice ordering food and drinks at a restaurant.</p>
+                        
+                        <div class="bg-gray-100 p-3 rounded-md mb-4">
+                            <p class="font-medium mb-1">Key Phrases:</p>
+                            <ul class="space-y-2">
+                                <li><span class="japanese">メニューをください。</span> - Menu o kudasai. (Please give me the menu.)</li>
+                                <li><span class="japanese">これをお願いします。</span> - Kore o onegaishimasu. (I'll have this, please.)</li>
+                                <li><span class="japanese">水をください。</span> - Mizu o kudasai. (Water, please.)</li>
+                                <li><span class="japanese">おいしいです。</span> - Oishii desu. (It's delicious.)</li>
+                                <li><span class="japanese">お会計をお願いします。</span> - O-kaikei o onegaishimasu. (The bill, please.)</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="italic text-sm mb-2">Try this scenario with a friend or practice both roles yourself!</p>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3 class="font-semibold text-lg mb-3">Asking for Directions</h3>
+                        <p class="mb-3">Practice asking for and giving directions to a location.</p>
+                        
+                        <div class="bg-gray-100 p-3 rounded-md mb-4">
+                            <p class="font-medium mb-1">Key Phrases:</p>
+                            <ul class="space-y-2">
+                                <li><span class="japanese">〜はどこですか？</span> - ~ wa doko desu ka? (Where is ~?)</li>
+                                <li><span class="japanese">まっすぐ行ってください。</span> - Massugu itte kudasai. (Please go straight.)</li>
+                                <li><span class="japanese">右に曲がってください。</span> - Migi ni magatte kudasai. (Please turn right.)</li>
+                                <li><span class="japanese">左に曲がってください。</span> - Hidari ni magatte kudasai. (Please turn left.)</li>
+                                <li><span class="japanese">ありがとうございます。</span> - Arigatō gozaimasu. (Thank you.)</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="italic text-sm mb-2">Try asking for directions to a station, store, or other location!</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="mb-4">Remember, speaking practice is most effective when done regularly. Try to practice these scenarios at least a few times a week!</p>
+                    <button class="practice-button">
+                        <i class="fas fa-microphone mr-2"></i> More Role Play Scenarios Coming Soon!
+                    </button>
+                </div>
+            </section>
+
+            <!-- Footer Navigation -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">More Practice Resources</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="./listening.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-headphones text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Listening Practice</h3>
+                    </a>
+                    <a href="./reading.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-book-open text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Reading Practice</h3>
+                    </a>
+                    <a href="./writing.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-pen text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Writing Practice</h3>
+                    </a>
+                    <a href="./speaking.html" class="bg-indigo-100 border border-indigo-300 rounded-lg p-4 text-center">
+                        <i class="fas fa-microphone text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Speaking Practice</h3>
+                    </a>
+                    <a href="./kanji-quiz.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-font text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Kanji Quiz</h3>
+                    </a>
+                    <a href="./vocabulary-quiz.html" class="bg-white hover:bg-indigo-50 border border-gray-200 rounded-lg p-4 text-center transition duration-300">
+                        <i class="fas fa-list text-indigo-500 text-2xl mb-2"></i>
+                        <h3 class="font-semibold">Vocabulary Quiz</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-300 text-sm">Your comprehensive resource for learning Japanese language and culture.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-300 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-300 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Practice Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./listening.html" class="text-gray-300 hover:text-white">Listening Practice</a></li>
+                        <li><a href="./reading.html" class="text-gray-300 hover:text-white">Reading Practice</a></li>
+                        <li><a href="./writing.html" class="text-gray-300 hover:text-white">Writing Practice</a></li>
+                        <li><a href="./speaking.html" class="text-indigo-300 hover:text-white">Speaking Practice</a></li>
+                        <li><a href="./vocabulary-quiz.html" class="text-gray-300 hover:text-white">Vocabulary Quiz</a></li>
+                        <li><a href="./grammar-quiz.html" class="text-gray-300 hover:text-white">Grammar Quiz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-300 text-sm mb-2">Stay updated with our latest lessons and resources.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 bg-white rounded-l-md focus:outline-none text-sm">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md text-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

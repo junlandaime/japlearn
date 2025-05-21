@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Family Vocabulary | JapLearn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3a82ee143e.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+        .content-container {
+            max-width: 900px;
+        }
+        .japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .vocabulary-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vocabulary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .example-card {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f5f3ff;
+        }
+        .vocabulary-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .vocabulary-table th,
+        .vocabulary-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .vocabulary-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .audio-button {
+            cursor: pointer;
+            color: #4f46e5;
+            transition: color 0.2s;
+        }
+        .audio-button:hover {
+            color: #6366f1;
+        }
+        .category-immediate {
+            background-color: #fee2e2;
+        }
+        .category-extended {
+            background-color: #dbeafe;
+        }
+        .category-in-laws {
+            background-color: #d1fae5;
+        }
+        .family-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            transition: all 0.2s;
+        }
+        .family-card:hover {
+            background-color: #f3f4f6;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../../index.html" class="text-xl font-bold text-indigo-600">JapLearn</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="../../index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="../intro.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            N5 Course
+                        </a>
+                        <a href="../../about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="../../contact.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="../../signup.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    <a href="../../login.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Log In</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Japanese Family Terms</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-indigo-100">Essential vocabulary for talking about family in Japanese</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="content-container mx-auto bg-white shadow-md rounded-lg p-6 mb-10">
+            
+            <!-- Introduction Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to Japanese Family Terms</h2>
+                <p class="text-gray-700 mb-4">
+                    Family (家族 - kazoku) is a central part of Japanese culture and society. The Japanese language has an extensive vocabulary for referring to family members, with different terms depending on whether you're talking about your own family or someone else's.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Unlike English, Japanese has separate words for "older brother," "younger brother," "older sister," and "younger sister." Additionally, there are different terms when referring to your own family members versus when referring to someone else's family members. This distinction reflects the importance of social hierarchy and relationships in Japanese culture.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> In Japanese society, family structure is traditionally hierarchical, with the eldest male often being the head of the household. However, modern Japanese families have evolved, and many now follow more egalitarian structures. The language still reflects some of these traditional distinctions, especially in the terms used for different family members.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Immediate Family Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Immediate Family Members</h2>
+                <p class="text-gray-700 mb-4">
+                    These are the basic terms for immediate family members in Japanese. Note the distinction between terms used for your own family (when speaking to others) and terms used for someone else's family (when speaking to the family member directly).
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Japanese (Your Family)</th>
+                                <th>Romaji</th>
+                                <th>Japanese (Someone Else's)</th>
+                                <th>Romaji</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-immediate">
+                            <tr>
+                                <td>Family</td>
+                                <td><span class="japanese">家族</span></td>
+                                <td>Kazoku</td>
+                                <td><span class="japanese">ご家族</span></td>
+                                <td>Go-kazoku</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Father</td>
+                                <td><span class="japanese">父 / お父さん</span></td>
+                                <td>Chichi / Otōsan</td>
+                                <td><span class="japanese">お父さん</span></td>
+                                <td>Otōsan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Mother</td>
+                                <td><span class="japanese">母 / お母さん</span></td>
+                                <td>Haha / Okāsan</td>
+                                <td><span class="japanese">お母さん</span></td>
+                                <td>Okāsan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Older Brother</td>
+                                <td><span class="japanese">兄 / お兄さん</span></td>
+                                <td>Ani / Onīsan</td>
+                                <td><span class="japanese">お兄さん</span></td>
+                                <td>Onīsan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Older Sister</td>
+                                <td><span class="japanese">姉 / お姉さん</span></td>
+                                <td>Ane / Onēsan</td>
+                                <td><span class="japanese">お姉さん</span></td>
+                                <td>Onēsan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Younger Brother</td>
+                                <td><span class="japanese">弟</span></td>
+                                <td>Otōto</td>
+                                <td><span class="japanese">弟さん</span></td>
+                                <td>Otōto-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Younger Sister</td>
+                                <td><span class="japanese">妹</span></td>
+                                <td>Imōto</td>
+                                <td><span class="japanese">妹さん</span></td>
+                                <td>Imōto-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Husband</td>
+                                <td><span class="japanese">夫 / 主人</span></td>
+                                <td>Otto / Shujin</td>
+                                <td><span class="japanese">ご主人</span></td>
+                                <td>Goshujin</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Wife</td>
+                                <td><span class="japanese">妻 / 家内</span></td>
+                                <td>Tsuma / Kanai</td>
+                                <td><span class="japanese">奥さん</span></td>
+                                <td>Okusan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Son</td>
+                                <td><span class="japanese">息子</span></td>
+                                <td>Musuko</td>
+                                <td><span class="japanese">息子さん</span></td>
+                                <td>Musuko-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Daughter</td>
+                                <td><span class="japanese">娘</span></td>
+                                <td>Musume</td>
+                                <td><span class="japanese">娘さん</span></td>
+                                <td>Musume-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Child</td>
+                                <td><span class="japanese">子供</span></td>
+                                <td>Kodomo</td>
+                                <td><span class="japanese">お子さん</span></td>
+                                <td>Oko-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">私の父は先生です。</p>
+                        <p class="text-gray-600">Watashi no chichi wa sensei desu.</p>
+                        <p class="text-gray-600">My father is a teacher.</p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="japanese">あなたのお母さんはどこにいますか。</p>
+                        <p class="text-gray-600">Anata no okāsan wa doko ni imasu ka.</p>
+                        <p class="text-gray-600">Where is your mother?</p>
+                    </div>
+                    <div>
+                        <p class="japanese">私には兄が二人と妹が一人います。</p>
+                        <p class="text-gray-600">Watashi ni wa ani ga futari to imōto ga hitori imasu.</p>
+                        <p class="text-gray-600">I have two older brothers and one younger sister.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Extended Family Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Extended Family Members</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are the terms for extended family members such as grandparents, aunts, uncles, and cousins.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Japanese (Your Family)</th>
+                                <th>Romaji</th>
+                                <th>Japanese (Someone Else's)</th>
+                                <th>Romaji</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-extended">
+                            <tr>
+                                <td>Grandfather</td>
+                                <td><span class="japanese">祖父 / おじいさん</span></td>
+                                <td>Sofu / Ojīsan</td>
+                                <td><span class="japanese">おじいさん</span></td>
+                                <td>Ojīsan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Grandmother</td>
+                                <td><span class="japanese">祖母 / おばあさん</span></td>
+                                <td>Sobo / Obāsan</td>
+                                <td><span class="japanese">おばあさん</span></td>
+                                <td>Obāsan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Uncle</td>
+                                <td><span class="japanese">叔父 / おじさん</span></td>
+                                <td>Oji / Ojisan</td>
+                                <td><span class="japanese">おじさん</span></td>
+                                <td>Ojisan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Aunt</td>
+                                <td><span class="japanese">叔母 / おばさん</span></td>
+                                <td>Oba / Obasan</td>
+                                <td><span class="japanese">おばさん</span></td>
+                                <td>Obasan</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Cousin</td>
+                                <td><span class="japanese">いとこ</span></td>
+                                <td>Itoko</td>
+                                <td><span class="japanese">いとこさん</span></td>
+                                <td>Itoko-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Nephew</td>
+                                <td><span class="japanese">甥</span></td>
+                                <td>Oi</td>
+                                <td><span class="japanese">甥御さん</span></td>
+                                <td>Oigo-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Niece</td>
+                                <td><span class="japanese">姪</span></td>
+                                <td>Mei</td>
+                                <td><span class="japanese">姪御さん</span></td>
+                                <td>Meigo-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Grandchild</td>
+                                <td><span class="japanese">孫</span></td>
+                                <td>Mago</td>
+                                <td><span class="japanese">お孫さん</span></td>
+                                <td>Omago-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Grandson</td>
+                                <td><span class="japanese">孫息子</span></td>
+                                <td>Magomusuko</td>
+                                <td><span class="japanese">お孫さん</span></td>
+                                <td>Omago-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Granddaughter</td>
+                                <td><span class="japanese">孫娘</span></td>
+                                <td>Magomusume</td>
+                                <td><span class="japanese">お孫さん</span></td>
+                                <td>Omago-san</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">祖父と祖母は田舎に住んでいます。</p>
+                        <p class="text-gray-600">Sofu to sobo wa inaka ni sunde imasu.</p>
+                        <p class="text-gray-600">My grandfather and grandmother live in the countryside.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">叔父は医者です。</p>
+                        <p class="text-gray-600">Oji wa isha desu.</p>
+                        <p class="text-gray-600">My uncle is a doctor.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- In-Laws Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">In-Laws and Other Family Relations</h2>
+                <p class="text-gray-700 mb-4">
+                    Japanese has specific terms for in-laws and other family relations. These terms often add prefixes or suffixes to the basic family terms.
+                </p>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="vocabulary-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Japanese</th>
+                                <th>Romaji</th>
+                                <th>Notes</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="category-in-laws">
+                            <tr>
+                                <td>Father-in-law</td>
+                                <td><span class="japanese">義父</span></td>
+                                <td>Gifu</td>
+                                <td>義 (gi) is the prefix for in-laws</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Mother-in-law</td>
+                                <td><span class="japanese">義母</span></td>
+                                <td>Gibo</td>
+                                <td>Can also be called 姑 (shūtome)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Brother-in-law</td>
+                                <td><span class="japanese">義兄 / 義弟</span></td>
+                                <td>Gikei / Gitei</td>
+                                <td>Depends if older or younger than you</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Sister-in-law</td>
+                                <td><span class="japanese">義姉 / 義妹</span></td>
+                                <td>Giane / Gimai</td>
+                                <td>Depends if older or younger than you</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Son-in-law</td>
+                                <td><span class="japanese">婿</span></td>
+                                <td>Muko</td>
+                                <td>Also can be 義理の息子 (giri no musuko)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Daughter-in-law</td>
+                                <td><span class="japanese">嫁</span></td>
+                                <td>Yome</td>
+                                <td>Also can be 義理の娘 (giri no musume)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Parents-in-law</td>
+                                <td><span class="japanese">義両親</span></td>
+                                <td>Giryōshin</td>
+                                <td>Both father-in-law and mother-in-law</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Stepfather</td>
+                                <td><span class="japanese">継父</span></td>
+                                <td>Keifu</td>
+                                <td>継 (kei) is the prefix for step-relations</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Stepmother</td>
+                                <td><span class="japanese">継母</span></td>
+                                <td>Keibo</td>
+                                <td>Also commonly called ままはは (mamahaha)</td>
+                                <td><span class="audio-button"><i class="fas fa-play-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-card p-4 rounded-md mb-6">
+                    <p class="text-lg font-semibold mb-2">Example Sentences:</p>
+                    <div class="mb-3">
+                        <p class="japanese">義父と義母は親切です。</p>
+                        <p class="text-gray-600">Gifu to gibo wa shinsetsu desu.</p>
+                        <p class="text-gray-600">My father-in-law and mother-in-law are kind.</p>
+                    </div>
+                    <div>
+                        <p class="japanese">姉の夫は私の義兄です。</p>
+                        <p class="text-gray-600">Ane no otto wa watashi no gikei desu.</p>
+                        <p class="text-gray-600">My sister's husband is my brother-in-law.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Family-Related Terms -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Other Family-Related Terms</h2>
+                <p class="text-gray-700 mb-4">
+                    Here are some additional terms related to family relationships and household that are useful to know.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Family</div>
+                        <div class="japanese text-xl">家族</div>
+                        <div>かぞく (Kazoku)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Relatives</div>
+                        <div class="japanese text-xl">親戚</div>
+                        <div>しんせき (Shinseki)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Parents</div>
+                        <div class="japanese text-xl">両親</div>
+                        <div>りょうしん (Ryōshin)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Siblings</div>
+                        <div class="japanese text-xl">兄弟姉妹</div>
+                        <div>きょうだい (Kyōdai)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Brothers</div>
+                        <div class="japanese text-xl">兄弟</div>
+                        <div>きょうだい (Kyōdai)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Sisters</div>
+                        <div class="japanese text-xl">姉妹</div>
+                        <div>しまい (Shimai)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Twins</div>
+                        <div class="japanese text-xl">双子</div>
+                        <div>ふたご (Futago)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">First-born</div>
+                        <div class="japanese text-xl">長男 / 長女</div>
+                        <div>ちょうなん / ちょうじょ (Chōnan / Chōjo)</div>
+                    </div>
+                    <div class="family-card">
+                        <div class="text-lg font-bold">Grandparents</div>
+                        <div class="japanese text-xl">祖父母</div>
+                        <div>そふぼ (Sofubo)</div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Cultural Note:</span> When referring to your own family members in conversation with others, it's customary to use humble language (e.g., 父 chichi for "my father"). When referring to someone else's family members, it's polite to use honorific language (e.g., お父さん otōsan for "your father"). This reflects the Japanese concept of showing respect to others and humility about oneself.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Practice Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Practice Exercises</h2>
+                <p class="text-gray-700 mb-4">
+                    Test your understanding of Japanese family terms with these exercises.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 1: Match the Terms</h3>
+                    <p class="text-gray-700 mb-3">
+                        Match each Japanese term with its English meaning:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium mb-1">Japanese:</p>
+                            <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                                <li><span class="japanese">お兄さん</span> (Onīsan)</li>
+                                <li><span class="japanese">妹</span> (Imōto)</li>
+                                <li><span class="japanese">祖母</span> (Sobo)</li>
+                                <li><span class="japanese">叔父</span> (Oji)</li>
+                                <li><span class="japanese">いとこ</span> (Itoko)</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p class="font-medium mb-1">English:</p>
+                            <ul class="list-disc pl-8 text-gray-700 space-y-2">
+                                <li>Grandmother</li>
+                                <li>Younger sister</li>
+                                <li>Uncle</li>
+                                <li>Older brother</li>
+                                <li>Cousin</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li>Older brother</li>
+                            <li>Younger sister</li>
+                            <li>Grandmother</li>
+                            <li>Uncle</li>
+                            <li>Cousin</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 2: Your Own vs. Someone Else's</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the appropriate term for each scenario:
+                    </p>
+                    <ol class="list-decimal pl-8 text-gray-700 space-y-2">
+                        <li>When talking about your own father to others: __________</li>
+                        <li>When talking about someone else's father: __________</li>
+                        <li>When talking about your own older sister: __________</li>
+                        <li>When talking about someone else's older sister: __________</li>
+                        <li>When talking about your own grandfather: __________</li>
+                    </ol>
+                    <button class="mt-4 text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <ol class="list-decimal pl-8 text-gray-700 space-y-1">
+                            <li><span class="japanese">父</span> (Chichi)</li>
+                            <li><span class="japanese">お父さん</span> (Otōsan)</li>
+                            <li><span class="japanese">姉</span> (Ane)</li>
+                            <li><span class="japanese">お姉さん</span> (Onēsan)</li>
+                            <li><span class="japanese">祖父</span> (Sofu)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Exercise 3: Complete the Sentences</h3>
+                    <p class="text-gray-700 mb-3">
+                        Fill in the blanks with appropriate family terms:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded mb-4">
+                        <p class="japanese">1. 私の＿＿＿＿は医者です。(My father is a doctor.)</p>
+                        <p class="japanese">2. あなたの＿＿＿＿は何歳ですか。(How old is your mother?)</p>
+                        <p class="japanese">3. 私には＿＿＿＿が一人います。(I have one younger brother.)</p>
+                        <p class="japanese">4. 田中さんの＿＿＿＿は先生です。(Mr. Tanaka's wife is a teacher.)</p>
+                        <p class="japanese">5. 私の＿＿＿＿は東京に住んでいます。(My grandparents live in Tokyo.)</p>
+                    </div>
+                    <button class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded" onclick="this.nextElementSibling.classList.toggle('hidden')">Show Answers</button>
+                    <div class="hidden mt-2 p-4 bg-gray-50 rounded">
+                        <p class="japanese">1. <span class="text-indigo-600">父</span> (Chichi)</p>
+                        <p class="japanese">2. <span class="text-indigo-600">お母さん</span> (Okāsan)</p>
+                        <p class="japanese">3. <span class="text-indigo-600">弟</span> (Otōto)</p>
+                        <p class="japanese">4. <span class="text-indigo-600">奥さん</span> (Okusan)</p>
+                        <p class="japanese">5. <span class="text-indigo-600">祖父母</span> (Sofubo)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Vocabulary Navigation -->
+            <section class="mb-12 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">N5 Vocabulary Navigation</h2>
+                <p class="text-gray-700 mb-4">
+                    Continue your N5 vocabulary journey with these related topics:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="greetings.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Greetings</h3>
+                        <p class="text-gray-600 text-sm">Essential expressions for conversations</p>
+                    </a>
+                    <a href="numbers.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Numbers</h3>
+                        <p class="text-gray-600 text-sm">Learn counting in Japanese</p>
+                    </a>
+                    <a href="time.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Time Expressions</h3>
+                        <p class="text-gray-600 text-sm">Days, months, and time vocabulary</p>
+                    </a>
+                    <a href="activities.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Daily Activities</h3>
+                        <p class="text-gray-600 text-sm">Vocabulary for everyday actions</p>
+                    </a>
+                    <a href="location.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Locations</h3>
+                        <p class="text-gray-600 text-sm">Places and direction words</p>
+                    </a>
+                    <a href="master-list-n5.html" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-indigo-600">Complete N5 Vocabulary</h3>
+                        <p class="text-gray-600 text-sm">Master list of all N5 vocabulary</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JapLearn</h3>
+                    <p class="text-gray-400">Your journey to Japanese language proficiency begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../intro.html" class="text-gray-400 hover:text-white">N5 Course</a></li>
+                        <li><a href="../../resources.html" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Sign up for our newsletter to receive updates and free lessons.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 JapLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Audio Buttons (placeholder) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButtons = document.querySelectorAll('.audio-button');
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Audio playback would start here in the full implementation.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
